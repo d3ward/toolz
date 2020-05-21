@@ -1,9 +1,9 @@
 # Toolz
 
-A set of web tools to check, verify, and test.
+
 
 ## Ad Block Test  [Link](https://d3ward.github.io/toolz/src/adblock)
-Check if your adblock is blocking enough hosts ( not ads )
+Check if your adblock is blocking enough hosts ( not ads ) 
 With a simple UI check how much yoou blocked , the tool try to connect to most common domains for a couple of category ( Ads,Analytics,Error Tracking and Social)
 
 ## 100vh Viewport Units Test [Link](https://d3ward.github.io/toolz/src/units)
