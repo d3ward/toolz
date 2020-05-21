@@ -241,19 +241,27 @@
             <span>View on Github</span>
         </a>
     </div>
+    <div id="test1"></div>
 </body>
-<script src="../lib/svelte.min.js"></script>
+<script src="../lib/svelte.js"></script>
 <script src="../lib/radialprogress.js"></script>
 <script src="../lib/d3Notif.js"></script>
 
-
-
 <script>
+    console.log(document.getElementById("test1"));
+    console.log(d3('#test1'));
+    console.log($('#test1'));
     var notification = new Notif({
         topPos: 10,
         classNames: 'success',
         autoClose: true,
         autoCloseTimeout: 2000
+    });
+    var bar = new RadialProgress(d3('#bar'), {
+        colorBg: "#ff3b3f",
+        colorFg: "#3cc47c",
+        colorText: "#202020",
+        thick: 12
     });
     var nTest = 0; //Number of url to be tested
     var data = {
@@ -289,13 +297,8 @@
         }
 
     };
-    var points = 0;
-    var bar = new RadialProgress(document.getElementById("bar"), {
-        colorBg: "#ff3b3f",
-        colorFg: "#3cc47c",
-        colorText: "#202020",
-        thick: 12
-    });
+    var points = 0;//Points of blocked urls
+    
 
     function copyToClip(str) {
         const el = document.createElement('textarea');
@@ -308,7 +311,7 @@
             document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
         el.select();
         document.execCommand('copy');
-        document.body.removeChild(el);
+        $(el).remove();
         if (selected) {
             document.getSelection().removeAllRanges();
             document.getSelection().addRange(selected);
@@ -320,15 +323,12 @@
         var hostDiv = document.createElement("div");
         nTest += 1;
         hostDiv.innerHTML = url;
-        hostDiv.onclick = () => {
-            copyToClip(url);
-        };
+        hostDiv.onclick = () => {copyToClip(url);};
         div.appendChild(hostDiv);
         fetch(url, {
             method: 'HEAD',
             mode: 'no-cors'
-        })
-            .then(response => {
+        }).then(response => {
                 $(div).css("background", "#ff3b3f");
                 $(hostDiv).css("background", "#ff3b3f");
             }) //Response was received --> ads are NOT blocked
@@ -339,32 +339,27 @@
                     points += 100 / nTest;
                     bar.setValue(points / 100);
                 }
-
-            }); //No response           --> ads are blocked
+            }); //No response --> ads are blocked
     }
 
     function show_info(t) {
         t = t.parentElement;
-        var others = document.querySelectorAll(".test");
-        others.forEach(element => {
-            if (element != t) $(element).removeClass("show");
-        });
+        var others = d3(".test");
+        others.forEach(element => {if (element != t) $(element).removeClass("show");});
         $(t).toggleClass("show");
     }
     window.onload = function () {
-        //Load JSON data
         for (element in data) {
             var catEl = document.createElement("div");
             catEl.id = element;
             catEl.innerHTML = "<h3>" + element + "</h3>";
-            document.getElementById("test").appendChild(catEl);
+            d3("#test").appendChild(catEl);
             var category = data[element];
             for (key in category) {
                 var div = document.createElement('div');
                 div.classList.add("test");
                 div.id = key;
                 div.innerHTML = "<span onclick='show_info(this)'>" + key + "</span>";
-
                 document.getElementById(element).appendChild(div);
                 if (category.hasOwnProperty(key)) {
                     var value = category[key];
@@ -372,19 +367,13 @@
                         var cnt = 0;
                         for (let i = 0; i < value.length; i++)
                             check_url(value[i], div);
-
                     } else check_url(value, div);
                 }
-
             }
         }
-
-
     }
     // Set a variable for our button element.
-    const scrollToTopButton = document.getElementById('go_top');
-
-    // Let's set up a function that shows our scroll-to-top button if we scroll beyond the height of the initial window.
+    const scrollToTopButton = d3('#go_top');
     const scrollFunc = () => {
         let y = window.scrollY;
         if (y > 0) {
@@ -393,9 +382,7 @@
             scrollToTopButton.className = "go_top hide";
         }
     };
-
     window.addEventListener("scroll", scrollFunc);
-
     const scrollToTop = () => {
         const c = document.documentElement.scrollTop || document.body.scrollTop;
         if (c > 0) {
@@ -403,12 +390,10 @@
             window.scrollTo(0, c - c / 10);
         }
     };
-
     scrollToTopButton.onclick = function (e) {
         e.preventDefault();
         scrollToTop();
     }
 </script>
-
 
 </html>
