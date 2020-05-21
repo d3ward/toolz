@@ -1,0 +1,414 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Ad Blocker Test</title>
+    <link rel="icon" href="icon.png">
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding: 5px;
+            background: #efefef;
+            color: #333333;
+        }
+
+        .dark {
+            background: #173145;
+            color: #efefef
+        }
+
+        .go_top {
+            transition: all .25s ease-in-out;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: inline-flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            margin: 0 1em 1em 0;
+            border-radius: 50%;
+            padding: .25em;
+            width: 50px;
+            height: 50px;
+            background-color: #333333;
+        }
+
+        .go_top.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .go_top.hide {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .go_top svg {
+            fill: #efefef;
+            width: 24px;
+            height: 12px;
+        }
+
+        .cnt {
+            max-width: 700px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .test {
+            background-color: #992325;
+            color: #fff;
+            padding: 5px;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            border-radius: 8px;
+            text-align: center;
+            line-height: 60px;
+            margin: 10px;
+            transition: all 1s;
+        }
+
+        .test>div {
+            position: relative;
+            user-select: none;
+            display: none;
+            overflow-x: auto;
+            border-radius: 8px;
+            white-space: nowrap;
+            color: #000;
+            margin: 10px;
+            padding: 5px;
+            box-shadow: 0px -1px 20px 9px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+
+
+        .test>span {
+            width: 100%;
+            display: block;
+        }
+
+        .test.show>div {
+            display: block;
+        }
+
+        #bar {
+            width: 10em;
+            margin: auto;
+        }
+
+        .cnt2 {
+            margin: auto;
+            max-width: 700px;
+            overflow-y: auto;
+        }
+
+        .cl_info {
+            margin-top: 5px;
+            font-weight: bold;
+            width: 150px;
+            padding: 5px;
+            border-radius: 8px;
+        }
+
+        .cl1 {
+            background: #3cc47c;
+        }
+
+        .cl2 {
+            background: #ff3b3f;
+        }
+
+        .button {
+            text-decoration: none;
+            float: left;
+            margin: 10px;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            background: #173145;
+            color: #efefef;
+            text-align: center;
+            padding: 1em .75em;
+        }
+
+        .toast-message {
+            position: fixed;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            width: 400px;
+            font-size: 16px;
+            transition: all .5s;
+            z-index: 9999;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        @media (max-width: 424px) {
+            .toast-message {
+                width: calc(100% - 20px);
+            }
+        }
+
+        .toast-message.success {
+            background: rgb(4, 184, 255);
+
+        }
+
+        .toast-message .message {
+            color: #333333;
+            padding: 20px 30px;
+            text-align: center;
+        }
+
+        .git_btn {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            width: 110px;
+            margin: 10px auto;
+            padding: 0 0 0 40px;
+            color: #efefef;
+            border-radius: 8px;
+            background-color: #173145;
+        }
+
+        .git_btn span {
+            font-size: 14px;
+            line-height: 44px;
+        }
+
+        .git_btn svg {
+            position: absolute;
+            fill: #efefef;
+            top: 2px;
+            left: 2px;
+            width: 40px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+
+<body class="dar">
+    <a class="go_top hide" href="" id="go_top">
+        <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 12 6">
+            <path d="M12 6H0l6-6z" /></svg>
+    </a>
+    <div class="toast-message">
+        <div class="message">
+            This is an Alert!
+        </div>
+    </div>
+
+    <div class="cnt">
+        <div id="bar"></div>
+        <div class="cl_info cl1">Blocked Hosts</div>
+        <div class="cl_info cl2">Not Blocked</div>
+        <p>
+            Click on a test below to see details about urls <br>
+            Click on a url to copy to clipboard <br>
+        </p>
+        <div id="test"></div>
+        <h3>Other tools from web </h3>
+        <div class="cnt2">
+            <a href="https://cryptojackingtest.com/" class="button">Cryptojacking by Opera</a>
+            <a href="https://ipleak.net/" class="button">IP Leak </a>
+            <a href="https://blockads.fivefilters.org/" class="button">Block Ads Test </a>
+            <a href="https://panopticlick.eff.org/" class="button">Browser Fingerprint by EEF</a>
+            <a href="https://raymondhill.net/ublock/tiles1.html" class="button">Adblock Testing by raymondhill</a>
+            <a href="https://raymondhill.net/ublock/popup.html" class="button">Popup Blocker by raymondhill</a>
+        </div>
+    </div>
+    <hr>
+    <div style="width: 100%;text-align: center;"><span> Made by d3ward </span> <br>
+        <a href="https://github.com/d3ward/toolz" class="git_btn">
+            <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <path fill-rule="evenodd"
+                    d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
+            </svg>
+            <span>View on Github</span>
+        </a>
+    </div>
+</body>
+<script src="../lib/svelte.min.js"></script>
+<script src="../lib/radialprogress.js"></script>
+<script src="../lib/d3Notif.js"></script>
+
+
+
+<script>
+    var notification = new Notif({
+        topPos: 10,
+        classNames: 'success',
+        autoClose: true,
+        autoCloseTimeout: 2000
+    });
+    var nTest = 0; //Number of url to be tested
+    var data = {
+        "Ads": { //Ads
+            "Google Ads": ["https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+                "https://pagead2.googlesyndication.com/pagead/show_ads.js",
+                "https://adservice.google.com/adsid/integrator.js?domain=localhost",
+                "https://www.google-analytics.com/analytics.js"
+            ],
+            "Media.net": ["https://static.media.net", "https://media.net", "https://adservetx.media.net"],
+            "Doubleclick.net": ["https://doubleclick.net/", "https://ad.doubleclick.net/"],
+            "FastClick": ["https://media.fastclick.net/", "https://cdn.fastclick.net/"]
+        },
+        "Analytics": { //Analytics
+            "Google Analytics": "https://google-analytics.com",
+            "Hotjar": ["https://www.hotjar.com", "https://static.hotjar.com/c/hotjar.js?sv=6"],
+            "MouseFlow": ["https://mouseflow.com/", "https://a.mouseflow.com"],
+            "FreshMarketer": "https://freshmarketer.com/",
+            "Luckyorange": ["https://cdn.luckyorange.com", "https://w1.luckyorange.com", "https://upload.luckyorange.net", "https://cs.luckyorange.net", "https://settings.luckyorange.net"],
+            "Stats WP Plugin": "https://stats.wp.com/e-202020.js"
+        },
+        "Error Trackers": { //Error tracker
+            "Bugsnag": ["https://notify.bugsnag.com", "https://sessions.bugsnag.com"],
+            "Sentry": "https://browser.sentry-cdn.com/5.10.2/bundle.min.js"
+        },
+        "Social": {
+            "Facebook": ["https://pixel.facebook.com", "https://adtools.facebook.com", "https://analytics.facebook.com", "https://graph.facebook.com", "https://ads.facebook.com"],
+            "Twitter": ["https://ads-twitter.com", "https://static.ads-twitter.com", "https://analytics.twitter.com"],
+            "LinkedIn": ["https://ads.linkedin.com", "https://analytics.pointdrive.linkedin.com"],
+            "Pinterest": ["https://ads.pinterest.com", "https://log.pinterest.com", "https://widgets.pinterest.com", "https://analytics.pinterest.com", "https://trk.pinterest.com"],
+            "Reddit": ["https://ads.reddit", "https://stats.redditmedia.com", "https://rereddit.com", "https://events.redditmedia.com"],
+            "YouTube": ["https://ads.youtube.com", "https://youtube.cleverads.vn"]
+        }
+
+    };
+    var points = 0;
+    var bar = new RadialProgress(document.getElementById("bar"), {
+        colorBg: "#ff3b3f",
+        colorFg: "#3cc47c",
+        colorText: "#202020",
+        thick: 12
+    });
+
+    function copyToClip(str) {
+        const el = document.createElement('textarea');
+        el.value = str;
+        el.setAttribute('readonly', '');
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        const selected =
+            document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        if (selected) {
+            document.getSelection().removeAllRanges();
+            document.getSelection().addRange(selected);
+        }
+        notification.showN('URL copied to clipboard !', 'success');
+    }
+
+    function check_url(url, div) {
+        var hostDiv = document.createElement("div");
+        nTest += 1;
+        hostDiv.innerHTML = url;
+        hostDiv.onclick = () => {
+            copyToClip(url);
+        };
+        div.appendChild(hostDiv);
+        fetch(url, {
+            method: 'HEAD',
+            mode: 'no-cors'
+        })
+            .then(response => {
+                $(div).css("background", "#ff3b3f");
+                $(hostDiv).css("background", "#ff3b3f");
+            }) //Response was received --> ads are NOT blocked
+            .catch(error => {
+                $(hostDiv).css("background", "#3cc47c");
+                if ($(div).css("background") != "#ff3b3f") {
+                    $(div).css("background", "#3cc47c");
+                    points += 100 / nTest;
+                    bar.setValue(points / 100);
+                }
+
+            }); //No response           --> ads are blocked
+    }
+
+    function show_info(t) {
+        t = t.parentElement;
+        var others = document.querySelectorAll(".test");
+        others.forEach(element => {
+            if (element != t) $(element).removeClass("show");
+        });
+        $(t).toggleClass("show");
+    }
+    window.onload = function () {
+        //Load JSON data
+        for (element in data) {
+            var catEl = document.createElement("div");
+            catEl.id = element;
+            catEl.innerHTML = "<h3>" + element + "</h3>";
+            document.getElementById("test").appendChild(catEl);
+            var category = data[element];
+            for (key in category) {
+                var div = document.createElement('div');
+                div.classList.add("test");
+                div.id = key;
+                div.innerHTML = "<span onclick='show_info(this)'>" + key + "</span>";
+
+                document.getElementById(element).appendChild(div);
+                if (category.hasOwnProperty(key)) {
+                    var value = category[key];
+                    if (Array.isArray(value)) {
+                        var cnt = 0;
+                        for (let i = 0; i < value.length; i++)
+                            check_url(value[i], div);
+
+                    } else check_url(value, div);
+                }
+
+            }
+        }
+
+
+    }
+    // Set a variable for our button element.
+    const scrollToTopButton = document.getElementById('go_top');
+
+    // Let's set up a function that shows our scroll-to-top button if we scroll beyond the height of the initial window.
+    const scrollFunc = () => {
+        let y = window.scrollY;
+        if (y > 0) {
+            scrollToTopButton.className = "go_top show";
+        } else {
+            scrollToTopButton.className = "go_top hide";
+        }
+    };
+
+    window.addEventListener("scroll", scrollFunc);
+
+    const scrollToTop = () => {
+        const c = document.documentElement.scrollTop || document.body.scrollTop;
+        if (c > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, c - c / 10);
+        }
+    };
+
+    scrollToTopButton.onclick = function (e) {
+        e.preventDefault();
+        scrollToTop();
+    }
+</script>
+
+
+</html>

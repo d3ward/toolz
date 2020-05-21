@@ -1,0 +1,122 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>100vh Test</title>
+  <style>
+    body,
+    html {
+      text-align: center;
+      background: #efefef;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    div.test {
+      display: inline-block;
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+      border: 5px solid red;
+      padding-top: 50px;
+      text-align: center;
+      box-sizing: border-box;
+      width: 20%;
+      color: black;
+    }
+
+    .cnt {
+      margin: auto;
+      max-width: 500px;
+      overflow-y: auto;
+    }
+
+    .cnt2 {
+      padding :10px;
+    }
+
+    .cnt> a {
+      text-decoration: none;
+      float: left;
+      margin: 10px;
+      outline: none;
+      border: none;
+      border-radius: 8px;
+      background: #173145;
+      color: #efefef;
+      text-align: center;
+      padding: 1em .75em;
+    }
+
+    .a {
+      background-color: #3cc47c;
+      height: 50vh;
+    }
+
+    .b {
+      background-color: #0095ff;
+      height: 50%;
+    }
+    .git_btn {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            width: 110px;
+            margin: 10px auto;
+            padding: 0 0 0 40px;
+            color: #efefef;
+            border-radius: 8px;
+            background-color: #173145;
+        }
+
+        .git_btn span {
+            font-size: 14px;
+            line-height: 44px;
+        }
+
+        .git_btn svg {
+            position: absolute;
+            fill: #efefef;
+            top: 2px;
+            left: 2px;
+            width: 40px;
+            height: 40px;
+        }
+  </style>
+</head>
+
+<body>
+  <div class="cnt2">
+
+    <h3>Test Viewport Units</h3>
+    <p>The following figures are used to test the css viewport problem.<br>
+      If the two figures have the same dimensions it means that your browser is not affected by the bug </p>
+  </div>
+  <div class="test a">50vh</div>
+  <div class="test b">50%</div>
+  <div class="cnt">
+    <a href="https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/">CSS fix for 100vh</a>
+    <a href="https://www.bram.us/2020/05/06/100vh-in-safari-on-ios/">100vh in Safari</a>
+    <a href="https://maximilianschmitt.me/posts/css-100vh-mobile-browsers/"> CSS 100vh Mobile Browsers</a>
+    <a href="https://medium.com/@susiekim9/how-to-compensate-for-the-ios-viewport-unit-bug-46e78d54af0d">It’s not a bug,
+      it’s a feature</a>
+    <a href="https://css-tricks.com/the-trick-to-viewport-units-on-mobile/">The trick of Viewport Units</a>
+    <a href="https://chanind.github.io/javascript/2019/09/28/avoid-100vh-on-mobile-web.html">Avoid 100vh on Mobile
+      Web</a>
+    <a href="https://bugs.webkit.org/show_bug.cgi?id=141832">WebKit Bugzilla</a>
+    <a href="https://twitter.com/AllThingsSmitty/status/1254151507412496384/">Matt Smith Solution</a></div>
+    <hr>
+
+    <div style="width: 100%;text-align: center;"><span> Made by d3ward </span> <br>
+        <a href="https://github.com/d3ward/toolz" class="git_btn">
+            <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 32 32" >
+                <path fill-rule="evenodd"
+                    d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
+            </svg>
+            <span>View on Github</span>
+        </a>
+    </div>
+</body>
+
+</html>
