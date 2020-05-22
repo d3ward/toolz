@@ -33,7 +33,7 @@ ff02::3 ip6-allhosts
  0.0.0.0 pagead2.googlesyndication.com
  0.0.0.0 pagead2.googleadservices.com
  0.0.0.0 ads.google.com
- 0.0.0.0 google-analytics.com
+ 0.0.0.0 adservice.google.com
 
 #Media.net
  0.0.0.0 static.media.net
