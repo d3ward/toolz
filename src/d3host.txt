@@ -32,8 +32,8 @@ ff02::3 ip6-allhosts
 
 # Google Ads
  0.0.0.0 pagead2.googlesyndication.com
- 0.0.0.0 adservice.google.com/adsid/integrator.js?domain=localhost
-0.0.0.0 www.google-analytics.com/analytics.js
+ 0.0.0.0 adservice.google.com
+ 0.0.0.0 google-analytics.com
 
 #Media.net
  0.0.0.0 static.media.net
@@ -41,12 +41,12 @@ ff02::3 ip6-allhosts
  0.0.0.0 adservetx.media.net
 
 #Doubleclick.net
- 0.0.0.0 doubleclick.net/
- 0.0.0.0 ad.doubleclick.net/
+ 0.0.0.0 doubleclick.net
+ 0.0.0.0 ad.doubleclick.net
 
 #FastClick
- 0.0.0.0 media.fastclick.net/
- 0.0.0.0 cdn.fastclick.net/
+ 0.0.0.0 media.fastclick.net
+ 0.0.0.0 cdn.fastclick.net
 
 ##Analytics  ====================
 
@@ -54,15 +54,15 @@ ff02::3 ip6-allhosts
  0.0.0.0 google-analytics.com
 
 #Hotjar
- 0.0.0.0 www.hotjar.com
- 0.0.0.0 static.hotjar.com/c/hotjar.js?sv=6
+ 0.0.0.0 hotjar.com
+ 0.0.0.0 static.hotjar.com
 
 #MouseFlow
- 0.0.0.0 mouseflow.com/
+ 0.0.0.0 mouseflow.com
  0.0.0.0 a.mouseflow.com
 
 #FreshMarketer
- 0.0.0.0 freshmarketer.com/
+ 0.0.0.0 freshmarketer.com
 
 #Luckyorange
  0.0.0.0 cdn.luckyorange.com
