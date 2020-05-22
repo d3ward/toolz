@@ -344,7 +344,7 @@
 
     function show_info(t) {
         t = t.parentElement;
-        var others = d3(".test");
+        var others = document.querySelectorAll(".test");;
         others.forEach(element => {if (element != t) $(element).removeClass("show");});
         $(t).toggleClass("show");
     }
