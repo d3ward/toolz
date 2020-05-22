@@ -1,7 +1,7 @@
 # d3Host by d3ward
 #
 # Github : https://github.com/d3ward/toolz
-# Hosts File : 
+# Hosts File : https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt
 #
 # Type : Stable
 # Updated On: 22-05-2020 
@@ -26,7 +26,6 @@ ff02::3 ip6-allhosts
 # End Local Hosts
 
 # Start
-
 
 #Ads  ====================
 
