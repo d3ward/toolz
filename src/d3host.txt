@@ -1,0 +1,121 @@
+# d3Host by d3ward
+#
+# Github : https://github.com/d3ward/toolz
+# Hosts File : 
+#
+# Type : Stable
+# Updated On: 22-05-2020 
+# Created by: d3ward
+
+
+# Start Local Hosts
+127.0.0.1 localhost
+127.0.0.1 localhost.localdomain
+127.0.0.1 local
+255.255.255.255 broadcasthost
+::1 localhost
+::1 ip6-localhost
+::1 ip6-loopback
+fe80::1%lo0 localhost
+ff00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+0.0.0.0 0.0.0.0
+# End Local Hosts
+
+# Start
+
+
+#Ads  ====================
+
+# Google Ads
+ 0.0.0.0 pagead2.googlesyndication.com
+ 0.0.0.0 adservice.google.com/adsid/integrator.js?domain=localhost
+0.0.0.0 www.google-analytics.com/analytics.js
+
+#Media.net
+ 0.0.0.0 static.media.net
+ 0.0.0.0 media.net
+ 0.0.0.0 adservetx.media.net
+
+#Doubleclick.net
+ 0.0.0.0 doubleclick.net/
+ 0.0.0.0 ad.doubleclick.net/
+
+#FastClick
+ 0.0.0.0 media.fastclick.net/
+ 0.0.0.0 cdn.fastclick.net/
+
+##Analytics  ====================
+
+#Google Analytics
+ 0.0.0.0 google-analytics.com
+
+#Hotjar
+ 0.0.0.0 www.hotjar.com
+ 0.0.0.0 static.hotjar.com/c/hotjar.js?sv=6
+
+#MouseFlow
+ 0.0.0.0 mouseflow.com/
+ 0.0.0.0 a.mouseflow.com
+
+#FreshMarketer
+ 0.0.0.0 freshmarketer.com/
+
+#Luckyorange
+ 0.0.0.0 cdn.luckyorange.com
+ 0.0.0.0 w1.luckyorange.com
+ 0.0.0.0 upload.luckyorange.net
+ 0.0.0.0 cs.luckyorange.net
+ 0.0.0.0 settings.luckyorange.net
+
+#Stats WP Plugin
+ 0.0.0.0 stats.wp.com
+
+##Error Trackers  ====================
+
+#Bugsnag
+ 0.0.0.0 notify.bugsnag.com
+ 0.0.0.0 sessions.bugsnag.com
+
+#Sentry
+ 0.0.0.0 browser.sentry-cdn.com
+
+##Social  ====================
+
+#Facebook
+ 0.0.0.0 pixel.facebook.com
+ 0.0.0.0 adtools.facebook.com
+ 0.0.0.0 analytics.facebook.com
+ 0.0.0.0 graph.facebook.com
+ 0.0.0.0 ads.facebook.com
+
+#Twitter
+ 0.0.0.0 ads-twitter.com
+ 0.0.0.0 static.ads-twitter.com
+ 0.0.0.0 analytics.twitter.com
+
+#LinkedIn
+ 0.0.0.0 ads.linkedin.com
+ 0.0.0.0 analytics.pointdrive.linkedin.com
+
+#Pinterest
+ 0.0.0.0 ads.pinterest.com
+ 0.0.0.0 log.pinterest.com
+ 0.0.0.0 widgets.pinterest.com
+ 0.0.0.0 analytics.pinterest.com
+ 0.0.0.0 trk.pinterest.com
+
+#Reddit
+ 0.0.0.0 ads.reddit
+ 0.0.0.0 stats.redditmedia.com
+ 0.0.0.0 rereddit.com
+ 0.0.0.0 events.redditmedia.com
+
+#YouTube
+ 0.0.0.0 ads.youtube.com
+ 0.0.0.0 youtube.cleverads.vn
+
+# End
