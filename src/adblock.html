@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#173145">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Ad Blocker Test</title>
     <link rel="icon" href="icon.png">
@@ -20,11 +21,6 @@
             color: #333333;
         }
 
-        .dark {
-            background: #173145;
-            color: #efefef
-        }
-
         .go_top {
             transition: all .25s ease-in-out;
             position: fixed;
@@ -34,12 +30,13 @@
             cursor: pointer;
             align-items: center;
             justify-content: center;
-            margin: 0 1em 1em 0;
-            border-radius: 50%;
-            padding: .25em;
+            margin: .2em;
+            text-align: center;
+            border-radius: 8px;
+            padding: .2em;
             width: 50px;
             height: 50px;
-            background-color: #333333;
+            background-color: #173145;
         }
 
         .go_top.show {
@@ -66,7 +63,7 @@
 
         .test {
             background-color: #992325;
-            color: #fff;
+            color: #333;
             padding: 5px;
             font-weight: bold;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -89,8 +86,6 @@
             padding: 5px;
             box-shadow: 0px -1px 20px 9px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
         }
-
-
 
         .test>span {
             width: 100%;
@@ -133,12 +128,51 @@
             float: left;
             margin: 10px;
             outline: none;
-            border: none;
+            border: 1px solid;
             border-radius: 8px;
             background: #173145;
             color: #efefef;
             text-align: center;
             padding: 1em .75em;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #173145;
+            margin: auto;
+            padding: 20px;
+            color: #efefef;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0px -1px 20px 9px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .close {
+            color: #efefef;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .toast-message {
@@ -197,31 +231,87 @@
             width: 40px;
             height: 40px;
         }
-
     </style>
 </head>
 
 <body class="dar">
-    <a class="go_top hide" href="" id="go_top"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 12 6"> <path d="M12 6H0l6-6z" /></svg></a>
-    <div class="toast-message"><div class="message">This is an Alert!</div></div>
+    <a class="go_top hide" href="" id="go_top"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 12 6">
+            <path d="M12 6H0l6-6z" /></svg></a>
+    <div class="toast-message">
+        <div class="message">This is an Alert!</div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div>
+                <h3>How does it work?</h3>
+                <b>You will not see any ads and no trackers will be activated </b><br>
+                When you load this website, it will try to establishes connections in pure
+                javascript with different hosts (advertising, analytics, and social ads services) from a list.<br>
+                For each host , if the connection fails
+                it means that the latter has been blocked by your ad blocker (e.g. uBlock Origin , Blokada , AdGuard ,
+                in-built adblocker)
+
+                <h3>How do I know if my ad blocker is working?</h3>
+                <p>
+                    You will receive a percentage of how many connections you have blocked
+                    Basically if you get a value > 40% you are ok as long as you block ads and analytics category
+                    connections
+                    If you get below 40% , you're probably not using an effective adblock or
+                    you're not making the most of its potential
+                </p>
+
+
+                <h3>How i can have 100%</h3>
+                <p>
+                    You can reach 100 % using a small list that I created
+                    <button class="button"
+                        onclick="copyToClip('https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt')">d3Host</button>
+                    <br><br>
+                    <b style="color:#7fffd4"><i>This list and this test is a beta project
+                            I do not take any responsibility if something stops working , example Social apps or your
+                            favorite blog
+                        </i></b>
+                </p>
+                <p>
+
+                    <h3>Other tools to test your adblock </h3>
+                    <div class="cnt2">
+                        <a href="https://cryptojackingtest.com/" class="button">Cryptojacking by Opera</a>
+                        <a href="https://ipleak.net/" class="button">IP Leak </a>
+                        <a href="https://blockads.fivefilters.org/" class="button">Block Ads Test </a>
+                        <a href="https://panopticlick.eff.org/" class="button">Browser Fingerprint by EEF</a>
+                        <a href="http://raymondhill.net/ublock/tiles1.html" class="button">Adblock Testing by
+                            raymondhill</a>
+                        <a href="http://raymondhill.net/ublock/popup.html" class="button">Popup Blocker by
+                            raymondhill</a>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
     <div class="cnt">
+        <svg id="info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="
+    width: 40px;
+    fill: #173145;
+">
+                <path d="M 16 3 C 8.832031 3 3 8.832031 3 16 C 3 23.167969 8.832031 29 16 29 C 23.167969 29 29 23.167969 29 16 C 29 8.832031 23.167969 3 16 3 Z M 16 5 C 22.085938 5 27 9.914063 27 16 C 27 22.085938 22.085938 27 16 27 C 9.914063 27 5 22.085938 5 16 C 5 9.914063 9.914063 5 16 5 Z M 15 10 L 15 12 L 17 12 L 17 10 Z M 15 14 L 15 22 L 17 22 L 17 14 Z"></path>
+                </svg>
+       
         <div id="bar"></div>
         <div class="cl_info cl1">Blocked Hosts</div>
         <div class="cl_info cl2">Not Blocked</div>
+        <!-- Trigger/Open The Modal -->
+
         <p>
             Click on a test below to see details about urls <br>
             Click on a url to copy to clipboard <br>
         </p>
         <div id="test"></div>
-        <h3>Other tools from web </h3>
-        <div class="cnt2">
-            <a href="https://cryptojackingtest.com/" class="button">Cryptojacking by Opera</a>
-            <a href="https://ipleak.net/" class="button">IP Leak </a>
-            <a href="https://blockads.fivefilters.org/" class="button">Block Ads Test </a>
-            <a href="https://panopticlick.eff.org/" class="button">Browser Fingerprint by EEF</a>
-            <a href="http://raymondhill.net/ublock/tiles1.html" class="button">Adblock Testing by raymondhill</a>
-            <a href="http://raymondhill.net/ublock/popup.html" class="button">Popup Blocker by raymondhill</a>
-        </div>
+
     </div>
     <hr>
     <div style="width: 100%;text-align: center;"><span> Made by d3ward </span> <br>
@@ -257,18 +347,28 @@
     var nTest = 0; //Number of url to be tested
     var data = {
         "Ads": { //Ads
-            "Google Ads": ["https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js","https://pagead2.googlesyndication.com/pagead/show_ads.js","https://pagead2.googleadservices.com"
+            "Google Ads": ["https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+                "https://pagead2.googlesyndication.com/pagead/show_ads.js",
+                "https://pagead2.googleadservices.com"
             ],
             "Media.net": ["https://static.media.net", "https://media.net", "https://adservetx.media.net"],
             "Doubleclick.net": ["https://doubleclick.net/", "https://ad.doubleclick.net/"],
-            "FastClick": ["https://media.fastclick.net/", "https://cdn.fastclick.net/"]
+            "FastClick": ["https://media.fastclick.net/", "https://cdn.fastclick.net/"],
+            "Amazon": ["https://aan.amazon.com", "https://aax.amazon-adsystem.com", "https://amazon-adsystem.com",
+                "https://assoc-amazon.com",
+                "https://c.amazon-adsystem.com", "https://mads.amazon-adsystem.com"
+            ]
+
         },
         "Analytics": { //Analytics
             "Google Analytics": "https://google-analytics.com",
             "Hotjar": ["https://hotjar.com", "https://static.hotjar.com/c/hotjar.js?sv=6"],
             "MouseFlow": ["https://mouseflow.com/", "https://a.mouseflow.com"],
             "FreshMarketer": "https://freshmarketer.com/",
-            "Luckyorange": ["https://cdn.luckyorange.com", "https://w1.luckyorange.com", "https://upload.luckyorange.net", "https://cs.luckyorange.net", "https://settings.luckyorange.net"],
+            "Luckyorange": ["https://cdn.luckyorange.com", "https://w1.luckyorange.com",
+                "https://upload.luckyorange.net", "https://cs.luckyorange.net",
+                "https://settings.luckyorange.net"
+            ],
             "Stats WP Plugin": "https://stats.wp.com/e-202020.js"
         },
         "Error Trackers": { //Error tracker
@@ -276,17 +376,40 @@
             "Sentry": "https://browser.sentry-cdn.com/5.10.2/bundle.min.js"
         },
         "Social": {
-            "Facebook": ["https://pixel.facebook.com", "https://adtools.facebook.com", "https://analytics.facebook.com", "https://graph.facebook.com", "https://ads.facebook.com"],
-            "Twitter": ["https://ads-twitter.com", "https://static.ads-twitter.com", "https://analytics.twitter.com"],
+            "Facebook": ["https://pixel.facebook.com", "https://adtools.facebook.com",
+                "https://analytics.facebook.com", "https://graph.facebook.com", "https://ads.facebook.com"
+            ],
+            "Twitter": ["https://ads-twitter.com", "https://static.ads-twitter.com",
+                "https://analytics.twitter.com"
+            ],
             "LinkedIn": ["https://ads.linkedin.com", "https://analytics.pointdrive.linkedin.com"],
-            "Pinterest": ["https://ads.pinterest.com", "https://log.pinterest.com", "https://widgets.pinterest.com", "https://analytics.pinterest.com", "https://trk.pinterest.com"],
-            "Reddit": ["https://ads.reddit", "https://stats.redditmedia.com", "https://rereddit.com", "https://events.redditmedia.com"],
+            "Pinterest": ["https://ads.pinterest.com", "https://log.pinterest.com", "https://widgets.pinterest.com",
+                "https://analytics.pinterest.com", "https://trk.pinterest.com"
+            ],
+            "Reddit": ["https://ads.reddit", "https://stats.redditmedia.com", "https://rereddit.com",
+                "https://events.redditmedia.com"
+            ],
             "YouTube": ["https://ads.youtube.com", "https://youtube.cleverads.vn"]
         }
 
     };
-    var points = 0;//Points of blocked urls
-    
+    var points = 0; //Points of blocked urls
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("info");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 
     function copyToClip(str) {
         const el = document.createElement('textarea');
@@ -311,12 +434,14 @@
         var hostDiv = document.createElement("div");
         nTest += 1;
         hostDiv.innerHTML = url;
-        hostDiv.onclick = () => {copyToClip(url);};
+        hostDiv.onclick = () => {
+            copyToClip(url);
+        };
         div.appendChild(hostDiv);
         fetch(url, {
-            method: 'HEAD',
-            mode: 'no-cors'
-        }).then(response => {
+                method: 'HEAD',
+                mode: 'no-cors'
+            }).then(response => {
                 $(div).css("background", "#ff3b3f");
                 $(hostDiv).css("background", "#ff3b3f");
             }) //Response was received --> ads are NOT blocked
@@ -333,7 +458,9 @@
     function show_info(t) {
         t = t.parentElement;
         var others = document.querySelectorAll(".test");;
-        others.forEach(element => {if (element != t) $(element).removeClass("show");});
+        others.forEach(element => {
+            if (element != t) $(element).removeClass("show");
+        });
         $(t).toggleClass("show");
     }
     window.onload = function () {
