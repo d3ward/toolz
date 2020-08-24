@@ -350,8 +350,8 @@
     var nTest = 0; //Number of url to be tested
     var data = {
         "Ads": { //Ads
-            "Google Ads": ["https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-                "https://pagead2.googlesyndication.com/pagead/show_ads.js",
+            "Google Ads": ["https://pagead.googlesyndication.com",
+                "https://pagead2.googlesyndication.com",
                 "https://pagead2.googleadservices.com"
             ],
             "Media.net": ["https://static.media.net", "https://media.net", "https://adservetx.media.net"],
@@ -365,18 +365,18 @@
         },
         "Analytics": { //Analytics
             "Google Analytics": "https://google-analytics.com",
-            "Hotjar": ["https://hotjar.com", "https://static.hotjar.com/c/hotjar.js?sv=6"],
+           "Hotjar": ["https://hotjar.com", "https://static.hotjar.com"],
             "MouseFlow": ["https://mouseflow.com/", "https://a.mouseflow.com"],
             "FreshMarketer": "https://freshmarketer.com/",
             "Luckyorange": ["https://cdn.luckyorange.com", "https://w1.luckyorange.com",
                 "https://upload.luckyorange.net", "https://cs.luckyorange.net",
                 "https://settings.luckyorange.net"
             ],
-            "Stats WP Plugin": "https://stats.wp.com/e-202020.js"
+            "Stats WP Plugin": "https://stats.wp.com"
         },
         "Error Trackers": { //Error tracker
             "Bugsnag": ["https://notify.bugsnag.com", "https://sessions.bugsnag.com"],
-            "Sentry": "https://browser.sentry-cdn.com/5.10.2/bundle.min.js"
+            "Sentry": "https://browser.sentry-cdn.com"
         },
         "Social": {
             "Facebook": ["https://pixel.facebook.com", "https://adtools.facebook.com",
@@ -389,10 +389,15 @@
             "Pinterest": ["https://ads.pinterest.com", "https://log.pinterest.com", "https://widgets.pinterest.com",
                 "https://analytics.pinterest.com", "https://trk.pinterest.com"
             ],
-            "Reddit": ["https://ads.reddit", "https://stats.redditmedia.com", "https://rereddit.com",
+            "Reddit": ["https://ads.reddit.com", "https://stats.redditmedia.com", "https://rereddit.com",
                 "https://events.redditmedia.com"
             ],
             "YouTube": ["https://ads.youtube.com", "https://youtube.cleverads.vn"]
+        },
+        "Mix":{
+            "Yahoo" : ["https://ads.yahoo.com","https://global.adserver.yahoo.com","https://analytics.yahoo.com","https://ads.yap.yahoo.com"],
+            "Yandex" : ["https://appmetrica.yandex.com","https://yandexadexchange.net","https://analytics.mobile.yandex.net","https://extmaps-api.yandex.net","https://adsdk.yandex.ru"],
+            "TikTok" : ["https://analytics.tiktok.com","https://ads.tiktok.com"]
         }
 
     };
