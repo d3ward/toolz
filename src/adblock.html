@@ -445,10 +445,13 @@
                 method: 'HEAD',
                 mode: 'no-cors'
             }).then(response => {
+                console.log(response);
+                //if(response.ok == false ) throw 'blocked';
                 $(div).css("background", "#ff3b3f");
                 $(hostDiv).css("background", "#ff3b3f");
             }) //Response was received --> ads are NOT blocked
             .catch(error => {
+                console.log(error);
                 $(hostDiv).css("background", "#3cc47c");
                 if ($(div).css("background") != "#ff3b3f") {
                     $(div).css("background", "#3cc47c");
