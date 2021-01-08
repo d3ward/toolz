@@ -4,21 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#173145">
+    <meta name="theme-color" content="#161625">
+    <link rel="apple-touch-icon" sizes="76x76" href="../resources/adblock/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../resources/adblock/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../resources/adblock/favicon-16x16.png">
+    <link rel="manifest" href="../resources/adblock/site.webmanifest">
+    <link rel="mask-icon" href="../resources/adblock/safari-pinned-tab.svg" color="#161625">
+    <link rel="shortcut icon" href="../resources/adblock/favicon.ico">
+    <meta name="msapplication-TileColor" content="#161625">
+    <meta name="msapplication-config" content="../resources/adblock/browserconfig.xml">
+
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Ad Blocker Test</title>
-    <link rel="icon" href="icon.png">
     <style>
-        html,
-        body {
-            padding: 0;
-            margin: 0;
+        :root,
+        [data-theme="light"] {
+            --primary: #302AE6;
+            --secondary: #536390;
+            --font: #161625;
+            --bg: #efefef;
+        }
+
+        [data-theme="dark"] {
+            --secondary: #818cab;
+            --font: #efefef;
+            --bg: #161625;
+        }
+
+        [data-theme='light'] .light-icon,
+        [data-theme='dark'] .dark-icon {
+            display: block !important;
+
+        }
+
+        .theme-icon>svg {
+            fill: var(--font);
+        }
+
+        .theme-icon {
+            display: none;
+        }
+
+
+        * {
+            box-sizing: border-box;
+            border-spacing: 0;
         }
 
         body {
-            padding: 5px;
-            background: #efefef;
-            color: #333333;
+            background: var(--bg);
+            color: var(--font);
+        }
+
+        main {
+            margin: auto;
+            width: 100%;
+            max-width: 60rem;
+            padding: 4rem 0.5rem 0rem;
+            overflow-x: hidden;
+        }
+
+        /* ------------------ Navbar ------------------ */
+        nav {
+            background-color: var(--bg);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 3;
+            padding: 0 .5rem;
+        }
+
+        /* Brand Label and Icon*/
+        nav>div {
+            float: left;
+            font-size: 2em;
+        }
+
+        nav div._icons {
+            margin: 0;
+            padding: 0;
+            width: auto;
+            float: right;
+            list-style: none;
+            overflow: hidden;
+            text-align: right;
+            background-color: var(--bg);
+        }
+
+        nav div._icons>div , nav>div{
+            width: 50px;
+            text-align: center;
+            padding: 0 8px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        nav div._icons>div a , nav>div>a {
+            vertical-align: middle;
+            display: table-cell;
+            height: 50px;
+            width: 50px;
+        }
+
+        nav div._icons>div a img,
+        nav div._icons>div a svg,
+        nav div>a>svg,
+        footer svg {
+            display: block;
+            height: 25px;
+            width: 25px;
+            margin: 0 auto;
+            fill: var(--font);
+        }
+
+        .rp_text {
+            color: var(--font) !important;
+        }
+
+        footer {
+            display: block;
+            margin: 0.5rem 0rem;
+            padding: 1rem 0;
+            width: 100%;
+            text-align: center;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        /* ------------------- Modal ------------------ */
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 5;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #173145;
+            margin: auto;
+            padding: 20px;
+            color: #efefef;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0px -1px 20px 9px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .close {
+            color: #efefef;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .go_top {
@@ -32,11 +184,12 @@
             justify-content: center;
             margin: 10px;
             text-align: center;
-            border-radius: 8px;
+            border-radius: .3rem;
             padding: 0;
             width: 45px;
             height: 45px;
-            background-color: #173145;
+            border: 2px solid var(--font);
+            background-color: var(--bg);
         }
 
         .go_top.show {
@@ -50,16 +203,12 @@
         }
 
         .go_top svg {
-            fill: #efefef;
+            fill: var(--font);
             width: 24px;
             height: 12px;
         }
 
-        .cnt {
-            max-width: 700px;
-            margin: auto;
-            padding: 10px;
-        }
+
 
         .test {
             background-color: #992325;
@@ -108,11 +257,13 @@
         }
 
         .cl_info {
+            margin: auto;
             margin-top: 5px;
             font-weight: bold;
             width: 150px;
             padding: 5px;
-            border-radius: 8px;
+            border-radius: .3rem;
+            text-align: center;
         }
 
         .cl1 {
@@ -135,8 +286,9 @@
             text-align: center;
             padding: 1em .75em;
         }
-        .no-float{
-            float:none!important;
+
+        .no-float {
+            float: none !important;
         }
 
         .modal {
@@ -234,7 +386,70 @@
             width: 40px;
             height: 40px;
         }
+
+        /*Simple css to style it like a toggle switch*/
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+
+
+        }
+
+        .theme-switch-wrapper em {
+            margin-left: 10px;
+            font-size: 1rem;
+        }
+
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
+
+        .theme-switch input {
+            display: none;
+        }
+
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+        }
+
+        .slider:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+        }
+
+        input:checked+.slider {
+            background-color: #66bb6a;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
     </style>
+
 </head>
 
 <body class="dar">
@@ -243,7 +458,8 @@
     <div class="toast-message">
         <div class="message">This is an Alert!</div>
     </div>
-
+    <!-- Modal Box  -->
+    
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -296,14 +512,64 @@
 
     </div>
 
-    <div class="cnt">
-        <svg id="info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="
-    width: 40px;
-    fill: #173145;
-">
-                <path d="M 16 3 C 8.832031 3 3 8.832031 3 16 C 3 23.167969 8.832031 29 16 29 C 23.167969 29 29 23.167969 29 16 C 29 8.832031 23.167969 3 16 3 Z M 16 5 C 22.085938 5 27 9.914063 27 16 C 27 22.085938 22.085938 27 16 27 C 9.914063 27 5 22.085938 5 16 C 5 9.914063 9.914063 5 16 5 Z M 15 10 L 15 12 L 17 12 L 17 10 Z M 15 14 L 15 22 L 17 22 L 17 14 Z"></path>
-                </svg>
-       
+
+    <!-- Navigation -->
+    <nav>
+        <div>
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.607 30">
+                    <path
+                        d="M12.787 29.698c-2.052-1.173-5.508-4.364-7.216-6.664C1.848 18.021-.01 12.477 0 6.418c.005-2.713.165-3.071 1.69-3.776C4.147 1.507 6.935.68 9.827.23c1.967-.307 5.99-.307 7.956 0 3.814.594 8.5 2.205 9.35 3.213.455.542.53 1.201.442 3.903-.077 2.353-.264 3.7-.815 5.891-1.476 5.862-4.997 11.208-9.906 15.04-2.287 1.786-2.996 2.034-4.067 1.421zm1.748-1.842c1.52-1.031 3.765-3.136 5.155-4.832 3.852-4.703 6.089-10.982 6.098-17.124.002-1.364-.046-1.426-1.584-2.038-3.637-1.449-6.481-2.001-10.334-2.007-3.798-.005-6.664.524-10.19 1.88-1.704.655-1.86.837-1.86 2.174.001 6.13 2.232 12.383 6.111 17.13 1.785 2.184 5.173 5.16 5.874 5.16.123 0 .452-.154.73-.343zm-1.928-2.936c-1.83-1.503-4.388-4.402-5.077-5.754-.297-.58-.245-1.232.123-1.542.124-.105.656-.38 1.182-.61l.957-.418.583.537c1.743 1.606 4.489 1.874 6.446.63 1.317-.839 2.356-2.353 2.541-3.704.077-.558.086-.567.745-.712 2.384-.524 2.799-.212 2.118 1.595-1.327 3.523-3.821 7.049-6.765 9.563-1.57 1.34-1.703 1.36-2.853.415zm-6.975-9.816c-.599-.42-1.502-4.042-1.737-6.962-.174-2.17-.108-2.314 1.31-2.86 2.765-1.063 5.24-1.492 8.6-1.492 3.368 0 5.835.429 8.617 1.5 1.382.53 1.489.761 1.306 2.829-.18 2.044-.21 2.07-2.734 2.486-1.02.168-1.872.282-1.892.254a49.76 49.76 0 01-.46-.724c-2.405-3.834-7.973-3.35-9.713.846-.166.403-.277 1.065-.326 1.95l-.074 1.34-1.166.516c-1.321.585-1.342.589-1.73.317z" />
+                    </svg>
+            </a>
+        </div>
+
+
+        <div class="_icons">
+            <div><a class="bmc" target="_blank" href="https://www.buymeacoffee.com/dOWS9cU">
+                    <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <title>Buy Me A Coffee icon</title>
+                        <path
+                            d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.197-.069-.42-.098-.57-.241-.152-.143-.196-.366-.231-.572-.065-.378-.125-.756-.192-1.133-.057-.325-.102-.69-.25-.987-.195-.4-.597-.634-.996-.788a5.723 5.723 0 00-.626-.194c-1-.263-2.05-.36-3.077-.416a25.834 25.834 0 00-3.7.062c-.915.083-1.88.184-2.75.5-.318.116-.646.256-.888.501-.297.302-.393.77-.177 1.146.154.267.415.456.692.58.36.162.737.284 1.123.366 1.075.238 2.189.331 3.287.37 1.218.05 2.437.01 3.65-.118.299-.033.598-.073.896-.119.352-.054.578-.513.474-.834-.124-.383-.457-.531-.834-.473-.466.074-.96.108-1.382.146-1.177.08-2.358.082-3.536.006a22.228 22.228 0 01-1.157-.107c-.086-.01-.18-.025-.258-.036-.243-.036-.484-.08-.724-.13-.111-.027-.111-.185 0-.212h.005c.277-.06.557-.108.838-.147h.002c.131-.009.263-.032.394-.048a25.076 25.076 0 013.426-.12c.674.019 1.347.067 2.017.144l.228.031c.267.04.533.088.798.145.392.085.895.113 1.07.542.055.137.08.288.111.431l.319 1.484a.237.237 0 01-.199.284h-.003c-.037.006-.075.01-.112.015a36.704 36.704 0 01-4.743.295 37.059 37.059 0 01-4.699-.304c-.14-.017-.293-.042-.417-.06-.326-.048-.649-.108-.973-.161-.393-.065-.768-.032-1.123.161-.29.16-.527.404-.675.701-.154.316-.199.66-.267 1-.069.34-.176.707-.135 1.056.087.753.613 1.365 1.37 1.502a39.69 39.69 0 0011.343.376.483.483 0 01.535.53l-.071.697-1.018 9.907c-.041.41-.047.832-.125 1.237-.122.637-.553 1.028-1.182 1.171-.577.131-1.165.2-1.756.205-.656.004-1.31-.025-1.966-.022-.699.004-1.556-.06-2.095-.58-.475-.458-.54-1.174-.605-1.793l-.731-7.013-.322-3.094c-.037-.351-.286-.695-.678-.678-.336.015-.718.3-.678.679l.228 2.185.949 9.112c.147 1.344 1.174 2.068 2.446 2.272.742.12 1.503.144 2.257.156.966.016 1.942.053 2.892-.122 1.408-.258 2.465-1.198 2.616-2.657.34-3.332.683-6.663 1.024-9.995l.215-2.087a.484.484 0 01.39-.426c.402-.078.787-.212 1.074-.518.455-.488.546-1.124.385-1.766zm-1.478.772c-.145.137-.363.201-.578.233-2.416.359-4.866.54-7.308.46-1.748-.06-3.477-.254-5.207-.498-.17-.024-.353-.055-.47-.18-.22-.236-.111-.71-.054-.995.052-.26.152-.609.463-.646.484-.057 1.046.148 1.526.22.577.088 1.156.159 1.737.212 2.48.226 5.002.19 7.472-.14.45-.06.899-.13 1.345-.21.399-.072.84-.206 1.08.206.166.281.188.657.162.974a.544.544 0 01-.169.364zm-6.159 3.9c-.862.37-1.84.788-3.109.788a5.884 5.884 0 01-1.569-.217l.877 9.004c.065.78.717 1.38 1.5 1.38 0 0 1.243.065 1.658.065.447 0 1.786-.065 1.786-.065.783 0 1.434-.6 1.499-1.38l.94-9.95a3.996 3.996 0 00-1.322-.238c-.826 0-1.491.284-2.26.613z" />
+                    </svg></a>
+            </div>
+            <div>
+                <a href="https://github.com/d3ward">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>GitHub icon</title>
+                        <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                    </svg>
+                </a>
+            </div>
+            <div id="theme-toggle">
+                <span class="light-icon theme-icon"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg></span>
+                <span class="dark-icon theme-icon"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            clip-rule="evenodd"></path>
+                    </svg></span>
+            </div>
+            <div>
+                <div id="info">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                            clip-rule="evenodd"></path>
+                    </svg></div>
+            </div>
+        </div>
+        </ul>
+    </nav>
+    <main>
+
+
+
+
+
         <div id="bar"></div>
         <div class="cl_info cl1">Blocked Hosts</div>
         <div class="cl_info cl2">Not Blocked</div>
@@ -315,26 +581,71 @@
         </p>
         <div id="test"></div>
 
-    </div>
-    <hr>
-    <div style="width: 100%;text-align: center;"><span> Made by d3ward </span> <br>
-        <a href="https://github.com/d3ward/toolz" class="git_btn">
-            <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    </main>
+    <footer>
+        <span> Made with <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
-                    d="M 16 4 C 9.371094 4 4 9.371094 4 16 C 4 21.300781 7.4375 25.800781 12.207031 27.386719 C 12.808594 27.496094 13.027344 27.128906 13.027344 26.808594 C 13.027344 26.523438 13.015625 25.769531 13.011719 24.769531 C 9.671875 25.492188 8.96875 23.160156 8.96875 23.160156 C 8.421875 21.773438 7.636719 21.402344 7.636719 21.402344 C 6.546875 20.660156 7.71875 20.675781 7.71875 20.675781 C 8.921875 20.761719 9.554688 21.910156 9.554688 21.910156 C 10.625 23.746094 12.363281 23.214844 13.046875 22.910156 C 13.15625 22.132813 13.46875 21.605469 13.808594 21.304688 C 11.144531 21.003906 8.34375 19.972656 8.34375 15.375 C 8.34375 14.0625 8.8125 12.992188 9.578125 12.152344 C 9.457031 11.851563 9.042969 10.628906 9.695313 8.976563 C 9.695313 8.976563 10.703125 8.65625 12.996094 10.207031 C 13.953125 9.941406 14.980469 9.808594 16 9.804688 C 17.019531 9.808594 18.046875 9.941406 19.003906 10.207031 C 21.296875 8.65625 22.300781 8.976563 22.300781 8.976563 C 22.957031 10.628906 22.546875 11.851563 22.421875 12.152344 C 23.191406 12.992188 23.652344 14.0625 23.652344 15.375 C 23.652344 19.984375 20.847656 20.996094 18.175781 21.296875 C 18.605469 21.664063 18.988281 22.398438 18.988281 23.515625 C 18.988281 25.121094 18.976563 26.414063 18.976563 26.808594 C 18.976563 27.128906 19.191406 27.503906 19.800781 27.386719 C 24.566406 25.796875 28 21.300781 28 16 C 28 9.371094 22.628906 4 16 4 Z" />
-            </svg>
-            <span>View on Github</span>
-        </a>
-    </div>
+                    d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                    clip-rule="evenodd"></path>
+            </svg> by d3ward </span> <br>
+
+    </footer>
+
     <div id="test1"></div>
 </body>
 <script src="../lib/svelte.js"></script>
 <script src="../lib/radialprogress.js"></script>
 <script src="../lib/d3Notif.js"></script>
 <script>
-    console.log(document.getElementById("test1"));
-    console.log(d3('#test1'));
-    console.log($('#test1'));
+
+    //Theme Switcher
+    if (window.CSS && CSS.supports("color", "var(--bg)")) {
+        var toggle = document.getElementById("theme-toggle");
+
+        var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ?
+            "dark" : "light");
+        if (storedTheme)
+            document.documentElement.setAttribute('data-theme', storedTheme)
+
+
+        toggle.onclick = function () {
+            var currentTheme = document.documentElement.getAttribute("data-theme");
+            var targetTheme = "light";
+
+            if (currentTheme === "light") {
+                targetTheme = "dark";
+            }
+
+            document.documentElement.setAttribute('data-theme', targetTheme)
+            localStorage.setItem('theme', targetTheme);
+        };
+    } else {
+        // If the feature isn't supported, then we hide the toggle buttons
+        var btnContainer = document.querySelector(".toggle_theme");
+        btnContainer.style.display = "none";
+    }
+    // Modal
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("info");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+
+
+
+
     var notification = new Notif({
         topPos: 10,
         classNames: 'success',
@@ -365,7 +676,7 @@
         },
         "Analytics": { //Analytics
             "Google Analytics": "https://google-analytics.com",
-           "Hotjar": ["https://hotjar.com", "https://static.hotjar.com"],
+            "Hotjar": ["https://hotjar.com", "https://static.hotjar.com"],
             "MouseFlow": ["https://mouseflow.com/", "https://a.mouseflow.com"],
             "FreshMarketer": "https://freshmarketer.com/",
             "Luckyorange": ["https://cdn.luckyorange.com", "https://w1.luckyorange.com",
@@ -394,30 +705,21 @@
             ],
             "YouTube": ["https://ads.youtube.com", "https://youtube.cleverads.vn"]
         },
-        "Mix":{
-            "Yahoo" : ["https://ads.yahoo.com","https://global.adserver.yahoo.com","https://analytics.yahoo.com","https://ads.yap.yahoo.com"],
-            "Yandex" : ["https://appmetrica.yandex.com","https://yandexadexchange.net","https://analytics.mobile.yandex.net","https://extmaps-api.yandex.net","https://adsdk.yandex.ru"],
-            "TikTok" : ["https://analytics.tiktok.com","https://ads.tiktok.com"]
+        "Mix": {
+            "Yahoo": ["https://ads.yahoo.com", "https://global.adserver.yahoo.com", "https://analytics.yahoo.com",
+                "https://ads.yap.yahoo.com"
+            ],
+            "Yandex": ["https://appmetrica.yandex.com", "https://yandexadexchange.net",
+                "https://analytics.mobile.yandex.net", "https://extmaps-api.yandex.net",
+                "https://adsdk.yandex.ru"
+            ],
+            "TikTok": ["https://analytics.tiktok.com", "https://ads.tiktok.com"]
         }
 
     };
     var points = 0; //Points of blocked urls
 
-    // Get the modal
-    var modal = document.getElementById("myModal");
-    var btn = document.getElementById("info");
-    var span = document.getElementsByClassName("close")[0];
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+
 
     function copyToClip(str) {
         const el = document.createElement('textarea');
