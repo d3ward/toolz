@@ -828,13 +828,17 @@
         }
         notification.showN('URL copied to clipboard !', 'success');
     }
-    //Custom fetch function with timeout
-    const fetchWithTimeout = (uri, options = {}, time = 4000) => {
+    
+    //Function to check an url and set red/green result
+    async function check_url(url, div, parent, np) {
         // Lets set up our `AbortController`, and create a request options object
         // that includes the controller's `signal` to pass to `fetch`.
         const controller = new AbortController()
         const config = {
-            ...options,
+            ...{
+                method: 'HEAD',
+                mode: 'no-cors'
+            },
             signal: controller.signal
         }
         // Set a timeout limit for the request using `setTimeout`. If the body
@@ -842,29 +846,8 @@
         // be cancelled.
         const timeout = setTimeout(() => {
             controller.abort()
-        }, time)
-        return fetch(uri, config)
-            .then((response) => {
-                // Because _any_ response is considered a success to `fetch`, we
-                // need to manually check that the response is in the 200 range.
-                // This is typically how I handle that.
-                if (!response.ok) {
-                    throw new Error(`${response.status}: ${response.statusText}`)
-                }
-                return response
-            })
-            .catch((error) => {
-                // When we abort our `fetch`, the controller conveniently throws
-                // a named error, allowing us to handle them separately from
-                // other errors.
-                if (error.name === 'AbortError') {
-                    throw new Error('Response timed out')
-                }
-                throw new Error(error.message)
-            })
-    }
-    //Function to check an url and set red/green result
-    async function check_url(url, div, parent, np) {
+        }, 8000);
+
         var hostDiv = document.createElement("div");
         if (!np)
             nTest += 1;
@@ -873,26 +856,19 @@
             copyToClip(url);
         };
         div.appendChild(hostDiv);
-        await fetchWithTimeout(url, {
-                method: 'HEAD',
-                mode: 'no-cors'
-            }, 4000).then(response => {
+        await fetch(url, config, timeout,parent,div).then(response => {
                 console.log(response);
                 $(parent).css("background", "var(--red)");
                 $(hostDiv).css("background", "var(--red)");
             }) //Response was received --> ads are NOT blocked
             .catch(error => {
                 console.log(error.message);
-                if (error.message == "Failed to fetch") {
                     $(hostDiv).css("background", "var(--green)");
                     if (!np) {
                         points += 100 / nTest;
                         bar.setValue(points / 100);
+
                     } //No response --> ads are blocked
-                } else {
-                    $(parent).css("background", "var(--red)");
-                    $(hostDiv).css("background", "var(--red)");
-                }
             });
     }
 
