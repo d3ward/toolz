@@ -104,7 +104,7 @@ const data = {
     },
     "Social Trackers": {
         "Facebook": ["https://pixel.facebook.com", "https://adtools.facebook.com",
-            "https://analytics.facebook.com", "https://graph.facebook.com", "https://ads.facebook.com"
+            "https://analytics.facebook.com", "https://ads.facebook.com"
         ],
         "Twitter": ["https://ads-twitter.com", "https://static.ads-twitter.com",
             "https://analytics.twitter.com"

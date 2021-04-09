@@ -7,7 +7,7 @@
 # This list cover all the tests on https://d3ward.github.io/toolz/src/adblock
 #
 # Type : Stable
-# Updated On: 09-06-2020
+# Updated On: 09-04-2021
 # Created by: d3ward
 
 
@@ -171,7 +171,6 @@ ff02::3 ip6-allhosts
 0.0.0.0 pixel.facebook.com
 0.0.0.0 adtools.facebook.com
 0.0.0.0 analytics.facebook.com
-0.0.0.0 graph.facebook.com
 0.0.0.0 ads.facebook.com
 
 #Twitter
@@ -195,6 +194,10 @@ ff02::3 ip6-allhosts
 0.0.0.0 stats.redditmedia.com
 0.0.0.0 rereddit.com
 0.0.0.0 events.redditmedia.com
+
+# TikTok
+0.0.0.0 ads.tiktok.com
+0.0.0.0 analytics.tiktok.comet
 
 #YouTube
 0.0.0.0 ads.youtube.com
@@ -249,8 +252,82 @@ ff02::3 ip6-allhosts
 0.0.0.0 yandexadexchange.net
 0.0.0.0 mobile.yandexadexchange.net
 
-# TikTok
-0.0.0.0 ads.tiktok.com
-0.0.0.0 analytics.tiktok.comet
+##OEM ====================
 
+#Realme
+0.0.0.0 bdapi-in-ads.realmemobile.com
+0.0.0.0 ata-ads.realmemobile.com
+
+#OPPO
+0.0.0.0 adsfs.oppomobile.com
+0.0.0.0 adx.ads.oppomobile.com
+0.0.0.0 bdapi.ads.oppomobile.com
+0.0.0.0 ck.ads.oppomobile.com
+0.0.0.0 data.ads.oppomobile.com
+0.0.0.0 g1.ads.oppomobile.com
+
+#Xiaomi
+0.0.0.0 ad.xiaomi.com    
+0.0.0.0 api.ad.xiaomi.com
+0.0.0.0 app.chat.xiaomi.net
+0.0.0.0 data.mistat.xiaomi.com
+0.0.0.0 data.mistat.intl.xiaomi.com
+0.0.0.0 data.mistat.india.xiaomi.com
+0.0.0.0 data.mistat.rus.xiaomi.com
+0.0.0.0 sdkconfig.ad.xiaomi.com
+0.0.0.0 sdkconfig.ad.intl.xiaomi.com
+0.0.0.0 stat.xiaomi.com
+0.0.0.0 globalapi.ad.xiaomi.com
+0.0.0.0 www.cdn.ad.xiaomi.com
+0.0.0.0 tracking.miui.com
+0.0.0.0 sa.api.intl.miui.com
+0.0.0.0 tracking.miui.com
+0.0.0.0 tracking.intl.miui.com
+0.0.0.0 tracking.india.miui.com
+0.0.0.0 tracking.rus.miui.com
+
+#OnePlus
+0.0.0.0 analytics.oneplus.cn
+0.0.0.0 click.oneplus.cn
+0.0.0.0 click.oneplus.com
+0.0.0.0 open.oneplus.net
+
+#Huawei
+0.0.0.0 metrics.data.hicloud.com
+0.0.0.0 metrics1.data.hicloud.com
+0.0.0.0 metrics2.data.hicloud.com
+0.0.0.0 metrics3.data.hicloud.com
+0.0.0.0 metrics4.data.hicloud.com
+0.0.0.0 metrics5.data.hicloud.com 
+0.0.0.0 logservice.hicloud.com
+0.0.0.0 logservice1.hicloud.com
+0.0.0.0 metrics-dra.dt.hicloud.com
+0.0.0.0 logbak.hicloud.com
+
+#Samsung
+0.0.0.0 ad.samsungadhub.com
+0.0.0.0 samsungadhub.com
+0.0.0.0 ad.samsungads.com
+0.0.0.0 samsungads.com
+0.0.0.0 smetrics.samsung.com
+0.0.0.0 nmetrics.samsung.com
+0.0.0.0 samsung-com.112.2o7.net
+0.0.0.0 insights.samsung.com
+0.0.0.0 analytics.samsungknox.com
+0.0.0.0 bigdata.ssp.samsung.com
+0.0.0.0 analytics-api.samsunghealthcn.com
+0.0.0.0 config.samsungads.com
+
+#Apple
+0.0.0.0 metrics.apple.com
+0.0.0.0 securemetrics.apple.com
+0.0.0.0 supportmetrics.apple.com
+0.0.0.0 metrics.icloud.com
+0.0.0.0 metrics.mzstatic.com
+0.0.0.0 dzc-metrics.mzstatic.com
+0.0.0.0 books-analytics-events.news.apple-dns.net
+0.0.0.0 books-analytics-events.apple.com
+0.0.0.0 stocks-analytics-events.apple.com
+0.0.0.0 stocks-analytics-events.news.apple-dns.net
+0.0.0.0 trackingshipment.apple.com
 # End
