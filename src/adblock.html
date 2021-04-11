@@ -518,6 +518,26 @@
                 transform: scale(1);
             }
         }
+        ._notif{
+            background: var(--primary);
+            border-radius: var(--radius);
+            color: var(--cl2);
+            margin: 1rem 0;
+
+        }
+        ._notif svg{
+            height: 26px;
+            fill: currentColor;
+        }
+        ._notif>span{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        ._notif>div{
+            padding: 0 1rem;
+            padding-bottom: 1.5rem;
+        }
 
         .noscroll {
             overflow: hidden;
@@ -673,6 +693,18 @@
         </nav>
     </header>
     <main>
+        <div class="_notif">
+            <span> <button onclick="closeNotif()">Close <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button> </span>
+            <div>
+                As many users reported the host <b>graph.facebook </b>is important to make the service works , so has been removed from the test.
+                <br><br>In the last days this tool had of lot of attention , but seems something it's not clear .
+                The test it's not a benchmark tool , and is not a race about who make 100% , 
+                it's a <b>reference tool</b> to check if you are blocking any of the host , in this case are used 
+                the most important hosts  by category and popularity as reference<br><br>
+                Oh, and if you get a bad points when you are sure that your blocking system used works ,
+                then probably you are on a browser that manage error connection in different ways so the tool will not detect it .
+            </div>
+        </div>
         <div id="bar"></div>
         <div class="cl_info _bg-green">Blocked Hosts</div>
         <div class="cl_info _bg-red">Not Blocked</div>
@@ -708,6 +740,10 @@
 <script src="../lib/radialprogress.js"></script>
 <script src="../lib/d3Notif.js"></script>
 <script>
+    function closeNotif(){
+        var n= document.querySelector("._notif");
+        n.remove();
+    }
     var d3ss = {
         //Open and close the navbar , on default button ofr navbar or using the toggle parameter
         navbar: function (toggle) {
