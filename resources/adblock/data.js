@@ -110,7 +110,7 @@ const data = {
             "https://analytics.twitter.com"
         ],
         "LinkedIn": ["https://ads.linkedin.com", "https://analytics.pointdrive.linkedin.com"],
-        "Pinterest": ["https://ads.pinterest.com", "https://log.pinterest.com", "https://widgets.pinterest.com",
+        "Pinterest": ["https://ads.pinterest.com", "https://log.pinterest.com", "https://ct.pinterest.com",
             "https://analytics.pinterest.com", "https://trk.pinterest.com"
         ],
         "Reddit": ["https://ads.reddit.com", "https://stats.redditmedia.com", "https://rereddit.com",
