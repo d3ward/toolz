@@ -2,7 +2,7 @@
 ! Title: d3Host List by d3ward
 ! Expires: 1 days
 ! License: CC BY-NC-SA
-! Source: https://github.com/d3ward/toolz/edit/master/src/d3host.txt
+! Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
 # Github : https://github.com/d3ward/toolz
 # Hosts File : https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt
 #
