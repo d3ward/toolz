@@ -1,18 +1,15 @@
-# d3Host by d3ward
 ! Title: d3Host List by d3ward
 ! Expires: 1 days
+! Description: Simple and small list with the most popular advertising, analytics and social advertising services
+! Homepage: https://github.com/d3ward/toolz
 ! License: CC BY-NC-SA
 ! Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
-# Github : https://github.com/d3ward/toolz
-# Hosts File : https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt
-#
-# Simple and small list with the most popular advertising, analytics and social advertising services
+
 # This list cover all the tests on https://d3ward.github.io/toolz/src/adblock
 #
 # Type : Stable
 # Updated On: 09-04-2021
 # Created by: d3ward
-
 
 # Start Local Hosts
 127.0.0.1 localhost
