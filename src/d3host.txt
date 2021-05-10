@@ -185,7 +185,7 @@ ff02::3 ip6-allhosts
 #Pinterest
 0.0.0.0 ads.pinterest.com
 0.0.0.0 log.pinterest.com
-0.0.0.0 widgets.pinterest.com
+0.0.0.0 ct.pinterest.com
 0.0.0.0 analytics.pinterest.com
 0.0.0.0 trk.pinterest.com
 
