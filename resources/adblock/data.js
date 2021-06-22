@@ -58,7 +58,7 @@ const dataOEM = {
         "https://smetrics.samsung.com",
         "https://nmetrics.samsung.com",
         "https://samsung-com.112.2o7.net",
-        "https://insights.samsung.com",
+        "https://business.samsungusa.com",
         "https://analytics.samsungknox.com",
         "https://bigdata.ssp.samsung.com",
         "https://analytics-api.samsunghealthcn.com",
