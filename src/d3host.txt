@@ -197,7 +197,7 @@ ff02::3 ip6-allhosts
 
 # TikTok
 0.0.0.0 ads.tiktok.com
-0.0.0.0 analytics.tiktok.comet
+0.0.0.0 analytics.tiktok.com
 
 #YouTube
 0.0.0.0 ads.youtube.com
