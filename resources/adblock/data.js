@@ -70,7 +70,7 @@ const dataOEM = {
         "https://supportmetrics.apple.com",
         "https://metrics.icloud.com",
         "https://metrics.mzstatic.com",
-        "https://trackingshipment.apple.com"
+        "https://xp.apple.com"
     ]
 }
 const data = {

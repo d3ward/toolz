@@ -329,5 +329,5 @@ ff02::3 ip6-allhosts
 0.0.0.0 books-analytics-events.apple.com
 0.0.0.0 stocks-analytics-events.apple.com
 0.0.0.0 stocks-analytics-events.news.apple-dns.net
-0.0.0.0 trackingshipment.apple.com
+0.0.0.0 xp.apple.com
 # End
