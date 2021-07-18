@@ -169,7 +169,6 @@ ff02::3 ip6-allhosts
 
 #Facebook
 0.0.0.0 pixel.facebook.com
-0.0.0.0 adtools.facebook.com
 0.0.0.0 analytics.facebook.com
 0.0.0.0 ads.facebook.com
 
