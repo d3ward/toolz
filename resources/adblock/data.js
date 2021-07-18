@@ -103,7 +103,7 @@ const data = {
         "Sentry": "https://browser.sentry-cdn.com"
     },
     "Social Trackers": {
-        "Facebook": ["https://pixel.facebook.com", "https://adtools.facebook.com",
+        "Facebook": ["https://pixel.facebook.com",
             "https://analytics.facebook.com", "https://ads.facebook.com"
         ],
         "Twitter": ["https://ads-twitter.com", "https://static.ads-twitter.com",
