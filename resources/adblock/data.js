@@ -69,8 +69,7 @@ const dataOEM = {
         "https://securemetrics.apple.com",
         "https://supportmetrics.apple.com",
         "https://metrics.icloud.com",
-        "https://metrics.mzstatic.com",
-        "https://xp.apple.com"
+        "https://metrics.mzstatic.com"
     ]
 }
 const data = {
