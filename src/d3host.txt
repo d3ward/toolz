@@ -175,7 +175,6 @@ ff02::3 ip6-allhosts
 #Twitter
 0.0.0.0 ads-twitter.com
 0.0.0.0 static.ads-twitter.com
-0.0.0.0 analytics.twitter.com
 
 #LinkedIn
 0.0.0.0 ads.linkedin.com
