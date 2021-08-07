@@ -105,8 +105,7 @@ const data = {
         "Facebook": ["https://pixel.facebook.com",
             "https://analytics.facebook.com", "https://ads.facebook.com"
         ],
-        "Twitter": ["https://ads-twitter.com", "https://static.ads-twitter.com",
-            "https://analytics.twitter.com"
+        "Twitter": ["https://ads-twitter.com", "https://static.ads-twitter.com"
         ],
         "LinkedIn": ["https://ads.linkedin.com", "https://analytics.pointdrive.linkedin.com"],
         "Pinterest": ["https://ads.pinterest.com", "https://log.pinterest.com", "https://ct.pinterest.com",
