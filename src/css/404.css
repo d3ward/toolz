@@ -1,0 +1,77 @@
+
+
+@keyframes rotate-fade {
+    0%{
+        transform: translateY(0) rotate(0deg) ;
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-1000px) rotate(720deg) scale(0);
+        opacity: 0;
+    }
+}
+
+.squares {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
+}
+.squares li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 300px;
+    height: 150px;
+    bottom: -200px;
+    background-image: url("../svg/404.svg");
+    animation: rotate-fade 5s linear infinite;
+}
+
+.squares li:nth-child(0) {
+    left: 80%;
+    transform: scale(.4);
+    animation-delay: 1s;
+}
+.squares li:nth-child(1) {
+    left: 90%;
+    transform: scale(.4);
+    animation-delay: 4s;
+}
+.squares li:nth-child(2) {
+    left: 45%;
+    transform: scale(.4);
+    animation-delay: 8s;
+}
+.squares li:nth-child(3) {
+    left: 5%;
+    transform: scale(.4);
+    animation-delay: 12s;
+}
+.squares li:nth-child(4) {
+    left: 5%;
+    transform: scale(.4);
+    animation-delay: 16s;
+}
+.squares li:nth-child(5) {
+    left: 60%;
+    transform: scale(.4);
+    animation-delay: 20s;
+}
+.squares li:nth-child(6) {
+    left: 15%;
+    transform: scale(.4);
+    animation-delay: 24s;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
