@@ -6,8 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> 404 - Not Found</title>
     <link rel="shortcut icon" href="./src/svg/404.svg" type="image/svg+xml">
-    <link href="src/css/style.css" rel="stylesheet">
     <style>
+        /* ---------------- Basic resets and improvements --------------- */
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    border-spacing: 0;
+}
+
+html {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 13pt;
+    scroll-behavior: smooth;
+    color: var(--txt);
+    background: var(--bg);
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background:linear-gradient(to left bottom, rgb(167, 243, 208), rgb(52, 211, 153), rgb(126, 34, 206));
+    background-size: 400% 100%;
+}
+/* ------------ Animation On Scroll ----------- */
+[class*=_aos],
+._aos {
+    opacity: 0;
+    transition: opacity 1s, transform 1.3s;
+}
+
+._aos-zoom {
+    transform: scale(0.4);
+}
+
+._aos-left {
+    transform: translate3d(-100px, 0, 0);
+}
+
+._aos-right {
+    transform: translate3d(100px, 0, 0);
+}
+
+._aos-top {
+    transform: translate3d(0, -100px, 0);
+}
+
+._aos-bottom {
+    transform: translate3d(0, 100px, 0);
+}
+
+._aos-done {
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+}
         @keyframes rotate-fade {
             0% {
                 transform: translateY(0) rotate(0deg);
@@ -39,49 +96,49 @@
             width: 300px;
             height: 150px;
             bottom: -200px;
-            background-image: url("./src/svg/404.svg");
+            background-image: url('data:image/svg+xml,<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M150.717 23.77c-20.252 0-36.667 16.415-36.667 36.667v29.127c0 20.251 16.415 36.667 36.667 36.667 20.251 0 36.666-16.416 36.666-36.667v-29.13c0-20.258-16.408-36.664-36.666-36.664zm22 65.998c0 12.13-9.868 22-22 22-12.13 0-22-9.87-22-22V60.434c0-12.132 9.87-22 22-22 12.132 0 22 9.868 22 22zm117.676 3.154a7.334 7.334 0 01-7.333 7.333h-7.334v18.741a7.334 7.334 0 01-14.666 0v-18.741h-51.334a7.344 7.344 0 01-6.199-3.412 7.342 7.342 0 01-.43-7.061l29.334-61.921c1.724-3.66 6.124-5.211 9.768-3.486a7.338 7.338 0 013.488 9.77l-24.374 51.443h39.747V53.001a7.334 7.334 0 0114.666 0v32.587h7.334c4.056 0 7.333 3.3 7.333 7.334zm-192.785 0a7.334 7.334 0 01-7.334 7.333h-7.333v18.74a7.334 7.334 0 01-14.667 0v-18.74H16.941a7.344 7.344 0 01-6.2-3.413 7.342 7.342 0 01-.43-7.06L39.646 27.86c1.725-3.66 6.125-5.21 9.769-3.485a7.338 7.338 0 013.488 9.77L28.527 85.587h39.747V53a7.334 7.334 0 0114.667 0v32.588h7.333c4.057 0 7.334 3.3 7.334 7.333z"/></svg>');
             animation: rotate-fade 5s linear infinite;
         }
 
         .squares li:nth-child(0) {
             left: 80%;
-            
+
             animation-delay: 1s;
         }
 
         .squares li:nth-child(1) {
             left: 60%;
-            
+
             animation-delay: 4s;
         }
 
         .squares li:nth-child(2) {
             left: 45%;
-            
+
             animation-delay: 8s;
         }
 
         .squares li:nth-child(3) {
             left: 5%;
-            
+
             animation-delay: 12s;
         }
 
         .squares li:nth-child(4) {
             left: 5%;
-            
+
             animation-delay: 16s;
         }
 
         .squares li:nth-child(5) {
             left: 60%;
-            
+
             animation-delay: 20s;
         }
 
         .squares li:nth-child(6) {
             left: 15%;
-            
+
             animation-delay: 24s;
         }
 
@@ -107,7 +164,7 @@
     <main>
         <div class="hero">
             <div class="_aos-top">
-                <img src="./src/svg/404.svg" alt="">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M150.717 23.77c-20.252 0-36.667 16.415-36.667 36.667v29.127c0 20.251 16.415 36.667 36.667 36.667 20.251 0 36.666-16.416 36.666-36.667v-29.13c0-20.258-16.408-36.664-36.666-36.664zm22 65.998c0 12.13-9.868 22-22 22-12.13 0-22-9.87-22-22V60.434c0-12.132 9.87-22 22-22 12.132 0 22 9.868 22 22zm117.676 3.154a7.334 7.334 0 01-7.333 7.333h-7.334v18.741a7.334 7.334 0 01-14.666 0v-18.741h-51.334a7.344 7.344 0 01-6.199-3.412 7.342 7.342 0 01-.43-7.061l29.334-61.921c1.724-3.66 6.124-5.211 9.768-3.486a7.338 7.338 0 013.488 9.77l-24.374 51.443h39.747V53.001a7.334 7.334 0 0114.666 0v32.587h7.334c4.056 0 7.333 3.3 7.333 7.334zm-192.785 0a7.334 7.334 0 01-7.334 7.333h-7.333v18.74a7.334 7.334 0 01-14.667 0v-18.74H16.941a7.344 7.344 0 01-6.2-3.413 7.342 7.342 0 01-.43-7.06L39.646 27.86c1.725-3.66 6.125-5.21 9.769-3.485a7.338 7.338 0 013.488 9.77L28.527 85.587h39.747V53a7.334 7.334 0 0114.667 0v32.588h7.333c4.057 0 7.334 3.3 7.334 7.333z"/></svg>
             </div>
             <div class="_aos-bottom _txt-black">
                 <h2><strong>Not Found</strong></h2>
