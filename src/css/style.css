@@ -9,7 +9,7 @@ html,
     --red: #FF4132;
     --orange: #FF851A;
     --yellow: #ffcd36;
-    --primary: var(--blue);
+    --primary: var(--txt);
     --accent: #E3F2FD;
     --active: #ECEFF1;
     --txt: #14191f;
@@ -107,7 +107,9 @@ html {
 }
 
 body {
-    background:linear-gradient(to left bottom, rgb(167, 243, 208), rgb(52, 211, 153), rgb(126, 34, 206));
+    background-color: #f7b42c;
+background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+
     background-size: 400% 100%;
 }
 
@@ -355,8 +357,8 @@ nav>a {
 }
 
 nav>a>svg {
-    height: 2.6rem !important;
-    width: 2.6rem !important;
+    height:1.6rem !important;
+    width: 1.6rem !important;
 }
 
 nav a:hover {
@@ -501,7 +503,11 @@ main {
 main.full {
     max-width: auto;
 }
-
+._2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+  }
 /* ----------- Grid columns and row ----------- */
 .grid {
     flex-wrap: wrap;
@@ -716,7 +722,6 @@ button>svg,
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 100%;
     padding: 1rem;
     background: var(--bg-card);
     border-radius: var(--radius);
@@ -743,16 +748,6 @@ button>svg,
     margin-bottom: 1rem;
 }
 
-.card>.links {
-    margin-top: auto ;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.card>.links >*{
-    width: 100%;
-    margin: 0;
-}
 
 .badges {
     margin: 0;
@@ -1948,6 +1943,3 @@ svg.wave>path {
     color: var(--txt-r) !important;
 }
 
-#ext-grid>div {
-    margin-top: 1rem;
-}
