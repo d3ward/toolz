@@ -1,0 +1,991 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#161625">
+    <link rel="apple-touch-icon" sizes="76x76" href="../resources/adblock/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../resources/adblock/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../resources/adblock/favicon-16x16.png">
+    <link rel="manifest" href="../resources/adblock/site.webmanifest">
+    <link rel="mask-icon" href="../resources/adblock/safari-pinned-tab.svg" color="#161625">
+    <link rel="shortcut icon" href="../resources/adblock/favicon.ico">
+    <meta name="msapplication-TileColor" content="#161625">
+    <meta name="msapplication-config" content="../resources/adblock/browserconfig.xml">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Ad Blocker Test</title>
+    <style>
+        html,
+        [data-theme='light'] {
+            --black: #060609;
+            --white: #f2f4f7;
+            --green: rgb(60, 196, 124);
+            --blue: #0074D8;
+            --red: #FF4132;
+            --orange: #FF851A;
+            --yellow: #ffcd36;
+            --primary: var(--blue);
+            --secondary: #536390;
+            --cl: #14191f;
+            --cl2: var(--white);
+            --bg: #f2f4f7;
+            --bg2: #dde2ea;
+            --bg3: #cfd6e1;
+            --bg-nav: var(--bg);
+            --bg-nav-hover: var(--bg2);
+            --bb-nav: var(--primary);
+            --shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            --radius: .4rem;
+        }
+
+        [data-theme="dark"] {
+            --black: #060609;
+            --white: #f2f4f7;
+            --blue: #4dacff;
+            --green: #67e5a8;
+            --red: #ff564d;
+            --cl: #f2f4f7;
+            --cl2: #14191f;
+            --bg3: #2c3844;
+            --bg2: #242e37;
+            --bg: #14191f;
+        }
+
+        [data-theme="light"] .light-icon,
+        [data-theme="dark"] .dark-icon {
+            display: block !important;
+        }
+
+        .theme-icon {
+            display: none;
+        }
+
+        /* ---------------- Basic resets and improvements --------------- */
+        *,
+        *:after,
+        *:before {
+            box-sizing: border-box;
+            border-spacing: 0;
+        }
+
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 13pt;
+            scroll-behavior: smooth;
+            color: var(--cl);
+            background: var(--bg);
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            margin: auto;
+            max-width: 60rem;
+            width: 100%;
+            padding: 1rem;
+            padding-top: 6rem;
+            overflow-x: hidden;
+        }
+
+        /* ------------------ Navbar ------------------ */
+        header {
+            width: 100%;
+            z-index: 1;
+            padding: .5rem;
+        }
+
+        header.fixed {
+            position: fixed;
+            top: 0;
+        }
+
+        nav {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            background-color: var(--bg-nav);
+            width: 100%;
+            max-width: 60rem;
+            margin: auto;
+            z-index: 1;
+            border-radius: var(--radius);
+            border-bottom: 1px solid var(--bb-nav);
+            padding: .7rem;
+            box-shadow: var(--shadow);
+        }
+
+        nav * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav>ul {
+            width: auto;
+            list-style: none;
+            display: flex;
+            flex-flow: nowrap row;
+            align-items: center;
+            justify-content: flex-end;
+            gap: .5rem;
+            overflow: unset;
+        }
+
+        nav>div {
+            display: flex;
+            flex: auto;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav ul li,
+        nav li>* {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        nav li>* {
+            color: var(--cl);
+            text-decoration: none;
+            padding: .7rem;
+            border-radius: var(--radius);
+            transition: background .4s linear;
+        }
+
+        nav li>a:hover,
+        nav li>div:hover {
+            color: var(--primary);
+            background: var(--bg-nav-hover);
+        }
+
+        nav svg {
+            display: block;
+            height: 1.4rem;
+            width: 1.4rem;
+            fill: var(--cl);
+            margin: 0 auto;
+            max-height: 1.7rem;
+        }
+
+        nav li>a:hover>svg,
+        nav li>div:hover>svg {
+            fill: var(--primary);
+        }
+
+        nav>div>a>svg {
+            max-height: 1.7rem;
+        }
+
+        nav>div>a {
+            display: flex;
+            align-items: center;
+            font-size: 1.7rem;
+        }
+
+        .rp_text {
+            color: var(--cl) !important;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        /* ------------------ Buttons ----------------- */
+        button[disabled],
+        .btn[disabled] {
+            opacity: .5;
+            cursor: not-allowed;
+        }
+
+        button:not([disabled]):hover,
+        .btn:not([disabled]):hover {
+            color: var(--white);
+            background: var(--primary);
+        }
+
+        button,
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            text-align: center;
+            border: 2px solid var(--primary);
+            outline: none;
+            padding: 0.6rem 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            font: 400 16px Arial;
+            color: var(--primary);
+            background-color: var(--bg);
+            border-radius: var(--radius);
+            margin: .5rem;
+            white-space: nowrap;
+            height: 2.5rem;
+        }
+
+        button>svg,
+        .btn>svg {
+            display: block;
+            height: 1rem;
+            width: 1rem;
+            fill: var(--cl);
+            margin: 0 auto;
+            max-height: 1.7rem;
+        }
+
+        /* ---------------- Go Top Link --------------- */
+        .gt-link {
+            transition: all .25s ease-in-out;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: inline-flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--bg);
+            border-radius: var(--radius);
+            margin: .5rem;
+            padding: .25em;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+        }
+
+        .gt-link.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .gt-link.hide {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .gt-link svg {
+            fill: var(--white);
+            width: 24px;
+        }
+
+        .gt-link:hover {
+            background-color: var(--bg);
+        }
+
+        .gt-link:hover svg {
+            fill: var(--cl);
+        }
+        /* ------------------- Links ------------------ */
+        a {
+        color: var(--primary);
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+        a:hover {
+        color: var(--primary);
+        border-color: var(--primary);
+        }
+        /*------------- Tests section -------------*/
+        .test {
+            background-color: var(--bg3);
+            color: var(--black);
+            padding: 5px;
+            font-weight: bold;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            text-align: center;
+            line-height: 60px;
+            margin: 10px;
+            transition: all 1s;
+        }
+
+        .testWrap h3,
+        .testWrap h5,
+        .test span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testWrap svg {
+            height: 25px;
+            fill: var(--cl);
+        }
+
+        .test>div {
+            display: none;
+        }
+
+        .test>div>div {
+            user-select: none;
+            overflow-x: auto;
+            border-radius: 8px;
+            white-space: nowrap;
+            color: var(--black);
+            margin: 10px;
+            padding: 5px;
+            box-shadow: var(--shadow);
+        }
+
+        .test>span svg {
+            fill: var(--black);
+        }
+
+
+        .test.show>div {
+            display: block;
+        }
+
+        #bar {
+            width: 10em;
+            margin: auto;
+        }
+
+        .cnt2 {
+            margin: auto;
+            max-width: 700px;
+            overflow-y: auto;
+        }
+
+        .cl_info {
+            margin: auto;
+            margin-top: 5px;
+            font-weight: bold;
+            width: 150px;
+            padding: 5px;
+            border-radius: .3rem;
+            text-align: center;
+            color: var(--black);
+        }
+
+        ._bg-green {
+            background: var(--green);
+        }
+        ._cl-green{
+            color: var(--green);
+        }
+
+        ._bg-red {
+            background: var(--red);
+        }
+        ._px{
+            padding-left: .3rem;
+            padding-right:.3rem;
+        }
+        ._radius{
+            border-radius: var(--radius);
+            color:var(--black);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0 0 0 / 78%);
+        }
+
+        .modal-content {
+            background-color: var(--bg);
+            margin: auto;
+            padding: 20px;
+            color: var(--cl);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: var(--shadow);
+        }
+
+        .close {
+            color: var(--cl);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Toast message */
+        .toast-message {
+            position: fixed;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--blue);
+            border-radius: 10px;
+            width: 400px;
+            font-size: 16px;
+            transition: all .5s;
+            z-index: 9999;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 424px) {
+            .toast-message {
+                width: calc(100% - 20px);
+            }
+        }
+
+        .toast-message.success {
+            background: var(--blue);
+
+        }
+
+        .toast-message .message {
+            color: var(--black);
+            padding: 20px 30px;
+            text-align: center;
+        }
+
+        /* Loading Wrapper */
+        .loadingWrap {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--bg);
+            z-index: 5;
+        }
+
+        .loadingWrap svg {
+            max-width: 150px;
+            fill: var(--cl);
+        }
+
+        .loading {
+            display: flex;
+            width: 10em;
+            height: 10em;
+            margin-top: 3rem;
+            border: 10px solid transparent;
+            border-top-color: var(--green);
+            border-bottom-color: var(--green);
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+        }
+
+        #testingInfo {
+            width: 90%;
+            background: var(--bg2);
+            padding: .5rem;
+            margin: .5rem;
+            border-radius: .3rem;
+        }
+
+        .loading:before {
+            content: '';
+            display: block;
+            margin: auto;
+            width: 4em;
+            height: 4em;
+            border: 10px solid var(--red);
+            border-radius: 50%;
+            animation: pulse 1s alternate ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(0.5);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+        ._notif{
+            background: var(--primary);
+            border-radius: var(--radius);
+            color: var(--cl2);
+            margin: 1rem 0;
+
+        }
+        ._notif svg{
+            height: 26px;
+            fill: currentColor;
+        }
+        ._notif>span{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        ._notif>div{
+            padding: 0 1rem;
+            padding-bottom: 1.5rem;
+        }
+
+        .noscroll {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="noscroll">
+
+    <div class="loadingWrap">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+            <path
+                d="M12.787 29.698c-2.052-1.173-5.508-4.364-7.216-6.664C1.848 18.021-.01 12.477 0 6.418c.005-2.713.165-3.071 1.69-3.776C4.147 1.507 6.935.68 9.827.23c1.967-.307 5.99-.307 7.956 0 3.814.594 8.5 2.205 9.35 3.213.455.542.53 1.201.442 3.903-.077 2.353-.264 3.7-.815 5.891-1.476 5.862-4.997 11.208-9.906 15.04-2.287 1.786-2.996 2.034-4.067 1.421zm1.748-1.842c1.52-1.031 3.765-3.136 5.155-4.832 3.852-4.703 6.089-10.982 6.098-17.124.002-1.364-.046-1.426-1.584-2.038-3.637-1.449-6.481-2.001-10.334-2.007-3.798-.005-6.664.524-10.19 1.88-1.704.655-1.86.837-1.86 2.174.001 6.13 2.232 12.383 6.111 17.13 1.785 2.184 5.173 5.16 5.874 5.16.123 0 .452-.154.73-.343zm-1.928-2.936c-1.83-1.503-4.388-4.402-5.077-5.754-.297-.58-.245-1.232.123-1.542.124-.105.656-.38 1.182-.61l.957-.418.583.537c1.743 1.606 4.489 1.874 6.446.63 1.317-.839 2.356-2.353 2.541-3.704.077-.558.086-.567.745-.712 2.384-.524 2.799-.212 2.118 1.595-1.327 3.523-3.821 7.049-6.765 9.563-1.57 1.34-1.703 1.36-2.853.415zm-6.975-9.816c-.599-.42-1.502-4.042-1.737-6.962-.174-2.17-.108-2.314 1.31-2.86 2.765-1.063 5.24-1.492 8.6-1.492 3.368 0 5.835.429 8.617 1.5 1.382.53 1.489.761 1.306 2.829-.18 2.044-.21 2.07-2.734 2.486-1.02.168-1.872.282-1.892.254a49.76 49.76 0 01-.46-.724c-2.405-3.834-7.973-3.35-9.713.846-.166.403-.277 1.065-.326 1.95l-.074 1.34-1.166.516c-1.321.585-1.342.589-1.73.317z" />
+        </svg>
+        <h5>Testing..</h5>
+        <div id="testingInfo"></div>
+        <span class="loading"></span>
+    </div>
+
+    <div class="toast-message">
+        <div class="message">This is an Alert!</div>
+    </div>
+    <!-- Modal Box  -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div>
+                <h2>How does it work?</h2>
+                <b class="_cl-red"><i>You will not see any ads and no trackers will be activated </i></b><br><br>
+                When you load this website, it will try to establishes connections in pure
+                Javascript with different urls (advertising, analytics, and social ads services) from a list.<br>
+                For each host , if the connection fails
+                it means that the latter has been blocked by your ad-blocker (e.g. uBlock Origin , Blokada , AdGuard ,
+                in-built adblocker) or DNS provider
+
+                <h3>How do I know if my ad blocker is working?</h3>
+                <p>
+                    You will receive a percentage of how many connections you have blocked
+                    Basically if you get a value <b class="_bg-green _radius _px"> > 40% </b> you are ok as long as you 
+                    block ads and analytics category<br>
+                    If you get <b class="_bg-red _radius _px">< 40%</b> , you're probably not using an <i>effective</i> adblock or
+                    you're not making the most of its potential
+                </p>
+
+
+                <h2>How i can have 100%</h2>
+                <p>
+                    You can reach 100 % using a small list that I created to cover all the tests in this website 
+                    <button 
+                        onclick="copyToClip('https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt')">Copy
+                        d3Host list to clipboard</button>
+                    <br><br>
+                    <b  class="_cl-green"><i>This list and this test is a beta project
+                            I do not take any responsibility if something stops working , example Social apps or your
+                            favorite blog
+                        </i></b>
+                </p>
+
+                <h3>Suggested solutions for ad-blocking</h3>
+                <div>
+                    <a href="https://adguard.com/" class="btn">Adguard</a>
+                    <a href="https://blokada.org/" class="btn">Blokada </a>
+                    <a href="https://ublockorigin.com/" class="btn">uBlock Origin </a>
+                    <a href="https://nextdns.io/" class="btn">Next DNS</a>
+                </div>
+                <p>
+
+                    <h3>Other tools to test your adblock </h3>
+                    <div class="cnt2">
+                        <a href="https://ipleak.net/" class="btn">IP Leak </a>
+                        <a href="https://blockads.fivefilters.org/" class="btn">Block Ads Test </a>
+                        <a href="https://panopticlick.eff.org/" class="btn">Browser Fingerprint by EEF</a>
+                        <a href="http://raymondhill.net/ublock/tiles1.html" class="btn">Adblock Testing by
+                            raymondhill</a>
+                        <a href="http://raymondhill.net/ublock/popup.html" class="btn">Popup Blocker by
+                            raymondhill</a>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="fixed">
+        <nav>
+            <div>
+                <a href="adblock.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                        <path
+                            d="M12.787 29.698c-2.052-1.173-5.508-4.364-7.216-6.664C1.848 18.021-.01 12.477 0 6.418c.005-2.713.165-3.071 1.69-3.776C4.147 1.507 6.935.68 9.827.23c1.967-.307 5.99-.307 7.956 0 3.814.594 8.5 2.205 9.35 3.213.455.542.53 1.201.442 3.903-.077 2.353-.264 3.7-.815 5.891-1.476 5.862-4.997 11.208-9.906 15.04-2.287 1.786-2.996 2.034-4.067 1.421zm1.748-1.842c1.52-1.031 3.765-3.136 5.155-4.832 3.852-4.703 6.089-10.982 6.098-17.124.002-1.364-.046-1.426-1.584-2.038-3.637-1.449-6.481-2.001-10.334-2.007-3.798-.005-6.664.524-10.19 1.88-1.704.655-1.86.837-1.86 2.174.001 6.13 2.232 12.383 6.111 17.13 1.785 2.184 5.173 5.16 5.874 5.16.123 0 .452-.154.73-.343zm-1.928-2.936c-1.83-1.503-4.388-4.402-5.077-5.754-.297-.58-.245-1.232.123-1.542.124-.105.656-.38 1.182-.61l.957-.418.583.537c1.743 1.606 4.489 1.874 6.446.63 1.317-.839 2.356-2.353 2.541-3.704.077-.558.086-.567.745-.712 2.384-.524 2.799-.212 2.118 1.595-1.327 3.523-3.821 7.049-6.765 9.563-1.57 1.34-1.703 1.36-2.853.415zm-6.975-9.816c-.599-.42-1.502-4.042-1.737-6.962-.174-2.17-.108-2.314 1.31-2.86 2.765-1.063 5.24-1.492 8.6-1.492 3.368 0 5.835.429 8.617 1.5 1.382.53 1.489.761 1.306 2.829-.18 2.044-.21 2.07-2.734 2.486-1.02.168-1.872.282-1.892.254a49.76 49.76 0 01-.46-.724c-2.405-3.834-7.973-3.35-9.713.846-.166.403-.277 1.065-.326 1.95l-.074 1.34-1.166.516c-1.321.585-1.342.589-1.73.317z" />
+                    </svg>
+                </a>
+                <div><span></span><span></span><span></span></div>
+            </div>
+            <ul>
+                <li>
+                    <a class="bmc" target="_blank" href="https://www.buymeacoffee.com/dOWS9cU">
+                        <svg role="img" id="bmac-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <title>Buy Me A Coffee icon</title>
+                            <path
+                                d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.197-.069-.42-.098-.57-.241-.152-.143-.196-.366-.231-.572-.065-.378-.125-.756-.192-1.133-.057-.325-.102-.69-.25-.987-.195-.4-.597-.634-.996-.788a5.723 5.723 0 00-.626-.194c-1-.263-2.05-.36-3.077-.416a25.834 25.834 0 00-3.7.062c-.915.083-1.88.184-2.75.5-.318.116-.646.256-.888.501-.297.302-.393.77-.177 1.146.154.267.415.456.692.58.36.162.737.284 1.123.366 1.075.238 2.189.331 3.287.37 1.218.05 2.437.01 3.65-.118.299-.033.598-.073.896-.119.352-.054.578-.513.474-.834-.124-.383-.457-.531-.834-.473-.466.074-.96.108-1.382.146-1.177.08-2.358.082-3.536.006a22.228 22.228 0 01-1.157-.107c-.086-.01-.18-.025-.258-.036-.243-.036-.484-.08-.724-.13-.111-.027-.111-.185 0-.212h.005c.277-.06.557-.108.838-.147h.002c.131-.009.263-.032.394-.048a25.076 25.076 0 013.426-.12c.674.019 1.347.067 2.017.144l.228.031c.267.04.533.088.798.145.392.085.895.113 1.07.542.055.137.08.288.111.431l.319 1.484a.237.237 0 01-.199.284h-.003c-.037.006-.075.01-.112.015a36.704 36.704 0 01-4.743.295 37.059 37.059 0 01-4.699-.304c-.14-.017-.293-.042-.417-.06-.326-.048-.649-.108-.973-.161-.393-.065-.768-.032-1.123.161-.29.16-.527.404-.675.701-.154.316-.199.66-.267 1-.069.34-.176.707-.135 1.056.087.753.613 1.365 1.37 1.502a39.69 39.69 0 0011.343.376.483.483 0 01.535.53l-.071.697-1.018 9.907c-.041.41-.047.832-.125 1.237-.122.637-.553 1.028-1.182 1.171-.577.131-1.165.2-1.756.205-.656.004-1.31-.025-1.966-.022-.699.004-1.556-.06-2.095-.58-.475-.458-.54-1.174-.605-1.793l-.731-7.013-.322-3.094c-.037-.351-.286-.695-.678-.678-.336.015-.718.3-.678.679l.228 2.185.949 9.112c.147 1.344 1.174 2.068 2.446 2.272.742.12 1.503.144 2.257.156.966.016 1.942.053 2.892-.122 1.408-.258 2.465-1.198 2.616-2.657.34-3.332.683-6.663 1.024-9.995l.215-2.087a.484.484 0 01.39-.426c.402-.078.787-.212 1.074-.518.455-.488.546-1.124.385-1.766zm-1.478.772c-.145.137-.363.201-.578.233-2.416.359-4.866.54-7.308.46-1.748-.06-3.477-.254-5.207-.498-.17-.024-.353-.055-.47-.18-.22-.236-.111-.71-.054-.995.052-.26.152-.609.463-.646.484-.057 1.046.148 1.526.22.577.088 1.156.159 1.737.212 2.48.226 5.002.19 7.472-.14.45-.06.899-.13 1.345-.21.399-.072.84-.206 1.08.206.166.281.188.657.162.974a.544.544 0 01-.169.364zm-6.159 3.9c-.862.37-1.84.788-3.109.788a5.884 5.884 0 01-1.569-.217l.877 9.004c.065.78.717 1.38 1.5 1.38 0 0 1.243.065 1.658.065.447 0 1.786-.065 1.786-.065.783 0 1.434-.6 1.499-1.38l.94-9.95a3.996 3.996 0 00-1.322-.238c-.826 0-1.491.284-2.26.613z" />
+                        </svg></a>
+                </li>
+                <li>
+                    <a href="https://github.com/d3ward">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <title>Github</title>
+                            <path
+                                d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <div id="info">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </li>
+                <li>
+                    <div id="theme-toggle">
+                        <span class="light-icon theme-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <title>ionicons-v5-j</title>
+                                <path
+                                    d="M264,480A232,232,0,0,1,32,248C32,154,86,69.72,169.61,33.33a16,16,0,0,1,21.06,21.06C181.07,76.43,176,104.66,176,136c0,110.28,89.72,200,200,200,31.34,0,59.57-5.07,81.61-14.67a16,16,0,0,1,21.06,21.06C442.28,426,358,480,264,480Z" />
+                            </svg>
+                        </span>
+                        <span class="dark-icon theme-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <title>ionicons-v5-q</title>
+                                <path d="M256,118a22,22,0,0,1-22-22V48a22,22,0,0,1,44,0V96A22,22,0,0,1,256,118Z" />
+                                <path d="M256,486a22,22,0,0,1-22-22V416a22,22,0,0,1,44,0v48A22,22,0,0,1,256,486Z" />
+                                <path
+                                    d="M369.14,164.86a22,22,0,0,1-15.56-37.55l33.94-33.94a22,22,0,0,1,31.11,31.11l-33.94,33.94A21.93,21.93,0,0,1,369.14,164.86Z" />
+                                <path
+                                    d="M108.92,425.08a22,22,0,0,1-15.55-37.56l33.94-33.94a22,22,0,1,1,31.11,31.11l-33.94,33.94A21.94,21.94,0,0,1,108.92,425.08Z" />
+                                <path d="M464,278H416a22,22,0,0,1,0-44h48a22,22,0,0,1,0,44Z" />
+                                <path d="M96,278H48a22,22,0,0,1,0-44H96a22,22,0,0,1,0,44Z" />
+                                <path
+                                    d="M403.08,425.08a21.94,21.94,0,0,1-15.56-6.45l-33.94-33.94a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.55,37.56Z" />
+                                <path
+                                    d="M142.86,164.86a21.89,21.89,0,0,1-15.55-6.44L93.37,124.48a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.56,37.55Z" />
+                                <path d="M256,358A102,102,0,1,1,358,256,102.12,102.12,0,0,1,256,358Z" />
+                            </svg>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="_notif">
+            <span> <button onclick="closeNotif()">Close <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button> </span>
+            <div>
+                As many users reported the host <b>graph.facebook </b>is important to make the service works , so has been removed from the test.
+                <br><br>In the last days this tool had of lot of attention , but seems something it's not clear .
+                The test it's not a benchmark tool , and is not a race about who make 100% , 
+                it's a <b>reference tool</b> to check if you are blocking any of the host , in this case are used 
+                the most important hosts  by category and popularity as reference<br><br>
+                Oh, and if you get a bad points when you are sure that your blocking system used works ,
+                then probably you are on a browser that manage error connection in different ways so the tool will not detect it .
+            </div>
+        </div>
+        <div id="bar"></div>
+        <div class="cl_info _bg-green">Blocked Hosts</div>
+        <div class="cl_info _bg-red">Not Blocked</div>
+        <!-- Trigger/Open The Modal -->
+        <p>
+            Click on a test below to see details about urls <br>
+            Click on a url to copy to clipboard <br>
+        </p>
+        <div id="test" class="testWrap"></div>
+        <div id="test1" class="testWrap"></div>
+
+    </main>
+    <footer>
+        <span> Made with <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="20" viewBox="0 0 512 512">
+                <title>ionicons-v5-f</title>
+                <path
+                    d="M256,448a32,32,0,0,1-18-5.57c-78.59-53.35-112.62-89.93-131.39-112.8-40-48.75-59.15-98.8-58.61-153C48.63,114.52,98.46,64,159.08,64c44.08,0,74.61,24.83,92.39,45.51a6,6,0,0,0,9.06,0C278.31,88.81,308.84,64,352.92,64,413.54,64,463.37,114.52,464,176.64c.54,54.21-18.63,104.26-58.61,153-18.77,22.87-52.8,59.45-131.39,112.8A32,32,0,0,1,256,448Z" />
+            </svg> by d3ward </span> <br>
+
+    </footer>
+    <a class="gt-link hide" href="" id="gt-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <title>ionicons-v5-b</title>
+            <path
+                d="M414,321.94,274.22,158.82a24,24,0,0,0-36.44,0L98,321.94c-13.34,15.57-2.28,39.62,18.22,39.62H395.82C416.32,361.56,427.38,337.51,414,321.94Z" />
+        </svg>
+    </a>
+
+</body>
+<script src="../resources/adblock/data.js"></script>
+<script src="../lib/colla.js"></script>
+<script src="../lib/radialprogress.js"></script>
+<script src="../lib/d3Notif.js"></script>
+<script>
+    function closeNotif(){
+        var n= document.querySelector("._notif");
+        n.remove();
+    }
+    var d3ss = {
+        //Open and close the navbar , on default button ofr navbar or using the toggle parameter
+        navbar: function (toggle) {
+            var n = document.querySelector("nav");
+            if (n) {
+                const toggleActive = function () {
+                    n.classList.toggle("opened");
+                };
+                var oc = (toggle) ? toggle : "nav>div>div";
+                document.querySelector(oc).addEventListener("click", toggleActive);
+            }
+        },
+        theme: function () {
+            //Theme Switcher
+            var toggle = document.getElementById("theme-toggle");
+            if (window.CSS && CSS.supports("color", "var(--bg)") && toggle) {
+                var storedTheme = localStorage.getItem('theme') || (window.matchMedia(
+                        "(prefers-color-scheme: dark)").matches ?
+                    "dark" : "light");
+                if (storedTheme)
+                    document.documentElement.setAttribute('data-theme', storedTheme)
+                toggle.onclick = function () {
+                    var currentTheme = document.documentElement.getAttribute("data-theme");
+                    var targetTheme = "light";
+
+                    if (currentTheme === "light") {
+                        targetTheme = "dark";
+                    }
+
+                    document.documentElement.setAttribute('data-theme', targetTheme)
+                    localStorage.setItem('theme', targetTheme);
+                };
+            }
+        },
+        gotop: function () {
+            const gt_btn = document.getElementById('gt-link');
+            if (gt_btn) {
+                // Let's set up a function that shows our scroll-to-top button if we scroll beyond the height of the initial window.
+                window.addEventListener("scroll", () => {
+                    let y = window.scrollY;
+                    if (y > 0) {
+                        gt_btn.className = "gt-link show";
+                    } else {
+                        gt_btn.className = "gt-link hide";
+                    }
+                });
+                gt_btn.onclick = function (e) {
+                    e.preventDefault();
+                    if (document.documentElement.scrollTop || document.body.scrollTop > 0) {
+                        window.scroll({
+                            top: 0,
+                            left: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
+        },
+        modal: function () {
+            // Modal
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementById("info");
+            var span = document.getElementsByClassName("close")[0];
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    }
+
+
+    //--------------------------------------------------
+    //Notification toast 
+    var notification = new Notif({
+        topPos: 10,
+        classNames: 'success',
+        autoClose: true,
+        autoCloseTimeout: 2000
+    });
+    //Radial points
+    var bar = new RadialProgress(document.getElementById('bar'), {
+        colorBg: "#ff3b3f",
+        colorFg: "#3cc47c",
+        colorText: "#202020",
+        thick: 12
+    });
+    var nTest = 0; //Number of url to be tested
+    const testWrapper = document.getElementById("test"); //Tests wrapper
+    var points = 0; //Points of blocked urls
+    //--------------------------------------------------
+
+
+    //Copy to clipboard the str value
+    function copyToClip(str) {
+        const el = document.createElement('textarea');
+        el.value = str;
+        el.setAttribute('readonly', '');
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        const selected =
+            document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+        el.select();
+        document.execCommand('copy');
+        $(el).remove();
+        if (selected) {
+            document.getSelection().removeAllRanges();
+            document.getSelection().addRange(selected);
+        }
+        notification.showN('URL copied to clipboard !', 'success');
+    }
+    
+    //Function to check an url and set red/green result
+    async function check_url(url, div, parent, np) {
+        // Lets set up our `AbortController`, and create a request options object
+        // that includes the controller's `signal` to pass to `fetch`.
+        const controller = new AbortController()
+        const config = {
+            ...{
+                method: 'HEAD',
+                mode: 'no-cors'
+            },
+            signal: controller.signal
+        }
+        // Set a timeout limit for the request using `setTimeout`. If the body
+        // of this timeout is reached before the request is completed, it will
+        // be cancelled.
+        const timeout = setTimeout(() => {
+            controller.abort()
+        }, 8000);
+
+        var hostDiv = document.createElement("div");
+        if (!np)
+            nTest += 1;
+        hostDiv.innerHTML = url;
+        hostDiv.onclick = () => {
+            copyToClip(url);
+        };
+        div.appendChild(hostDiv);
+        await fetch(url, config, timeout,parent,div).then(response => {
+                console.log(response);
+                $(parent).css("background", "var(--red)");
+                $(hostDiv).css("background", "var(--red)");
+            }) //Response was received --> ads are NOT blocked
+            .catch(error => {
+                console.log(error.message);
+                    $(hostDiv).css("background", "var(--green)");
+                    if (!np) {
+                        points += 100 / nTest;
+                        bar.setValue(points / 100);
+
+                    } //No response --> ads are blocked
+            });
+    }
+
+    //Function to collapse a test
+    function show_info(t) {
+        t = t.parentElement;
+        var others = document.querySelectorAll(".test");;
+        others.forEach(element => {
+            if (element != t) $(element).removeClass("show");
+        });
+        $(t).toggle("show");
+    }
+    // Function to fetch all the tests
+    async function fetchTests() {
+        const testingInfoLoading = document.getElementById("testingInfo");
+        let fetches = [];
+        for (element in data) {
+            var catEl = document.createElement("div");
+            catEl.id = element;
+            catEl.innerHTML = "<h3>" + icons[element] + "&nbsp;&nbsp;" + element + "</h3>";
+            testWrapper.appendChild(catEl);
+            var category = data[element];
+            var testInfo = document.createElement("div");
+            var countTests = 0;
+            for (key in category) {
+                //Set log test
+                var div = document.createElement('div');
+                const dw = document.createElement('div');
+                div.classList.add("test");
+                div.id = key;
+                div.style.background = "var(--green)";
+                div.innerHTML = "<span onclick='show_info(this)'>" + key + "</span>";
+                div.appendChild(dw);
+                catEl.appendChild(div);
+                if (category.hasOwnProperty(key)) {
+                    var value = category[key];
+
+                    if (Array.isArray(value)) {
+                        for (let i = 0; i < value.length; i++) {
+                            fetches.push(check_url(value[i], dw, div));
+                            countTests++;
+                        }
+
+                    } else fetches.push(check_url(value, dw, div));
+                }
+                testInfo.innerHTML = "Testing urls => " + element + "  |  Number of tests => " + countTests;
+                testingInfoLoading.appendChild(testInfo);
+            }
+        }
+        //Test fetch for the OEMs
+        var oemTest = document.createElement("div");
+        oemTest.id = "OEM";
+        oemTest.innerHTML = "<h3>" + icons["OEM"] +
+            "&nbsp;&nbsp; OEM </h3><h5> Optional test separated from final points</h5>";
+        testWrapper.appendChild(oemTest);
+        for (key in dataOEM) {
+            var div = document.createElement('div');
+            const dw = document.createElement('div');
+            div.classList.add("test");
+            div.id = key;
+            div.style.background = "var(--green)";
+            div.innerHTML = "<span onclick='show_info(this)'>" + icons[key] + "&nbsp;&nbsp;" + key + "</span>";
+            div.appendChild(dw);
+            oemTest.appendChild(div);
+            var value = dataOEM[key];
+            if (Array.isArray(value)) {
+                for (let i = 0; i < value.length; i++)
+                    fetches.push(check_url(value[i], dw, div, "np"));
+            } else fetches.push(check_url(value, dw, div, "np"));
+        }
+        let results = await Promise.all(fetches);
+        return results; //do whatever you want with your results like converting them to json.
+    }
+    window.onload = function () {
+        d3ss.navbar();
+        d3ss.theme();
+        d3ss.gotop();
+        d3ss.modal();
+        fetchTests().then((result) => {
+            $(".loadingWrap").fade("out", () => {
+                console.log("All tests completed");
+                $("body").removeClass("noscroll");
+            });
+        });
+    }
+</script>
+
+</html>
