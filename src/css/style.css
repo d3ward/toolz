@@ -1836,9 +1836,6 @@ svg.wave>path {
     margin: 0 auto;
 }
 
-._ratio32 {
-    apsect-ratio: 3/2;
-}
 
 ._fit-cover {
     -o-object-fit: cover !important;
@@ -1903,6 +1900,7 @@ svg.wave>path {
 /* ------------ Text Color Utility ------------ */
 ._txt-primary {
     color: var(--primary) !important;
+    font-family: monospace;
 }
 
 ._txt-black {
