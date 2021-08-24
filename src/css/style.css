@@ -105,15 +105,13 @@ body,
 html {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body {
     background-color: #f7b42c;
     background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
-
-    background-size: 400% 100%;
 }
-
 
 figure,
 video,
