@@ -9,7 +9,7 @@ html,
     --red: #FF4132;
     --orange: #FF851A;
     --yellow: #ffcd36;
-    --primary: var(--txt);
+    --primary: #f3535b;
     --accent: #E3F2FD;
     --active: #ECEFF1;
     --txt: #14191f;
@@ -55,6 +55,7 @@ html,
     --red: #ff564d;
     --orange: #ff9f4d;
     --yellow: #ffd24d;
+    --primary:var(--white);
     --txt: #f2f4f7;
     --txt-r: #14191f;
     --bg3: #2c3844;
@@ -145,9 +146,6 @@ dd {
     margin-bottom: 0.4rem;
 }
 
-dt {
-    font-weight: bold;
-}
 
 /* ------------ Animation On Scroll ----------- */
 [class*=_aos],
