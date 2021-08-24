@@ -33,18 +33,22 @@
             background-color: #baf72c;
             background-image: linear-gradient(315deg, #baf72c 0%, #04a72d 74%);
         }
-        [data-theme=dark],html,
-[data-theme=light]  {
-    --primary:var(--green);
-}
-main {
-    padding-top: 6rem;
-}
-#flist{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .5rem;
-}
+
+        [data-theme=dark],
+        html,
+        [data-theme=light] {
+            --primary: var(--green);
+        }
+
+        main {
+            padding-top: 6rem;
+        }
+
+        #flist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .5rem;
+        }
     </style>
 </head>
 
@@ -194,7 +198,7 @@ main {
             var detected = false;
             for (var index in baseFonts) {
                 s.style.fontFamily = font + ',' + baseFonts[
-                index]; // name of the font along with the base font for fallback.
+                    index]; // name of the font along with the base font for fallback.
                 h.appendChild(s);
                 var matched = (s.offsetWidth != defaultWidth[baseFonts[index]] || s.offsetHeight != defaultHeight[
                     baseFonts[index]]);
@@ -240,12 +244,20 @@ main {
         if (a) {
             var li = document.createElement("div");
             li.innerText = element;
-            li.className="card";
+            li.className = "card";
             li.style.fontFamily = element;
             ul.appendChild(li);
         }
         console.log(a);
     });
+     // Call the function when the DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+      new navbar();
+      new themeManager();
+      new gotop();
+      new aos();
+    
+  });
 </script>
 
 </html>
