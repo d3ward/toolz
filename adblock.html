@@ -15,20 +15,26 @@
     <meta name="msapplication-config" content="./resources/adblock/browserconfig.xml">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Ad Blocker Test</title>
+    <script async defer src="https://aurora-d3.herokuapp.com/public/aurora.js"
+        aurora-id="520ce98a53142dd933fe4c0f3abb41a0">
+    </script>
     <link rel="stylesheet" href="./src/css/style.css">
     <style>
         body {
             background-color: var(--bg);
             background-image: none;
         }
+
         main {
-      padding-top: 6rem;
-    }
+            padding-top: 6rem;
+        }
+
         [data-theme=dark],
         html,
         [data-theme=light] {
-        --primary: var(--blue);
+            --primary: var(--blue);
         }
+
         /*------------- Tests section -------------*/
         .test {
             background-color: var(--bg3);
@@ -39,7 +45,8 @@
             border-radius: var(--radius);
             text-align: center;
             line-height: 60px;
-            transition: all 1s;s
+            transition: all 1s;
+            s
         }
 
         .testWrap h3,
@@ -48,9 +55,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom:0;
+            margin-bottom: 0;
         }
-        .testWrap>div,.test>div{
+
+        .testWrap>div,
+        .test>div {
             display: flex;
             flex-direction: column;
             gap: .5rem;
@@ -86,8 +95,9 @@
             width: 10em;
             margin: auto;
         }
-        .rp_text{
-            color: var(--txt)!important;
+
+        .rp_text {
+            color: var(--txt) !important;
         }
 
         .cnt2 {
@@ -194,12 +204,13 @@
                 transform: rotate(360deg);
             }
         }
+
         ._icon {
-    display: block;
-    height: 1.6rem;
-    fill: currentColor;
-    margin: 0 auto;
-}
+            display: block;
+            height: 1.6rem;
+            fill: currentColor;
+            margin: 0 auto;
+        }
 
         @keyframes pulse {
             from {
@@ -218,7 +229,7 @@
             margin: 1rem 0;
 
         }
-        
+
 
         ._notif svg {
             height: 26px;
@@ -235,7 +246,6 @@
             padding: 0 1rem;
             padding-bottom: 1.5rem;
         }
-
     </style>
 </head>
 
@@ -257,73 +267,73 @@
     <!-- Modal Box  -->
     <div class="modal" id="info-modal">
         <div>
-          <header>
-            <h3></h3>
-            <button class="close-modal">Close</button>
-          </header>
-          <hr>
-          <div>
-            <h2>How does it work?</h2>
-            <b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b><br><br>
-            When you load this website, it will try to establishes connections in pure
-            Javascript with different urls (advertising, analytics, and social ads services) from a list.<br>
-            For each host , if the connection fails
-            it means that the latter has been blocked by your ad-blocker (e.g. uBlock Origin , Blokada , AdGuard ,
-            in-built adblocker) or DNS provider
-
-            <h3>How do I know if my ad blocker is working?</h3>
-            <p>
-                You will receive a percentage of how many connections you have blocked
-                Basically if you get a value <b class="_bg-green _radius _px"> > 40% </b> you are ok as long as you
-                block ads and analytics category<br>
-                If you get <b class="_bg-red _radius _px">
-                    < 40%</b> , you're probably not using an <i>effective</i> adblock or
-                        you're not making the most of its potential
-            </p>
-
-
-            <h2>How i can have 100%</h2>
-            <p>
-                You can reach 100 % using a small list that I created to cover all the tests in this website
-                <button
-                    onclick="copyToClip('https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt')">Copy
-                    d3Host list to clipboard</button>
-                <br><br>
-                <b class="_txt-green"><i>This list and this test is a beta project
-                        I do not take any responsibility if something stops working , example Social apps or your
-                        favorite blog
-                    </i></b>
-            </p>
-
-            <h3>Suggested solutions for ad-blocking</h3>
+            <header>
+                <h3></h3>
+                <button class="close-modal">Close</button>
+            </header>
+            <hr>
             <div>
-                <a href="https://adguard.com/" class="btn">Adguard</a>
-                <a href="https://blokada.org/" class="btn">Blokada </a>
-                <a href="https://ublockorigin.com/" class="btn">uBlock Origin </a>
-                <a href="https://nextdns.io/" class="btn">Next DNS</a>
-            </div>
-            <p>
+                <h2>How does it work?</h2>
+                <b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b><br><br>
+                When you load this website, it will try to establishes connections in pure
+                Javascript with different urls (advertising, analytics, and social ads services) from a list.<br>
+                For each host , if the connection fails
+                it means that the latter has been blocked by your ad-blocker (e.g. uBlock Origin , Blokada , AdGuard ,
+                in-built adblocker) or DNS provider
 
-                <h3>Other tools to test your adblock </h3>
-                <div class="cnt2">
-                    <a href="https://ipleak.net/" class="btn">IP Leak </a>
-                    <a href="https://blockads.fivefilters.org/" class="btn">Block Ads Test </a>
-                    <a href="https://panopticlick.eff.org/" class="btn">Browser Fingerprint by EEF</a>
-                    <a href="http://raymondhill.net/ublock/tiles1.html" class="btn">Adblock Testing by
-                        raymondhill</a>
-                    <a href="http://raymondhill.net/ublock/popup.html" class="btn">Popup Blocker by
-                        raymondhill</a>
+                <h3>How do I know if my ad blocker is working?</h3>
+                <p>
+                    You will receive a percentage of how many connections you have blocked
+                    Basically if you get a value <b class="_bg-green _radius _px"> > 40% </b> you are ok as long as you
+                    block ads and analytics category<br>
+                    If you get <b class="_bg-red _radius _px">
+                        < 40%</b> , you're probably not using an <i>effective</i> adblock or
+                            you're not making the most of its potential
+                </p>
+
+
+                <h2>How i can have 100%</h2>
+                <p>
+                    You can reach 100 % using a small list that I created to cover all the tests in this website
+                    <button
+                        onclick="copyToClip('https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt')">Copy
+                        d3Host list to clipboard</button>
+                    <br><br>
+                    <b class="_txt-green"><i>This list and this test is a beta project
+                            I do not take any responsibility if something stops working , example Social apps or your
+                            favorite blog
+                        </i></b>
+                </p>
+
+                <h3>Suggested solutions for ad-blocking</h3>
+                <div>
+                    <a href="https://adguard.com/" class="btn">Adguard</a>
+                    <a href="https://blokada.org/" class="btn">Blokada </a>
+                    <a href="https://ublockorigin.com/" class="btn">uBlock Origin </a>
+                    <a href="https://nextdns.io/" class="btn">Next DNS</a>
                 </div>
-            </p>
+                <p>
+
+                    <h3>Other tools to test your adblock </h3>
+                    <div class="cnt2">
+                        <a href="https://ipleak.net/" class="btn">IP Leak </a>
+                        <a href="https://blockads.fivefilters.org/" class="btn">Block Ads Test </a>
+                        <a href="https://panopticlick.eff.org/" class="btn">Browser Fingerprint by EEF</a>
+                        <a href="http://raymondhill.net/ublock/tiles1.html" class="btn">Adblock Testing by
+                            raymondhill</a>
+                        <a href="http://raymondhill.net/ublock/popup.html" class="btn">Popup Blocker by
+                            raymondhill</a>
+                    </div>
+                </p>
+            </div>
+            <hr>
+            <footer>
+                <button class="close-modal mw-100">
+                    Ok
+                </button>
+            </footer>
         </div>
-          <hr>
-          <footer>
-            <button class="close-modal mw-100">
-              Ok
-            </button>
-          </footer>
-        </div>
-      </div>
+    </div>
     <header class="fixed">
         <nav>
             <a href="adblock.html">
@@ -335,7 +345,7 @@
             <ul>
                 <li>
                     <a href="https://d3ward.github.io/toolz/">
-                        <svg viewBox="0 0 12.002 12.7" class="_icon"xmlns="http://www.w3.org/2000/svg">
+                        <svg viewBox="0 0 12.002 12.7" class="_icon" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="prefix__a">
                                     <stop offset="0" stop-color="#fc575e" />
@@ -343,7 +353,8 @@
                                 </linearGradient>
                             </defs>
                             <g paint-order="stroke markers fill" stroke-width="10.32">
-                                <path d="M8 4.22c.581-.065 3.977.236 3.961.314L5.19 8.361.034 8.214z" fill-opacity=".831" />
+                                <path d="M8 4.22c.581-.065 3.977.236 3.961.314L5.19 8.361.034 8.214z"
+                                    fill-opacity=".831" />
                                 <path
                                     d="M3.579 4.385C1.42 4.27.047 2.012 0 0h3.982c3.437 0 4.025.013 4.24.044 2.282-.027 3.674 2.286 3.74 4.49M7.38 8.204c2.537.053 4.463 2.109 4.622 4.496l-7.9-.016c-1.18-.019-4.052-1.81-4.068-4.47" />
                             </g>
@@ -366,7 +377,7 @@
                                 d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z" />
                         </svg>
                     </a>
-                    <div id="info" data-toggle="info-modal" class="nav-item"> 
+                    <div id="info" data-toggle="info-modal" class="nav-item">
                         <svg class="_icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
@@ -409,47 +420,51 @@
                     </svg></button> </span>
             <div>
                 Thank you all for the support and feedback!<br>
-                Recently I started to make some changes to the project structure, creating a homepage with all the 
-                tools and soon will be available new test tools and if someone wants, can suggest a new test of any kind on Github.<br><br>
-                For newcomers, this is not a test to compete for the most points, it is a tool to use as a reference to see 
+                Recently I started to make some changes to the project structure, creating a homepage with all the
+                tools and soon will be available new test tools and if someone wants, can suggest a new test of any kind
+                on Github.<br><br>
+                For newcomers, this is not a test to compete for the most points, it is a tool to use as a reference to
+                see
                 how efficient your blocking system is (consider that with some DNS and browsers there may be problems).
 
             </div>
         </div>
         <div class="card">
             <div id="bar"></div>
-        <div class="cl_info _bg-green">Blocked Hosts</div>
-        <div class="cl_info _bg-red">Not Blocked</div>
-        <!-- Trigger/Open The Modal -->
-        <p>
-            Click on a test below to see details about urls <br>
-            Click on a url to copy to clipboard <br>
-        </p>
+            <div class="cl_info _bg-green">Blocked Hosts</div>
+            <div class="cl_info _bg-red">Not Blocked</div>
+            <!-- Trigger/Open The Modal -->
+            <p>
+                Click on a test below to see details about urls <br>
+                Click on a url to copy to clipboard <br>
+            </p>
         </div>
-        
+
         <div id="test" class="testWrap"></div>
         <div id="test1" class="testWrap"></div>
 
         <footer class="_bg _radius _aos">
             <div class="cnt ">
-              <div class="grid">
-                <div>Icons by <b><a href="https://heroicons.dev/">Heroicons</a> (<a
-                      href="https://github.com/tailwindlabs/heroicons/blob/master/LICENSE" class="_txt-cl">MIT</a>)</b>
+                <div class="grid">
+                    <div>Icons by <b><a href="https://heroicons.dev/">Heroicons</a> (<a
+                                href="https://github.com/tailwindlabs/heroicons/blob/master/LICENSE"
+                                class="_txt-cl">MIT</a>)</b>
+                    </div>
+                    <div>
+                        Designed by Eduard Ursu(<b><a href="https://d3ward.github.io">d3ward</a></b>) © 2021
+                    </div>
+                    <div>
+                        Licensed under <b><a
+                                href="https://creativecommons.org/licenses/by-nc-sa/4.0/">[NC-SA-4.0]</a></b>
+                    </div>
                 </div>
-                <div>
-                  Designed by Eduard Ursu(<b><a href="https://d3ward.github.io">d3ward</a></b>) © 2021
-                </div>
-                <div>
-                  Licensed under <b><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">[NC-SA-4.0]</a></b>
-                </div>
-              </div>
             </div>
-          </footer>
-        </main>
-        <button class="gt-link hide" id="gt-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6">
+        </footer>
+    </main>
+    <button class="gt-link hide" id="gt-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6">
             <path d="M12 6H0l6-6z" /></svg>
-        </button>
+    </button>
 
 </body>
 <script src="./resources/adblock/data.js"></script>
@@ -463,8 +478,8 @@
         n.remove();
     }
 
-    
-    
+
+
 
     //--------------------------------------------------
     //Notification toast 
