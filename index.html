@@ -29,19 +29,21 @@
 
     <link rel="shortcut icon" href="./src/svg/toolz.svg" type="image/svg+xml">
     <link href="src/css/style.css" rel="stylesheet">
+    <script async defer src="https://aurora-d3.herokuapp.com/public/aurora.js"
+        aurora-id="520ce98a53142dd933fe4c0f3abb41a0">
+    </script>
     <style>
-        body{
+        body {
             background-size: 400% 100%;
             height: auto;
         }
-        
     </style>
 </head>
 
 <body>
     <header class="fixed">
         <nav>
-            <a href="index.html"> 
+            <a href="index.html">
                 <svg viewBox="0 0 12.002 12.7" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="prefix__a">
@@ -191,13 +193,14 @@
 </body>
 <script src="./src/js/script.js"></script>
 <script>
-     // Call the function when the DOM is loaded
-  document.addEventListener("DOMContentLoaded", () => {
-      new navbar();
-      new themeManager();
-      new gotop();
-      new aos();
-    
-  });
+    // Call the function when the DOM is loaded
+    document.addEventListener("DOMContentLoaded", () => {
+        new navbar();
+        new themeManager();
+        new gotop();
+        new aos();
+
+    });
 </script>
+
 </html>
