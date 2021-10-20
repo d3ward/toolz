@@ -8,7 +8,7 @@
 # This list cover all the tests on https://d3ward.github.io/toolz/src/adblock
 #
 # Type : Stable
-# Updated On: 09-04-2021
+# Updated On: 20-10-2021
 # Created by: d3ward
 
 # Start Local Hosts
@@ -37,6 +37,7 @@ ff02::3 ip6-allhosts
 0.0.0.0 pagead2.googleadservices.com
 0.0.0.0 ads.google.com
 0.0.0.0 adservice.google.com
+0.0.0.0 google-adservices.com
 
 #Media.net
 0.0.0.0 static.media.net
@@ -44,20 +45,28 @@ ff02::3 ip6-allhosts
 0.0.0.0 adservetx.media.net
 
 #Doubleclick.net
+0.0.0.0 mediavisor.doubleclick.net
+0.0.0.0 m.doubleclick.net
+0.0.0.0 static-doubleclick.com
 0.0.0.0 doubleclick.net
 0.0.0.0 ad.doubleclick.net
 
 #FastClick
+0.0.0.0 fastclick.com
+0.0.0.0 fastclick.net
 0.0.0.0 media.fastclick.net
 0.0.0.0 cdn.fastclick.net
 
 #Amazon
-0.0.0.0 aan.amazon.com
-0.0.0.0 aax.amazon-adsystem.com
+0.0.0.0 adtago.s3.amazonaws.com
+0.0.0.0 analyticsengine.s3.amazonaws.com
+0.0.0.0 advice-ads.s3.amazonaws.com
+0.0.0.0 affiliationjs.s3.amazonaws.com
+0.0.0.0 advertising-api-eu.amazon.com
+0.0.0.0 amazonaax.com
+0.0.0.0 amazonclix.com
 0.0.0.0 amazon-adsystem.com
 0.0.0.0 assoc-amazon.com
-0.0.0.0 c.amazon-adsystem.com
-0.0.0.0 mads.amazon-adsystem.com
 
 ##Analytics ====================
 # Yahoo
@@ -134,8 +143,11 @@ ff02::3 ip6-allhosts
 
 #Google Analytics
 0.0.0.0 google-analytics.com
+0.0.0.0 google.analytics.com
 
 #Hotjar
+0.0.0.0 api-hotjar.com
+0.0.0.0 hotjar-analytics.com
 0.0.0.0 hotjar.com
 0.0.0.0 static.hotjar.com
 
@@ -147,6 +159,8 @@ ff02::3 ip6-allhosts
 0.0.0.0 freshmarketer.com
 
 #Luckyorange
+0.0.0.0 luckyorange.com
+0.0.0.0 luckyorange.net
 0.0.0.0 cdn.luckyorange.com
 0.0.0.0 w1.luckyorange.com
 0.0.0.0 upload.luckyorange.net
@@ -161,9 +175,12 @@ ff02::3 ip6-allhosts
 #Bugsnag
 0.0.0.0 notify.bugsnag.com
 0.0.0.0 sessions.bugsnag.com
+0.0.0.0 api.bugsnag.com
+0.0.0.0 app.bugsnag.com
 
 #Sentry
 0.0.0.0 browser.sentry-cdn.com
+0.0.0.0 app.getsentry.com
 
 ##Social ====================
 
@@ -171,8 +188,11 @@ ff02::3 ip6-allhosts
 0.0.0.0 pixel.facebook.com
 0.0.0.0 analytics.facebook.com
 0.0.0.0 ads.facebook.com
+0.0.0.0 an.facebook.com
 
 #Twitter
+0.0.0.0 ads-api.twitter.com
+0.0.0.0 advertising.twitter.com
 0.0.0.0 ads-twitter.com
 0.0.0.0 static.ads-twitter.com
 
@@ -183,17 +203,21 @@ ff02::3 ip6-allhosts
 #Pinterest
 0.0.0.0 ads.pinterest.com
 0.0.0.0 log.pinterest.com
-0.0.0.0 ct.pinterest.com
+0.0.0.0 ads-dev.pinterest.com
 0.0.0.0 analytics.pinterest.com
 0.0.0.0 trk.pinterest.com
+0.0.0.0 trk2.pinterest.com
+0.0.0.0 widgets.pinterest.com
 
 #Reddit
 0.0.0.0 ads.reddit.com
-0.0.0.0 stats.redditmedia.com
 0.0.0.0 rereddit.com
 0.0.0.0 events.redditmedia.com
+0.0.0.0 d.reddit.com
 
 # TikTok
+0.0.0.0 ads-sg.tiktok.com
+0.0.0.0 analytics-sg.tiktok.com
 0.0.0.0 ads.tiktok.com
 0.0.0.0 analytics.tiktok.com
 
@@ -205,7 +229,6 @@ ff02::3 ip6-allhosts
 # Yahoo
 0.0.0.0 ads.yahoo.com
 0.0.0.0 adserver.yahoo.com
-
 0.0.0.0 global.adserver.yahoo.com
 0.0.0.0 us.adserver.yahoo.com
 0.0.0.0 adspecs.yahoo.com
@@ -254,7 +277,6 @@ ff02::3 ip6-allhosts
 
 #Realme
 0.0.0.0 bdapi-in-ads.realmemobile.com
-0.0.0.0 ata-ads.realmemobile.com
 
 #OPPO
 0.0.0.0 adsfs.oppomobile.com
@@ -264,8 +286,7 @@ ff02::3 ip6-allhosts
 0.0.0.0 data.ads.oppomobile.com
 0.0.0.0 g1.ads.oppomobile.com
 
-#Xiaomi
-0.0.0.0 ad.xiaomi.com    
+#Xiaomi   
 0.0.0.0 api.ad.xiaomi.com
 0.0.0.0 app.chat.xiaomi.net
 0.0.0.0 data.mistat.xiaomi.com
@@ -274,7 +295,6 @@ ff02::3 ip6-allhosts
 0.0.0.0 data.mistat.rus.xiaomi.com
 0.0.0.0 sdkconfig.ad.xiaomi.com
 0.0.0.0 sdkconfig.ad.intl.xiaomi.com
-0.0.0.0 stat.xiaomi.com
 0.0.0.0 globalapi.ad.xiaomi.com
 0.0.0.0 www.cdn.ad.xiaomi.com
 0.0.0.0 tracking.miui.com
@@ -305,7 +325,6 @@ ff02::3 ip6-allhosts
 #Samsung
 0.0.0.0 ad.samsungadhub.com
 0.0.0.0 samsungadhub.com
-0.0.0.0 ad.samsungads.com
 0.0.0.0 samsungads.com
 0.0.0.0 smetrics.samsung.com
 0.0.0.0 nmetrics.samsung.com

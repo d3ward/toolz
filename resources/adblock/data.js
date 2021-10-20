@@ -13,7 +13,6 @@ const icons = {
 };
 const dataOEM = {
     "Xiaomi": [
-        "https://ad.xiaomi.com ",
         "https://api.ad.xiaomi.com",
         "https://app.chat.xiaomi.net",
         "https://data.mistat.xiaomi.com",
@@ -22,7 +21,6 @@ const dataOEM = {
         "https://data.mistat.rus.xiaomi.com",
         "https://sdkconfig.ad.xiaomi.com",
         "https://sdkconfig.ad.intl.xiaomi.com",
-        "https://stat.xiaomi.com",
         "https://globalapi.ad.xiaomi.com",
         "https://www.cdn.ad.xiaomi.com",
         "https://tracking.miui.com",
@@ -53,7 +51,6 @@ const dataOEM = {
     "Samsung": [
         "https://ad.samsungadhub.com",
         "https://samsungadhub.com",
-        "https://ad.samsungads.com",
         "https://samsungads.com",
         "https://smetrics.samsung.com",
         "https://nmetrics.samsung.com",
@@ -74,47 +71,49 @@ const dataOEM = {
 }
 const data = {
     "Ads": { //Ads
-        "Google Ads": ["https://pagead.googlesyndication.com",
-            "https://pagead2.googlesyndication.com",
-            "https://pagead2.googleadservices.com"
+        "Google Ads": [
+            "https://pagead2.googlesyndication.com","https://ads.google.com","https://adservice.google.com",
+            "https://pagead2.googleadservices.com","https://google-adservices.com"
         ],
         "Media.net": ["https://static.media.net", "https://media.net", "https://adservetx.media.net"],
-        "Doubleclick.net": ["https://doubleclick.net/", "https://ad.doubleclick.net/"],
-        "FastClick": ["https://media.fastclick.net/", "https://cdn.fastclick.net/"],
-        "Amazon": ["https://aan.amazon.com", "https://aax.amazon-adsystem.com", "https://amazon-adsystem.com",
-            "https://assoc-amazon.com",
-            "https://c.amazon-adsystem.com", "https://mads.amazon-adsystem.com"
+        "Doubleclick.net": ["https://doubleclick.net/", "https://ad.doubleclick.net/","https://static-doubleclick.com","https://m.doubleclick.net",
+    "https://mediavisor.doubleclick.net"],
+        "FastClick": ["https://fastclick.com","https://fastclick.net","https://media.fastclick.net/", "https://cdn.fastclick.net/"],
+        "Amazon": ["https://adtago.s3.amazonaws.com","https://analyticsengine.s3.amazonaws.com",
+        "advice-ads.s3.amazonaws.com","https://affiliationjs.s3.amazonaws.com","https://advertising-api-eu.amazon.com",
+        "https://amazonaax.com","https://amazonclix.com","https://amazon-adsystem.com",
+            "https://assoc-amazon.com"
         ]
     },
     "Analytics": { //Analytics
-        "Google Analytics": "https://google-analytics.com",
-        "Hotjar": ["https://hotjar.com", "https://static.hotjar.com"],
+        "Google Analytics": ["https://google-analytics.com","https://google.analytics.com"],
+        "Hotjar": ["https://hotjar.com", "https://static.hotjar.com","https://api-hotjar.com","https://hotjar-analytics.com"],
         "MouseFlow": ["https://mouseflow.com/", "https://a.mouseflow.com"],
         "FreshMarketer": "https://freshmarketer.com/",
-        "Luckyorange": ["https://cdn.luckyorange.com", "https://w1.luckyorange.com",
+        "Luckyorange": ["https://luckyorange.com","https://cdn.luckyorange.com", "https://w1.luckyorange.com",
             "https://upload.luckyorange.net", "https://cs.luckyorange.net",
             "https://settings.luckyorange.net"
         ],
         "Stats WP Plugin": "https://stats.wp.com"
     },
     "Error Trackers": { //Error tracker
-        "Bugsnag": ["https://notify.bugsnag.com", "https://sessions.bugsnag.com"],
-        "Sentry": "https://browser.sentry-cdn.com"
+        "Bugsnag": ["https://notify.bugsnag.com", "https://sessions.bugsnag.com","https://api.bugsnag.com","https://app.bugsnag.com"],
+        "Sentry": ["https://browser.sentry-cdn.com","https://app.getsentry.com"]
     },
     "Social Trackers": {
         "Facebook": ["https://pixel.facebook.com",
-            "https://analytics.facebook.com", "https://ads.facebook.com"
+            "https://analytics.facebook.com", "https://ads.facebook.com","https://an.facebook.com"
         ],
-        "Twitter": ["https://ads-twitter.com", "https://static.ads-twitter.com"
+        "Twitter": ["https://ads-twitter.com", "https://static.ads-twitter.com","https://ads-api.twitter.com","https://advertising.twitter.com"
         ],
         "LinkedIn": ["https://ads.linkedin.com", "https://analytics.pointdrive.linkedin.com"],
-        "Pinterest": ["https://ads.pinterest.com", "https://log.pinterest.com", "https://ct.pinterest.com",
-            "https://analytics.pinterest.com", "https://trk.pinterest.com"
+        "Pinterest": ["https://ads.pinterest.com", "https://log.pinterest.com", "https://ads-dev.pinterest.com",
+            "https://analytics.pinterest.com", "https://trk.pinterest.com","https://widgets.pinterest.com"
         ],
-        "Reddit": ["https://ads.reddit.com", "https://stats.redditmedia.com", "https://rereddit.com",
+        "Reddit": ["https://ads.reddit.com", "https://d.reddit.com", "https://rereddit.com",
             "https://events.redditmedia.com"
         ],
-        "YouTube": ["https://ads.youtube.com", "https://youtube.cleverads.vn"]
+        "YouTube": ["https://ads.youtube.com", "https://youtube.cleverads.vn","https://analytics-sg.tiktok.com","https://ads-sg.tiktok.com"]
         ,
         "TikTok": ["https://analytics.tiktok.com", "https://ads.tiktok.com"]
     },
