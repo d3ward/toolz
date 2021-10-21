@@ -7,10 +7,19 @@
 A set of testing and verification tools, with simple and beautiful design 
 
 ## Ad Block Test  [Link](https://d3ward.github.io/toolz/adblock)
-Check if your adblock is blocking enough hosts ( not only ads )
-With a simple UI check how much yoou blocked , the tool try to connect to most common domains for a couple of category ( Ads, Analytics, Error Tracking and Social)
-If you don't block all the hosts but you want to , you can use this list -> [d3Host](https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt)
+Check if your adblock solution is blocking enough hosts
+With a simple UI check how much you blocked , the tool try to connect to most common domains for 6 category 
+( Ads, Analytics, Error Tracking, SocialTrackers, Mix and OEMs)
+
 **Warning, I take no responsibility if any app stops working.**
+If you don't block all the hosts but you want to , you can use
+- My hosts txt list -> [d3Host.txt](https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt)
+- Compressed adblock version by Zelo72 -> [d3Host.adblock](https://raw.githubusercontent.com/Zelo72/adguard/main/d3host.adblock)
+
+d3Host list is included in 
+- (Blokada)[https://blokada.org/]
+- (OISD List)[https://oisd.nl/]
+- (Zelo72 lists )[https://github.com/Zelo72/]
 
 
 ## Units Test of Viewport [Link](https://d3ward.github.io/toolz/units)
