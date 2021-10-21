@@ -86,7 +86,7 @@ const data = {
         ]
     },
     "Analytics": { //Analytics
-        "Google Analytics": ["https://google-analytics.com","https://google.analytics.com"],
+        "Google Analytics": ["https://google-analytics.com","https://ssl.google-analytics.com"],
         "Hotjar": ["https://hotjar.com", "https://static.hotjar.com","https://api-hotjar.com","https://hotjar-analytics.com"],
         "MouseFlow": ["https://mouseflow.com/", "https://a.mouseflow.com"],
         "FreshMarketer": "https://freshmarketer.com/",
