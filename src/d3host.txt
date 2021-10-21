@@ -37,7 +37,7 @@ ff02::3 ip6-allhosts
 0.0.0.0 pagead2.googleadservices.com
 0.0.0.0 ads.google.com
 0.0.0.0 adservice.google.com
-0.0.0.0 google-adservices.com
+0.0.0.0 googleadservices.com
 
 #Media.net
 0.0.0.0 static.media.net
@@ -47,7 +47,7 @@ ff02::3 ip6-allhosts
 #Doubleclick.net
 0.0.0.0 mediavisor.doubleclick.net
 0.0.0.0 m.doubleclick.net
-0.0.0.0 static-doubleclick.com
+0.0.0.0 static.doubleclick.net
 0.0.0.0 doubleclick.net
 0.0.0.0 ad.doubleclick.net
 
