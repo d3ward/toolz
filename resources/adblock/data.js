@@ -73,10 +73,10 @@ const data = {
     "Ads": { //Ads
         "Google Ads": [
             "https://pagead2.googlesyndication.com","https://ads.google.com","https://adservice.google.com",
-            "https://pagead2.googleadservices.com","https://google-adservices.com"
+            "https://pagead2.googleadservices.com","https://googleadservices.com"
         ],
         "Media.net": ["https://static.media.net", "https://media.net", "https://adservetx.media.net"],
-        "Doubleclick.net": ["https://doubleclick.net/", "https://ad.doubleclick.net/","https://static-doubleclick.com","https://m.doubleclick.net",
+        "Doubleclick.net": ["https://doubleclick.net/", "https://ad.doubleclick.net/","https://static.doubleclick.net","https://m.doubleclick.net",
     "https://mediavisor.doubleclick.net"],
         "FastClick": ["https://fastclick.com","https://fastclick.net","https://media.fastclick.net/", "https://cdn.fastclick.net/"],
         "Amazon": ["https://adtago.s3.amazonaws.com","https://analyticsengine.s3.amazonaws.com",
