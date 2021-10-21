@@ -81,7 +81,7 @@ const data = {
         "FastClick": ["https://fastclick.com","https://fastclick.net","https://media.fastclick.net/", "https://cdn.fastclick.net/"],
         "Amazon": ["https://adtago.s3.amazonaws.com","https://analyticsengine.s3.amazonaws.com",
         "https://advice-ads.s3.amazonaws.com","https://affiliationjs.s3.amazonaws.com","https://advertising-api-eu.amazon.com",
-        "https://amazonaax.com","https://amazonclix.com","https://amazon-adsystem.com",
+        "https://amazonaax.com","https://amazonclix.com",
             "https://assoc-amazon.com"
         ]
     },

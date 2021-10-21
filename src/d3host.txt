@@ -5,7 +5,7 @@
 ! License: CC BY-NC-SA
 ! Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
 
-# This list cover all the tests on https://d3ward.github.io/toolz/src/adblock
+# This list cover all the tests on https://d3ward.github.io/toolz/adblock
 #
 # Type : Stable
 # Updated On: 20-10-2021
@@ -65,7 +65,6 @@ ff02::3 ip6-allhosts
 0.0.0.0 advertising-api-eu.amazon.com
 0.0.0.0 amazonaax.com
 0.0.0.0 amazonclix.com
-0.0.0.0 amazon-adsystem.com
 0.0.0.0 assoc-amazon.com
 
 ##Analytics ====================
