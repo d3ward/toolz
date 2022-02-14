@@ -1,0 +1,247 @@
+! Title: d3Host List by d3ward
+! Expires: 1 days
+! Description: Simple and small list with the most popular advertising, analytics and social advertising services
+! Homepage: https://github.com/d3ward/toolz
+! License: CC BY-NC-SA
+! Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
+
+! This list cover all the tests on https://d3ward.github.io/toolz/adblock
+!
+! Type : Stable
+! Updated On: 14-02-2022
+! Created by: d3ward
+
+! Start Local Hosts
+! End Local Hosts
+
+! Start
+
+!Ads ====================
+
+! Google Ads
+||pagead2.googlesyndication.com^
+||ads.google.com^
+||adservice.google.com^
+||googleadservices.com^
+
+!Media.net
+||media.net^
+
+!Doubleclick.net
+||doubleclick.net^
+
+!FastClick
+||fastclick.com^
+||fastclick.net^
+
+!Amazon
+||adtago.s3.amazonaws.com^
+||analyticsengine.s3.amazonaws.com^
+||advice-ads.s3.amazonaws.com^
+||affiliationjs.s3.amazonaws.com^
+||advertising-api-eu.amazon.com^
+||amazonaax.com^
+||amazonclix.com^
+||assoc-amazon.com^
+
+!#Analytics ====================
+! Yahoo
+||ads.yahoo.com^
+||adserver.yahoo.com^
+||adspecs.yahoo.com^
+||advertising.yahoo.com^
+||analytics.yahoo.com^
+||comet.yahoo.com^
+||log.fc.yahoo.com^
+||ganon.yahoo.com^
+||gemini.yahoo.com^
+||geo.yahoo.com^
+||marketingsolutions.yahoo.com^
+||pclick.yahoo.com^
+||analytics.query.yahoo.com^
+||geo.query.yahoo.com^
+||onepush.query.yahoo.com^
+||bats.video.yahoo.com^
+||visit.webhosting.yahoo.com^
+||ads.yap.yahoo.com^
+||m.yap.yahoo.com^
+||partnerads.ysm.yahoo.com^
+
+! Yandex
+||appmetrica.yandex.com^
+||report.appmetrica.yandex.net^
+||extmaps-api.yandex.net^
+||analytics.mobile.yandex.net^
+||banners.mobile.yandex.net^
+||banners-slb.mobile.yandex.net^
+||startup.mobile.yandex.net^
+||offerwall.yandex.net^
+||adfox.yandex.ru^
+||adsdk.yandex.ru^
+||an.yandex.ru^
+||redirect.appmetrica.yandex.ru^
+||awaps.yandex.ru^
+||awsync.yandex.ru^
+||bs.yandex.ru^
+||bs-meta.yandex.ru^
+||clck.yandex.ru^
+||informer.yandex.ru^
+||kiks.yandex.ru^
+||grade.market.yandex.ru^
+||mc.yandex.ru^
+||metrika.yandex.ru^
+||click.sender.yandex.ru^
+||share.yandex.ru^
+||yandexadexchange.net^
+
+!Google Analytics
+||google-analytics.com^
+
+!Hotjar
+||api-hotjar.com^
+||hotjar-analytics.com^
+||hotjar.com^
+
+!MouseFlow
+||mouseflow.com^
+
+!FreshMarketer
+||freshmarketer.com^
+
+!Luckyorange
+||luckyorange.com^
+||luckyorange.net^
+
+!Stats WP Plugin
+||stats.wp.com^
+
+!#Error Trackers ====================
+
+!Bugsnag
+||notify.bugsnag.com^
+||sessions.bugsnag.com^
+||api.bugsnag.com^
+||app.bugsnag.com^
+
+!Sentry
+||browser.sentry-cdn.com^
+||app.getsentry.com^
+
+!#Social ====================
+
+!Facebook
+||pixel.facebook.com^
+||analytics.facebook.com^
+||ads.facebook.com^
+||an.facebook.com^
+
+!Twitter
+||ads-api.twitter.com^
+||advertising.twitter.com^
+||ads-twitter.com^
+
+!LinkedIn
+||ads.linkedin.com^
+||analytics.pointdrive.linkedin.com^
+
+!Pinterest
+||ads.pinterest.com^
+||log.pinterest.com^
+||ads-dev.pinterest.com^
+||analytics.pinterest.com^
+||trk.pinterest.com^
+||trk2.pinterest.com^
+||widgets.pinterest.com^
+
+!Reddit
+||ads.reddit.com^
+||rereddit.com^
+||events.redditmedia.com^
+||d.reddit.com^
+
+! TikTok
+||ads-sg.tiktok.com^
+||analytics-sg.tiktok.com^
+||ads.tiktok.com^
+||analytics.tiktok.com^
+
+!YouTube
+||ads.youtube.com^
+||youtube.cleverads.vn^
+
+!#Mix ====================
+! Yahoo
+
+! Yandex
+
+!#OEM ====================
+
+!Realme
+||bdapi-in-ads.realmemobile.com^
+
+!OPPO
+||adsfs.oppomobile.com^
+||adx.ads.oppomobile.com^
+||bdapi.ads.oppomobile.com^
+||ck.ads.oppomobile.com^
+||data.ads.oppomobile.com^
+||g1.ads.oppomobile.com^
+
+!Xiaomi   
+||api.ad.xiaomi.com^
+||app.chat.xiaomi.net^
+||data.mistat.xiaomi.com^
+||data.mistat.intl.xiaomi.com^
+||data.mistat.india.xiaomi.com^
+||data.mistat.rus.xiaomi.com^
+||sdkconfig.ad.xiaomi.com^
+||sdkconfig.ad.intl.xiaomi.com^
+||globalapi.ad.xiaomi.com^
+||www.cdn.ad.xiaomi.com^
+||tracking.miui.com^
+||sa.api.intl.miui.com^
+||tracking.intl.miui.com^
+||tracking.india.miui.com^
+||tracking.rus.miui.com^
+
+!OnePlus
+||analytics.oneplus.cn^
+||click.oneplus.cn^
+||click.oneplus.com^
+||open.oneplus.net^
+
+!Huawei
+||metrics.data.hicloud.com^
+||metrics1.data.hicloud.com^
+||metrics2.data.hicloud.com^
+||metrics3.data.hicloud.com^
+||metrics4.data.hicloud.com^
+||metrics5.data.hicloud.com^
+||logservice.hicloud.com^
+||logservice1.hicloud.com^
+||metrics-dra.dt.hicloud.com^
+||logbak.hicloud.com^
+
+!Samsung
+||samsungadhub.com^
+||samsungads.com^
+||smetrics.samsung.com^
+||nmetrics.samsung.com^
+||samsung-com.112.2o7.net^
+||business.samsungusa.com^
+||analytics.samsungknox.com^
+||bigdata.ssp.samsung.com^
+||analytics-api.samsunghealthcn.com^
+
+!Apple
+||metrics.apple.com^
+||securemetrics.apple.com^
+||supportmetrics.apple.com^
+||metrics.icloud.com^
+||metrics.mzstatic.com^
+||dzc-metrics.mzstatic.com^
+||books-analytics-events.news.apple-dns.net^
+||books-analytics-events.apple.com^
+||stocks-analytics-events.apple.com^
+||stocks-analytics-events.news.apple-dns.net^
+! End
