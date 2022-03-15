@@ -113,9 +113,9 @@ const data = {
         "Reddit": ["https://ads.reddit.com", "https://d.reddit.com", "https://rereddit.com",
             "https://events.redditmedia.com"
         ],
-        "YouTube": ["https://ads.youtube.com", "https://youtube.cleverads.vn","https://analytics-sg.tiktok.com","https://ads-sg.tiktok.com"]
+        "YouTube": ["https://ads.youtube.com", "https://youtube.cleverads.vn"]
         ,
-        "TikTok": ["https://analytics.tiktok.com", "https://ads.tiktok.com"]
+        "TikTok": ["https://analytics.tiktok.com", "https://ads.tiktok.com", "https://analytics-sg.tiktok.com","https://ads-sg.tiktok.com"]
     },
     "Mix": {
         "Yahoo": ["https://ads.yahoo.com", "https://global.adserver.yahoo.com", "https://analytics.yahoo.com",
