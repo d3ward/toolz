@@ -289,7 +289,6 @@ ff02::3 ip6-allhosts
 0.0.0.0 api.ad.xiaomi.com
 0.0.0.0 app.chat.xiaomi.net
 0.0.0.0 data.mistat.xiaomi.com
-0.0.0.0 data.mistat.intl.xiaomi.com
 0.0.0.0 data.mistat.india.xiaomi.com
 0.0.0.0 data.mistat.rus.xiaomi.com
 0.0.0.0 sdkconfig.ad.xiaomi.com
