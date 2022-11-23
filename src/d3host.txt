@@ -315,7 +315,7 @@ ff02::3 ip6-allhosts
 0.0.0.0 metrics2.data.hicloud.com
 0.0.0.0 metrics3.data.hicloud.com
 0.0.0.0 metrics4.data.hicloud.com
-0.0.0.0 metrics5.data.hicloud.com 
+0.0.0.0 metrics5.data.hicloud.com
 0.0.0.0 logservice.hicloud.com
 0.0.0.0 logservice1.hicloud.com
 0.0.0.0 metrics-dra.dt.hicloud.com
