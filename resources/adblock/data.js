@@ -72,8 +72,8 @@ const dataOEM = {
 const data = {
     "Ads": { //Ads
         "Google Ads": [
-            "https://pagead2.googlesyndication.com","https://ads.google.com","https://adservice.google.com",
-            "https://pagead2.googleadservices.com","https://googleadservices.com"
+            "https://pagead2.googlesyndication.com","https://adservice.google.com",
+            "https://pagead2.googleadservices.com"
         ],
         "Media.net": ["https://static.media.net", "https://media.net", "https://adservetx.media.net"],
         "Doubleclick.net": ["https://doubleclick.net/", "https://ad.doubleclick.net/","https://static.doubleclick.net","https://m.doubleclick.net",
@@ -101,8 +101,7 @@ const data = {
         "Sentry": ["https://browser.sentry-cdn.com","https://app.getsentry.com"]
     },
     "Social Trackers": {
-        "Facebook": ["https://pixel.facebook.com",
-            "https://analytics.facebook.com", "https://ads.facebook.com","https://an.facebook.com"
+        "Facebook": ["https://pixel.facebook.com","https://ads.facebook.com","https://an.facebook.com"
         ],
         "Twitter": ["https://ads-twitter.com", "https://static.ads-twitter.com","https://ads-api.twitter.com","https://advertising.twitter.com"
         ],
@@ -122,8 +121,7 @@ const data = {
             "https://ads.yap.yahoo.com"
         ],
         "Yandex": ["https://appmetrica.yandex.com", "https://yandexadexchange.net",
-            "https://analytics.mobile.yandex.net", "https://extmaps-api.yandex.net",
-            "https://adsdk.yandex.ru"
+            "https://analytics.mobile.yandex.net"
         ]
     }
 
