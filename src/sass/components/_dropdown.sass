@@ -1,0 +1,51 @@
+.dropdown
+	display: inline-flex
+	position: relative
+	padding-bottom: .5rem
+	&>a,&>button
+		margin: 0
+		&:after
+			content: ""
+			width: .5rem
+			height: .5rem
+			margin-left: 1rem
+			transform-origin: color
+			transform: rotate(45deg)
+			display: block
+			border: .1875rem solid currentColor
+			border-bottom: 0
+			border-left: 0
+			pointer-events: none
+	>[data-dropdown-id]
+		display: none
+		flex-direction: column
+		left: 0
+		list-style: none
+		width: 14rem
+		margin: 0
+		padding: 0
+		transform-origin: right top
+		position: absolute
+		border:1px solid var(--bg2)
+		border-radius: var(--radius)
+		background-color: var(--bg)
+		box-shadow: var(--shadow)
+		top: 100%
+		z-index: 20
+		&>a:hover,&>a.link-active
+			padding: .3rem
+			border: 0
+			background: var(--bg2)
+			color: var(--primary)
+		>*
+			width: 100%
+			display: flex
+			margin: 0
+			border-radius: var(--radius)
+			padding: .3rem
+	&.dropdown-active
+		&>a:after,&>button:after
+			border-top: 0
+			border-bottom: .1875rem solid currentColor
+		&>[data-dropdown-id]
+			display: flex

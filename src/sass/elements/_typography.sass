@@ -1,0 +1,65 @@
+/* ------------------ Heading ----------------- */
+
+h1, h2, h3, h4, h5, h6
+	margin-top: 1.5rem
+h1 
+	font-size: 2.6em
+h2 
+	font-size: 2.0em 
+h3 
+	font-size: 1.7em 
+h4 
+	font-size: 1.5em 
+h5 
+	font-size: 1.2em 
+h6 
+	font-size: 1em 
+p
+	margin-bottom: 1.5rem
+p strong, p b 
+	color: var(--txt) 
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6 
+	margin: 0 
+blockquote 
+	border-left: var(--radius) solid var(--primary) 
+	padding: 1rem 1.5rem 
+q 
+	&:before 
+		content: "\201C" 
+	q 
+		&:before 
+			content: "\2018" 
+		&:after 
+			content: "\2019" 
+	&:after 
+		content: "\201D" 
+summary 
+	font-weight: bold 
+	cursor: pointer 
+time 
+	color: var(--txt) 
+	opacity: .7
+mark 
+	background-color: var(--primary) 
+	color: var(--txt-r) 
+	padding: .1rem .2rem 
+	font-size: 90%
+small,
+sub,
+sup 
+	font-size: 75% 
+var 
+	color: var(--yellow)
+ins
+	color: var(--green)
+del 
+	color: var(--red)
+/* ------------------- Links ------------------ */
+a 
+	color: var(--primary) 
+	text-decoration: none 
+	cursor: pointer

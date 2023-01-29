@@ -1,0 +1,26 @@
+/* ------------------ Tooltip ----------------- */
+[data-tooltip] 
+	cursor: pointer 
+	position: relative 
+	text-decoration: none
+[data-tooltip]::after 
+	background-color: var(--primary) 
+	color: var(--txt-r) 
+	font-size: 14px 
+	padding: 8px 12px 
+	height: fit-content 
+	width: fit-content 
+	border-radius: 6px 
+	position: absolute 
+	text-align: center 
+	bottom: 0px 
+	left: 50% 
+	content: attr(data-tooltip) 
+	transform: translate(-50%, 110%) scale(0) 
+	transform-origin: top 
+	transition: 0.14s 
+	box-shadow: var(--shadow)
+[data-tooltip]:hover 
+	&:after 
+		display: block 
+		transform: translate(-50%, 110%) scale(1) 

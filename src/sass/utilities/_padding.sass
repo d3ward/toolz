@@ -1,0 +1,21 @@
+/* -------------- Padding Utility ------------- */
+
+$sizes: ( "0": 0,"05": 0.5rem,"1": 1rem,"2": 2rem,"3": 3rem,"4": 4rem,"5": 5rem)
+
+@each $size, $value in $sizes
+	._p-#{$size}
+		padding: $value
+	._pt-#{$size}
+		padding-top: $value
+	._pr-#{$size}
+		padding-right: $value
+	._pb-#{$size}
+		padding-bottom: $value
+	._pl-#{$size}
+		padding-left: $value
+	._px-#{$size}
+		padding-left: $value
+		padding-right: $value
+	._py-#{$size}
+		padding-left: $value
+		padding-right: $value

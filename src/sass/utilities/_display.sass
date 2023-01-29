@@ -1,0 +1,9 @@
+/* -------------- Display Utility ------------- */
+$displays: 'block' 'flex' 'inline' 'none'
+@each $display in $displays
+	._d-#{$display}
+		display: #{$display} !important
+
+@media only screen and (min-width: 768px)
+	._d-m-only
+		display: none

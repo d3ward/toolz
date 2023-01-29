@@ -1,0 +1,162 @@
+<div class="dialog" id="dlg_ty" data-a11y-dialog="dlg_ty" aria-labelledby="dlg_ty-title" aria-hidden="true">
+	<div class="dialog-overlay" data-a11y-dialog-hide></div>
+	<div class="dialog-content">
+		<header>
+			<h3 id="dlg_ty-title">Thank you !</h3>
+			<button data-a11y-dialog-hide><svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor"
+					viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+					</path>
+				</svg></button>
+		</header>
+		<section>
+			<div>
+				<h2>More than 1 million tests so far</h2>
+				<b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b><br><br>
+				<div class="row keep-width">
+					<div>
+						<div class="card">
+
+							<div class="_f-center">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="var(--green)" width="24" height="24"
+									viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+									stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+									<path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"></path>
+								</svg>
+								&nbsp; Blocked
+							</div>
+							If the connection to a host/script fails or a box is removed means the latter has been blocked by your
+							ad-blocker
+						</div>
+					</div>
+					<div>
+						<div class="card">
+
+							<div class="_f-center">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="var(--red)" width="24" height="24"
+									viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+									stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+									<path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"></path>
+								</svg>
+								&nbsp; Not Blocked
+							</div>
+							Connection to a host did not fail or box is not removed, means that your ad-blocker did not block it or doesn't work
+		
+						</div>
+					</div>
+				</div>
+				<p>After tests are completed , you get a liquid color ball with points.<br>
+				Points are caculated based on your tests for each category and type <br>
+				The color is calculated based on you points range <br>
+				Here a preview of 3 scenarios :</p>
+				
+				<div class="template_wrap row keep-width ">
+					<div>
+						<div class="lt_cwrap lt_template" style="--liquid-color:var(--red);--liquid-percentage:10%">
+							<div class="lt_circle">
+								<div class="lt_wave"></div>
+							</div>
+
+						</div>
+						<div class="lt_value_2 _bg-red">
+							Cmon , use an adblock or smth
+						</div>
+					</div>
+					<div>
+						<div class="lt_cwrap lt_template" style="--liquid-color:var(--orange);--liquid-percentage:0%">
+							<div class="lt_circle">
+								<div class="lt_wave"></div>
+							</div>
+
+						</div>
+						<div class="lt_value_2 _bg-orange">
+							Ok, but you can do better
+						</div>
+					</div>
+					<div>
+						<div class="lt_cwrap lt_template" style="--liquid-color:var(--green);--liquid-percentage:-30%">
+							<div class="lt_circle">
+								<div class="lt_wave"></div>
+							</div>
+
+						</div>
+						<div class="lt_value_2 _bg-green">
+							Great, you're ready to surf
+						</div>
+					</div>
+
+				</div>
+				
+				The tests consist of 3 types
+				<ul>
+					<li>Cosmetic Filter : Check if you are hiding/removing the empy boxes of ads, cookie policy etc.</li>
+					<li>Script Loading : Check if you are blocking a possible ad script loading or trackers</li>
+					<li>Host : Check if you block domains that provide trackers, analytics or ads</li>
+				</ul>
+
+				<h3>The test is not working, I'm sure my adblock method is properly configured</h3>
+				<p>
+					In that case probably you have a setup that is not compatible for the checks of this tool.
+					This doesn't mean you are not protected by your configured solution that can be ablock extension , vpn or dns
+					It's because due to some JS limitation or lack of implementation feature the test is not able to figure out 
+					You will receive a percentage of how many connections you have blocked
+					
+				</p>
+
+
+				<h2>How I can have 100%</h2>
+				<p>
+					It's not needed . If you got a green result , you are pretty good. Don't be too competitive with that number 
+
+					In case you want to have a full 100% ,
+					consider using my small list that I created to cover most of the tests in this website (cosmetic filter,script loading excluded)
+					<button class="btn-blue"
+						onclick="copyToClip('https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt')">
+						d3Host List (TXT)</button>
+					<button class="btn-blue"
+						onclick="copyToClip('https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.adblock')">
+						d3Host List (ADBLOCK)</button>
+					<br><br>
+					
+				</p>
+				<h2>Adblock solutions</h2>
+				On any device where possible the first thing I install on the browser is <a href="https://ublockorigin.com/" class="btn">uBlock Origin </a>
+				Second, I go with a DNS solution like <a href="https://nextdns.io/" class="btn">Next DNS</a> for blocking on any installed app
+				<h3>Other suggested solutions for ad-blocking</h3>
+				<div>
+					<a href="https://adguard.com/" class="btn">Adguard Extension or DNS </a>
+					<a href="https://blokada.org/" class="btn">Blokada </a>
+				</div>
+				<p>
+
+				<h2>Test tools for your adblock </h2>
+				I created this website to quickly test my small list of most common hosts. 
+				I wanted to build something with a great design and user experience that is pretty straigthforward for any user.
+				There are other great tools that I use and I want to recommend
+
+				<div class="cnt2">
+					<a href="https://canyoublockit.com/" class="btn">CanYouBlockIt</a>
+					<a href="https://ipleak.net/" class="btn">IP Leak </a>
+					<a href="https://blockads.fivefilters.org/" class="btn">Block Ads Test </a>
+					<a href="https://panopticlick.eff.org/" class="btn">Browser Fingerprint by EEF</a>
+					<a href="http://raymondhill.net/ublock/tiles1.html" class="btn">Adblock Testing by
+						raymondhill</a>
+					<a href="http://raymondhill.net/ublock/popup.html" class="btn">Popup Blocker by
+						raymondhill</a>
+				</div>
+				</p>
+			</div>
+		</section>
+		<footer>
+			<button data-a11y-dialog-hide>
+				Cancel
+			</button>
+			<button class="btn-p" data-a11y-dialog-hide>
+				Ok
+			</button>
+
+		</footer>
+	</div>
+</div>

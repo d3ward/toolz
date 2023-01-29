@@ -1,0 +1,70 @@
+.toast
+	position: fixed
+	z-index: 20
+	bottom: 0
+	padding: .5rem
+	display: flex
+	flex-direction: column
+	justify-items: center
+	justify-content: center
+	gap: .5rem
+	&[toast-pos^="top"]
+		bottom: unset
+		top: 0
+		flex-direction: column-reverse
+		.toast-item
+			--_travel-distance: -5vh
+	&[toast-pos^="bottom"]
+		bottom: 0
+	&[toast-pos$="left"]
+		left: 0
+	&[toast-pos$="right"]
+		right: 0
+.toast-item
+	max-inline-size: min(25ch, 90vw)
+	border-radius: var(--radius)
+	color: var(--txt)
+	background: var(--toast-bg)
+	--toast-bg: var(--bg2)
+	--_duration: 3s
+	--_travel-distance: 5vh
+	will-change: transform
+	display: flex
+	gap: 0.5rem
+	justify-content: center
+	align-items: center
+	flex: 1
+	padding: 1rem
+	box-shadow: var(--shadow)
+	animation: toast-in 500ms ease forwards 1
+
+	&.success
+		--toast-bg: var(--green-l)
+		--toast-bg2: var(--green-d)
+	&.error
+		--toast-bg: var(--red-l)
+		--toast-bg2: var(--red-d)
+	&.warn
+		--toast-bg: var(--orange-l)
+		--toast-bg2: var(--orange-d)
+	&.info
+		--toast-bg: var(--blue-l)
+		--toast-bg2: var(--blue-d)
+	&.toast-out
+		animation: toast-out .3s ease
+	&>svg
+		height: 20px
+		width: 20px
+		fill: var(--toast-bg2)
+		&._closeIcon
+			border-radius: 3px
+			margin-left: 2rem
+@keyframes toast-out
+	to
+		transform: translateY(--_travel-distance)
+		opacity: 0
+
+@keyframes toast-in
+	from
+		transform: translateY(var(--_travel-distance))
+		opacity: 0

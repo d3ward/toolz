@@ -1,0 +1,17 @@
+/* ------------ Animation On Scroll ----------- */
+[class*=_aos],._aos
+    opacity: 0
+    transition: opacity 1s, transform 1.3s
+._aos-zoom
+    transform: scale(.4)
+._aos-left
+    transform: translate3d(-100px,0,0)
+._aos-right
+    transform: translate3d(100px,0,0)
+._aos-top
+    transform: translate3d(0,-100px, 0)
+._aos-bottom
+    transform: translate3d(0,100px, 0)
+._aos-done
+    opacity: 1
+    transform: translateZ(0) scale(1)

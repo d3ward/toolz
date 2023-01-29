@@ -1,0 +1,47 @@
+/* ------------------- Card ------------------- */
+.card
+	display: flex
+	flex-wrap: wrap
+	flex-direction: column
+	gap: 1rem
+	padding: 1rem
+	background: var(--bg-card)
+	border-radius: var(--radius)
+	box-shadow: var(--shadow)
+	&> *
+		width: 100%
+		margin: 0
+	&> img
+		height: auto
+		border-radius: var(--radius)
+		width: 100%
+		&.full
+			width: calc( 100% + 2rem )
+			max-width: unset
+		&.full:first-child
+			border-radius: var(--radius) var(--radius) 0 0
+			margin: -1rem -1rem 0 -1rem
+		&.full:last-child
+			border-radius: 0 0 var(--radius) var(--radius)
+			margin: 0 -1rem -1rem -1rem
+	&>.img-w
+		padding: 1rem
+		box-shadow: 0 8px 20px -4px var(--b-shadow)
+		max-width: 100px
+		border-radius: 50%
+		margin: 15px auto 15px
+		width: 100px
+		height: 100px
+		&> img
+			height: auto
+			border-radius: 50%
+			width: 100%
+.img-w200
+	padding: 40px
+	border-radius: 50%
+	width: 200px
+	height: 200px
+	&> img
+		height: auto
+		border-radius: 50%
+		width: 100%

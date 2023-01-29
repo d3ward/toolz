@@ -1,185 +1,206 @@
 ! Title: d3Host List by d3ward
 ! Expires: 1 days
-! Description: Simple and small list with the most popular advertising, analytics and social advertising services
+! Description: Simple and small list with the most popular advertising, tracking, analytics and social advertising services
 ! Homepage: https://github.com/d3ward/toolz
 ! License: CC BY-NC-SA
 ! Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
 
-! This list cover all the tests on https://d3ward.github.io/toolz/adblock
-!
-! Type : Stable
-! Updated On: 14-02-2022
+! This list cover all the tests on https://d3ward.github.io/toolz/adblock! Type : Stable
+! Entries : 157
+! Updated On: 21/12/2022
 ! Created by: d3ward
 
-! Start Local Hosts
-! End Local Hosts
+!============ Ads =============
 
-! Start
-
-!Ads ====================
-
-! Google Ads
+! --- Google Ads
 ||pagead2.googlesyndication.com^
 ||ads.google.com^
 ||adservice.google.com^
+||pagead2.googleadservices.com^
 ||googleadservices.com^
 
-!Media.net
+! --- Media.net
+||static.media.net^
 ||media.net^
+||adservetx.media.net^
 
-!Doubleclick.net
+! --- Doubleclick.net
 ||doubleclick.net^
+||ad.doubleclick.net^
+||static.doubleclick.net^
+||m.doubleclick.net^
+||mediavisor.doubleclick.net^
 
-!FastClick
-||fastclick.com^
-||fastclick.net^
-
-!Amazon
+! --- Amazon
 ||adtago.s3.amazonaws.com^
 ||analyticsengine.s3.amazonaws.com^
+||analytics.s3.amazonaws.com^
 ||advice-ads.s3.amazonaws.com^
 ||affiliationjs.s3.amazonaws.com^
 ||advertising-api-eu.amazon.com^
-||amazonaax.com^
 ||amazonclix.com^
-||assoc-amazon.com^
 
-!#Analytics ====================
-! Yahoo
+
+!========= Analytics ==========
+
+! --- Google Analytics
+||google-analytics.com^
+||ssl.google-analytics.com^
+
+! --- Hotjar
+||hotjar.com^
+||adm.hotjar.com^
+||identify.hotjar.com^
+||insights.hotjar.com^
+||script.hotjar.com^
+||surveys.hotjar.com^
+||careers.hotjar.com^
+||events.hotjar.io^
+
+! --- MouseFlow
+||mouseflow.com^
+||api.mouseflow.com^
+||tools.mouseflow.com^
+||cdn-test.mouseflow.com^
+||a.mouseflow.com^
+
+! --- FreshWorks
+||freshmarketer.com^
+||claritybt.freshmarketer.com^
+||fwtracks.freshmarketer.com^
+
+! --- Luckyorange
+||luckyorange.com^
+||api.luckyorange.com^
+||realtime.luckyorange.com^
+||cdn.luckyorange.com^
+||w1.luckyorange.com^
+||upload.luckyorange.net^
+||cs.luckyorange.net^
+||settings.luckyorange.net^
+
+! --- Stats WP Plugin
+||stats.wp.com^
+
+
+!======= Error Trackers =======
+
+! --- Bugsnag
+||notify.bugsnag.com^
+||sessions.bugsnag.com^
+||api.bugsnag.com^
+||app.bugsnag.com^
+
+! --- Sentry
+||browser.sentry-cdn.com^
+||app.getsentry.com^
+
+
+!====== Social Trackers =======
+
+! --- Facebook
+||pixel.facebook.com^
+||ads.facebook.com^
+||an.facebook.com^
+
+! --- Twitter
+||ads-twitter.com^
+||static.ads-twitter.com^
+||ads-api.twitter.com^
+||advertising.twitter.com^
+
+! --- LinkedIn
+||ads.linkedin.com^
+||analytics.pointdrive.linkedin.com^
+
+! --- Pinterest
+||ads.pinterest.com^
+||log.pinterest.com^
+||ads-dev.pinterest.com^
+||analytics.pinterest.com^
+||trk.pinterest.com^
+||widgets.pinterest.com^
+
+! --- Reddit
+||ads.reddit.com^
+||events.reddit.com^
+||d.reddit.com^
+||rereddit.com^
+||events.redditmedia.com^
+
+! --- YouTube
+||ads.youtube.com^
+
+! --- TikTok
+||ads-api.tiktok.com^
+||analytics.tiktok.com^
+||ads-sg.tiktok.com^
+||analytics-sg.tiktok.com^
+||analytics.tiktok.com^
+||business-api.tiktok.com^
+||ads.tiktok.com^
+
+
+!============ Mix =============
+
+! --- Yahoo
 ||ads.yahoo.com^
-||adserver.yahoo.com^
-||adspecs.yahoo.com^
-||advertising.yahoo.com^
 ||analytics.yahoo.com^
-||comet.yahoo.com^
+||ads.yap.yahoo.com^
+||advertising.yahoo.com^
+||analytics.query.yahoo.com^
+||partnerads.ysm.yahoo.com^
 ||log.fc.yahoo.com^
 ||ganon.yahoo.com^
 ||gemini.yahoo.com^
 ||geo.yahoo.com^
 ||marketingsolutions.yahoo.com^
 ||pclick.yahoo.com^
-||analytics.query.yahoo.com^
-||geo.query.yahoo.com^
-||onepush.query.yahoo.com^
-||bats.video.yahoo.com^
-||visit.webhosting.yahoo.com^
-||ads.yap.yahoo.com^
-||m.yap.yahoo.com^
-||partnerads.ysm.yahoo.com^
 
-! Yandex
-||appmetrica.yandex.com^
-||report.appmetrica.yandex.net^
-||extmaps-api.yandex.net^
+! --- Yandex
+||yandexadexchange.net^
 ||analytics.mobile.yandex.net^
-||banners.mobile.yandex.net^
-||banners-slb.mobile.yandex.net^
-||startup.mobile.yandex.net^
+||extmaps-api.yandex.net^
+||redirect.appmetrica.yandex.com^
+||appmetrica.yandex.ru^
+||adfstat.yandex.ru^
+||an.yandex.ru^
+||metrika.yandex.ru^
+||share.yandex.ru^
+||advertising.yandex.ru^
 ||offerwall.yandex.net^
 ||adfox.yandex.ru^
-||adsdk.yandex.ru^
-||an.yandex.ru^
-||redirect.appmetrica.yandex.ru^
-||awaps.yandex.ru^
-||awsync.yandex.ru^
 ||bs.yandex.ru^
 ||bs-meta.yandex.ru^
-||clck.yandex.ru^
-||informer.yandex.ru^
-||kiks.yandex.ru^
-||grade.market.yandex.ru^
-||mc.yandex.ru^
-||metrika.yandex.ru^
-||click.sender.yandex.ru^
 ||share.yandex.ru^
-||yandexadexchange.net^
 
-!Google Analytics
-||google-analytics.com^
 
-!Hotjar
-||api-hotjar.com^
-||hotjar-analytics.com^
-||hotjar.com^
+!============ OEMs ============
 
-!MouseFlow
-||mouseflow.com^
-
-!FreshMarketer
-||freshmarketer.com^
-
-!Luckyorange
-||luckyorange.com^
-||luckyorange.net^
-
-!Stats WP Plugin
-||stats.wp.com^
-
-!#Error Trackers ====================
-
-!Bugsnag
-||notify.bugsnag.com^
-||sessions.bugsnag.com^
-||api.bugsnag.com^
-||app.bugsnag.com^
-
-!Sentry
-||browser.sentry-cdn.com^
-||app.getsentry.com^
-
-!#Social ====================
-
-!Facebook
-||pixel.facebook.com^
-||analytics.facebook.com^
-||ads.facebook.com^
-||an.facebook.com^
-
-!Twitter
-||ads-api.twitter.com^
-||advertising.twitter.com^
-||ads-twitter.com^
-
-!LinkedIn
-||ads.linkedin.com^
-||analytics.pointdrive.linkedin.com^
-
-!Pinterest
-||ads.pinterest.com^
-||log.pinterest.com^
-||ads-dev.pinterest.com^
-||analytics.pinterest.com^
-||trk.pinterest.com^
-||trk2.pinterest.com^
-||widgets.pinterest.com^
-
-!Reddit
-||ads.reddit.com^
-||rereddit.com^
-||events.redditmedia.com^
-||d.reddit.com^
-
-! TikTok
-||ads-sg.tiktok.com^
-||analytics-sg.tiktok.com^
-||ads.tiktok.com^
-||analytics.tiktok.com^
-
-!YouTube
-||ads.youtube.com^
-||youtube.cleverads.vn^
-
-!#Mix ====================
-! Yahoo
-
-! Yandex
-
-!#OEM ====================
-
-!Realme
+! --- Realme
+||iot-eu-logser.realme.com^
+||iot-logser.realme.com^
+||data-cl-id-ads.realmemobile.com^
+||data-sg-ads.realmemobile.com^
+||bdapi-ads.realmemobile.com^
+||adx-id-ads.realmemobile.com^
 ||bdapi-in-ads.realmemobile.com^
 
-!OPPO
+! --- Xiaomi
+||api.ad.xiaomi.com^
+||data.mistat.xiaomi.com^
+||data.mistat.intl.xiaomi.com^
+||data.mistat.india.xiaomi.com^
+||data.mistat.rus.xiaomi.com^
+||sdkconfig.ad.xiaomi.com^
+||sdkconfig.ad.intl.xiaomi.com^
+||globalapi.ad.xiaomi.com^
+||tracking.miui.com^
+||tracking.intl.miui.com^
+||tracking.india.miui.com^
+||tracking.rus.miui.com^
+
+! --- Oppo
 ||adsfs.oppomobile.com^
 ||adx.ads.oppomobile.com^
 ||bdapi.ads.oppomobile.com^
@@ -187,60 +208,34 @@
 ||data.ads.oppomobile.com^
 ||g1.ads.oppomobile.com^
 
-!Xiaomi   
-||api.ad.xiaomi.com^
-||app.chat.xiaomi.net^
-||data.mistat.xiaomi.com^
-||data.mistat.india.xiaomi.com^
-||data.mistat.rus.xiaomi.com^
-||sdkconfig.ad.xiaomi.com^
-||sdkconfig.ad.intl.xiaomi.com^
-||globalapi.ad.xiaomi.com^
-||www.cdn.ad.xiaomi.com^
-||tracking.miui.com^
-||sa.api.intl.miui.com^
-||tracking.intl.miui.com^
-||tracking.india.miui.com^
-||tracking.rus.miui.com^
-
-!OnePlus
-||analytics.oneplus.cn^
-||click.oneplus.cn^
-||click.oneplus.com^
-||open.oneplus.net^
-
-!Huawei
+! --- Huawei
+||data.hicloud.com^
 ||metrics.data.hicloud.com^
 ||metrics1.data.hicloud.com^
 ||metrics2.data.hicloud.com^
-||metrics3.data.hicloud.com^
-||metrics4.data.hicloud.com^
-||metrics5.data.hicloud.com^
+||metrics5.data.hicloud.com ^
+||grs.hicloud.com^
 ||logservice.hicloud.com^
 ||logservice1.hicloud.com^
 ||metrics-dra.dt.hicloud.com^
 ||logbak.hicloud.com^
 
-!Samsung
-||samsungadhub.com^
+! --- OnePlus
+||click.oneplus.cn^
+||click.oneplus.com^
+||open.oneplus.net^
+
+! --- Samsung
 ||samsungads.com^
 ||smetrics.samsung.com^
-||nmetrics.samsung.com^
 ||samsung-com.112.2o7.net^
 ||business.samsungusa.com^
-||analytics.samsungknox.com^
-||bigdata.ssp.samsung.com^
 ||analytics-api.samsunghealthcn.com^
+||config.samsungads.com^
 
-!Apple
-||metrics.apple.com^
-||securemetrics.apple.com^
+! --- Apple
+||iad.apple.com^
+||advertising.apple.com^
+||tr.iadsdk.apple.com^
 ||supportmetrics.apple.com^
 ||metrics.icloud.com^
-||metrics.mzstatic.com^
-||dzc-metrics.mzstatic.com^
-||books-analytics-events.news.apple-dns.net^
-||books-analytics-events.apple.com^
-||stocks-analytics-events.apple.com^
-||stocks-analytics-events.news.apple-dns.net^
-! End

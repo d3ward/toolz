@@ -1,0 +1,44 @@
+@charset "utf-8"
+
+@import "./settings/variables"
+$primary : #06dc94
+@import "./theme/light"
+@import "./theme/dark"
+
+body
+    background-color: #07a04e
+    background-image: linear-gradient(315deg, #07a04e 0%, #06dc94 74%)
+    background-size: 200% 100%
+    height: auto
+#flist
+    display: grid
+    grid-gap: .5rem
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+
+@import "./base/basic"
+@import "./extra/aos"
+@import "./elements/typography"
+
+@import "./layout/navbar"
+@import "./layout/header"
+@import "./layout/container"
+@import "./layout/grid"
+@import "./layout/footer"
+
+@import "./elements/button"
+@import "./components/card"
+@import "./components/modal"
+@import "./components/gotop_link"
+@import "./extra/tooltip"
+@import "./extra/alert"
+
+@import "./utilities/alignment"
+@import "./utilities/position"
+@import "./utilities/background"
+@import "./utilities/border"
+@import "./utilities/display"
+@import "./utilities/margin"
+@import "./utilities/general"
+@import "./utilities/padding"
+@import "./utilities/spacer"
+@import "./utilities/text"

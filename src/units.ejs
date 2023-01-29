@@ -1,0 +1,122 @@
+<html lang="en">
+	<%- include('partials/head.ejs', { 
+		page: 'units' , 
+		title:'Toolz by d3ward - Home', 
+		description:'Test viewport units of your browser.', 
+		url: 'd3ward.github.io/toolz' ,
+		preview_thumbnail:'https://d3ward.github.io/toolz/src/preview_toolz.png',
+		 keywords:'viewport,toolz,units,css,web tools,testing,' }) %>
+
+	<body>
+		<%- include('partials/support_me.ejs') %>
+		<%- include('partials/header.ejs', {page:'units'}) %>
+		<main>
+			<details class="card _p-0p _shadowless _brd-bg3 _bg2  _my-2m">
+				<summary class="_p-1p"> Units </summary>
+				
+				<div class="_p-1p"><p>
+				<b>innerHeight</b> property returns the height of a window's content area <br>
+				vh = 1% of the height of the viewport size. <br>
+				
+				5 units can be used with CSS to fix mobile issues,if you use a unit that does not match the innerheight the user 
+				visiting your site may not see some absolute or fixed buttons because they are hidden by the navigation bar .
+				 One of the browsers most affected by the problem is Webkit based , which is why several units have been
+				  introduced over the years to compensate for the problem. <br>
+				  These tests can be used to check the value of each units . <br>
+			</p></div>
+			</details>
+			
+			<div class="row keep-width vtests">
+				<div>
+					<div class="test t-vh"><span>100vh</span></div>
+				</div>
+				<div>
+					<div class="test t-p"><span>100%</span></div>
+				</div>
+				<div>
+					<div class="test t-svh"><span>100svh</span></div>
+				</div>
+				<div>
+					<div class="test t-lvh"><span>100lvh</span></div>
+				</div>
+				<div>
+					<div class="test t-dvh"><span>100dvh</span></div>
+				</div>
+			</div>
+			<div id="barContainer" style="opacity:0;">
+				<div class="bar b-vh" style="right: 5px; position: fixed; height: 100vh;">
+					<div class="text">100vh position:fixed <span class="height"></span></div>
+				</div>
+				<div class="bar b-lvh" style="right: 30px; position: fixed; height: 100lvh;">
+					<div class="text">100lvh position:fixed <span class="height"></span></div>
+				</div>
+				<div class="bar b-svh" style="right: 55px; position: fixed; height: 100svh;">
+					<div class="text">100svh position:fixed <span class="height"></span></div>
+				</div>
+				<div class="bar b-dvh" style="right: 80px; position: fixed; height: 100dvh;">
+					<div class="text">100dvh position:fixed <span class="height"></span></div>
+				</div>
+				<div class="bar b-p" style="right: 105px; position: fixed; height: 100%;">
+					<div class="text">100% position:fixed <span class="height"></span></div>
+				</div>
+				<div class="bar" style="right: 130px; position: absolute; height: 100vh;">
+					<div class="text">100vh position:absolute <span class="height"></span></div>
+				</div>
+				<div class="bar" style="right: 155px; position: absolute; height: 100lvh;">
+					<div class="text">100lvh position:absolute <span class="height"></span></div>
+				</div>
+				<div class="bar" style="right: 180px; position: absolute; height: 100svh;">
+					<div class="text">100svh position:absolute <span class="height"></span></div>
+				</div>
+				<div class="bar" style="right: 205px; position: absolute; height: 100dvh;">
+					<div class="text">100dvh position:absolute <span class="height"></span></div>
+				</div>
+				<div class="bar" style="right: 230px; position: absolute; height: 100%;">
+					<div class="text">100% position:absolute <span class="height"></span></div>
+				</div>
+			</div>
+			
+			<div class="innerHeightLog"><span></span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+					viewBox="0 0 24 24">
+					<path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" opacity=".25" />
+					<path
+						d="M10.14,1.16a11,11,0,0,0-9,8.92A1.59,1.59,0,0,0,2.46,12,1.52,1.52,0,0,0,4.11,10.7a8,8,0,0,1,6.66-6.61A1.42,1.42,0,0,0,12,2.69h0A1.57,1.57,0,0,0,10.14,1.16Z">
+						<animateTransform attributeName="transform" type="rotate" dur="0.75s" values="0 12 12;360 12 12"
+							repeatCount="indefinite" />
+					</path>
+					
+				</svg></div>
+
+			<div>
+				<a class="btn" target="_blank" href="https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/">CSS fix
+					for
+					100vh</a>
+				<a class="btn" target="_blank" href="https://www.bram.us/2020/05/06/100vh-in-safari-on-ios/">100vh in Safari</a>
+				<a class="btn" target="_blank" href="https://maximilianschmitt.me/posts/css-100vh-mobile-browsers/"> CSS 100vh Mobile
+					Browsers</a>
+				<a class="btn" target="_blank" 
+					href="https://medium.com/@susiekim9/how-to-compensate-for-the-ios-viewport-unit-bug-46e78d54af0d">It’s
+					not a
+					bug,
+					it’s a feature</a>
+				<a class="btn" target="_blank" href="https://css-tricks.com/the-trick-to-viewport-units-on-mobile/">The trick of
+					Viewport
+					Units</a>
+				<a class="btn" target="_blank" 
+					href="https://chanind.github.io/javascript/2019/09/28/avoid-100vh-on-mobile-web.html">Avoid 100vh
+					on Mobile
+					Web</a>
+				<a class="btn" target="_blank" href="https://bugs.webkit.org/show_bug.cgi?id=141832">WebKit Bugzilla</a>
+				<a class="btn" target="_blank" href="https://twitter.com/AllThingsSmitty/status/1254151507412496384/">Matt Smith
+					Solution</a>
+			</div>
+
+		</main>
+		<%- include('partials/footer.ejs') %>
+    <%- include('partials/gotop.ejs') %>
+
+
+	</body>
+
+
+</html>

@@ -1,0 +1,59 @@
+/* --------------- Toast Message -------------- */
+.alert-item
+    transition: all .3s
+    max-width: 200px
+    padding: .8rem
+    margin-bottom: .3rem
+    display: flex
+    background: var(--primary)
+    border-radius: var(--radius)
+    box-shadow: var(--shadow)
+    animation: fade-in .3s
+    animation-timing-function: cubic-bezier(.6,.04,.98,.34)
+    &.animate-out
+        animation: fade-out .3s
+        animation-timing-function: cubic-bezier(.6,.04,.98,.34)
+    &.success
+        background: var(--green)
+    &.error
+        background: var(--red)
+    &.warn
+        background: var(--yellow)
+    &.info
+        background: var(--blue)
+
+.alert-container
+    position: fixed
+    padding: .3rem
+    display: flex
+    align-items: center
+    flex-direction: column
+    z-index: 9999
+    &._top
+        flex-direction: column-reverse
+    &._bottom
+        bottom:0
+    &._left
+        left: 0
+    &._right
+        right: 0
+    &._center
+        left: 50%
+        transform: translateX(-50%)
+    
+
+@keyframes fade-out
+    from
+        opacity: 1
+        transform: scaleY(1)
+    to
+        opacity: 0
+        transform: scaleY(0)
+@keyframes fade-in
+    from
+        opacity: 0
+        transform: scaleY(0)
+    to
+        opacity: 1
+        transform: scaleY(1)
+

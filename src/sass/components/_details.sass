@@ -1,0 +1,28 @@
+
+/* ------------------ Details ----------------- */
+details
+	width: 100%
+	overflow-x: hidden
+	display: flex
+	flex-flow: wrap column
+	border-radius: var(--radius)
+	user-select: none
+	background: var(--bg-details)
+	& > summary
+		outline-color: initial
+		padding: .6rem
+		border-radius: var(--radius)
+		outline: 0
+		cursor: pointer
+		font-weight: 500
+		&:hover
+			color: var(--primary)
+			background-color: var(--bg-details)
+	& > div
+		padding: .5rem
+details[open]
+	summary 
+		background-color: var(--bg-details-open)
+		color: var(--txt-details-open)
+details+details
+	margin-top: .5rem

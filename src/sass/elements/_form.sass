@@ -1,0 +1,200 @@
+.field
+	display: flex
+	justify-content: center
+	gap: .5rem
+	flex-direction: column
+[class^="with-icon"]
+	position: relative
+[class^="with-icon"]>svg
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+.with-icon-left>svg
+	left: 1rem
+.with-icon-right>svg
+	left: 1rem
+.with-icon-left>input
+	padding-left: 3rem!important
+.with-icon-right>input
+	padding-right: 3rem!important
+
+input[type="color"]
+	-webkit-appearance: none
+	border: none
+	border-radius: var(--radius)
+	width: 32px
+	height: 32px
+input[type="color"]::-webkit-color-swatch-wrapper
+	padding: 0
+input[type="color"]::-webkit-color-swatch
+	border: none
+	border-radius: var(--radius)
+textarea,
+input:not([type=color]):not([type=file]):not([type=button]):not([type=range]):not([type=radio]):not([type=checkbox]),
+select
+	display: block
+	width: 100%
+	font-size: .875rem
+	line-height: 1.25rem
+	height: 2.6rem
+	padding: .6rem
+	border: .1rem solid var(--input-brd)
+	border-radius: var(--radius)
+	background-color: var(--input-bg)
+	background-clip: padding-box
+	color: var(--input-txt)
+	&:focus
+		outline: 0
+		border-color: var(--primary)
+		box-shadow: 0 0 0 5px var(--primary-h)
+	&[disabled]
+		cursor: not-allowed
+	&:disabled,
+	&[readonly]
+		background-color: var(--input-brd)
+		opacity: 1
+select
+	-webkit-appearance: none
+	-moz-appearance: none
+	background-image: linear-gradient(45deg, transparent 50%, var(--input-brd) 50%), linear-gradient(134deg, var(--input-brd) 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc)
+	background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 10px) calc(1em + 2px), calc(100% - 2.5em) 0.5em
+	background-size: 10px 10px, 10px 10px, 2px 1.6rem
+	background-repeat: no-repeat
+
+fieldset
+	margin-top: 1rem
+	border-radius: var(--radius)
+	border: .1rem solid var(--input-brd)
+
+@supports (-webkit-appearance: none) or (-moz-appearance: none)
+	input[type="checkbox"],
+	input[type="radio"]
+		--active: var(--primary)
+		--active-inner: #fff
+		--focus: 3px var(--primary-h)
+		--border: var(--input-brd)
+		--border-hover: var(--primary)
+		--background: var(--bg)
+		-webkit-appearance: none
+		-moz-appearance: none
+		height: 1.3rem
+		outline: none
+		display: inline-block
+		vertical-align: top
+		position: relative
+		margin: 0
+		cursor: pointer
+		border: .1rem solid var(--bc, var(--border))
+		background: var(--b, var(--background))
+		transition: background 0.3s, border-color 0.3s, box-shadow 0.2s
+
+	input[type="checkbox"]:after,
+	input[type="radio"]:after
+		content: ""
+		display: block
+		left: .1rem
+		top: .1rem
+		position: absolute
+		transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),opacity var(--d-o, 0.2s)
+
+	input[type="checkbox"]:checked,
+	input[type="radio"]:checked
+		--b: var(--active)
+		--bc: var(--active)
+		--d-o: 0.3s
+		--d-t: 0.6s
+		--d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2)
+
+	input[type="checkbox"]:disabled,
+	input[type="radio"]:disabled
+		--b: var(--disabled)
+		cursor: not-allowed
+		opacity: 0.9
+
+	input[type="checkbox"]:disabled:checked,
+	input[type="radio"]:disabled:checked
+		--b: var(--disabled-inner)
+		--bc: var(--border)
+
+	input[type="checkbox"]:disabled + label,
+	input[type="radio"]:disabled + label
+		cursor: not-allowed
+
+	input[type="checkbox"]:hover:not(:checked):not(:disabled),
+	input[type="radio"]:hover:not(:checked):not(:disabled)
+		--bc: var(--border-hover)
+
+	input[type="checkbox"]:focus,
+	input[type="radio"]:focus
+		--bc: var(--active)
+		box-shadow: 0 0 0 var(--focus)
+
+	input[type="checkbox"]:not(.toggle),
+	input[type="radio"]:not(.toggle)
+		width: 1.3rem
+
+	input[type="checkbox"]:not(.toggle):after,
+	input[type="radio"]:not(.toggle):after
+		opacity: var(--o, 0)
+
+	input[type="checkbox"]:not(.toggle):checked,
+	input[type="radio"]:not(.toggle):checked
+		--o: 1
+
+	input[type="checkbox"] + label,
+	input[type="radio"] + label
+		line-height: 1.3rem
+		display: inline-block
+		vertical-align: top
+		cursor: pointer
+		margin-left: .3rem
+
+	input[type="checkbox"]:not(.toggle)
+		border-radius: .4rem
+
+	input[type="checkbox"]:not(.toggle):after
+		width: .4rem
+		height: .6rem
+		border: .2rem solid var(--active-inner)
+		border-top: 0
+		border-left: 0
+		left: .4rem
+		top: .2rem
+		transform: rotate(var(--r, 20deg))
+
+	input[type="checkbox"]:not(.toggle):checked
+		--r: 43deg
+
+	input[type="checkbox"].toggle
+		width: 38px
+		border-radius: 11px
+
+	input[type="checkbox"].toggle:after
+		left: .1rem
+		top: .1rem
+		border-radius: 50%
+		width: .9rem
+		height: .9rem
+		background: var(--ab, var(--border))
+		transform: translateX(var(--x, 0))
+
+	input[type="checkbox"].toggle:checked
+		--ab: var(--active-inner)
+		--x: 1.1rem
+
+	input[type="checkbox"].toggle:disabled:not(:checked):after
+		opacity: 0.6
+
+	input[type="radio"]
+		border-radius: 50%
+
+	input[type="radio"]:after
+		width: .9rem
+		height: .9rem
+		border-radius: 50%
+		background: var(--active-inner)
+		opacity: 0
+		transform: scale(var(--s, 0.7))
+
+	input[type="radio"]:checked
+		--s: 0.8

@@ -1,0 +1,5 @@
+/* ------------ Alignement Utility ------------ */
+$alignments: 'center' 'left' 'right'
+@each $align in $alignments
+    ._ta-#{$align}
+        text-align: #{$align} !important

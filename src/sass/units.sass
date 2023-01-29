@@ -1,0 +1,107 @@
+@charset "utf-8"
+
+@import "./settings/variables"
+
+html
+	--primary: var(--green) !important
+	--primary-h: var(--green-h)!important
+	--primary-l: var(--green-l)!important
+	--primary-d: var(--green-d)!important
+
+@import "./theme/light"
+@import "./theme/dark"
+
+@import "./base/basic"
+@import "./extra/aos"
+@import "./elements/typography"
+
+@import "./layout/navbar"
+@import "./layout/header"
+@import "./layout/container"
+@import "./layout/grid"
+@import "./layout/footer"
+
+@import "./elements/button"
+@import "./components/card"
+@import "./elements/form"
+@import "./components/modal"
+@import "./components/gotop_link"
+@import "./extra/tooltip"
+@import "./extra/alert"
+
+@import "./utilities/alignment"
+@import "./utilities/background"
+@import "./utilities/position"
+@import "./utilities/border"
+@import "./utilities/display"
+@import "./utilities/margin"
+@import "./utilities/general"
+@import "./utilities/padding"
+@import "./utilities/spacer"
+@import "./utilities/text"
+
+
+main
+	padding-top: 6rem
+
+.test
+	display: inline-flex
+	position: relative
+	align-items: center
+	justify-content: center
+	margin: 0
+	font-size: 18px
+	font-weight: bold
+	border-radius: var(--radius)
+	text-align: center
+	box-sizing: border-box
+	background-color: var(--green)
+	width: 100%
+.test.t-vh
+	height: calc( var(--100vh) / 2 )
+.test.t-svh
+	height: calc( var(--100svh) / 2 )
+.test.t-dvh
+	height: calc( var(--100dvh) / 2 )
+.test.t-lvh
+	height: calc( var(--100lvh) / 2 )
+.test.t-p
+	height: calc( var(--100p) / 2 )
+
+.vtests
+	gap: .5rem
+.vtests>*
+	padding: 0!important
+div.test span
+	position: absolute
+	top: 50%
+	width: 30vh
+	transform: rotate(-90deg)
+
+.template
+	display: none
+
+div.bar
+	width: 20px
+	top: 0px
+
+.bar > .text
+	box-sizing: border-box
+	width: 65vh
+	background-color: white
+	opacity: 0.7
+	height: 20px
+	padding: 0px 80px
+	transform: rotate(90deg)
+	transform-origin: left bottom 0
+
+.innerHeightLog
+	position: fixed
+	display: flex
+	gap: 0.5rem
+	align-items: center
+	top: 80px
+	left: 0.5rem
+	padding: 0.5rem
+	background-color: var(--green)
+	border-radius: var(--radius)

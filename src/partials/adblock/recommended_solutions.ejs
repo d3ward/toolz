@@ -1,0 +1,79 @@
+<div class="dialog" id="dlg_faq" data-a11y-dialog="dlg_faq"
+	aria-labelledby="dlg_faq-title"
+	aria-hidden="true">
+		<div class="dialog-overlay" data-a11y-dialog-hide></div>
+      <div class="dialog-content">
+        <header>
+          <h3 id="dlg_faq-title">FAq</h3>
+          <button data-a11y-dialog-hide><svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        </header>
+        <section>
+			<div>
+                <h2>How does it work?</h2>
+                <b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b><br><br>
+                When you load this website, it will try to establishes connections in pure
+                Javascript with different urls (advertising, analytics, and social ads services) from a list.<br>
+                For each host , if the connection fails
+                it means that the latter has been blocked by your ad-blocker (e.g. uBlock Origin , Blokada , AdGuard ,
+                in-built adblocker) or DNS provider
+
+                <h3>How do I know if my ad blocker is working?</h3>
+                <p>
+                    Use uBlock Origin
+				Free. Open source. For users by users.
+
+				It's a fantastic blocker, not just for ads but for privacy and malware protection too. And unlike
+				Adblock/Adblock Plus, it comes with a filter list that doesn't make allowances for certain ads. (Note:
+				We are not affiliated with uBlock Origin.)
+
+				When you use this site to test your browser for ad blocking, we'll recommend uBlock Origin if it's
+				available for your browser. If it's not, we'll recommend another ad blocker.
+                </p>
+
+
+                <h2>How i can have 100%</h2>
+                <p>
+                    You can reach 100 % using a small list that I created to cover all the tests in this website
+                    <button
+                        onclick="copyToClip('https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt')">Copy
+                        d3Host list to clipboard</button>
+                    <br><br>
+                    <b class="_txt-green"><i>This list and this test is a beta project
+                            I do not take any responsibility if something stops working , example Social apps or your
+                            favorite blog
+                        </i></b>
+                </p>
+
+                <h3>Suggested solutions for ad-blocking</h3>
+                <div>
+                    <a href="https://adguard.com/" class="btn">Adguard</a>
+                    <a href="https://blokada.org/" class="btn">Blokada </a>
+                    <a href="https://ublockorigin.com/" class="btn">uBlock Origin </a>
+                    <a href="https://nextdns.io/" class="btn">Next DNS</a>
+                </div>
+                <p>
+
+                <h3>Other tools to test your adblock </h3>
+                <div class="cnt2">
+                    <a href="https://ipleak.net/" class="btn">IP Leak </a>
+                    <a href="https://blockads.fivefilters.org/" class="btn">Block Ads Test </a>
+                    <a href="https://panopticlick.eff.org/" class="btn">Browser Fingerprint by EEF</a>
+                    <a href="http://raymondhill.net/ublock/tiles1.html" class="btn">Adblock Testing by
+                        raymondhill</a>
+                    <a href="http://raymondhill.net/ublock/popup.html" class="btn">Popup Blocker by
+                        raymondhill</a>
+                </div>
+                </p>
+            </div>
+        </section>
+        <footer>
+			<button  data-a11y-dialog-hide>
+				Cancel
+			  </button>
+          <button class="btn-p" data-a11y-dialog-hide>
+            Ok
+          </button>
+		 
+        </footer>
+      </div>
+    </div>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('partials/head.ejs',
+		{
+			page:'adblock',
+			title:'Test Ad Block - Toolz',
+			description:'Looking for an easy way to check the efficiency of your ad blocker?'+
+			'Toolz offers a simple and beautiful design test that allows you to quickly and easily test the performance of'+
+			'current ad/content blocker solution. Intuitive interface makes it easy to navigate and use,and the beautiful design ensures that the experience is visually appealing. '+
+			'With just a click, you can see how well the ad blocker is working and make any necessary adjustments.',
+			url: 'd3ard.github.io/toolz/adblock',
+			preview_thumbnail:'https://d3ward.github.io/toolz/src/preview_toolz.png',
+			keywords:'adblock,test adblock,analytics,trackers,ads,cosmetic filter,ublock, ublockorigin,adblock extension,script loading'
+		}) %>
+	<body class="_overflowhidden">
+		<%- include('partials/adblock/report.ejs') %>
+		<%- include('partials/support_me.ejs') %>
+		<%- include('partials/adblock/faq.ejs') %>
+		<%- include('partials/adblock/logs.ejs') %>
+		<%- include('partials/header.ejs', {page:'adblock'}) %>
+		<main>
+			<button data-a11y-dialog-show="dlg_reports"> <svg xmlns="http://www.w3.org/2000/svg"
+					class="icon icon-tabler icon-tabler-list-details" width="24" height="24" viewBox="0 0 24 24"
+					stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+					<path d="M13 5h8"></path>
+					<path d="M13 9h5"></path>
+					<path d="M13 15h8"></path>
+					<path d="M13 19h5"></path>
+					<rect x="3" y="4" width="6" height="6" rx="1"></rect>
+					<rect x="3" y="14" width="6" height="6" rx="1"></rect>
+				</svg> Reports</button>
+			<button data-a11y-dialog-show="dlg_faq">
+				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square" width="24" height="24"
+					viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+					stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+					<line x1="12" y1="8" x2="12.01" y2="8"></line>
+					<rect x="4" y="4" width="16" height="16" rx="2"></rect>
+					<polyline points="11 12 12 12 12 16 13 16"></polyline>
+				</svg> Open FAQ</button>
+				<button data-a11y-dialog-show="dlg_logs">
+					<svg xmlns="http://www.w3.org/2000/svg"
+					class="icon icon-tabler icon-tabler-message-2-code" width="24" height="24" viewBox="0 0 24 24"
+					stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+					<path
+						d="M12 20l-3 -3h-2a3 3 0 0 1 -3 -3v-6a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-2l-3 3">
+					</path>
+					<path d="M10 9l-2 2l2 2"></path>
+					<path d="M14 9l2 2l-2 2"></path>
+				</svg> Logs</button>
+			<section>
+				<div class="grid">
+					<div>
+						<div class="lt_wrap">
+							<div class="lt_particles">
+								<div class="p1">
+									<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' stroke-width='2'
+										stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+										<path d='M0 0h24v24H0z' stroke='none' />
+										<path d='M18 8a3 3 0 010 6M10 8v11a1 1 0 01-1 1H8a1 1 0 01-1-1v-5' />
+										<path
+											d='M12 8h0l4.524-3.77A.9.9 0 0118 4.922v12.156a.9.9 0 01-1.476.692L12 14H4a1 1 0 01-1-1V9a1 1 0 011-1h8' />
+									</svg>
+								</div>
+								<div class="p2">
+									<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' stroke-width='2'
+										stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+										<path d='M0 0h24v24H0z' stroke='none' />
+										<path d='M4 18V6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2z' />
+										<path d='M7 14l3-3 2 2 3-3 2 2' />
+									</svg>
+								</div>
+								<div class="p3">
+									<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' stroke-width='2'
+										stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+										<path d='M0 0h24v24H0z' stroke='none' />
+										<circle cx='12' cy='5' r='2' />
+										<circle cx='5' cy='19' r='2' />
+										<circle cx='19' cy='19' r='2' />
+										<circle cx='12' cy='14' r='3' />
+										<path d='M12 7v4M6.7 17.8l2.8-2M17.3 17.8l-2.8-2' />
+									</svg>
+								</div>
+								<div class="p4">
+									<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' stroke-width='2'
+										stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+										<path d='M0 0h24v24H0z' stroke='none' />
+										<path
+											d='M9 9V8a3 3 0 016 0v1M8 9h8a6 6 0 011 3v3a5 5 0 01-10 0v-3a6 6 0 011-3M3 13h4M17 13h4M12 20v-6M4 19l3.35-2M20 19l-3.35-2M4 7l3.75 2.4M20 7l-3.75 2.4' />
+									</svg>
+								</div>
+								<div class="p5">
+									<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' stroke-width='2'
+										stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+										<path d='M0 0h24v24H0z' stroke='none' />
+										<path d='M12 4L4 8l8 4 8-4-8-4M4 12l8 4 8-4M4 16l8 4 8-4' />
+									</svg>
+								</div>
+		
+							</div>
+							<div class="lt_cwrap">
+								<div class="lt_circle">
+									<div class="lt_wave"></div>
+								</div>
+								<div class="lt_value">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="_f-center">
+						<button id="start_test"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-refresh-dot" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+							<path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4"></path>
+							<path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"></path>
+							<circle cx="12" cy="12" r="1"></circle>
+						 </svg> &nbsp; Re-test</button>
+					</div>
+				</div>
+			</section>
+			<section class="page-active">
+		
+		
+				<div class="grid">
+					<div>
+						<hr>
+					</div>
+					<div>
+						<div class="test_card">
+							<h5>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke-width="2"
+									stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M0 0h24v24H0z" stroke="none" />
+									<circle cx="12" cy="12" r="2" />
+									<path
+										d="M22 12c-2.667 4.667-6 7-10 7s-7.333-2.333-10-7c2.667-4.667 6-7 10-7s7.333 2.333 10 7" />
+								</svg>
+								&nbsp; Cosmetic Filter
+							</h5>
+							<div class="row keep-width">
+								<div>
+									<div id="ct_static" class="test_block _aos">
+										<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' stroke-width='2'
+											stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'>
+											<path d='M0 0h24v24H0z' stroke='none' />
+											<rect x='3' y='5' width='18' height='14' rx='2' />
+											<path d='M7 15v-4a2 2 0 014 0v4m-4-2h4m6-4v6h-1.5a1.5 1.5 0 111.5-1.5' />
+										</svg>
+										&nbsp;
+										Static Ad
+										<div id="cts_test" class="adsbox banner_ads"></div>
+									</div>
+								</div>
+								<div>
+									<div id="ct_dynamic" class="test_block _aos">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+											stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+											stroke-linejoin="round">
+											<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+											<path d="M11.933 5h-6.933v16h13v-8"></path>
+											<path d="M14 17h-5"></path>
+											<path d="M9 13h5v-4h-5z"></path>
+											<path d="M15 5v-2"></path>
+											<path d="M18 6l2 -2"></path>
+											<path d="M19 9h2"></path>
+										</svg>
+										&nbsp;
+										Dynamic Ad
+										<div id="ctd_test"></div>
+									</div>
+								</div>
+		
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="test_card">
+							<h5>
+								<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-script" width="24"
+									height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+									stroke-linecap="round" stroke-linejoin="round">
+									<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+									<path
+										d="M17 20h-11a3 3 0 0 1 0 -6h11a3 3 0 0 0 0 6h1a3 3 0 0 0 3 -3v-11a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v8">
+									</path>
+								</svg>
+								&nbsp; Ad Scripts Loading
+							</h5>
+							<div class="grid">
+								<div>
+									<div id="sfa_1" class="test_block _aos">
+										ads.js
+										<script src="./js/widget/ads.js"></script>
+									</div>
+								</div>
+								<div>
+									<div id="sfa_2" class="test_block _aos">
+										pagead.js
+										<script src="./js/pagead.js"></script>
+									</div>
+								</div>
+								<div>
+									<div id="sfa_3" class="test_block _aos">
+										partner.ads.js
+										<script src="./js/partner.ads.js"></script>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<hr>
+					</div>
+					<div>
+						<div id="test" class="test_wrapper"></div>
+					</div>
+				</div>
+			</section>
+			</div>
+		</main>
+		<%- include('partials/footer.ejs') %>
+		<%- include('partials/gotop.ejs') %>
+	</body>
+</html>

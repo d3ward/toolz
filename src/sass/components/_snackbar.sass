@@ -1,0 +1,24 @@
+.snackbar 
+    position: fixed
+    top: -100%
+    left: 50%
+    transform: translateX(-50%)
+    background-color: var(--blue)
+    border-radius: 10px
+    width: 400px
+    font-size: 16px
+    transition: all .5s
+    z-index: 9999
+    box-shadow: var(--shadow)
+
+@media (max-width: 424px)
+    .snackbar 
+        width: calc(100% - 20px)
+
+.snackbar.success
+    background: var(--blue)
+
+.snackbar div
+    color: var(--txt-on-blue)
+    padding: 20px 30px
+    text-align: center

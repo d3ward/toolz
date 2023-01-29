@@ -1,0 +1,148 @@
+/* ------------------ Buttons ----------------- */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"],
+input[type="file"]::file-selector-button,
+.btn
+	display: inline-flex
+	align-items: center
+	text-align: center
+	justify-content: center
+	cursor: pointer
+	gap: .4rem
+	line-height: 1.5
+	font-size: 1rem
+	border: 0.1rem solid var(--btn-brd)
+	border-radius: var(--btn-radius)
+	color: var(--btn-txt)
+	background-color: var(--btn-bg)
+	min-width: 100px
+	cursor: pointer
+	padding: .4rem .7rem
+	margin: .4rem
+	outline-color: var(--primary)
+	box-shadow: 0 0 0 var(--btn-hs) var(--btn-f)
+	transition: all 145ms ease
+	user-select: none
+	-webkit-touch-callout: none
+	touch-action: manipulation
+	-webkit-tap-highlight-color: transparent
+input[type="file"]::file-selector-button
+	margin: 0 .4rem 0 0
+input[type="file"]
+	inline-size: 100%
+	padding: 0
+	max-inline-size: max-content
+	background-color: var(--btn-brd)
+	border: 0
+input[type="file"]::file-selector-button
+	height: 2.6rem
+	border-radius: var(--btn-radius) 0 0 var(--btn-radius)
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.btn
+	height: 2.6rem
+	&:active,&:focus
+		--btn-hs: .3rem
+	&:focus-visible
+		outline: .1rem solid var(--btn-brd)
+		outline-offset: .1rem
+	&:not(active):hover
+		--btn-bg: var(--btn-bg-h)
+		--btn-brd: var(--btn-bg-h)
+		
+	&.mw-auto
+		min-width: unset
+	&[disabled]
+		opacity: .5
+		pointer-events: none
+		cursor: not-allowed
+	&.pill
+		--btn-radius: 2rem
+	&.outline
+		--btn-bg: transparent
+		color: var(--btn-brd)
+		border: 2px solid var(--focus)
+	&.outline:hover
+		color: var(--btn-txt)
+	&.fill:hover
+		background: var(--btn-bg)
+		color: var(--btn-txt)!important
+	&>svg
+		display: block
+		height: 1.5rem
+		width: 1.5rem
+		max-height: 1.7rem
+
+.group-btn
+	position: relative
+	display: flex
+	margin: .5rem
+	>*
+		margin: 0
+		border-radius: 0
+		&:first-child
+			border-top-left-radius: var(--btn-radius)
+			border-bottom-left-radius: var(--btn-radius)
+			border-right: 1px
+		&:last-child
+			border-top-right-radius: var(--btn-radius)
+			border-bottom-right-radius: var(--btn-radius)
+			border-left: 1px
+.btn-transparent,._btn_t
+	--btn-f: var(--primary-l)
+	--btn-bg-h: transparent
+	--btn-bg: transparent
+.btn-inverted
+	--btn-f: var(--txt-h)
+	--btn-brd: var(--txt)
+	--btn-bg-h: var(--txt-l)
+	--btn-bg: var(--txt)
+	--btn-txt: var(--bg)
+.btn-black
+	--btn-f: var(--black-h)
+	--btn-brd: var(--black)
+	--btn-bg-h: var(--black-l)
+	--btn-bg: var(--black-l)
+	--btn-txt: var(--white)
+.btn-white
+	--btn-f: var(--white-h)
+	--btn-brd: var(--white-l)
+	--btn-bg-h: var(--white-l)
+	--btn-bg: var(--white-l)
+	--btn-txt: var(--black)
+.btn-p
+	--btn-f: var(--primary-h)
+	--btn-brd: var(--primary)
+	--btn-bg: var(--primary)
+	--btn-bg-h: var(--primary-l)
+	--btn-txt: var(--txt-on-p)
+.btn-blue
+	--btn-f: var(--blue-h)
+	--btn-brd: var(--blue)
+	--btn-bg: var(--blue)
+	--btn-bg-h: var(--blue-l)
+	--btn-txt: var(--txt-on-blue)
+.btn-red,[type="reset"]
+	--btn-f: var(--red-h)
+	--btn-txt: var(--txt-on-red)
+	--btn-brd: var(--red)
+	--btn-bg-h: var(--red-l)
+	--btn-bg: var(--red)
+.btn-green
+	--btn-f: var(--green-h)
+	--btn-brd: var(--green)
+	--btn-bg-h: var(--green-l)
+	--btn-bg: var(--green)
+	--btn-txt: var(--txt-on-green)
+.btn-orange
+	--btn-f: var(--orange-h)
+	--btn-brd: var(--orange)
+	--btn-bg-h: var(--orange-l)
+	--btn-bg: var(--orange)
+	--btn-txt: var(--txt-on-orange)

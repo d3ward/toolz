@@ -1,0 +1,36 @@
+/* ----------- Grid columns and row ----------- */
+.grid
+	flex-wrap: wrap
+.row ,.grid
+	display: flex
+	align-items: stretch
+	&>[class*="col"],&>div
+		flex: 0 0 auto
+		flex-shrink: 0
+		width: 100%
+		max-width: 100%
+		padding: .5rem
+	&>[class*="col"]>*,&>div>*
+		margin: 0
+	.col,&>div
+		flex: 1 1 100%
+	.col-2
+		width: calc((100%) / (12/2))
+	.col-3
+		width: calc((100%) / (12/3))
+	.col-4
+		width: calc((100%) / (12/4))
+	.col-6
+		width: calc((100%) / (12/6))
+	.col-8
+		width: calc((100%) / (12/8))
+	.col-9
+		width: calc((100%) / (12/9))
+	.col-10
+		width: calc((100%) / (12/10))
+
+@media (max-width:40em)
+	.row:not(.keep-width),.grid:not(.keep-width)
+		flex-direction: column !important
+		&>[class*="col"],&>div
+			width: auto

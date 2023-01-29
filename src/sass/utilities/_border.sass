@@ -1,0 +1,13 @@
+
+/* -------------- Border Utility -------------- */
+._radius
+    border-radius: var(--radius) !important
+._radiusless
+    border-radius: 0 !important
+._brd-none
+    border: none !important    
+/* ----------- Border Color Utility ----------- */
+$brdcolors: ("primary","txt-r","txt","black","white","blue","bg","bg2","bg3","red","green","yellow","orange")!default
+@each $var in $brdcolors
+    ._brd-#{$var}
+        border: 2px solid var(--#{$var})!important

@@ -1,0 +1,389 @@
+@charset "utf-8"
+
+@import "./settings/variables"
+@import "./theme/light"
+@import "./theme/dark"
+
+@import "./base/basic"
+@import "./extra/aos"
+@import "./elements/typography"
+
+@import "./layout/navbar"
+@import "./layout/aside"
+@import "./layout/header"
+@import "./layout/container"
+@import "./layout/grid"
+@import "./layout/footer"
+
+@import "./elements/button"
+@import "./components/snackbar"
+@import "./components/card"
+@import "./elements/form"
+@import "./components/dropdown"
+@import "./components/modal"
+@import "./components/gotop_link"
+@import "./components/details"
+@import "./elements/table"
+@import "./components/tabs"
+@import "./extra/tooltip"
+@import "./extra/pages"
+@import "./extra/alert"
+
+@import "./utilities/alignment"
+@import "./utilities/background"
+@import "./utilities/position"
+@import "./utilities/border"
+@import "./utilities/display"
+@import "./utilities/margin"
+@import "./utilities/general"
+@import "./utilities/padding"
+@import "./utilities/spacer"
+@import "./utilities/text"
+footer>div
+	background: var(--bg2)
+.card
+	border-radius: 12px
+	box-shadow: none
+	background: var(--bg2)
+.test_block,.test>span
+	border-radius: var(--radius)
+	position: relative
+	min-height: 45px
+	width: 100%
+.test_block
+	text-align: center
+	margin: 0
+	display: flex
+	align-items: center
+	justify-content: center
+	color: #fff
+#test_log
+	height: 200px
+	overflow-y: auto
+	flex-wrap: nowrap
+.test_wrapper
+	display: flex
+	flex-direction: column
+	gap: .5rem
+.test_wrapper>div,.test_card
+	padding: .5rem
+	border-radius: 12px
+	background: var(--bg2)
+
+.test_wrapper svg,.test_card svg
+	height: 1.5rem
+.test_wrapper>div>h5,.test_card>h5,.test>span
+	text-align: center
+	margin: 0
+	display: flex
+	align-items: center
+	justify-content: center
+.test
+	background-color: var(--red)
+	color: #fff
+	border-radius: 8px
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	text-align: center
+	margin: 10px
+	height: 100%
+	min-height: 45px
+	transition: all 1s
+
+.test>div>div
+	height: 45px
+	width: 100%
+	border-radius: 8px
+	background: var(--bg2)
+	color: var(--txt)
+	padding: 0.5rem
+	display: flex
+	align-items: center
+	gap: 0.5rem
+.test>div>div>span
+	white-space: nowrap
+	overflow: hidden
+	text-overflow: ellipsis
+	width: 100%
+	text-align: left
+.test>div
+	position: relative
+	user-select: none
+	display: none
+	flex-direction: column
+	overflow-x: auto
+	gap: 0.5rem
+	padding: 0.5rem
+	width: 100%
+	white-space: nowrap
+	color: #000
+.test.show>div
+	display: flex
+
+#test2
+	background-color: green
+	color: white
+	display: inline-block
+	height: 50px
+	text-align: center
+	vertical-align: top
+	width: 100%
+#test2>div
+	height: 50px
+	overflow: hidden
+	width: 100%
+
+#results
+	background-color: white
+	border: 1px solid #ddd
+	bottom: 1em
+	font-size: 24px
+	left: 1em
+	padding: 4px 8px
+	position: fixed
+.epic_path1, .epic_path
+	fill: var(--primary)
+.epic
+	width: 250px
+	height: 250px
+
+.lt_wrap
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+.lt_particles
+	width: 15rem
+	height: 7.5rem
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: row
+	grid-gap: 16px
+.start .p1
+	animation: p1 1.6s cubic-bezier(.2, .4, .35, 1) .2s infinite backwards
+.start .p2
+	animation: p2 1.5s cubic-bezier(.2, .4, .35, 1) .2s infinite backwards
+.start .p3
+	animation: p3 1.6s cubic-bezier(.2, .4, .35, 1) .2s infinite backwards
+.start .p4
+	animation: p4 1.4s cubic-bezier(.2, .4, .35, 1) .2s infinite backwards
+.start .p5
+	animation: p5 1.2s cubic-bezier(.2, .4, .35, 1) .2s infinite backwards
+.p1,.p2,.p3,.p4,.p5
+	padding: 4px
+	height: 32px
+	width: 32px
+	border-radius: 50%
+.p1
+	background: var(--blue-h)
+	color: var(--blue)
+.p2
+	background: var(--green-h)
+	color: var(--green)
+.p3
+	background: var(--orange-h)
+	color: var(--orange)
+.p5
+	background: var(--purple-h)
+	color: var(--purple)
+.p4
+	background: var(--red-h)
+	color: var(--red)
+@keyframes p1
+	0%
+		transform: translateY(0px) translateX(-20px) scale(.8)
+		opacity: 0
+	50%
+		transform: translateY(40px) translateX(0px) scale(1)
+		opacity: 1
+		animation-timing-function: cubic-bezier(1, .4, .35, 1)
+	75%
+		transform: translateY(100px) translateX(10px) scale(1)
+		opacity: 0
+	100%
+		transform: translateY(0px) translateX(-10px) scale(.8)
+		opacity: 0
+
+@keyframes p2
+	0%
+		transform: translateY(0px) translateX(-10px) scale(.8)
+		opacity: 0
+	50%
+		transform: translateY(50px) translateX(0px) scale(1)
+		opacity: 1
+		animation-timing-function: cubic-bezier(1, .4, .35, 1)
+	75%
+		transform: translateY(80px) translateX(5px) scale(1)
+		opacity: 0
+	100%
+		transform: translateY(0px) translateX(5px) scale(.8)
+		opacity: 0
+
+@keyframes p3
+	0%
+		transform: translateY(0px) scale(.8) rotate(45deg)
+		opacity: 0
+	50%
+		transform: translateY(40px) scale(1) rotate(0deg)
+		opacity: 1
+		animation-timing-function: cubic-bezier(1, .4, .35, 1)
+	75%
+		transform: translateY(100px) scale(1) rotate(0deg)
+		opacity: 0
+	100%
+		transform: translateY(0px) scale(.8) rotate(0deg)
+		opacity: 0
+
+@keyframes p4
+	0%
+		transform: translateY(0px) translateX(10px) scale(.8)
+		opacity: 0
+	50%
+		transform: translateY(60px) translateX(0px) scale(1)
+		opacity: 1
+		animation-timing-function: cubic-bezier(1, .4, .35, 1)
+	75%
+		transform: translateY(100px) translateX(0px) scale(1)
+		opacity: 0
+	100%
+		transform: translateY(0px) translateX(10px) scale(.8)
+		opacity: 0
+
+@keyframes p5
+	0%
+		transform: translateY(0px) translateX(20px) scale(.8)
+		opacity: 0
+	50%
+		transform: translateY(50px) translateX(0px) scale(1)
+		opacity: 1
+		animation-timing-function: cubic-bezier(1, .4, .35, 1)
+	75%
+		transform: translateY(90px) translateX(0px) scale(1)
+		opacity: 0
+	100%
+		transform: translateY(0px) translateX(20px) scale(.8)
+		opacity: 0
+:root
+	--liquid-percentage: 50%
+	--liquid-title: "BAD"
+	--liquid-color: var(--red)
+
+.r_wrap
+	width: 100%
+	display: flex
+	flex-direction: column
+	gap: .5rem
+	&>div
+		background: var(--bg2)
+		border-radius: 8px
+		padding: .5rem
+		display: flex
+
+.r_wrap textarea
+	min-height: 150px
+	margin-top: 0.5rem
+
+.lt_template .lt_circle
+	width: 60px
+	height: 60px
+.template_wrap.row>div
+	justify-content: center
+	gap: .5rem
+	align-items: center
+	display: flex
+	flex-direction: column
+.lt_value_2
+	border-radius: 8px
+	color: var(--white)
+	padding: .4rem
+
+.lt_cwrap
+	position: relative
+	border-radius: 50rem
+	background-color: var(--bg2)
+
+.lt_circle
+	width: 200px
+	height: 200px
+	background: var(--liquid-color)
+	border: 3px solid var(--black-h)
+	border-radius: 50%
+	overflow: hidden
+	z-index: 5
+
+.lt_wave
+	position: relative
+	top: var(--liquid-percentage)
+	width: 100%
+	height: 100%
+	background: var(--liquid-color)
+	border-radius: 50%
+	transition: 3s
+
+.lt_wave:before,
+.lt_wave:after
+	content: ''
+	position: absolute
+	width: 200%
+	height: 200%
+	left: 50%
+	-webkit-transform: translate(-50%, -75%)
+	transform: translate(-50%, -75%)
+	background: #000
+
+.lt_wave:before
+	border-radius: 45%
+	background: var(--bg2)
+	animation: animate_lt_wave 6s linear infinite
+
+.lt_wave:after
+	border-radius: 40%
+	opacity: .5
+	background: var(--bg2)
+	animation: animate_lt_wave 10s linear infinite
+
+@keyframes animate_lt_wave
+	0%
+		transform: translate(-50%, -75%) rotate(0deg)
+	100%
+		transform: translate(-50%, -75%) rotate(360deg)
+
+.lt_cwrap .lt_value
+	position: absolute
+	height: 100%
+	right: 0
+	bottom: 0
+	width: 100%
+
+.lt_cwrap .lt_value::after,
+.lt_cwrap .lt_value::before
+	content: var(--liquid-title)
+	position: inherit
+	left: 100%
+	margin-left: 10px
+	bottom: calc(45% - var(--liquid-percentage))
+	transform: translateY(50%)
+	background: var(--liquid-color)
+	color: var(--white)
+	padding: 10px
+	font-size: 20px
+	font-weight: bold
+	border-radius: 8px
+	transition: 3s
+
+.lt_cwrap .lt_value::after
+	content: ''
+	border: 12px solid transparent
+	border-right-color: var(--liquid-color)
+	padding: 0
+	border-radius: 0
+	background: transparent
+	transform: translate(-78%, 50%)
+
+#dlg_faq p
+	-moz-osx-font-smoothing: grayscale
+	-webkit-font-smoothing: antialiased!important
+	margin-top: 1rem

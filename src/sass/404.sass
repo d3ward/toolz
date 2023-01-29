@@ -1,0 +1,70 @@
+@charset "utf-8"
+
+@import "./settings/variables"
+
+@import "./theme/light"
+@import "./theme/dark"
+$or-50: '#ffffff'
+$or-100: '#fdddde'
+$or-200: '#fababd'
+$or-300: '#f8989d'
+$or-400: '#f5757c'
+$or-500: '#f3535b'
+$or-600: '#d94148'
+$or-700: '#bf2f36'
+$or-800: '#a41c23'
+$or-900: '#8a0a10'
+html
+	--primary: #{$or-500}!important
+	--primary-h: #{$or-100}!important
+	--primary-l: #{$or-400}!important
+	--primary-d: #{$or-800}!important
+
+[data-theme="dark"]
+	--primary: #{$or-500} !important
+	--primary-h: #{$or-800}!important
+	--primary-l: #{$or-400}!important
+	--primary-d: #{$or-600}!important
+
+body
+	background-color: #f7b42c
+	background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%)
+	background-size: 400% 100%
+	height: auto
+    
+@import "./base/basic"
+@import "./extra/aos"
+@import "./elements/typography"
+
+@import "./layout/navbar"
+@import "./layout/aside"
+@import "./layout/header"
+@import "./layout/container"
+@import "./layout/grid"
+@import "./layout/footer"
+
+@import "./elements/button"
+@import "./components/card"
+@import "./elements/form"
+@import "./components/dropdown"
+@import "./components/modal"
+@import "./components/gotop_link"
+@import "./elements/code"
+@import "./elements/figure"
+@import "./components/details"
+@import "./elements/table"
+@import "./components/tabs"
+@import "./extra/tooltip"
+@import "./extra/wave"
+@import "./extra/pages"
+@import "./extra/alert"
+
+@import "./utilities/alignment"
+@import "./utilities/background"
+@import "./utilities/border"
+@import "./utilities/display"
+@import "./utilities/margin"
+@import "./utilities/general"
+@import "./utilities/padding"
+@import "./utilities/spacer"
+@import "./utilities/text"

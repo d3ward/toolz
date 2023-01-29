@@ -1,0 +1,65 @@
+
+.dialog,.dialog-overlay
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+.dialog
+	display: flex
+	z-index: 50
+	padding: .5rem
+.dialog[aria-hidden='true']
+	display: none
+.dialog-overlay
+	background: rgba(43, 46, 56, 0.9)
+
+.dialog-content
+	z-index: 50
+	margin: auto
+	display: flex
+	flex-direction: column
+	align-items: start
+	max-block-size: 80vh
+	max-block-size: 80dvb
+	border-radius: 0.5em
+	width: 100%
+	max-width: 42rem
+	overflow: hidden
+	background: var(--bg)
+	*
+		margin: 0
+	>*
+		padding: 1rem
+	>footer
+		border-top: 1px solid var(--brd)
+		display: flex
+		gap: .5rem
+	>header
+		border-bottom: 1px solid var(--brd)
+		display: flex
+		align-items: center
+		justify-content: space-between
+	>section
+		width: 100%
+@keyframes dialog-fade-in
+	from
+		opacity: 0
+
+@keyframes dialog-slide-up
+	from
+		transform: translateY(10%)
+.dialog-sm .dialog-content
+	max-width: 320px
+.dialog-lg .dialog-content
+	max-width: unset
+.dialog-overlay
+	animation: dialog-fade-in 200ms both
+.dialog-content
+	animation: dialog-fade-in 400ms 200ms both, dialog-slide-up 400ms 200ms both
+
+@media (prefers-reduced-motion: reduce)
+	.dialog-close
+		transition: none
+	.dialog-content
+		animation: none

@@ -1,0 +1,41 @@
+/* ------------------- Tabs ------------------- */
+.tabs
+	display: flex
+	flex-wrap: wrap
+	background: var(--bg-tabs)
+	box-shadow: var(--shadow)
+	border: 2px solid var(--brd-tabs)
+	border-radius: var(--radius)
+	margin-bottom: .5rem
+	> label
+		order: 1
+		display: flex
+		justify-content: center
+		align-items: center
+		padding: 0.7rem 1rem
+		margin-right: 0.2rem
+		cursor: pointer
+		border-bottom: 0.2rem solid transparent
+		font-weight: bold
+		transition: background ease 0.2s
+	> div
+		width: 100%
+		display: none
+		padding: 1rem
+		order: 99
+		border-radius: var(--radius)
+		flex-grow: 1
+		& > *
+			margin: .4rem
+	& > input
+		display: none
+		&:checked
+			& + label.ghost
+				background: var(--bg-btn)!important
+				color: var(--txt-btn)!important
+				border-color: var(--bg-btn)!important
+			& + label
+				border-color: var(--brd-tabs-l)
+				& + div
+					display: block
+	

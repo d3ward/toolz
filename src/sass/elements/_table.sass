@@ -1,0 +1,59 @@
+/* ------------------- Table ------------------ */
+table
+	width: 100%
+	padding: 0
+	border-collapse: collapse
+	overflow: hidden
+	border-radius: var(--radius)
+	box-shadow: var(--fake-brd-table)
+	caption
+		padding: 0.5rem 1.5rem
+	thead
+		background: var(--primary)
+		color: var(--txt-r)
+		th:first-child
+			border-top-left-radius: var(--radius)
+		th:last-child
+			border-top-right-radius: var(--radius)
+	td,th
+		padding: 0.5rem 1.5rem
+	tr
+		text-align: left
+		padding: .3rem
+		border-bottom: 1px solid var(--brd-table)
+		&:hover
+			background-color: var(--bbg-table-hover)
+		&:last-child
+			border-bottom: none
+		&:first-child
+			& > th
+				border-bottom: 1px solid var(--primary)
+	tfoot
+		border-top: 1px solid var(--brd-table)
+@media (max-width: 500px)
+	table, thead, tbody, th, td, tr
+		display: block
+	table
+		border: 0
+		thead
+			display: none
+		caption
+			display: block
+			font-size: 1.3em
+		tr
+			border-bottom: 2px solid var(--brd-table)
+			display: block
+		td
+			border-bottom: 1px solid var(--brd-table)
+			font-size: .8em
+			display: flex
+			align-items: center
+		td::before
+			content: attr(data-column)
+			text-align: left
+			width: 45%
+			font-weight: bold
+			text-transform: uppercase
+		td:last-child
+			border-bottom: 0
+		

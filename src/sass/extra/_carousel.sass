@@ -1,0 +1,30 @@
+.carousel
+	position: relative
+	.slide
+		display: none
+	.prev-btn,.next-btn
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+	.prev-btn
+		left: 0
+	.next-btn
+		right: 0
+		.numbertext
+			color: #f2f2f2
+			font-size: 12px
+			padding: 8px 12px
+			position: absolute
+			top: 0
+			right: 0
+		.dot
+			cursor: pointer
+			height: 15px
+			width: 15px
+			margin: 0 2px
+			background-color: var(--bg2)
+			border-radius: 50%
+			display: inline-block
+			transition: background-color 0.6s ease
+	.active,.dot:hover
+		background-color: var(--primary)

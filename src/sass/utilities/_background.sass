@@ -1,0 +1,11 @@
+/* --------- Background Color Utility --------- */
+$bgcolors: ("primary","black","white","blue","red","green","yellow","orange")!default
+@each $var in $bgcolors
+    ._bg-#{$var}
+        background-color: var(--#{$var})!important
+._bg
+    background-color: var(--bg)!important
+._bg2
+    background-color: var(--bg2)!important
+._bg3
+    background-color: var(--bg3)!important

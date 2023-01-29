@@ -1,0 +1,22 @@
+
+/* -------------- Margin Utility ------------- */
+
+$sizes: ( "0": 0,"05": 0.5rem,"1": 1rem,"2": 2rem,"3": 3rem,"4": 4rem,"5": 5rem)
+
+@each $size, $value in $sizes
+	._m-#{$size}
+		margin: $value
+	._mt-#{$size}
+		margin-top: $value
+	._mr-#{$size}
+		margin-right: $value
+	._mb-#{$size}
+		margin-bottom: $value
+	._ml-#{$size}
+		margin-left: $value
+	._mx-#{$size}
+		margin-left: $value
+		margin-right: $value
+	._my-#{$size}
+		margin-left: $value
+		margin-right: $value

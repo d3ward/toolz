@@ -1,0 +1,13 @@
+/* ------------ Text Color Utility ------------ */
+$txtcolors: ("primary","black","white","blue","red","green","yellow","orange")!default
+@each $var in $txtcolors
+    ._txt-#{$var}
+        color: var(--#{$var})!important
+._txt
+    color: var(--txt)!important
+._txt-r
+    color: var(--txt-r)!important
+._mono
+    font-family: monospace
+._txt-center
+    text-align: center

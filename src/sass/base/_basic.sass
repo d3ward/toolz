@@ -1,0 +1,56 @@
+/* ---------------- Basic resets and improvements --------------- */
+*,
+*::before,
+*::after
+	box-sizing: border-box
+*:focus:not(:focus-visible)
+	outline: 0
+*:focus-visible
+	outline: .1rem solid var(--focus)
+	outline-offset: .1rem
+html
+	text-rendering: optimizeLegibility
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif
+	font-size: 12pt
+	color: var(--txt)
+	background: var(--bg)
+body
+	min-height: 100vh
+	display: flex
+	flex-flow: wrap column
+	gap: .5rem
+	align-items: center
+	justify-content: center
+	
+	@media (prefers-reduced-motion: no-preference)
+		scroll-behavior: smooth
+body,html
+	margin: 0
+	padding: 0
+header>*,main>*,footer>*
+	max-width: 60rem
+
+ol, ul
+	list-style: none
+	display: flex
+	flex-direction: column
+	gap: .3rem
+.keep-ls
+	list-style: unset
+img
+	max-width: 100%
+
+table
+	border-collapse: collapse
+
+textarea
+	white-space: revert
+
+hr
+	border: 0
+	border-top: .1rem solid var(--brd)
+
+section
+	overflow-x: hidden
+	display: flex
+	flex-direction: column
