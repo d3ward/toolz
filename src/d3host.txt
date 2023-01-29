@@ -53,7 +53,6 @@ ff02::3 ip6-allhosts
 
 #FastClick
 0.0.0.0 fastclick.com
-0.0.0.0 fastclick.net
 0.0.0.0 media.fastclick.net
 0.0.0.0 cdn.fastclick.net
 
@@ -89,12 +88,10 @@ ff02::3 ip6-allhosts
 0.0.0.0 cms.analytics.yahoo.com
 0.0.0.0 opus.analytics.yahoo.com
 0.0.0.0 sp.analytics.yahoo.com
-0.0.0.0 comet.yahoo.com
 0.0.0.0 log.fc.yahoo.com
 0.0.0.0 ganon.yahoo.com
 0.0.0.0 gemini.yahoo.com
 0.0.0.0 beap.gemini.yahoo.com
-0.0.0.0 geo.yahoo.com
 0.0.0.0 marketingsolutions.yahoo.com
 0.0.0.0 pclick.yahoo.com
 0.0.0.0 analytics.query.yahoo.com
@@ -103,7 +100,6 @@ ff02::3 ip6-allhosts
 0.0.0.0 bats.video.yahoo.com
 0.0.0.0 visit.webhosting.yahoo.com
 0.0.0.0 ads.yap.yahoo.com
-0.0.0.0 m.yap.yahoo.com
 0.0.0.0 partnerads.ysm.yahoo.com
 
 # Yandex
@@ -145,8 +141,6 @@ ff02::3 ip6-allhosts
 0.0.0.0 ssl.google-analytics.com
 
 #Hotjar
-0.0.0.0 api-hotjar.com
-0.0.0.0 hotjar-analytics.com
 0.0.0.0 hotjar.com
 0.0.0.0 static.hotjar.com
 
@@ -192,8 +186,6 @@ ff02::3 ip6-allhosts
 #Twitter
 0.0.0.0 ads-api.twitter.com
 0.0.0.0 advertising.twitter.com
-0.0.0.0 ads-twitter.com
-0.0.0.0 static.ads-twitter.com
 
 #LinkedIn
 0.0.0.0 ads.linkedin.com
@@ -222,55 +214,6 @@ ff02::3 ip6-allhosts
 
 #YouTube
 0.0.0.0 ads.youtube.com
-0.0.0.0 youtube.cleverads.vn
-
-##Mix ====================
-# Yahoo
-0.0.0.0 ads.yahoo.com
-0.0.0.0 adserver.yahoo.com
-0.0.0.0 global.adserver.yahoo.com
-0.0.0.0 us.adserver.yahoo.com
-0.0.0.0 adspecs.yahoo.com
-0.0.0.0 advertising.yahoo.com
-0.0.0.0 analytics.yahoo.com
-0.0.0.0 analytics.query.yahoo.com
-0.0.0.0 ads.yap.yahoo.com
-0.0.0.0 m.yap.yahoo.com
-0.0.0.0 partnerads.ysm.yahoo.com
-
-# Yandex
-0.0.0.0 appmetrica.yandex.com
-0.0.0.0 redirect.appmetrica.yandex.com
-0.0.0.0 19534.redirect.appmetrica.yandex.com
-0.0.0.0 3.redirect.appmetrica.yandex.com
-0.0.0.0 30488.redirect.appmetrica.yandex.com
-0.0.0.0 4.redirect.appmetrica.yandex.com
-0.0.0.0 report.appmetrica.yandex.net
-0.0.0.0 extmaps-api.yandex.net
-0.0.0.0 analytics.mobile.yandex.net
-0.0.0.0 banners.mobile.yandex.net
-0.0.0.0 banners-slb.mobile.yandex.net
-0.0.0.0 startup.mobile.yandex.net
-0.0.0.0 offerwall.yandex.net
-0.0.0.0 adfox.yandex.ru
-0.0.0.0 matchid.adfox.yandex.ru
-0.0.0.0 adsdk.yandex.ru
-0.0.0.0 an.yandex.ru
-0.0.0.0 redirect.appmetrica.yandex.ru
-0.0.0.0 awaps.yandex.ru
-0.0.0.0 awsync.yandex.ru
-0.0.0.0 bs.yandex.ru
-0.0.0.0 bs-meta.yandex.ru
-0.0.0.0 clck.yandex.ru
-0.0.0.0 informer.yandex.ru
-0.0.0.0 kiks.yandex.ru
-0.0.0.0 grade.market.yandex.ru
-0.0.0.0 mc.yandex.ru
-0.0.0.0 metrika.yandex.ru
-0.0.0.0 click.sender.yandex.ru
-0.0.0.0 share.yandex.ru
-0.0.0.0 yandexadexchange.net
-0.0.0.0 mobile.yandexadexchange.net
 
 ##OEM ====================
 
@@ -297,14 +240,12 @@ ff02::3 ip6-allhosts
 0.0.0.0 globalapi.ad.xiaomi.com
 0.0.0.0 www.cdn.ad.xiaomi.com
 0.0.0.0 tracking.miui.com
-0.0.0.0 sa.api.intl.miui.com
 0.0.0.0 tracking.miui.com
 0.0.0.0 tracking.intl.miui.com
 0.0.0.0 tracking.india.miui.com
 0.0.0.0 tracking.rus.miui.com
 
 #OnePlus
-0.0.0.0 analytics.oneplus.cn
 0.0.0.0 click.oneplus.cn
 0.0.0.0 click.oneplus.com
 0.0.0.0 open.oneplus.net
@@ -330,7 +271,6 @@ ff02::3 ip6-allhosts
 0.0.0.0 samsung-com.112.2o7.net
 0.0.0.0 business.samsungusa.com
 0.0.0.0 analytics.samsungknox.com
-0.0.0.0 bigdata.ssp.samsung.com
 0.0.0.0 analytics-api.samsunghealthcn.com
 0.0.0.0 config.samsungads.com
 

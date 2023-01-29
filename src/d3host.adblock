@@ -32,7 +32,6 @@
 
 !FastClick
 ||fastclick.com^
-||fastclick.net^
 
 !Amazon
 ||adtago.s3.amazonaws.com^
@@ -51,11 +50,9 @@
 ||adspecs.yahoo.com^
 ||advertising.yahoo.com^
 ||analytics.yahoo.com^
-||comet.yahoo.com^
 ||log.fc.yahoo.com^
 ||ganon.yahoo.com^
 ||gemini.yahoo.com^
-||geo.yahoo.com^
 ||marketingsolutions.yahoo.com^
 ||pclick.yahoo.com^
 ||analytics.query.yahoo.com^
@@ -64,7 +61,6 @@
 ||bats.video.yahoo.com^
 ||visit.webhosting.yahoo.com^
 ||ads.yap.yahoo.com^
-||m.yap.yahoo.com^
 ||partnerads.ysm.yahoo.com^
 
 ! Yandex
@@ -98,8 +94,6 @@
 ||google-analytics.com^
 
 !Hotjar
-||api-hotjar.com^
-||hotjar-analytics.com^
 ||hotjar.com^
 
 !MouseFlow
@@ -138,7 +132,6 @@
 !Twitter
 ||ads-api.twitter.com^
 ||advertising.twitter.com^
-||ads-twitter.com^
 
 !LinkedIn
 ||ads.linkedin.com^
@@ -167,12 +160,6 @@
 
 !YouTube
 ||ads.youtube.com^
-||youtube.cleverads.vn^
-
-!#Mix ====================
-! Yahoo
-
-! Yandex
 
 !#OEM ====================
 
@@ -198,13 +185,11 @@
 ||globalapi.ad.xiaomi.com^
 ||www.cdn.ad.xiaomi.com^
 ||tracking.miui.com^
-||sa.api.intl.miui.com^
 ||tracking.intl.miui.com^
 ||tracking.india.miui.com^
 ||tracking.rus.miui.com^
 
 !OnePlus
-||analytics.oneplus.cn^
 ||click.oneplus.cn^
 ||click.oneplus.com^
 ||open.oneplus.net^
@@ -229,7 +214,6 @@
 ||samsung-com.112.2o7.net^
 ||business.samsungusa.com^
 ||analytics.samsungknox.com^
-||bigdata.ssp.samsung.com^
 ||analytics-api.samsunghealthcn.com^
 
 !Apple

@@ -24,7 +24,6 @@ const dataOEM = {
         "https://globalapi.ad.xiaomi.com",
         "https://www.cdn.ad.xiaomi.com",
         "https://tracking.miui.com",
-        "https://sa.api.intl.miui.com",
         "https://tracking.miui.com",
         "https://tracking.intl.miui.com",
         "https://tracking.india.miui.com",
@@ -43,7 +42,6 @@ const dataOEM = {
         "https://logbak.hicloud.com"
     ],
     "OnePlus": [
-        "https://analytics.oneplus.cn",
         "https://click.oneplus.cn",
         "https://click.oneplus.com",
         "https://open.oneplus.net"
@@ -57,7 +55,6 @@ const dataOEM = {
         "https://samsung-com.112.2o7.net",
         "https://business.samsungusa.com",
         "https://analytics.samsungknox.com",
-        "https://bigdata.ssp.samsung.com",
         "https://analytics-api.samsunghealthcn.com",
         "https://config.samsungads.com"
     ],
@@ -78,7 +75,7 @@ const data = {
         "Media.net": ["https://static.media.net", "https://media.net", "https://adservetx.media.net"],
         "Doubleclick.net": ["https://doubleclick.net/", "https://ad.doubleclick.net/","https://static.doubleclick.net","https://m.doubleclick.net",
     "https://mediavisor.doubleclick.net"],
-        "FastClick": ["https://fastclick.com","https://fastclick.net","https://media.fastclick.net/", "https://cdn.fastclick.net/"],
+        "FastClick": ["https://fastclick.com"],
         "Amazon": ["https://adtago.s3.amazonaws.com","https://analyticsengine.s3.amazonaws.com",
         "https://advice-ads.s3.amazonaws.com","https://affiliationjs.s3.amazonaws.com","https://advertising-api-eu.amazon.com",
         "https://amazonaax.com","https://amazonclix.com",
@@ -87,7 +84,7 @@ const data = {
     },
     "Analytics": { //Analytics
         "Google Analytics": ["https://google-analytics.com","https://ssl.google-analytics.com"],
-        "Hotjar": ["https://hotjar.com", "https://static.hotjar.com","https://api-hotjar.com","https://hotjar-analytics.com"],
+        "Hotjar": ["https://hotjar.com", "https://static.hotjar.com"],
         "MouseFlow": ["https://mouseflow.com/", "https://a.mouseflow.com"],
         "FreshMarketer": "https://freshmarketer.com/",
         "Luckyorange": ["https://luckyorange.com","https://cdn.luckyorange.com", "https://w1.luckyorange.com",
@@ -103,7 +100,7 @@ const data = {
     "Social Trackers": {
         "Facebook": ["https://pixel.facebook.com","https://ads.facebook.com","https://an.facebook.com"
         ],
-        "Twitter": ["https://ads-twitter.com", "https://static.ads-twitter.com","https://ads-api.twitter.com","https://advertising.twitter.com"
+        "Twitter": ["https://ads-api.twitter.com","https://advertising.twitter.com"
         ],
         "LinkedIn": ["https://ads.linkedin.com", "https://analytics.pointdrive.linkedin.com"],
         "Pinterest": ["https://ads.pinterest.com", "https://log.pinterest.com", "https://ads-dev.pinterest.com",
@@ -112,7 +109,7 @@ const data = {
         "Reddit": ["https://ads.reddit.com", "https://d.reddit.com", "https://rereddit.com",
             "https://events.redditmedia.com"
         ],
-        "YouTube": ["https://ads.youtube.com", "https://youtube.cleverads.vn"]
+        "YouTube": ["https://ads.youtube.com"]
         ,
         "TikTok": ["https://analytics.tiktok.com", "https://ads.tiktok.com", "https://analytics-sg.tiktok.com","https://ads-sg.tiktok.com"]
     },
