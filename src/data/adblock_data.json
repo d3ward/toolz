@@ -111,7 +111,6 @@
 		],
 		"Reddit": [
 			"events.reddit.com",
-			"rereddit.com",
 			"events.redditmedia.com"
 		],
 		"YouTube": [
@@ -139,7 +138,7 @@
 			"partnerads.ysm.yahoo.com",
 			"log.fc.yahoo.com",
 			"gemini.yahoo.com",
-			"marketingsolutions.yahoo.com"
+			"adtech.yahooinc.com"
 		],
 		"Yandex": [
 			"extmaps-api.yandex.net",
@@ -200,7 +199,6 @@
 			"analytics-api.samsunghealthcn.com"
 		],
 		"Apple": [
-			"iad.apple.com",
 			"advertising.apple.com",
 			"tr.iadsdk.apple.com",
 			"metrics.icloud.com"

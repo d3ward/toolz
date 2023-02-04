@@ -92,6 +92,7 @@ async function check_url(url, div, parent, k1, k2) {
 	hostDiv.onclick = () => {
 		copyToClip(url)
 	}
+	checkURLStatus('https://' + url)
 	div.appendChild(hostDiv)
 	try {
 		await fetch('https://' + url, config, timeout, parent, div)
@@ -105,6 +106,7 @@ async function check_url(url, div, parent, k1, k2) {
 				//Response was received --> ads are NOT blocked
 			})
 			.catch((error) => {
+				console.log(error)
 				console.log(error.message)
 				hostDiv.innerHTML = icons['v'] + '<span>' + url + '</span>'
 				abt.blocked += 1
@@ -129,7 +131,38 @@ function collapse_category(cc, c) {
 			})
 	})
 }
-
+function checkURLStatus(url) {
+	/*
+	const xhr = new XMLHttpRequest();
+	xhr.open("HEAD", url, true);
+	xhr.send();
+  
+	xhr.onreadystatechange = function() {
+	  if (xhr.readyState === XMLHttpRequest.DONE && xhr.status != 0) {
+		console.log(`HTTP status code: ${xhr.status}`);
+	  }
+	};
+	fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .catch(error => {
+    console.error("There was a problem with the fetch operation:", error);
+  });*/
+  const img = new Image();
+  img.addEventListener("error", function (event) {
+	if(event.type === 'error' && event.message.indexOf('Failed to load resource: net::ERR_BLOCKED_BY_CLIENT')!== -1){
+	  console.log(true)
+	}else{
+		console.log(false);
+	}
+  });
+  img.src = url;
+  
+  }
 // Function to fetch all the tests
 async function fetchTests() {
 	let fetches = []
@@ -172,6 +205,7 @@ async function fetchTests() {
 			if (Object.prototype.hasOwnProperty.call(category, keyC)) {
 				var value = category[keyC]
 				for (let i = 0; i < value.length; i++) {
+					
 					fetches.push(
 						check_url(value[i], dw, div, key, keyC).then(() => {
 							set_liquid()

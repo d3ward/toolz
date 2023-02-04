@@ -6,7 +6,7 @@
 # Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
 
 # This list cover all the tests on https://d3ward.github.io/toolz/adblock# Type : Stable
-# Entries : 135
+# Entries : 133
 # Updated On: 4/2/2023
 # Created by: d3ward
 
@@ -126,7 +126,6 @@
 
 # --- Reddit
 0.0.0.0 events.reddit.com
-0.0.0.0 rereddit.com
 0.0.0.0 events.redditmedia.com
 
 # --- YouTube
@@ -155,7 +154,7 @@
 0.0.0.0 partnerads.ysm.yahoo.com
 0.0.0.0 log.fc.yahoo.com
 0.0.0.0 gemini.yahoo.com
-0.0.0.0 marketingsolutions.yahoo.com
+0.0.0.0 adtech.yahooinc.com
 
 # --- Yandex
 0.0.0.0 extmaps-api.yandex.net
@@ -217,7 +216,6 @@
 0.0.0.0 analytics-api.samsunghealthcn.com
 
 # --- Apple
-0.0.0.0 iad.apple.com
 0.0.0.0 advertising.apple.com
 0.0.0.0 tr.iadsdk.apple.com
 0.0.0.0 metrics.icloud.com
