@@ -78,7 +78,6 @@ async function check_url(url, div, parent, k1, k2) {
 	hostDiv.onclick = () => {
 		copyToClip(url)
 	}
-	checkURLStatus('https://' + url)
 	div.appendChild(hostDiv)
 	try {
 		await fetch('https://' + url, config, timeout, parent, div)
