@@ -28,40 +28,34 @@
 				</header>
 				<section>
 					<div>
-						<p>Over time this test has been used by millions.
-							While most of the test are done by users using the most popular solutions like ublock-Origin, Blokada, NextDNS and Adguard,
-							there are some false positive results due to limitation of platforms/browser/solution
-							The test uses pure javascript , and due to it's limits and how some solutions works there may be issues .
-							So here a list of situations where the test works, provide a valid report of the result and where the test might have some issue 
+						<p>Over time, this test has been used by +1million of users. Thank you !<br>
+							While most of the tests are performed by users using the most popular solutions such as ublock-Origin, Blokada, NextDNS and Adguard,
+							there are some false positives due to platform/browser/solution limitations<br>
+							The test uses pure Javascript, and due to it's limitations and the way some solutions work, there may be problems.<br>
+							So here is a list of situations where the test works, and gives a valid report of the result
 						</p>
-						<b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b><br><br>
+						<b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b><br>
+						<b class="_txt-blue"><i>A configuration with multiple solutions at the same time can lead to false positives.</i></b><br>
 						
 						<table class="rwd-table">
 							<tr>
-							  <th>Solution</th>
-							  <th>Type</th>
+							  <th>Solution(type)</th>
 							  <th>no-issues</th>
-							  <th>issues</th>
 							</tr>
 							<% for (let key in adblock_compatibility) { %>
 								<% value = adblock_compatibility[key]%>
 								<% if (key != 'default') { %>
 									<tr>
-										<td data-th="Solution"><%= key %></td>
-										<td data-th="type"><%= value.type%></td>
-										<td data-th="no-issues">
-											<ul>
-												<% for (let b in value["no-issues"]) { %>
-												<li><%= value["no-issues"][b] %></li>
-												<% } %>
-											</ul>
+										<td data-th="Solution">
+											<%- value.icon %>
+											<%= key %> (<%= value.type%>)
 										</td>
-										<td data-th="issues">
-											<ul>
-												<% for (let c in value.issues) { %>
-												<li><%= value.issues[c] %></li>
+										<td data-th="no-issues">
+											<div class="badges">
+												<% for (let b in value["no-issues"]) { %>
+												<span><%= value["no-issues"][b] %></span>
 												<% } %>
-											</ul>
+												</div>
 										</td>
 									</tr>
 								<% } %>

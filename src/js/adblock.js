@@ -143,22 +143,31 @@ async function fetchTests() {
 		var category = data[key]
 		var total_hosts = 0
 		abt.hosts[key] = {}
+		var dd_1 = document.createElement('div')
+		dd_1.classList.add('col-6')
+		var dd_2 = document.createElement('div')
+		dd_2.classList.add('col-6')
+		
+		catEl.appendChild(dd_2)
+		catEl.appendChild(dd_1)
+		var i=0
 		Object.keys(category).forEach((keyC) => {
 			var testInfo = document.createElement('div')
 			var tests_count = 0
-			const dd = document.createElement('div')
-			dd.classList.add('col-6')
 			var div = document.createElement('div')
 			const dw = document.createElement('div')
 			div.classList.add('test')
-
 			div.id = keyC
 			div.style.background = 'var(--green)'
 			let tc = icons[keyC] != undefined ? (icons[keyC] + "&nbsp") : ""
 			div.innerHTML = "<span class='test_collapse'>" + tc + keyC + '</span>'
 			div.appendChild(dw)
-			dd.appendChild(div)
-			catEl.appendChild(dd)
+			if(i%2==0){
+				dd_2.appendChild(div)
+			}else{
+				dd_1.appendChild(div)
+			}
+			i++
 			Object.assign(abt.hosts[key], { [keyC]: {} })
 			if (Object.prototype.hasOwnProperty.call(category, keyC)) {
 				var value = category[keyC]
@@ -287,24 +296,20 @@ function stopAdBlockTesting() {
 	lt_cwrap.classList.remove('start')
 	console.log(abt)
 }
-function saveNote(t, i) {
-	console.log(i, t.value)
-
-}
 function render_tests() {
-	console.log(reports)
 	var r_wrap = document.querySelector('.r_wrap')
 	r_wrap.innerHTML = ''
 	reports.forEach((r, index) => {
 		var div = document.createElement('div')
-		div.className = "row"
+		div.className = "col-6"
 		var date = new Date(r["time"]);
 		let d = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() +
 			" " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-		var abt = reports[index].abt
+		var abt_r = reports[index].abt
+		var t = "<span>Total : "+abt_r.total+"</span><br><span>"+icons["x"]+" "+abt_r.notblocked+" not blocked</span><span>"+icons["v"]+" "+abt_r.blocked+" blocked</span>"
+		div.innerHTML = "<div class='card'><div>"+t+"<br><h6>" + d + "</h6></div><div><button class='btn-blue'>" + icons["download"] + "</button></div></div>"
+		r_wrap.insertBefore(div,r_wrap.children[0])
 
-		div.innerHTML = "<div><h5>" + d + "</h5></div><div><button class='btn-blue'>" + icons["download"] + "</button> <button class='btn-red'>" + icons["delete"] + index + "</button></div>"
-		r_wrap.appendChild(div)
 	})
 }
 //Browser : \nOS : \nAd-block : \nDNS : \nVPN :
@@ -332,8 +337,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	new gotop()
 	new aos()
 	const ct = document.querySelector("#collapse_status")
-
-
 	ct.checked = collapseStatus
 	ct.addEventListener("change", () => {
 		console.log(collapseStatus)

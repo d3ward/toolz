@@ -19,6 +19,13 @@
 			"m.doubleclick.net",
 			"mediavisor.doubleclick.net"
 		],
+		"Adcolony":[
+			"ads30.adcolony.com",
+			"adc3-launch.adcolony.com",
+			"events3alt.adcolony.com",
+			"wd.adcolony.com",
+			"events3alt.adcolony.com"
+		],
 		"Media.net": [
 			"static.media.net",
 			"media.net",
@@ -27,6 +34,7 @@
 	},
 	"Analytics": {
 		"Google Analytics": [
+			"app-measurement.com",
 			"analytics.google.com",
 			"click.googleanalytics.com",
 			"google-analytics.com",
@@ -85,9 +93,10 @@
 			"an.facebook.com"
 		],
 		"Twitter": [
+			"analytics.twitter.com",
 			"static.ads-twitter.com",
 			"ads-api.twitter.com",
-			"advertising.twitter.com"
+			"ads.twitter.com"
 		],
 		"LinkedIn": [
 			"ads.linkedin.com",
@@ -141,6 +150,12 @@
 			"advertising.yandex.ru",
 			"offerwall.yandex.net",
 			"adfox.yandex.ru"
+		],
+		"Unity":[
+			"auction.unityads.unity3d.com",
+			"webview.unityads.unity3d.com",
+			"config.unityads.unity3d.com",
+			"adserver.unityads.unity3d.com"
 		]
 	},
 	"OEMs": {
@@ -153,7 +168,6 @@
 		"Xiaomi": [
 			"api.ad.xiaomi.com",
 			"data.mistat.xiaomi.com",
-			"data.mistat.intl.xiaomi.com",
 			"data.mistat.india.xiaomi.com",
 			"data.mistat.rus.xiaomi.com",
 			"sdkconfig.ad.xiaomi.com",

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font list</title>
-    <meta name="description" content="List fonts available in the browser ">
-
-    
-</head>
+<%- include('partials/head.ejs',
+		{
+			page:'fontlist',
+			title:'Fontlist - Toolz',
+			description:'Discover the full list of fonts available on your browser with this comprehensive font testing page.',
+			url: 'd3ard.github.io/toolz/fontlist',
+			preview_thumbnail:'https://d3ward.github.io/toolz/src/preview_toolz.png',
+			keywords:'fonts, available, browser, test, list, web design, typography, font styles, font families, system fonts, custom fonts'
+		}) %>
 
 <body>
     <%- include('partials/header.ejs', {page:'fontlist'}) %>
     <main>
         <div class="hero ">
-            <p>Show a list of available fonts in your browser</p>
+            <p>View a list of available fonts in your browser</p>
         </div>
         <div id="flist">
 

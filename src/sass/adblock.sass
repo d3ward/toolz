@@ -69,10 +69,22 @@ footer>div
 	display: flex
 	flex-direction: column
 	gap: .5rem
+.test_wrapper .col-6
+	gap: 1rem
+	display: flex
+	flex-direction: column
 .test_wrapper>div,.test_card
 	padding: .5rem
 	border-radius: 12px
 	background: var(--bg2)
+.badges
+	display: flex
+	flex-wrap: wrap
+	gap: .5rem
+	>*
+		padding: 10px
+		background: var(--bg2)
+		border-radius: var(--radius)
 
 .test_wrapper svg,.test_card svg
 	height: 1.5rem
@@ -274,20 +286,10 @@ footer>div
 	--liquid-title: "BAD"
 	--liquid-color: var(--red)
 
-.r_wrap
-	width: 100%
+.r_wrap span
 	display: flex
-	flex-direction: column
-	gap: .5rem
-	&>div
-		background: var(--bg2)
-		border-radius: 8px
-		padding: .5rem
-		display: flex
-
-.r_wrap textarea
-	min-height: 150px
-	margin-top: 0.5rem
+	align-items: center
+	gap: 0.5rem
 
 .lt_template .lt_circle
 	width: 60px

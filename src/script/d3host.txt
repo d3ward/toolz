@@ -6,7 +6,7 @@
 # Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
 
 # This list cover all the tests on https://d3ward.github.io/toolz/adblock# Type : Stable
-# Entries : 125
+# Entries : 135
 # Updated On: 4/2/2023
 # Created by: d3ward
 
@@ -31,6 +31,13 @@
 0.0.0.0 m.doubleclick.net
 0.0.0.0 mediavisor.doubleclick.net
 
+# --- Adcolony
+0.0.0.0 ads30.adcolony.com
+0.0.0.0 adc3-launch.adcolony.com
+0.0.0.0 events3alt.adcolony.com
+0.0.0.0 wd.adcolony.com
+0.0.0.0 events3alt.adcolony.com
+
 # --- Media.net
 0.0.0.0 static.media.net
 0.0.0.0 media.net
@@ -40,6 +47,7 @@
 #========= Analytics ==========
 
 # --- Google Analytics
+0.0.0.0 app-measurement.com
 0.0.0.0 analytics.google.com
 0.0.0.0 click.googleanalytics.com
 0.0.0.0 google-analytics.com
@@ -100,9 +108,10 @@
 0.0.0.0 an.facebook.com
 
 # --- Twitter
+0.0.0.0 analytics.twitter.com
 0.0.0.0 static.ads-twitter.com
 0.0.0.0 ads-api.twitter.com
-0.0.0.0 advertising.twitter.com
+0.0.0.0 ads.twitter.com
 
 # --- LinkedIn
 0.0.0.0 ads.linkedin.com
@@ -158,6 +167,12 @@
 0.0.0.0 offerwall.yandex.net
 0.0.0.0 adfox.yandex.ru
 
+# --- Unity
+0.0.0.0 auction.unityads.unity3d.com
+0.0.0.0 webview.unityads.unity3d.com
+0.0.0.0 config.unityads.unity3d.com
+0.0.0.0 adserver.unityads.unity3d.com
+
 
 #============ OEMs ============
 
@@ -170,7 +185,6 @@
 # --- Xiaomi
 0.0.0.0 api.ad.xiaomi.com
 0.0.0.0 data.mistat.xiaomi.com
-0.0.0.0 data.mistat.intl.xiaomi.com
 0.0.0.0 data.mistat.india.xiaomi.com
 0.0.0.0 data.mistat.rus.xiaomi.com
 0.0.0.0 sdkconfig.ad.xiaomi.com
