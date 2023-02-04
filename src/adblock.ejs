@@ -14,6 +14,74 @@
 		}) %>
 	<body class="_overflowhidden">
 		<%- include('partials/adblock/report.ejs') %>
+		<% const adblock_compatibility = require('./data/adblock_compatibility.json') %>
+		<div class="dialog" id="dlg_compatibility" data-a11y-dialog="dlg_compatibility" aria-labelledby="dlg_compatibility-title" aria-hidden="true">
+			<div class="dialog-overlay" data-a11y-dialog-hide></div>
+			<div class="dialog-content">
+				<header>
+					<h3 id="dlg_compatibility-title">Compatibility Table</h3>
+					<button data-a11y-dialog-hide><svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor"
+							viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+							</path>
+						</svg></button>
+				</header>
+				<section>
+					<div>
+						<p>Over time this test has been used by millions.
+							While most of the test are done by users using the most popular solutions like ublock-Origin, Blokada, NextDNS and Adguard,
+							there are some false positive results due to limitation of platforms/browser/solution
+							The test uses pure javascript , and due to it's limits and how some solutions works there may be issues .
+							So here a list of situations where the test works, provide a valid report of the result and where the test might have some issue 
+						</p>
+						<b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b><br><br>
+						
+						<table class="rwd-table">
+							<tr>
+							  <th>Solution</th>
+							  <th>Type</th>
+							  <th>no-issues</th>
+							  <th>issues</th>
+							</tr>
+							<% for (let key in adblock_compatibility) { %>
+								<% value = adblock_compatibility[key]%>
+								<% if (key != 'default') { %>
+									<tr>
+										<td data-th="Solution"><%= key %></td>
+										<td data-th="type"><%= value.type%></td>
+										<td data-th="no-issues">
+											<ul>
+												<% for (let b in value["no-issues"]) { %>
+												<li><%= value["no-issues"][b] %></li>
+												<% } %>
+											</ul>
+										</td>
+										<td data-th="issues">
+											<ul>
+												<% for (let c in value.issues) { %>
+												<li><%= value.issues[c] %></li>
+												<% } %>
+											</ul>
+										</td>
+									</tr>
+								<% } %>
+							<% } %>
+							
+						  </table>
+		
+					</div>
+				</section>
+				<footer>
+					<button data-a11y-dialog-hide>
+						Cancel
+					</button>
+					<button class="btn-p" data-a11y-dialog-hide>
+						Ok
+					</button>
+		
+				</footer>
+			</div>
+		</div>
 		<%- include('partials/support_me.ejs') %>
 		<%- include('partials/adblock/faq.ejs') %>
 		<%- include('partials/adblock/logs.ejs') %>
@@ -39,6 +107,15 @@
 					<rect x="4" y="4" width="16" height="16" rx="2"></rect>
 					<polyline points="11 12 12 12 12 16 13 16"></polyline>
 				</svg> Open FAQ</button>
+				<button data-a11y-dialog-show="dlg_compatibility">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square" width="24" height="24"
+						viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+						stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<line x1="12" y1="8" x2="12.01" y2="8"></line>
+						<rect x="4" y="4" width="16" height="16" rx="2"></rect>
+						<polyline points="11 12 12 12 12 16 13 16"></polyline>
+					</svg> Check Compatibility</button>
 				<button data-a11y-dialog-show="dlg_logs">
 					<svg xmlns="http://www.w3.org/2000/svg"
 					class="icon icon-tabler icon-tabler-message-2-code" width="24" height="24" viewBox="0 0 24 24"
@@ -119,9 +196,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="page-active">
-		
-		
+			<section class="page-active" id="adb_test">
 				<div class="grid">
 					<div>
 						<hr>
@@ -188,19 +263,19 @@
 								&nbsp; Ad Scripts Loading
 							</h5>
 							<div class="grid">
-								<div>
+								<div class="col-4">
 									<div id="sfa_1" class="test_block _aos">
 										ads.js
 										<script src="./js/widget/ads.js"></script>
 									</div>
 								</div>
-								<div>
+								<div class="col-4">
 									<div id="sfa_2" class="test_block _aos">
 										pagead.js
 										<script src="./js/pagead.js"></script>
 									</div>
 								</div>
-								<div>
+								<div class="col-4">
 									<div id="sfa_3" class="test_block _aos">
 										partner.ads.js
 										<script src="./js/partner.ads.js"></script>
@@ -211,6 +286,12 @@
 					</div>
 					<div>
 						<hr>
+					</div>
+					<div>
+						<input class="toggle" id="collapse_status" name="toggle" type="checkbox"
+													checked="checked"><label for="collapse_status">
+													Collapse all</label><br>
+													<small>Click a category to collapse the url hosts</small>
 					</div>
 					<div>
 						<div id="test" class="test_wrapper"></div>

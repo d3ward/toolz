@@ -1,0 +1,209 @@
+# Title: d3Host List by d3ward
+# Expires: 1 days
+# Description: Simple and small list with the most popular advertising, tracking, analytics and social advertising services
+# Homepage: https://github.com/d3ward/toolz
+# License: CC BY-NC-SA
+# Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
+
+# This list cover all the tests on https://d3ward.github.io/toolz/adblock# Type : Stable
+# Entries : 125
+# Updated On: 4/2/2023
+# Created by: d3ward
+
+#============ Ads =============
+
+# --- Amazon
+0.0.0.0 adtago.s3.amazonaws.com
+0.0.0.0 analyticsengine.s3.amazonaws.com
+0.0.0.0 analytics.s3.amazonaws.com
+0.0.0.0 advice-ads.s3.amazonaws.com
+0.0.0.0 advertising-api-eu.amazon.com
+
+# --- Google Ads
+0.0.0.0 pagead2.googlesyndication.com
+0.0.0.0 adservice.google.com
+0.0.0.0 pagead2.googleadservices.com
+0.0.0.0 afs.googlesyndication.com
+
+# --- Doubleclick.net
+0.0.0.0 ad.doubleclick.net
+0.0.0.0 static.doubleclick.net
+0.0.0.0 m.doubleclick.net
+0.0.0.0 mediavisor.doubleclick.net
+
+# --- Media.net
+0.0.0.0 static.media.net
+0.0.0.0 media.net
+0.0.0.0 adservetx.media.net
+
+
+#========= Analytics ==========
+
+# --- Google Analytics
+0.0.0.0 analytics.google.com
+0.0.0.0 click.googleanalytics.com
+0.0.0.0 google-analytics.com
+0.0.0.0 ssl.google-analytics.com
+
+# --- Hotjar
+0.0.0.0 adm.hotjar.com
+0.0.0.0 identify.hotjar.com
+0.0.0.0 insights.hotjar.com
+0.0.0.0 script.hotjar.com
+0.0.0.0 surveys.hotjar.com
+0.0.0.0 careers.hotjar.com
+0.0.0.0 events.hotjar.io
+
+# --- MouseFlow
+0.0.0.0 mouseflow.com
+0.0.0.0 api.mouseflow.com
+0.0.0.0 tools.mouseflow.com
+0.0.0.0 cdn-test.mouseflow.com
+
+# --- FreshWorks
+0.0.0.0 freshmarketer.com
+0.0.0.0 claritybt.freshmarketer.com
+0.0.0.0 fwtracks.freshmarketer.com
+
+# --- Luckyorange
+0.0.0.0 luckyorange.com
+0.0.0.0 api.luckyorange.com
+0.0.0.0 realtime.luckyorange.com
+0.0.0.0 cdn.luckyorange.com
+0.0.0.0 w1.luckyorange.com
+0.0.0.0 upload.luckyorange.net
+0.0.0.0 cs.luckyorange.net
+0.0.0.0 settings.luckyorange.net
+
+# --- Stats WP Plugin
+0.0.0.0 stats.wp.com
+
+
+#======= Error Trackers =======
+
+# --- Bugsnag
+0.0.0.0 notify.bugsnag.com
+0.0.0.0 sessions.bugsnag.com
+0.0.0.0 api.bugsnag.com
+0.0.0.0 app.bugsnag.com
+
+# --- Sentry
+0.0.0.0 browser.sentry-cdn.com
+0.0.0.0 app.getsentry.com
+
+
+#====== Social Trackers =======
+
+# --- Facebook
+0.0.0.0 pixel.facebook.com
+0.0.0.0 ads.facebook.com
+0.0.0.0 an.facebook.com
+
+# --- Twitter
+0.0.0.0 static.ads-twitter.com
+0.0.0.0 ads-api.twitter.com
+0.0.0.0 advertising.twitter.com
+
+# --- LinkedIn
+0.0.0.0 ads.linkedin.com
+0.0.0.0 analytics.pointdrive.linkedin.com
+
+# --- Pinterest
+0.0.0.0 ads.pinterest.com
+0.0.0.0 log.pinterest.com
+0.0.0.0 analytics.pinterest.com
+0.0.0.0 trk.pinterest.com
+0.0.0.0 widgets.pinterest.com
+
+# --- Reddit
+0.0.0.0 events.reddit.com
+0.0.0.0 rereddit.com
+0.0.0.0 events.redditmedia.com
+
+# --- YouTube
+0.0.0.0 ads.youtube.com
+
+# --- TikTok
+0.0.0.0 ads-api.tiktok.com
+0.0.0.0 analytics.tiktok.com
+0.0.0.0 ads-sg.tiktok.com
+0.0.0.0 analytics-sg.tiktok.com
+0.0.0.0 analytics.tiktok.com
+0.0.0.0 business-api.tiktok.com
+0.0.0.0 ads.tiktok.com
+
+
+#============ Mix =============
+
+# --- Yahoo
+0.0.0.0 ads.yahoo.com
+0.0.0.0 analytics.yahoo.com
+0.0.0.0 geo.yahoo.com
+0.0.0.0 udc.yahoo.com
+0.0.0.0 udcm.yahoo.com
+0.0.0.0 advertising.yahoo.com
+0.0.0.0 analytics.query.yahoo.com
+0.0.0.0 partnerads.ysm.yahoo.com
+0.0.0.0 log.fc.yahoo.com
+0.0.0.0 gemini.yahoo.com
+0.0.0.0 marketingsolutions.yahoo.com
+
+# --- Yandex
+0.0.0.0 extmaps-api.yandex.net
+0.0.0.0 redirect.appmetrica.yandex.com
+0.0.0.0 appmetrica.yandex.ru
+0.0.0.0 adfstat.yandex.ru
+0.0.0.0 metrika.yandex.ru
+0.0.0.0 advertising.yandex.ru
+0.0.0.0 offerwall.yandex.net
+0.0.0.0 adfox.yandex.ru
+
+
+#============ OEMs ============
+
+# --- Realme
+0.0.0.0 iot-eu-logser.realme.com
+0.0.0.0 iot-logser.realme.com
+0.0.0.0 bdapi-ads.realmemobile.com
+0.0.0.0 bdapi-in-ads.realmemobile.com
+
+# --- Xiaomi
+0.0.0.0 api.ad.xiaomi.com
+0.0.0.0 data.mistat.xiaomi.com
+0.0.0.0 data.mistat.intl.xiaomi.com
+0.0.0.0 data.mistat.india.xiaomi.com
+0.0.0.0 data.mistat.rus.xiaomi.com
+0.0.0.0 sdkconfig.ad.xiaomi.com
+0.0.0.0 sdkconfig.ad.intl.xiaomi.com
+0.0.0.0 globalapi.ad.xiaomi.com
+0.0.0.0 tracking.rus.miui.com
+
+# --- Oppo
+0.0.0.0 adsfs.oppomobile.com
+0.0.0.0 adx.ads.oppomobile.com
+0.0.0.0 ck.ads.oppomobile.com
+0.0.0.0 data.ads.oppomobile.com
+
+# --- Huawei
+0.0.0.0 metrics.data.hicloud.com
+0.0.0.0 metrics2.data.hicloud.com
+0.0.0.0 grs.hicloud.com
+0.0.0.0 logservice.hicloud.com
+0.0.0.0 logservice1.hicloud.com
+0.0.0.0 logbak.hicloud.com
+
+# --- OnePlus
+0.0.0.0 click.oneplus.cn
+0.0.0.0 open.oneplus.net
+
+# --- Samsung
+0.0.0.0 samsungads.com
+0.0.0.0 smetrics.samsung.com
+0.0.0.0 samsung-com.112.2o7.net
+0.0.0.0 analytics-api.samsunghealthcn.com
+
+# --- Apple
+0.0.0.0 iad.apple.com
+0.0.0.0 advertising.apple.com
+0.0.0.0 tr.iadsdk.apple.com
+0.0.0.0 metrics.icloud.com

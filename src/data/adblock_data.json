@@ -1,41 +1,38 @@
 { 
 	"Ads": {
-		"Google Ads": [
-			"pagead2.googlesyndication.com",
-			"ads.google.com",
-			"adservice.google.com",
-			"pagead2.googleadservices.com",
-			"googleadservices.com"
-		],
-		"Media.net": [
-			"static.media.net",
-			"media.net",
-			"adservetx.media.net"
-		],
-		"Doubleclick.net": [
-			"doubleclick.net",
-			"ad.doubleclick.net",
-			"static.doubleclick.net",
-			"m.doubleclick.net",
-			"mediavisor.doubleclick.net"
-		],
 		"Amazon": [
 			"adtago.s3.amazonaws.com",
 			"analyticsengine.s3.amazonaws.com",
 			"analytics.s3.amazonaws.com",
 			"advice-ads.s3.amazonaws.com",
-			"affiliationjs.s3.amazonaws.com",
-			"advertising-api-eu.amazon.com",
-			"amazonclix.com"
+			"advertising-api-eu.amazon.com"
+		],
+		"Google Ads": [
+			"pagead2.googlesyndication.com",
+			"adservice.google.com",
+			"pagead2.googleadservices.com",
+			"afs.googlesyndication.com"
+		],
+		"Doubleclick.net": [
+			"ad.doubleclick.net",
+			"static.doubleclick.net",
+			"m.doubleclick.net",
+			"mediavisor.doubleclick.net"
+		],
+		"Media.net": [
+			"static.media.net",
+			"media.net",
+			"adservetx.media.net"
 		]
 	},
 	"Analytics": {
 		"Google Analytics": [
+			"analytics.google.com",
+			"click.googleanalytics.com",
 			"google-analytics.com",
 			"ssl.google-analytics.com"
 		],
 		"Hotjar": [
-			"hotjar.com",
 			"adm.hotjar.com",
 			"identify.hotjar.com",
 			"insights.hotjar.com",
@@ -48,8 +45,7 @@
 			"mouseflow.com",
 			"api.mouseflow.com",
 			"tools.mouseflow.com",
-			"cdn-test.mouseflow.com",
-			"a.mouseflow.com"
+			"cdn-test.mouseflow.com"
 		],
 		"FreshWorks": [
 			"freshmarketer.com",
@@ -89,7 +85,6 @@
 			"an.facebook.com"
 		],
 		"Twitter": [
-			"ads-twitter.com",
 			"static.ads-twitter.com",
 			"ads-api.twitter.com",
 			"advertising.twitter.com"
@@ -101,15 +96,12 @@
 		"Pinterest": [
 			"ads.pinterest.com",
 			"log.pinterest.com",
-			"ads-dev.pinterest.com",
 			"analytics.pinterest.com",
 			"trk.pinterest.com",
 			"widgets.pinterest.com"
 		],
 		"Reddit": [
-			"ads.reddit.com",
 			"events.reddit.com",
-			"d.reddit.com",
 			"rereddit.com",
 			"events.redditmedia.com"
 		],
@@ -130,42 +122,32 @@
 		"Yahoo": [
 			"ads.yahoo.com",
 			"analytics.yahoo.com",
-			"ads.yap.yahoo.com",
+			"geo.yahoo.com",
+			"udc.yahoo.com",
+			"udcm.yahoo.com",
 			"advertising.yahoo.com",
 			"analytics.query.yahoo.com",
 			"partnerads.ysm.yahoo.com",
 			"log.fc.yahoo.com",
-			"ganon.yahoo.com",
 			"gemini.yahoo.com",
-			"marketingsolutions.yahoo.com",
-			"pclick.yahoo.com"
+			"marketingsolutions.yahoo.com"
 		],
 		"Yandex": [
-			"yandexadexchange.net",
-			"analytics.mobile.yandex.net",
 			"extmaps-api.yandex.net",
 			"redirect.appmetrica.yandex.com",
 			"appmetrica.yandex.ru",
 			"adfstat.yandex.ru",
-			"an.yandex.ru",
 			"metrika.yandex.ru",
-			"share.yandex.ru",
 			"advertising.yandex.ru",
 			"offerwall.yandex.net",
-			"adfox.yandex.ru",
-			"bs.yandex.ru",
-			"bs-meta.yandex.ru",
-			"share.yandex.ru"
+			"adfox.yandex.ru"
 		]
 	},
 	"OEMs": {
 		"Realme": [
 			"iot-eu-logser.realme.com",
 			"iot-logser.realme.com",
-			"data-cl-id-ads.realmemobile.com",
-			"data-sg-ads.realmemobile.com",
 			"bdapi-ads.realmemobile.com",
-			"adx-id-ads.realmemobile.com",
 			"bdapi-in-ads.realmemobile.com"
 		],
 		"Xiaomi": [
@@ -177,49 +159,36 @@
 			"sdkconfig.ad.xiaomi.com",
 			"sdkconfig.ad.intl.xiaomi.com",
 			"globalapi.ad.xiaomi.com",
-			"tracking.miui.com",
-			"tracking.intl.miui.com",
-			"tracking.india.miui.com",
 			"tracking.rus.miui.com"
 		],
 		"Oppo": [
 			"adsfs.oppomobile.com",
 			"adx.ads.oppomobile.com",
-			"bdapi.ads.oppomobile.com",
 			"ck.ads.oppomobile.com",
-			"data.ads.oppomobile.com",
-			"g1.ads.oppomobile.com"
+			"data.ads.oppomobile.com"
 		],
 		"Huawei": [
-			"data.hicloud.com",
 			"metrics.data.hicloud.com",
-			"metrics1.data.hicloud.com",
 			"metrics2.data.hicloud.com",
-			"metrics5.data.hicloud.com ",
 			"grs.hicloud.com",
 			"logservice.hicloud.com",
 			"logservice1.hicloud.com",
-			"metrics-dra.dt.hicloud.com",
 			"logbak.hicloud.com"
 		],
 		"OnePlus": [
 			"click.oneplus.cn",
-			"click.oneplus.com",
 			"open.oneplus.net"
 		],
 		"Samsung": [
 			"samsungads.com",
 			"smetrics.samsung.com",
 			"samsung-com.112.2o7.net",
-			"business.samsungusa.com",
-			"analytics-api.samsunghealthcn.com",
-			"config.samsungads.com"
+			"analytics-api.samsunghealthcn.com"
 		],
 		"Apple": [
 			"iad.apple.com",
 			"advertising.apple.com",
 			"tr.iadsdk.apple.com",
-			"supportmetrics.apple.com",
 			"metrics.icloud.com"
 		]
 	}

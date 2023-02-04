@@ -1,0 +1,43 @@
+{
+
+	"NextDNS":{
+		"type":"DNS",
+		"no-issues": ["safari-ios","chrome-android","firefox-android"],
+		"issues":[]
+	},
+	"PiHole":{
+		"no-issues": ["safari-ios","chrome-android","firefox-android"],
+		"issues":[]
+	},
+	"Blokada":{
+		"no-issues": ["safari-ios","chrome-android","firefox-android"],
+		"issues":[]
+	},
+	"Brave Browser":{
+		"type":"in-built AdBlocker",
+		"no-issues": ["macos"],
+		"issues":[] 
+	},
+	"adguard":{
+		"type":"Browser Extension",
+		"no-issues": ["safari-ios","chrome-android","firefox-android"],
+		"issues":[] 
+	},
+	"adguard-app":{
+		"type":"Browser Extension",
+		"no-issues": ["safari-ios","chrome-android","firefox-android"],
+		"issues":[] 
+	},
+	"ublock":{
+		"type":"Browser Extension",
+		"no-issues":[
+			"kiwi-browser","chrome","firefox","fennec","brave"
+		],
+		"issues":[]
+	},
+	"adguard-dns":{
+		"type":"DNS",
+		"no-issues": ["safari-ios","chrome-android","firefox-android"],
+		"issues":[] 
+	}
+}
