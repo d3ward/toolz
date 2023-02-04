@@ -223,16 +223,14 @@ function ad_script_test() {
 		'</div><br> ------------------------- '
 }
 const ctd = document.querySelector('#ctd_test')
-const cts = document.querySelector('#cts_test')
+
 //Static
 function cosmetic_test_static() {
-	abt.cosmetic_test.static =
-		cts.offsetHeight || cts.clientHeight ? false : true
+	const cts = document.querySelector('#cts_test')
+	abt.cosmetic_test.static = (cts.clientHeight || cts.offsetHeight || window.getComputedStyle(cts, null).getPropertyValue("display") =='block') ? false : true
 	abt.blocked += abt.cosmetic_test.static ? 2 : 0
 	abt.notblocked += abt.cosmetic_test.static ? 0 : 2
-	document
-		.querySelector('#ct_static')
-		.classList.add(abt.cosmetic_test.static ? '_bg-green' : '_bg-red')
+	document.querySelector('#ct_static').classList.add(abt.cosmetic_test.static ? '_bg-green' : '_bg-red')
 	let log = document.createElement('div')
 	test_log.appendChild(log)
 	log.innerHTML =
@@ -244,12 +242,15 @@ function cosmetic_test_static() {
 function cosmetic_test_dynamic() {
 	let log = document.createElement('div')
 	let ad = document.createElement('div')
+	ad.id="ad_ctd"
 	ad.className =
 		'textads banner-ads banner_ads ad-unit afs_ads ad-zone ad-space adsbox'
+	ad.innerHTML="&nbsp;"
 	ctd.appendChild(ad)
 	setTimeout(function () {
+		let adt = document.querySelector("#ad_ctd")
 		abt.cosmetic_test.dynamic =
-			ad.offsetHeight || ad.clientHeight ? false : true
+			(adt.offsetHeight  || adt.clientHeight  || window.getComputedStyle(adt, null).getPropertyValue("display") =='block')? false : true
 		abt.blocked += abt.cosmetic_test.dynamic ? 2 : 0
 		abt.notblocked += abt.cosmetic_test.dynamic ? 0 : 2
 		test_log.appendChild(log)
@@ -272,7 +273,7 @@ async function startAdBlockTesting() {
 	tests.push(cosmetic_test_static())
 	tests.push(cosmetic_test_dynamic())
 	tests.push(ad_script_test())
-	tests.push(fetchTests())
+	//tests.push(fetchTests())
 	let results = await Promise.all(tests)
 	return results
 }
