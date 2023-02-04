@@ -107,11 +107,11 @@ fs.readFile(
 			const obj = JSON.parse(jsonString)
 			test(obj)
 			write(
-				path.resolve(__dirname, 'd3host.txt'),
+				path.resolve(__dirname, '../d3host.txt'),
 				build(obj, '#', '0.0.0.0 ', '')
 			)
 			write(
-				path.resolve(__dirname, 'd3host.adblock'),
+				path.resolve(__dirname, '../d3host.adblock'),
 				build(obj, '!', '||', '^')
 			)
 		} catch (err) {
