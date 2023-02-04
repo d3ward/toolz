@@ -9,21 +9,7 @@ import { aos } from './components/aos'
 import { fadeIn, fadeOut } from './components/fade'
 import { Snackbar } from './components/snackbar'
 import { LocalStorageManager } from './components/localStorage'
-async function getStatus(url) {
-	return new Promise(function (resolve, reject) {
-		var link = document.createElement('link')
-		link.rel = 'stylesheet'
-		link.type = 'text/css'
-		link.href = url
-		link.onload = function () {
-			resolve(true)
-		}
-		link.onerror = function () {
-			resolve(false)
-		}
-		document.body.appendChild(link)
-	})
-}
+
 var LS = new LocalStorageManager('adb_tool')
 var reports = LS.get('reports')
 var collapseStatus = LS.get('collapseStatus')
@@ -131,38 +117,7 @@ function collapse_category(cc, c) {
 			})
 	})
 }
-function checkURLStatus(url) {
-	/*
-	const xhr = new XMLHttpRequest();
-	xhr.open("HEAD", url, true);
-	xhr.send();
-  
-	xhr.onreadystatechange = function() {
-	  if (xhr.readyState === XMLHttpRequest.DONE && xhr.status != 0) {
-		console.log(`HTTP status code: ${xhr.status}`);
-	  }
-	};
-	fetch(url)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return response.json();
-  })
-  .catch(error => {
-    console.error("There was a problem with the fetch operation:", error);
-  });*/
-  const img = new Image();
-  img.addEventListener("error", function (event) {
-	if(event.type === 'error' && event.message.indexOf('Failed to load resource: net::ERR_BLOCKED_BY_CLIENT')!== -1){
-	  console.log(true)
-	}else{
-		console.log(false);
-	}
-  });
-  img.src = url;
-  
-  }
+
 // Function to fetch all the tests
 async function fetchTests() {
 	let fetches = []
