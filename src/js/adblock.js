@@ -221,6 +221,7 @@ function ad_script_test() {
 		'</div><div>script_partenrads : ' +
 		abt.script.partnerads +
 		'</div><br> ------------------------- '
+		set_liquid()
 }
 const ctd = document.querySelector('#ctd_test')
 
@@ -237,6 +238,7 @@ function cosmetic_test_static() {
 		' cosmetic_static_ad : ' +
 		abt.cosmetic_test.static +
 		'<br><br> ------------------------- '
+		set_liquid()
 }
 //Dynamic
 function cosmetic_test_dynamic() {
@@ -261,6 +263,7 @@ function cosmetic_test_dynamic() {
 		document
 			.querySelector('#ct_dynamic')
 			.classList.add(abt.cosmetic_test.dynamic ? '_bg-green' : '_bg-red')
+			set_liquid()
 	}, 500)
 }
 
@@ -273,7 +276,7 @@ async function startAdBlockTesting() {
 	tests.push(cosmetic_test_static())
 	tests.push(cosmetic_test_dynamic())
 	tests.push(ad_script_test())
-	//tests.push(fetchTests())
+	tests.push(fetchTests())
 	let results = await Promise.all(tests)
 	return results
 }
