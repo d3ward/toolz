@@ -6,7 +6,7 @@
 # Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
 
 # This list cover all the tests on https://d3ward.github.io/toolz/adblock# Type : Stable
-# Entries : 133
+# Entries : 132
 # Updated On: 4/2/2023
 # Created by: d3ward
 
@@ -26,6 +26,7 @@
 0.0.0.0 afs.googlesyndication.com
 
 # --- Doubleclick.net
+0.0.0.0 stats.g.doubleclick.net
 0.0.0.0 ad.doubleclick.net
 0.0.0.0 static.doubleclick.net
 0.0.0.0 m.doubleclick.net
@@ -104,7 +105,6 @@
 
 # --- Facebook
 0.0.0.0 pixel.facebook.com
-0.0.0.0 ads.facebook.com
 0.0.0.0 an.facebook.com
 
 # --- Twitter
@@ -158,7 +158,6 @@
 
 # --- Yandex
 0.0.0.0 extmaps-api.yandex.net
-0.0.0.0 redirect.appmetrica.yandex.com
 0.0.0.0 appmetrica.yandex.ru
 0.0.0.0 adfstat.yandex.ru
 0.0.0.0 metrika.yandex.ru

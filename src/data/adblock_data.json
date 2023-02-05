@@ -14,6 +14,7 @@
 			"afs.googlesyndication.com"
 		],
 		"Doubleclick.net": [
+			"stats.g.doubleclick.net",
 			"ad.doubleclick.net",
 			"static.doubleclick.net",
 			"m.doubleclick.net",
@@ -89,7 +90,6 @@
 	"Social Trackers": {
 		"Facebook": [
 			"pixel.facebook.com",
-			"ads.facebook.com",
 			"an.facebook.com"
 		],
 		"Twitter": [
@@ -142,7 +142,6 @@
 		],
 		"Yandex": [
 			"extmaps-api.yandex.net",
-			"redirect.appmetrica.yandex.com",
 			"appmetrica.yandex.ru",
 			"adfstat.yandex.ru",
 			"metrika.yandex.ru",

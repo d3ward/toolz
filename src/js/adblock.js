@@ -83,12 +83,22 @@ async function check_url(url, div, parent, k1, k2) {
 		await fetch('https://' + url, config, timeout, parent, div)
 			.then((response) => {
 				console.log(response)
-				parent.style.background = 'var(--red)'
-				hostDiv.innerHTML = icons['x'] + '<span>' + url + '</span>'
-				abt.notblocked += 1
-				Object.assign(abt.hosts[k1][k2], { [url]: false })
-				tslog += "<br> " + url + " - not blocked"
-				//Response was received --> ads are NOT blocked
+				if(response.type == "basic" && response.status == 200)
+				{
+					hostDiv.innerHTML = icons['v'] + '<span>' + url + '</span>'
+					abt.blocked += 1
+					Object.assign(abt.hosts[k1][k2], { [url]: true })
+					tslog += "<br> " + url + " - blocked"
+				}else{
+					//Response was received --> ads are NOT blocked
+					parent.style.background = 'var(--red)'
+					hostDiv.innerHTML = icons['x'] + '<span>' + url + '</span>'
+					abt.notblocked += 1
+					Object.assign(abt.hosts[k1][k2], { [url]: false })
+					tslog += "<br> " + url + " - not blocked"
+				}
+				
+				
 			})
 			.catch((error) => {
 				console.log(error)
@@ -215,18 +225,20 @@ const ctd = document.querySelector('#ctd_test')
 
 //Static
 function cosmetic_test_static() {
-	const cts = document.querySelector('#cts_test')
-	abt.cosmetic_test.static = (cts.clientHeight || cts.offsetHeight || window.getComputedStyle(cts, null).getPropertyValue("display") =='block') ? false : true
-	abt.blocked += abt.cosmetic_test.static ? 2 : 0
-	abt.notblocked += abt.cosmetic_test.static ? 0 : 2
-	document.querySelector('#ct_static').classList.add(abt.cosmetic_test.static ? '_bg-green' : '_bg-red')
-	let log = document.createElement('div')
-	test_log.appendChild(log)
-	log.innerHTML =
-		' cosmetic_static_ad : ' +
-		abt.cosmetic_test.static +
-		'<br><br> ------------------------- '
-		set_liquid()
+	setTimeout(function () {
+		const cts = document.querySelector('#cts_test')
+		abt.cosmetic_test.static = (cts.clientHeight || cts.offsetHeight || window.getComputedStyle(cts, null).getPropertyValue("display") =='block') ? false : true
+		abt.blocked += abt.cosmetic_test.static ? 2 : 0
+		abt.notblocked += abt.cosmetic_test.static ? 0 : 2
+		document.querySelector('#ct_static').classList.add(abt.cosmetic_test.static ? '_bg-green' : '_bg-red')
+		let log = document.createElement('div')
+		test_log.appendChild(log)
+		log.innerHTML =
+			' cosmetic_static_ad : ' +
+			abt.cosmetic_test.static +
+			'<br><br> ------------------------- '
+			set_liquid()
+	}, 500)
 }
 //Dynamic
 function cosmetic_test_dynamic() {

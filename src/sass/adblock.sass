@@ -39,8 +39,12 @@
 @import "./utilities/padding"
 @import "./utilities/spacer"
 @import "./utilities/text"
+
+
 main
 	min-height: 100vh
+#dlg_compatibility
+	z-index: 52!important
 #adb_test
 	display: none
 
@@ -61,7 +65,7 @@ footer>div
 	display: flex
 	align-items: center
 	justify-content: center
-	color: #fff
+	color: #000
 #test_log
 	height: 200px
 	overflow-y: auto
@@ -97,7 +101,7 @@ footer>div
 	justify-content: center
 .test
 	background-color: var(--red)
-	color: #fff
+	color: #000
 	border-radius: 8px
 	display: flex
 	flex-direction: column
@@ -137,19 +141,6 @@ footer>div
 	color: #000
 .test.show>div
 	display: flex
-
-#test2
-	background-color: green
-	color: white
-	display: inline-block
-	height: 50px
-	text-align: center
-	vertical-align: top
-	width: 100%
-#test2>div
-	height: 50px
-	overflow: hidden
-	width: 100%
 
 #results
 	background-color: white
