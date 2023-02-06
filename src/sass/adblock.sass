@@ -40,7 +40,6 @@
 @import "./utilities/spacer"
 @import "./utilities/text"
 
-
 main
 	min-height: 100vh
 #dlg_compatibility
@@ -82,14 +81,27 @@ footer>div
 	padding: .5rem
 	border-radius: 12px
 	background: var(--bg2)
+.rwd-table-t
+	display: flex
+	gap: .5rem
+	align-items: center
 .badges
 	display: flex
 	flex-wrap: wrap
 	gap: .5rem
 	>*
-		padding: 10px
+		padding: 5px
+		display: flex
+		align-items: center
+		gap: 5px
 		background: var(--bg2)
 		border-radius: var(--radius)
+		&.light-green
+			background: var(--green-h)
+			color: var(--green-d)
+		&.light-red
+			background: var(--red-h)
+			color: var(--red-d)
 
 .test_wrapper svg,.test_card svg
 	height: 1.5rem

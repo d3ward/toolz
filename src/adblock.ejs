@@ -28,9 +28,6 @@
 				</header>
 				<section>
 					<div>
-						<div >
-
-						</div>
 						<p>
 							While most of the tests are performed by users using the most popular solutions such as ublock-Origin, Blokada, NextDNS and Adguard,
 							there are some false positives due to platform/browser/solution limitations<br>
@@ -39,26 +36,43 @@
 						</p>
 						<b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b><br>
 						<b class="_txt-blue"><i>A configuration with multiple solutions at the same time can lead to false positives.</i></b><br>
-						
 						<table class="rwd-table">
 							<tr>
-							  <th>Solution(type)</th>
+							  <th>solution (type)</th>
 							  <th>browser-platform</th>
 							</tr>
 							<% for (let key in adblock_compatibility) { %>
 								<% value = adblock_compatibility[key]%>
 								<% if (key != 'default') { %>
 									<tr>
-										<td data-th="Solution">
-											<%- value.icon %>
-											<%= key %> (<%= value.type%>)
+										<td data-th="solution (type)">
+											<span class="rwd-table-t"><%- value.icon %>
+											<%= key %> (<%= value.type%>)</span>
+											<br>
+											<p>
+												<%= value.note %>
+											</p>
 										</td>
-										<td data-th="no-issues">
+										<td data-th="browser-platform">
 											<div class="badges">
 												<% for (let b in value["no-issues"]) { %>
-												<span><%= value["no-issues"][b] %></span>
+												<span class="light-green">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+														<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+														<path d="M5 12l5 5l10 -10"></path>
+													 </svg>
+													<%= value["no-issues"][b] %></span>
 												<% } %>
-												</div>
+												<% for (let b in value["issues"]) { %>
+													<span class="light-red">
+														<svg xmlns="http://www.w3.org/2000/svg"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+															<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+															<path d="M18 6l-12 12"></path>
+															<path d="M6 6l12 12"></path>
+														 </svg>
+														<%= value["issues"][b] %></span>
+													<% } %>
+											</div>
 										</td>
 									</tr>
 								<% } %>
