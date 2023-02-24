@@ -354,7 +354,7 @@ function set_liquid() {
 	var c = p > 30 ? (p > 60 ? 'var(--green)' : 'var(--orange)') : 'var(--red)'
 	document.body.style.setProperty('--liquid-percentage', 45 - p + '%')
 	document.body.style.setProperty('--liquid-color', c)
-	document.body.style.setProperty('--liquid-title', "'" + abt.blocked + "'")
+	document.body.style.setProperty('--liquid-title', "'" + Math.round(p) + "%'")
 }
 
 function stopAdBlockTesting() {
