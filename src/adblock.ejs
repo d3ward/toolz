@@ -38,24 +38,25 @@
 							<b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b>
 							<b class="_txt-blue"><i>A configuration with multiple solutions at the same time can lead to false positives.</i></b>
 						</div>
-						<table class="rwd-table">
-							<tr>
-							  <th>solution (type)</th>
-							  <th>browser-platform</th>
-							</tr>
+						<div class="card _bg-bg3 _mt-2">
+							<div class="row _ta-center">
+							  <div>solution (type)</div>
+							  <div>browser-platform</div>
+							</div>
+							<hr>
 							<% for (let key in adblock_compatibility) { %>
 								<% value = adblock_compatibility[key]%>
 								<% if (key != 'default' && value.hidden!=true) { %>
-									<tr>
-										<td data-th="solution (type)">
+									<div class="row">
+										<div data-th="solution (type)">
 											<span class="rwd-table-t"><%- value.icon %>
 											<%= key %> (<%= value.type%>)</span>
 											<br>
 											<p>
 												<%= value.note %>
 											</p>
-										</td>
-										<td data-th="browser-platform">
+										</div>
+										<div>
 											<div class="badges">
 												<% for (let b in value["no-issues"]) { %>
 												<span class="light-green">
@@ -75,11 +76,11 @@
 														<%= value["issues"][b] %></span>
 													<% } %>
 											</div>
-										</td>
-									</tr>
+										</div>
+									</div><hr>
 								<% } %>
 							<% } %>
-						  </table>
+								</div>
 					</div>
 				</section>
 				<footer>
