@@ -24,7 +24,7 @@ if (tzversion !== version) {
 var LS = new LocalStorageManager('adb_tool')
 var results = LS.get('results')
 var settings = LS.get('settings')
-if (!settings) {
+if (!settings || settings['hideCF']) {
 	settings = {
 		collapseAll: true,
 		showCF: true,
@@ -32,6 +32,7 @@ if (!settings) {
 	}
 	LS.set('settings', settings)
 }
+
 var tslog = ''
 if (!results) results = []
 var test_log = document.getElementById('test_log')
@@ -331,14 +332,14 @@ async function startAdBlockTesting() {
 	document.querySelector('.lt_wrap').classList.add('start')
 	lt_cwrap.classList.add('start')
 	let tests = []
-	if (settings['showCF']) {
+	if (settings['showCF'] == true) {
 		abt.total += 4
 		tests.push(cosmetic_test_static())
 		tests.push(cosmetic_test_dynamic())
 	} else {
 		document.querySelector('#cf_wrap').style.display = 'none'
 	}
-	if (settings['showSL']) {
+	if (settings['showSL'] == true) {
 		abt.total += 6
 		tests.push(ad_script_test())
 	} else {
