@@ -444,16 +444,21 @@ document.addEventListener('DOMContentLoaded', function () {
 	new aos()
 	console.log(settings)
 	for (const key in settings) {
-		console.log(`${key}: ${settings[key]}`)
+		try {
+			console.log(`${key}: ${settings[key]}`)
 
-		const c = document.querySelector('#' + key)
-		c.checked = settings[key]
-		c.addEventListener('change', () => {
-			settings[key] = c.checked
-			console.log(key, c.checked)
-			if (key == 'collapseAll') collapse_category(settings[key], false)
-			LS.set('settings', settings)
-		})
+			const c = document.querySelector('#' + key)
+			c.checked = settings[key]
+			c.addEventListener('change', () => {
+				settings[key] = c.checked
+				console.log(key, c.checked)
+				if (key == 'collapseAll')
+					collapse_category(settings[key], false)
+				LS.set('settings', settings)
+			})
+		} catch (error) {
+			console.log(error)
+		}
 	}
 	render_tests()
 
