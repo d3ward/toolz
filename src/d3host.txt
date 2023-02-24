@@ -5,9 +5,10 @@
 # License: CC BY-NC-SA
 # Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
 
-# This list cover all the tests on https://d3ward.github.io/toolz/adblock# Type : Stable
+# This list cover all the tests on https://d3ward.github.io/toolz/adblock
+# Type : Stable
 # Entries : 132
-# Updated On: 4/2/2023
+# Updated On: 24/2/2023
 # Created by: d3ward
 
 #============ Ads =============

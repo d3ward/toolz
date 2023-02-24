@@ -1,5 +1,5 @@
 const https = require('https')
-const chalk = require("chalk")
+const chalk = require('chalk')
 const fs = require('fs')
 const path = require('path')
 function center(s, max, c) {
@@ -22,7 +22,7 @@ const header = (entries, date, comment) => {
 		comment +
 		' Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt\n\n' +
 		comment +
-		' This list cover all the tests on https://d3ward.github.io/toolz/adblock' +
+		' This list cover all the tests on https://d3ward.github.io/toolz/adblock\n' +
 		comment +
 		' Type : Stable\n' +
 		comment +
@@ -44,22 +44,34 @@ function test(obj, comment, pre, post) {
 			let value2 = value[key]
 			if (value2)
 				value2.forEach((v) => {
-					https.get("https://" + v, res => {
-						if (res.statusCode >= 200 && res.statusCode < 300)
-							console.log(chalk.green(`${v}: ${res.statusCode}`));
-						else if (res.statusCode >= 300 && res.statusCode < 400)
-							console.log(chalk.blue(`${v}: ${res.statusCode}`));
-						else if (res.statusCode == 404)
-							console.log(chalk.red(`${v}: ${res.statusCode}`));
-						else 
-							console.log(chalk.magenta(`${v}: ${res.statusCode}`));
-					}).on('error', error => {
-						console.error(`${v}: ${error.message}`);
-					});
+					https
+						.get('https://' + v, (res) => {
+							if (res.statusCode >= 200 && res.statusCode < 300)
+								console.log(
+									chalk.green(`${v}: ${res.statusCode}`)
+								)
+							else if (
+								res.statusCode >= 300 &&
+								res.statusCode < 400
+							)
+								console.log(
+									chalk.blue(`${v}: ${res.statusCode}`)
+								)
+							else if (res.statusCode == 404)
+								console.log(
+									chalk.red(`${v}: ${res.statusCode}`)
+								)
+							else
+								console.log(
+									chalk.magenta(`${v}: ${res.statusCode}`)
+								)
+						})
+						.on('error', (error) => {
+							console.error(`${v}: ${error.message}`)
+						})
 				})
 		})
 	})
-
 }
 function build(obj, comment, pre, post) {
 	let txt = ''
