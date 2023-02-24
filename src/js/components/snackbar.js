@@ -20,19 +20,19 @@ export function Snackbar(option) {
 		t.message.innerHTML = ''
 		t.snack.classList.remove(t.classNames)
 	}
-	t.showN = function (msg, type) {
-		t.hideN()
+	t.show = function (msg, type) {
+		t.hide()
 		t.message.innerHTML = msg
 		t.snack.style.top = t.top
 		t.snack.classList.add(type || t.classNames)
 
 		if (t.autoClose) {
 			setTimeout(function () {
-				t.hideN()
+				t.hide()
 			}, t.autoCloseTimeout)
 		}
 	}
-	t.hideN = function () {
+	t.hide = function () {
 		t.snack.style.top = '-100%'
 		t.reset()
 	}

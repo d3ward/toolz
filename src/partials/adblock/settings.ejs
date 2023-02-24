@@ -1,0 +1,39 @@
+<div class="dialog" id="dlg_settings" data-a11y-dialog="dlg_settings" aria-labelledby="dlg_settings-title"
+	aria-hidden="true">
+	<div class="dialog-overlay" data-a11y-dialog-hide></div>
+	<div class="dialog-content">
+		<header>
+			<h3 id="dlg_settings-title">Settings</h3>
+			<button data-a11y-dialog-hide><svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor"
+					viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+					</path>
+				</svg></button>
+		</header>
+		<section>
+			<div class="field">
+				<div>
+					<input class="toggle" id="collapseAll" name="toggle" type="checkbox" checked="checked"><label
+						for="collapseAll">
+						Collapse all</label><br>
+					<small>Click a category to toggle the url hosts list</small>
+				</div>
+				<div>
+					<input class="toggle" id="hideCF" name="toggle" type="checkbox" checked="checked"><label
+						for="hideCF">
+						Cosmetic Filter</label><br>
+				</div>
+				<div>
+					<input class="toggle" id="hideSL" name="toggle" type="checkbox" checked="checked"><label
+						for="hideSL">
+						Ad Scripts Loading</label><br>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<button data-a11y-dialog-hide>
+				Close
+			</button>
+		</footer>
+	</div>
+</div>

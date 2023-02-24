@@ -13,7 +13,7 @@
 			keywords:'adblock,test adblock,analytics,trackers,ads,cosmetic filter,ublock, ublockorigin,adblock extension,script loading'
 		}) %>
 	<body class="_overflowhidden">
-		<%- include('partials/adblock/report.ejs') %>
+		<%- include('partials/adblock/results.ejs') %>
 		<% const adblock_compatibility = require('./data/adblock_compatibility.json') %>
 		<div class="dialog" id="dlg_compatibility" data-a11y-dialog="dlg_compatibility" aria-labelledby="dlg_compatibility-title" aria-hidden="true">
 			<div class="dialog-overlay" data-a11y-dialog-hide></div>
@@ -28,14 +28,16 @@
 				</header>
 				<section>
 					<div>
-						<p>
-							While most of the tests are performed by users using the most popular solutions such as ublock-Origin, Blokada, NextDNS and Adguard,
-							there are some false positives due to platform/browser/solution limitations<br>
-							The test uses pure Javascript, and due to it's limitations and the way some solutions work, there may be problems.<br>
-							So here is a list of solutions where the test works, and gives a valid report of the result
-						</p>
-						<b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b><br>
-						<b class="_txt-blue"><i>A configuration with multiple solutions at the same time can lead to false positives.</i></b><br>
+						<div class="card _pb-2">
+							<p>
+								While most of the tests are performed by users using the most popular solutions such as ublock-Origin, Blokada, NextDNS and Adguard,
+								there are some false positives due to platform/browser/solution limitations<br>
+								The test uses pure Javascript, and due to it's limitations and the way some solutions work, there may be problems.<br>
+								So here is a list of solutions where the test works, and gives a valid report of the result
+							</p>
+							<b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b>
+							<b class="_txt-blue"><i>A configuration with multiple solutions at the same time can lead to false positives.</i></b>
+						</div>
 						<table class="rwd-table">
 							<tr>
 							  <th>solution (type)</th>
@@ -43,7 +45,7 @@
 							</tr>
 							<% for (let key in adblock_compatibility) { %>
 								<% value = adblock_compatibility[key]%>
-								<% if (key != 'default') { %>
+								<% if (key != 'default' && value.hidden!=true) { %>
 									<tr>
 										<td data-th="solution (type)">
 											<span class="rwd-table-t"><%- value.icon %>
@@ -88,50 +90,31 @@
 			</div>
 		</div>
 		<%- include('partials/support_me.ejs') %>
+		<%- include('partials/adblock/settings.ejs') %>
 		<%- include('partials/adblock/faq.ejs') %>
+		<%- include('partials/adblock/changelog.ejs') %>
 		<%- include('partials/adblock/logs.ejs') %>
 		<%- include('partials/header.ejs', {page:'adblock'}) %>
 		<main>
-			<button data-a11y-dialog-show="dlg_reports"> <svg xmlns="http://www.w3.org/2000/svg"
-					class="icon icon-tabler icon-tabler-list-details" width="24" height="24" viewBox="0 0 24 24"
-					stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+			<button data-a11y-dialog-show="dlg_reports"> 
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
 					<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-					<path d="M13 5h8"></path>
-					<path d="M13 9h5"></path>
-					<path d="M13 15h8"></path>
-					<path d="M13 19h5"></path>
-					<rect x="3" y="4" width="6" height="6" rx="1"></rect>
-					<rect x="3" y="14" width="6" height="6" rx="1"></rect>
-				</svg> Reports</button>
+					<path d="M12 8l0 4l2 2"></path>
+					<path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"></path>
+				 </svg>
+				 Results</button>
 			<button data-a11y-dialog-show="dlg_faq">
-				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square" width="24" height="24"
-					viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-					stroke-linejoin="round">
-					<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-					<line x1="12" y1="8" x2="12.01" y2="8"></line>
-					<rect x="4" y="4" width="16" height="16" rx="2"></rect>
-					<polyline points="11 12 12 12 12 16 13 16"></polyline>
-				</svg> Open FAQ</button>
-				<button data-a11y-dialog-show="dlg_compatibility">
-					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square" width="24" height="24"
-						viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-						stroke-linejoin="round">
-						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-						<line x1="12" y1="8" x2="12.01" y2="8"></line>
-						<rect x="4" y="4" width="16" height="16" rx="2"></rect>
-						<polyline points="11 12 12 12 12 16 13 16"></polyline>
-					</svg> Check Compatibility</button>
-				<button data-a11y-dialog-show="dlg_logs">
-					<svg xmlns="http://www.w3.org/2000/svg"
-					class="icon icon-tabler icon-tabler-message-2-code" width="24" height="24" viewBox="0 0 24 24"
-					stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-					<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-					<path
-						d="M12 20l-3 -3h-2a3 3 0 0 1 -3 -3v-6a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-2l-3 3">
-					</path>
-					<path d="M10 9l-2 2l2 2"></path>
-					<path d="M14 9l2 2l-2 2"></path>
-				</svg> Logs</button>
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-info-square"><path stroke="none" d="M0 0h24v24H0z"/><path d="M12 8 12.01 8"/><rect width="16" height="16" x="4" y="4" rx="2"/><path d="M11 12 12 12 12 16 13 16"/></svg> 
+				Open FAQ</button>
+			<button data-a11y-dialog-show="dlg_compatibility">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke="none" d="M0 0h24v24H0z"/><path d="m7 12 5 5L22 7M2 12l5 5m5-5 5-5"/></svg> 
+				Check Compatibility</button>
+			<button data-a11y-dialog-show="dlg_logs">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-message-2-code"><path stroke="none" d="M0 0h24v24H0z"/><path d="m12 20-3-3H7a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-2l-3 3"/><path d="m10 9-2 2 2 2M14 9l2 2-2 2"/></svg> 
+				Logs</button>
+			<button data-a11y-dialog-show="dlg_settings">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-settings"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37 1 .608 2.296.07 2.572-1.065z"/><path d="M9 12a3 3 0 1 0 6 0 3 3 0 1 0-6 0"/></svg>
+				Settings</button>
 			<section>
 				<div class="grid">
 					<div>
@@ -206,7 +189,7 @@
 					<div>
 						<hr>
 					</div>
-					<div>
+					<div id="cf_wrap">
 						<div class="test_card">
 							<h5>
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke-width="2"
@@ -254,7 +237,7 @@
 							</div>
 						</div>
 					</div>
-					<div>
+					<div id="sl_wrap">
 						<div class="test_card">
 							<h5>
 								<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-script" width="24"
@@ -288,15 +271,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div>
 						<hr>
-					</div>
-					<div>
-						<input class="toggle" id="collapse_status" name="toggle" type="checkbox"
-													checked="checked"><label for="collapse_status">
-													Collapse all</label><br>
-													<small>Click a category to collapse the url hosts</small>
 					</div>
 					<div>
 						<div id="test" class="test_wrapper"></div>

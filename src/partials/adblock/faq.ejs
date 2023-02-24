@@ -10,12 +10,12 @@
 				</svg></button>
 		</header>
 		<section>
-			<div>
+			<div class="better_r">
 				<h2>How does it work?</h2>
 				<b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b><br><br>
 				<div class="row keep-width">
 					<div>
-						<div class="card">
+						<div class="card _h-100">
 							<div class="_f-center">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="var(--green)" width="24" height="24"
 									viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -25,7 +25,7 @@
 								</svg>
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke-width="2" stroke="var(--green)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"></path><circle cx="12" cy="12" r="9"></circle><path d="M9 12l2 2 4-4"></path></svg>
 								
-								&nbsp; Blocked
+								&nbsp; <b>Blocked</b>
 							</div>
 							If the connection to a host/script fails or a box is removed means the latter has been
 							blocked by your
@@ -42,7 +42,7 @@
 									<path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"></path>
 								</svg>
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke-width="2" stroke="var(--red)" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"></path><circle cx="12" cy="12" r="9"></circle><path d="M10 10l4 4m0-4l-4 4"></path></svg>
-								&nbsp; Not Blocked
+								&nbsp; <b>Not Blocked</b>
 							</div>
 							Connection to a host did not fail or box is not removed, means that your ad-blocker did not
 							block it or doesn't work
@@ -109,7 +109,8 @@
 					However, please note that this does not mean that there is a lack of protection provided by the solution you have configured, such as an ad blocking extension, a VPN or a DNS.<br>
 					The limitations of JavaScript or the absence of certain features may prevent the test from being able to accurately determine the number of connections that are blocked.<br>
 					You will still receive an estimate of the percentage of connections that have been blocked/detected by this tool
-					<br><button data-a11y-dialog-show="dlg_compatibility">
+				</p>
+				<div class="_py-1"><button data-a11y-dialog-show="dlg_compatibility">
 						<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-square" width="24" height="24"
 							viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
 							stroke-linejoin="round">
@@ -117,18 +118,17 @@
 							<line x1="12" y1="8" x2="12.01" y2="8"></line>
 							<rect x="4" y="4" width="16" height="16" rx="2"></rect>
 							<polyline points="11 12 12 12 12 16 13 16"></polyline>
-						</svg> Check Compatibility</button>
-				</p>
+						</svg> Check Compatibility</button></div>
 				<br>
 				<hr><br>
 				<h2>How I can have 100%</h2>
 				<p>
 					A green score indicates a satisfactory level of protection.<br>
 					There is no need to aim for a perfect score.<br>
-					However, if you are interested in achieving full 100% protection, you can use the list we have provided, which covers most of the tests on the site (excluding cosmetic filters and script loading). 
+					However, if you are interested in achieving full 100% protection, you can use my d3Host List, which covers most of the tests on the site (excluding cosmetic filters and script loading). 
 					This should help to improve your score.
 				</p>
-				<div class="grid keep-width">
+				<div class="grid keep-width _mt-1">
 					<div>
 						<button class="btn-blue" id="d3H_txt">
 							<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -151,18 +151,24 @@
 				<br>
 				<hr><br>
 				<h2>My ad-blocking solutions</h2>
-				I use <a href="https://www.dnsfilter.com/">DNSFilter</a> as main DNS resolver<br>
-				Plus these combo on each platform : 
-				<ul>
+				<p>
+					I use <a href="https://www.dnsfilter.com/">DNSFilter</a> as main DNS resolver<br>
+					Plus these combo on each platform : 
+				</p>
+				
+				<ul class="keep-ls">
 					<li>Windows : Brave + ublock-Origin</li>
 					<li>MacOS : Brave + ublock-Origin</li>
 					<li>Android : Kiwi Browser + ublock-Origin</li>
 					<li>iOS : Safari + Adguard Extension</li>
 				</ul>
-				<a href="https://ublockorigin.com/" class="btn">uBlock Origin </a>
-				<a href="https://adguard.com/it/adguard-ios/overview.html" class="btn">Adguard for iOS</a>
+				<div class="_cnt-grid-wrap">
+					<a href="https://ublockorigin.com/" class="btn">uBlock Origin </a>
+					<a href="https://adguard.com/it/adguard-ios/overview.html" class="btn">Adguard for iOS</a>
+				</div>
+				
 				Lists I have set on ad blocking solutions :
-				<ul>
+				<ul class="keep-ls">
 					<li>OISD List (includes my list)</li>
 					<li>Peter Lowe’s Ad and tracking server list </li>
 					<li>uBlock filters</li>
@@ -175,7 +181,7 @@
 					I wanted to build something with a great design and user experience that was pretty straightforward for any type of user.<br>
 					There are other great tools that I use and would like to recommend
 				</p>
-				<div class="cnt2">
+				<div class="_cnt-grid-wrap">
 					<a href="https://canyoublockit.com/" class="btn">CanYouBlockIt</a>
 					<a href="https://ipleak.net/" class="btn">IP Leak </a>
 					<a href="https://blockads.fivefilters.org/" class="btn">Block Ads Test </a>

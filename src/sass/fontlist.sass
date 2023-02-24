@@ -8,6 +8,9 @@ html
 	--primary-h: var(--orange-h)!important
 	--primary-l: var(--orange-l)!important
 	--primary-d: var(--orange-d)!important
+	--slider-color: var(--primary-l)
+	--slider-thumb-color: #fff
+
 body
 	background-color: var(--primary)
 	background-image: linear-gradient(315deg, var(--primary)0%, var(--primary-l)74%)
@@ -21,16 +24,18 @@ body
 @import "./base/basic"
 @import "./extra/aos"
 @import "./elements/typography"
+@import "./elements/form"
 
 @import "./layout/navbar"
 @import "./layout/header"
 @import "./layout/container"
 @import "./layout/grid"
 @import "./layout/footer"
-
+@import "./elements/code"
 @import "./elements/button"
 @import "./components/card"
 @import "./components/modal"
+@import "./components/snackbar"
 @import "./components/gotop_link"
 @import "./extra/tooltip"
 @import "./extra/alert"
@@ -45,3 +50,37 @@ body
 @import "./utilities/padding"
 @import "./utilities/spacer"
 @import "./utilities/text"
+
+#results>span
+	display: flex
+	align-items: center
+	gap: .5rem
+
+input[type=range]
+	-webkit-appearance: none
+	margin: 10px 0
+	width: 100%
+
+input[type=range]:focus
+	outline: none
+
+input[type=range]::-webkit-slider-runnable-track
+	height: 6px
+	background: #ddd
+	border-radius: 3px
+
+input[type=range]::-webkit-slider-thumb
+	-webkit-appearance: none
+	height: 20px
+	width: 20px
+	background: #fff
+	border-radius: 50%
+	border: 1px solid #ccc
+	margin-top: -8px
+
+input[type=range]::-webkit-slider-runnable-track
+	background: var(--slider-color)
+
+input[type=range]::-webkit-slider-thumb
+	background: var(--slider-thumb-color)
+

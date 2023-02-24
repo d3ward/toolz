@@ -1,9 +1,22 @@
 import '../sass/units.sass'
+import packageJSON from '../../package.json'
 import { navbar } from './components/navbar'
-import { dialog } from './components/dialog'
+import A11yDialog from './components/dialog'
 import { themeManager } from './components/themeManager'
 import { gotop } from './components/gotop'
 import { aos } from './components/aos'
+import { LocalStorageManager } from './components/localStorage'
+const cd = document.querySelector('#dlg_changelog')
+const ch_dialog = new A11yDialog(cd)
+var TZ = new LocalStorageManager('toolz')
+const version = packageJSON.version
+const tzversion = TZ.get('version')
+if (tzversion !== version) {
+	//Show changelog
+	ch_dialog.show()
+	//Set version
+	TZ.set('version', version)
+}
 
 // Call the function when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,8 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	new aos()
 })
 
-const spinner = ['/', '-', '\\', '|']
-let spinnerIx = 0
 function el(name) {
 	return document.querySelector(name)
 }
@@ -60,10 +71,8 @@ function updateTest() {
 		lvh == i ? 'var(--green)' : lvh > i ? 'var(--blue)' : 'var(--orange)'
 	el('.t-p').style.background =
 		p == i ? 'var(--green)' : p > i ? 'var(--blue)' : 'var(--orange)'
-	
 }
 
-var fullscreen = false
 addEventListener('load', function () {
 	getBars()
 	updateTest()

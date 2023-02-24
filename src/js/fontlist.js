@@ -1,220 +1,147 @@
 import '../sass/fontlist.sass'
+import packageJSON from '../../package.json'
+import { font_list } from '../data/font_list'
 import { navbar } from './components/navbar'
-import { dialog } from './components/dialog'
+import A11yDialog from './components/dialog'
 import { themeManager } from './components/themeManager'
 import { gotop } from './components/gotop'
 import { aos } from './components/aos'
-
+import { Snackbar } from './components/snackbar'
+import { fontChecker } from './components/fontChecker'
+import { icons } from '../data/icons'
+import { LocalStorageManager } from './components/localStorage'
+const cd = document.querySelector('#dlg_changelog')
+const ch_dialog = new A11yDialog(cd)
+var TZ = new LocalStorageManager('toolz')
+const version = packageJSON.version
+const tzversion = TZ.get('version')
+if (tzversion !== version) {
+	//Show changelog
+	ch_dialog.show()
+	//Set version
+	TZ.set('version', version)
+}
+var snackbar = new Snackbar({
+	topPos: '10px',
+	classNames: 'success',
+	autoClose: true,
+	autoCloseTimeout: 2000
+})
+const fo = document.getElementById('f_options')
+const ft = document.getElementById('font_test')
+const r_fw = document.getElementById('r_fw')
+const r_fwv = document.getElementById('r_fw_value')
+const r_fs = document.getElementById('r_fs')
+const r_fsv = document.getElementById('r_fs_value')
+const r_ls = document.getElementById('r_ls')
+const r_lsv = document.getElementById('r_ls_value')
+const r_lh = document.getElementById('r_lh')
+const r_lhv = document.getElementById('r_lh_value')
+function copyToClip() {
+	var cssCode = document.getElementById('css-code')
+	var range = document.createRange()
+	range.selectNode(cssCode)
+	window.getSelection().removeAllRanges()
+	window.getSelection().addRange(range)
+	document.execCommand('copy')
+	window.getSelection().removeAllRanges()
+	snackbar.show('CSS copied to clipboard !')
+}
+function generateCSS() {
+	var css =
+		'.custom-font {\n' +
+		'  font-family: ' +
+		fo.value +
+		';\n' +
+		'  font-weight: ' +
+		r_fwv.innerText +
+		';\n' +
+		'  font-size: ' +
+		r_fsv.innerText +
+		';\n' +
+		'  letter-spacing: ' +
+		r_lsv.innerText +
+		';\n' +
+		'  line-height: ' +
+		r_lhv.innerText +
+		';\n' +
+		'}'
+	document.getElementById('css-code').innerHTML = css
+}
 // Call the function when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
 	new themeManager()
 	new navbar()
 	new gotop()
-	new aos()
-	new modal()
-})
 
-var Detector = function () {
-	var baseFonts = ['monospace', 'sans-serif', 'serif']
-	var testString = 'abcdefghilmnopqrstuvz'
-	var testSize = '72px'
-	var h = document.getElementsByTagName('body')[0]
-	// create a SPAN in the document to get the width of the text we use to test
-	var s = document.createElement('span')
-	s.style.fontSize = testSize
-	s.innerHTML = testString
-	var defaultWidth = {}
-	var defaultHeight = {}
-	for (var index in baseFonts) {
-		//get the default width for the three base fonts
-		s.style.fontFamily = baseFonts[index]
-		h.appendChild(s)
-		defaultWidth[baseFonts[index]] = s.offsetWidth //width for the default font
-		defaultHeight[baseFonts[index]] = s.offsetHeight //height for the defualt font
-		h.removeChild(s)
-	}
-
-	function detect(font) {
-		var detected = false
-		for (var index in baseFonts) {
-			s.style.fontFamily = font + ',' + baseFonts[index] // name of the font along with the base font for fallback.
-			h.appendChild(s)
-			var matched =
-				s.offsetWidth != defaultWidth[baseFonts[index]] ||
-				s.offsetHeight != defaultHeight[baseFonts[index]]
-			h.removeChild(s)
-			detected = detected || matched
+	var total = 0,
+		available = 0,
+		notAvalaible = 0
+	var fc = new fontChecker()
+	const flist = document.querySelector('#flist')
+	font_list.forEach((element) => {
+		total++
+		var a = fc.detect(element)
+		if (a) {
+			var el = document.createElement('div')
+			el.innerText = element
+			el.className = 'card _aos'
+			var op = document.createElement('option')
+			op.value = element
+			op.innerText = element
+			fo.appendChild(op)
+			el.style.fontFamily = element
+			flist.appendChild(el)
+			available++
+		} else {
+			notAvalaible++
 		}
-		return detected
+		console.log(a)
+	})
+	const r = document.querySelector('#results')
+
+	r.innerHTML =
+		'<span>' +
+		total +
+		' Tested Fonts </span><span>' +
+		icons['v'] +
+		' ' +
+		available +
+		' Detected fonts</span><span>' +
+		icons['cdot'] +
+		' ' +
+		notAvalaible +
+		' Not available </span>'
+	new aos()
+
+	fo.onchange = function () {
+		ft.style['fontFamily'] = this.value
+		generateCSS()
+	}
+	r_fw.oninput = function () {
+		ft.style['font-weight'] = this.value
+		r_fwv.innerText = this.value
+		generateCSS()
 	}
 
-	this.detect = detect
-}
-var d = new Detector()
-var list = [
-	'Abadi MT Condensed Light',
-	'Albertus Extra Bold',
-	'Albertus Medium',
-	'Antique Olive',
-	'Arial',
-	'Arial Black',
-	'Arial MT',
-	'Arial Narrow',
-	'Bazooka',
-	'Book Antiqua',
-	'Bookman Old Style',
-	'Boulder',
-	'Calisto MT',
-	'Calligrapher',
-	'Century Gothic',
-	'Century Schoolbook',
-	'Cezanne',
-	'CG Omega',
-	'CG Times',
-	'Charlesworth',
-	'Chaucer',
-	'Clarendon Condensed',
-	'Comic Sans MS',
-	'Copperplate Gothic Bold',
-	'Copperplate Gothic Light',
-	'Cornerstone',
-	'Coronet',
-	'Courier',
-	'Courier New',
-	'Cuckoo',
-	'Dauphin',
-	'Denmark',
-	'Fransiscan',
-	'Garamond',
-	'Geneva',
-	'Haettenschweiler',
-	'Heather',
-	'Helvetica',
-	'Herald',
-	'Impact',
-	'Jester',
-	'Letter Gothic',
-	'Lithograph',
-	'Lithograph Light',
-	'Long Island',
-	'Lucida Console',
-	'Lucida Handwriting',
-	'Lucida Sans',
-	'Lucida Sans Unicode',
-	'Marigold',
-	'Market',
-	'Matisse ITC',
-	'MS LineDraw',
-	'News GothicMT',
-	'OCR A Extended',
-	'Old Century',
-	'Pegasus',
-	'Pickwick',
-	'Poster',
-	'Pythagoras',
-	'Sceptre',
-	'Sherwood',
-	'Signboard',
-	'Socket',
-	'Steamer',
-	'Storybook',
-	'Subway',
-	'Tahoma',
-	'Technical',
-	'Teletype',
-	'Tempus Sans ITC',
-	'Times',
-	'Times New Roman',
-	'Times New Roman PS',
-	'Trebuchet MS',
-	'Tristan',
-	'Tubular',
-	'Unicorn',
-	'Univers',
-	'Univers Condensed',
-	'Vagabond',
-	'Verdana',
-	'Westminster	Allegro',
-	'Amazone BT',
-	'AmerType Md BT',
-	'Arrus BT',
-	'Aurora Cn BT',
-	'AvantGarde Bk BT',
-	'AvantGarde Md BT',
-	'BankGothic Md BT',
-	'Benguiat Bk BT',
-	'BernhardFashion BT',
-	'BernhardMod BT',
-	'BinnerD',
-	'Bremen Bd BT',
-	'CaslonOpnface BT',
-	'Charter Bd BT',
-	'Charter BT',
-	'ChelthmITC Bk BT',
-	'CloisterBlack BT',
-	'CopperplGoth Bd BT',
-	'English 111 Vivace BT',
-	'EngraversGothic BT',
-	'Exotc350 Bd BT',
-	'Freefrm721 Blk BT',
-	'FrnkGothITC Bk BT',
-	'Futura Bk BT',
-	'Futura Lt BT',
-	'Futura Md BT',
-	'Futura ZBlk BT',
-	'FuturaBlack BT',
-	'Galliard BT',
-	'Geometr231 BT',
-	'Geometr231 Hv BT',
-	'Geometr231 Lt BT',
-	'GeoSlab 703 Lt BT',
-	'GeoSlab 703 XBd BT',
-	'GoudyHandtooled BT',
-	'GoudyOLSt BT',
-	'Humanst521 BT',
-	'Humanst 521 Cn BT',
-	'Humanst521 Lt BT',
-	'Incised901 Bd BT',
-	'Incised901 BT',
-	'Incised901 Lt BT',
-	'Informal011 BT',
-	'Kabel Bk BT',
-	'Kabel Ult BT',
-	'Kaufmann Bd BT',
-	'Kaufmann BT',
-	'Korinna BT',
-	'Lydian BT',
-	'Monotype Corsiva',
-	'NewsGoth BT',
-	'Onyx BT',
-	'OzHandicraft BT',
-	'PosterBodoni BT',
-	'PTBarnum BT',
-	'Ribbon131 Bd BT',
-	'Serifa BT',
-	'Serifa Th BT',
-	'ShelleyVolante BT',
-	'Souvenir Lt BT',
-	'Staccato222 BT',
-	'Swis721 BlkEx BT',
-	'Swiss911 XCm BT',
-	'TypoUpright BT',
-	'ZapfEllipt BT',
-	'ZapfHumnst BT',
-	'ZapfHumnst Dm BT',
-	'Zurich BlkEx BT',
-	'Zurich Ex BT'
-]
-
-const flist = document.querySelector('#flist')
-list.forEach((element) => {
-	var a = d.detect(element)
-	if (a) {
-		var el = document.createElement('div')
-		el.innerText = element
-		el.className = 'card _aos'
-		el.style.fontFamily = element
-		flist.appendChild(el)
+	r_fs.oninput = function () {
+		ft.style['font-size'] = this.value + 'px'
+		r_fsv.innerText = this.value + 'px'
+		generateCSS()
 	}
-	console.log(a)
+
+	r_ls.oninput = function () {
+		ft.style['letter-spacing'] = this.value + 'px'
+		r_lsv.innerText = this.value + 'px'
+		generateCSS()
+	}
+
+	r_lh.oninput = function () {
+		ft.style['line-height'] = this.value
+		r_lhv.innerText = this.value
+		generateCSS()
+	}
+	document
+		.querySelector('#css_code_copy')
+		.addEventListener('click', copyToClip)
 })

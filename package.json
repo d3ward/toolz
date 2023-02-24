@@ -34,7 +34,6 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
     "node-sass": "^8.0.0",
-    "ping-url": "^1.0.3",
     "postcss": "^8.4.21",
     "prettier": "^2.8.3",
     "purgecss-webpack-plugin": "^5.0.0",

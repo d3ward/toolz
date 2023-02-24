@@ -1,32 +1,74 @@
 import '../sass/adblock.sass'
 import * as data from '../data/adblock_data.json'
-import { icons } from '../assets/adblock/icons'
+import packageJSON from '../../package.json'
+import { icons } from '../data/icons'
 import { navbar } from './components/navbar'
-import { dialog } from './components/dialog'
+import A11yDialog from './components/dialog'
 import { themeManager } from './components/themeManager'
 import { gotop } from './components/gotop'
 import { aos } from './components/aos'
 import { fadeIn, fadeOut } from './components/fade'
 import { Snackbar } from './components/snackbar'
 import { LocalStorageManager } from './components/localStorage'
-
+const cd = document.querySelector('#dlg_changelog')
+const ch_dialog = new A11yDialog(cd)
+var TZ = new LocalStorageManager('toolz')
+const version = packageJSON.version
+const tzversion = TZ.get('version')
+if (tzversion !== version) {
+	//Show changelog
+	ch_dialog.show()
+	//Set version
+	TZ.set('version', version)
+}
 var LS = new LocalStorageManager('adb_tool')
-var reports = LS.get('reports')
-var collapseStatus = LS.get('collapseStatus')
-if (!collapseStatus) { collapseStatus = true; LS.set('collapseStatus', collapseStatus) }
-var tslog = ""
-if (!reports) reports = []
+var results = LS.get('results')
+var settings = LS.get('settings')
+if (!settings) {
+	settings = {
+		collapseAll: true,
+		hideCF: false,
+		hideSL: false
+	}
+	LS.set('settings', settings)
+}
+var tslog = ''
+if (!results) results = []
 var test_log = document.getElementById('test_log')
 var snackbar = new Snackbar({
-	topPos: "10px",
+	topPos: '10px',
 	classNames: 'success',
 	autoClose: true,
 	autoCloseTimeout: 2000
 })
+function downloadResult(k) {
+	var r
+	results.forEach((ri) => {
+		console.log(ri['time'], k)
+		if (ri['time'] == k) r = ri
+	})
+	var data = JSON.stringify(r)
+	var blob = new Blob([data], { type: 'application/json' })
+	var url = URL.createObjectURL(blob)
+	var linkElement = document.createElement('a')
+	linkElement.setAttribute('download', 'd3_adb_' + r.date + '.json')
+	var revokeAndDownload = function () {
+		URL.revokeObjectURL(linkElement.href)
+		linkElement.href = url
+		linkElement.click()
+	}
+	if (linkElement.href) {
+		URL.revokeObjectURL(linkElement.href)
+		setTimeout(revokeAndDownload, 1000)
+	} else {
+		revokeAndDownload()
+	}
+}
 async function copyToClip(str) {
 	try {
-		await navigator.clipboard.writeText(str).then(() => { snackbar.showN('URL copied to clipboard !') })
-
+		await navigator.clipboard.writeText(str).then(() => {
+			snackbar.show('URL copied to clipboard !')
+		})
 	} catch (err) {
 		const txt = document.createElement('textarea')
 		txt.value = str
@@ -35,25 +77,25 @@ async function copyToClip(str) {
 		txt.style.left = '-9999px'
 		document.body.appendChild(txt)
 
-		txt.select();
-		txt.setSelectionRange(0, 99999);
-		document.execCommand('copy');
+		txt.select()
+		txt.setSelectionRange(0, 99999)
+		document.execCommand('copy')
 		txt.remove()
-		snackbar.showN('URL copied to clipboard !')
+		snackbar.show('URL copied to clipboard !')
 	}
 }
 var abt = {
-	total: 10,
+	total: 0,
 	blocked: 0,
-	notblocked:0,
+	notblocked: 0,
 	cosmetic_test: {
-		static: false,
-		dynamic: false
+		static: null,
+		dynamic: null
 	},
 	script: {
-		ads: false,
-		pagead: false,
-		partnerads: false
+		ads: null,
+		pagead: null,
+		partnerads: null
 	},
 	hosts: {}
 }
@@ -83,22 +125,19 @@ async function check_url(url, div, parent, k1, k2) {
 		await fetch('https://' + url, config, timeout, parent, div)
 			.then((response) => {
 				console.log(response)
-				if(response.type == "basic" && response.status == 200)
-				{
+				if (response.type == 'basic' && response.status == 200) {
 					hostDiv.innerHTML = icons['v'] + '<span>' + url + '</span>'
 					abt.blocked += 1
 					Object.assign(abt.hosts[k1][k2], { [url]: true })
-					tslog += "<br> " + url + " - blocked"
-				}else{
+					tslog += '<br> ' + url + ' - blocked'
+				} else {
 					//Response was received --> ads are NOT blocked
 					parent.style.background = 'var(--red)'
 					hostDiv.innerHTML = icons['x'] + '<span>' + url + '</span>'
 					abt.notblocked += 1
 					Object.assign(abt.hosts[k1][k2], { [url]: false })
-					tslog += "<br> " + url + " - not blocked"
+					tslog += '<br> ' + url + ' - not blocked'
 				}
-				
-				
 			})
 			.catch((error) => {
 				console.log(error)
@@ -106,7 +145,7 @@ async function check_url(url, div, parent, k1, k2) {
 				hostDiv.innerHTML = icons['v'] + '<span>' + url + '</span>'
 				abt.blocked += 1
 				Object.assign(abt.hosts[k1][k2], { [url]: true })
-				tslog += "<br> " + url + " - blocked"
+				tslog += '<br> ' + url + ' - blocked'
 				//No response / error  --> ads are blocked
 			})
 	} catch (error) {
@@ -133,9 +172,10 @@ async function fetchTests() {
 	Object.keys(data).forEach((key) => {
 		if (key == 'default') return
 		var catEl = document.createElement('div')
-		catEl.className = "grid"
+		catEl.className = 'grid'
 		catEl.id = key
-		catEl.innerHTML = '<div><h5>' + icons[key] + '&nbsp;&nbsp;' + key + '</h5><div>'
+		catEl.innerHTML =
+			'<div><h5>' + icons[key] + '&nbsp;&nbsp;' + key + '</h5><div>'
 		testWrapper.appendChild(catEl)
 		var category = data[key]
 		var total_hosts = 0
@@ -144,10 +184,10 @@ async function fetchTests() {
 		dd_1.classList.add('col-6')
 		var dd_2 = document.createElement('div')
 		dd_2.classList.add('col-6')
-		
+
 		catEl.appendChild(dd_2)
 		catEl.appendChild(dd_1)
-		var i=0
+		var i = 0
 		Object.keys(category).forEach((keyC) => {
 			var testInfo = document.createElement('div')
 			var tests_count = 0
@@ -156,12 +196,13 @@ async function fetchTests() {
 			div.classList.add('test')
 			div.id = keyC
 			div.style.background = 'var(--green)'
-			let tc = icons[keyC] != undefined ? (icons[keyC] + "&nbsp") : ""
-			div.innerHTML = "<span class='test_collapse'>" + tc + keyC + '</span>'
+			let tc = icons[keyC] != undefined ? icons[keyC] + '&nbsp' : ''
+			div.innerHTML =
+				"<span class='test_collapse'>" + tc + keyC + '</span>'
 			div.appendChild(dw)
-			if(i%2==0){
+			if (i % 2 == 0) {
 				dd_2.appendChild(div)
-			}else{
+			} else {
 				dd_1.appendChild(div)
 			}
 			i++
@@ -169,12 +210,10 @@ async function fetchTests() {
 			if (Object.prototype.hasOwnProperty.call(category, keyC)) {
 				var value = category[keyC]
 				for (let i = 0; i < value.length; i++) {
-					
 					fetches.push(
 						check_url(value[i], dw, div, key, keyC).then(() => {
 							set_liquid()
 						})
-
 					)
 					tests_count++
 				}
@@ -208,8 +247,14 @@ function ad_script_test() {
 	sfa1.classList.add(abt.script.ads ? '_bg-green' : '_bg-red')
 	sfa2.classList.add(abt.script.pagead ? '_bg-green' : '_bg-red')
 	sfa3.classList.add(abt.script.partnerads ? '_bg-green' : '_bg-red')
-	abt.blocked += (abt.script.ads ? 2 :0)+(abt.script.pagead ? 2 :0)+(abt.script.partnerads ? 2 :0)
-	abt.notblocked += (abt.script.ads ? 0 :2)+(abt.script.pagead ? 0 :2)+(abt.script.partnerads ? 0 :2)
+	abt.blocked +=
+		(abt.script.ads ? 2 : 0) +
+		(abt.script.pagead ? 2 : 0) +
+		(abt.script.partnerads ? 2 : 0)
+	abt.notblocked +=
+		(abt.script.ads ? 0 : 2) +
+		(abt.script.pagead ? 0 : 2) +
+		(abt.script.partnerads ? 0 : 2)
 	test_log.appendChild(log)
 	log.innerHTML =
 		'<div>script_ads : ' +
@@ -219,7 +264,7 @@ function ad_script_test() {
 		'</div><div>script_partenrads : ' +
 		abt.script.partnerads +
 		'</div><br> ------------------------- '
-		set_liquid()
+	set_liquid()
 }
 const ctd = document.querySelector('#ctd_test')
 
@@ -227,32 +272,45 @@ const ctd = document.querySelector('#ctd_test')
 function cosmetic_test_static() {
 	setTimeout(function () {
 		const cts = document.querySelector('#cts_test')
-		abt.cosmetic_test.static = (cts.clientHeight || cts.offsetHeight || window.getComputedStyle(cts, null).getPropertyValue("display") =='block') ? false : true
+		abt.cosmetic_test.static =
+			cts.clientHeight ||
+			cts.offsetHeight ||
+			window.getComputedStyle(cts, null).getPropertyValue('display') ==
+				'block'
+				? false
+				: true
 		abt.blocked += abt.cosmetic_test.static ? 2 : 0
 		abt.notblocked += abt.cosmetic_test.static ? 0 : 2
-		document.querySelector('#ct_static').classList.add(abt.cosmetic_test.static ? '_bg-green' : '_bg-red')
+		document
+			.querySelector('#ct_static')
+			.classList.add(abt.cosmetic_test.static ? '_bg-green' : '_bg-red')
 		let log = document.createElement('div')
 		test_log.appendChild(log)
 		log.innerHTML =
 			' cosmetic_static_ad : ' +
 			abt.cosmetic_test.static +
 			'<br><br> ------------------------- '
-			set_liquid()
+		set_liquid()
 	}, 500)
 }
 //Dynamic
 function cosmetic_test_dynamic() {
 	let log = document.createElement('div')
 	let ad = document.createElement('div')
-	ad.id="ad_ctd"
+	ad.id = 'ad_ctd'
 	ad.className =
 		'textads banner-ads banner_ads ad-unit afs_ads ad-zone ad-space adsbox'
-	ad.innerHTML="&nbsp;"
+	ad.innerHTML = '&nbsp;'
 	ctd.appendChild(ad)
 	setTimeout(function () {
-		let adt = document.querySelector("#ad_ctd")
+		let adt = document.querySelector('#ad_ctd')
 		abt.cosmetic_test.dynamic =
-			(adt.offsetHeight  || adt.clientHeight  || window.getComputedStyle(adt, null).getPropertyValue("display") =='block')? false : true
+			adt.offsetHeight ||
+			adt.clientHeight ||
+			window.getComputedStyle(adt, null).getPropertyValue('display') ==
+				'block'
+				? false
+				: true
 		abt.blocked += abt.cosmetic_test.dynamic ? 2 : 0
 		abt.notblocked += abt.cosmetic_test.dynamic ? 0 : 2
 		test_log.appendChild(log)
@@ -263,7 +321,7 @@ function cosmetic_test_dynamic() {
 		document
 			.querySelector('#ct_dynamic')
 			.classList.add(abt.cosmetic_test.dynamic ? '_bg-green' : '_bg-red')
-			set_liquid()
+		set_liquid()
 	}, 500)
 }
 
@@ -273,9 +331,20 @@ async function startAdBlockTesting() {
 	document.querySelector('.lt_wrap').classList.add('start')
 	lt_cwrap.classList.add('start')
 	let tests = []
-	tests.push(cosmetic_test_static())
-	tests.push(cosmetic_test_dynamic())
-	tests.push(ad_script_test())
+	if (settings['hideCF']) {
+		abt.total += 4
+		tests.push(cosmetic_test_static())
+		tests.push(cosmetic_test_dynamic())
+	} else {
+		document.querySelector('#cf_wrap').style.display = 'none'
+	}
+	if (settings['hideSL']) {
+		abt.total += 6
+		tests.push(ad_script_test())
+	} else {
+		document.querySelector('#sl_wrap').style.display = 'none'
+	}
+
 	tests.push(fetchTests())
 	let results = await Promise.all(tests)
 	return results
@@ -285,17 +354,14 @@ function set_liquid() {
 	var c = p > 30 ? (p > 60 ? 'var(--green)' : 'var(--orange)') : 'var(--red)'
 	document.body.style.setProperty('--liquid-percentage', 45 - p + '%')
 	document.body.style.setProperty('--liquid-color', c)
-	document.body.style.setProperty(
-		'--liquid-title',
-		"'" + abt.blocked + "'"
-	)
+	document.body.style.setProperty('--liquid-title', "'" + abt.blocked + "'")
 }
 
 function stopAdBlockTesting() {
 	fadeOut(lt_particles, () => {
 		document.querySelector('.lt_wrap').classList.remove('start')
 		fadeIn(lt_particles, 'flex')
-		document.body.classList.remove("_overflowhidden")
+		document.body.classList.remove('_overflowhidden')
 	})
 	lt_cwrap.classList.remove('start')
 	console.log(abt)
@@ -303,73 +369,118 @@ function stopAdBlockTesting() {
 function render_tests() {
 	var r_wrap = document.querySelector('.r_wrap')
 	r_wrap.innerHTML = ''
-	reports.forEach((r, index) => {
+	results.forEach((r, index) => {
 		var div = document.createElement('div')
-		div.className = "col-6"
-		var date = new Date(r["time"]);
-		let d = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear() +
-			" " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-		var abt_r = reports[index].abt
-		var t = "<span>Total : "+abt_r.total+"</span><br><span>"+icons["x"]+" "+abt_r.notblocked+" not blocked</span><span>"+icons["v"]+" "+abt_r.blocked+" blocked</span>"
-		div.innerHTML = "<div class='card'><div>"+t+"<br><h6>" + d + "</h6></div><div><button class='btn-blue'>" + icons["download"] + "</button></div></div>"
-		r_wrap.insertBefore(div,r_wrap.children[0])
-
+		div.className = 'col-6'
+		var abt_r = results[index].abt
+		var t =
+			'<span>Total : ' +
+			abt_r.total +
+			'</span><br><span>' +
+			icons['x'] +
+			' ' +
+			abt_r.notblocked +
+			' not blocked</span><span>' +
+			icons['v'] +
+			' ' +
+			abt_r.blocked +
+			' blocked</span>'
+		div.innerHTML =
+			"<div class='card'><div>" +
+			t +
+			'<br><h6>' +
+			r.date +
+			'</h6></div><div><button class="btn-blue outline" data-r=' +
+			r['time'] +
+			'>' +
+			icons['download'] +
+			'</button></div></div>'
+		r_wrap.insertBefore(div, r_wrap.children[0])
+	})
+	document.querySelectorAll('button[data-r]').forEach((el) => {
+		el.addEventListener('click', () => {
+			downloadResult(el.getAttribute('data-r'))
+		})
 	})
 }
 //Browser : \nOS : \nAd-block : \nDNS : \nVPN :
 function add_report() {
-	let ms = Date.now();
-	if (reports.length < 10) {
-		reports.push({ "time": ms, "note": "", "abt": abt })
+	let ms = Date.now()
+	var date = new Date(ms)
+	let d =
+		date.getDate() +
+		'/' +
+		(date.getMonth() + 1) +
+		'/' +
+		date.getFullYear() +
+		' ' +
+		date.getHours() +
+		':' +
+		date.getMinutes() +
+		':' +
+		date.getSeconds()
+	if (results.length < 10) {
+		results.push({ time: ms, date: d, note: '', abt: abt })
 	} else {
-		reports.splice(0, 1)
-		reports.push({ "time": ms, "note": "", "abt": abt })
+		results.splice(0, 1)
+		results.push({ time: ms, date: d, note: '', abt: abt })
 	}
-	LS.set("reports", reports)
+	LS.set('results', results)
 	render_tests()
 	console.log(abt)
 }
 window.onbeforeunload = function () {
-	window.scrollTo(0, 0);
-};
+	window.scrollTo(0, 0)
+}
 
-const el = (l) => { return document.querySelector(l) }
+const el = (l) => {
+	return document.querySelector(l)
+}
 
 document.addEventListener('DOMContentLoaded', function () {
 	new navbar()
 	new themeManager()
 	new gotop()
 	new aos()
-	const ct = document.querySelector("#collapse_status")
-	ct.checked = collapseStatus
-	ct.addEventListener("change", () => {
-		console.log(collapseStatus)
-		collapseStatus = ct.checked
-		collapse_category(collapseStatus, false)
-		LS.set('collapseStatus', collapseStatus)
-	})
+	console.log(settings)
+	for (const key in settings) {
+		console.log(`${key}: ${settings[key]}`)
+
+		const c = document.querySelector('#' + key)
+		c.checked = settings[key]
+		c.addEventListener('change', () => {
+			settings[key] = c.checked
+			console.log(key, c.checked)
+			if (key == 'collapseAll') collapse_category(settings[key], false)
+			LS.set('settings', settings)
+		})
+	}
 	render_tests()
 
 	startAdBlockTesting().then(() => {
-		collapse_category(collapseStatus, true)
+		collapse_category(settings['collapseAll'], true)
 		//Add a delay in order to show properly the animation
 		setTimeout(() => {
 			stopAdBlockTesting()
 			add_report()
-			var tsl = document.createElement("div")
+			var tsl = document.createElement('div')
 			tsl.innerHTML = tslog
 			test_log.appendChild(tsl)
-			fadeIn(document.querySelector("#adb_test"), "flex")
+			fadeIn(document.querySelector('#adb_test'), 'flex')
 		}, 2000)
-
 	})
 
-	document.querySelector("#start_test").addEventListener("click", () => {
+	document.querySelector('#start_test').addEventListener('click', () => {
 		location.reload(true)
 	})
-	const stxt = "https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt"
-	const sadblock = 'https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.adblock'
-	document.querySelector("#d3H_txt").addEventListener("click", function () { copyToClip(stxt) })
-	el("#d3H_adblock").addEventListener("click", function () { copyToClip(sadblock) })
-
+	const stxt =
+		'https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.txt'
+	const sadblock =
+		'https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.adblock'
+	document.querySelector('#d3H_txt').addEventListener('click', function () {
+		copyToClip(stxt)
+	})
+	el('#d3H_adblock').addEventListener('click', function () {
+		copyToClip(sadblock)
+	})
 })
