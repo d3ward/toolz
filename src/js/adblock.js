@@ -27,8 +27,8 @@ var settings = LS.get('settings')
 if (!settings) {
 	settings = {
 		collapseAll: true,
-		hideCF: false,
-		hideSL: false
+		showCF: true,
+		showSL: true
 	}
 	LS.set('settings', settings)
 }
@@ -331,14 +331,14 @@ async function startAdBlockTesting() {
 	document.querySelector('.lt_wrap').classList.add('start')
 	lt_cwrap.classList.add('start')
 	let tests = []
-	if (settings['hideCF']) {
+	if (settings['showCF']) {
 		abt.total += 4
 		tests.push(cosmetic_test_static())
 		tests.push(cosmetic_test_dynamic())
 	} else {
 		document.querySelector('#cf_wrap').style.display = 'none'
 	}
-	if (settings['hideSL']) {
+	if (settings['showSL']) {
 		abt.total += 6
 		tests.push(ad_script_test())
 	} else {
