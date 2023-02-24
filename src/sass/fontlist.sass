@@ -55,7 +55,9 @@ body
 	display: flex
 	align-items: center
 	gap: .5rem
-
+pre
+	max-width: calc(100vw - 8rem)
+	overflow: scroll
 input[type=range]
 	-webkit-appearance: none
 	margin: 10px 0
@@ -83,4 +85,3 @@ input[type=range]::-webkit-slider-runnable-track
 
 input[type=range]::-webkit-slider-thumb
 	background: var(--slider-thumb-color)
-
