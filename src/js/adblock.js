@@ -354,7 +354,10 @@ function set_liquid() {
 	var c = p > 30 ? (p > 60 ? 'var(--green)' : 'var(--orange)') : 'var(--red)'
 	document.body.style.setProperty('--liquid-percentage', 45 - p + '%')
 	document.body.style.setProperty('--liquid-color', c)
-	document.body.style.setProperty('--liquid-title', "'" + Math.round(p) + "%'")
+	document.body.style.setProperty(
+		'--liquid-title',
+		"'" + Math.round(p) + "%'"
+	)
 }
 
 function stopAdBlockTesting() {
@@ -374,7 +377,9 @@ function render_tests() {
 		div.className = 'col-6'
 		var abt_r = results[index].abt
 		var t =
-			'<span>Total : ' +
+			'<span>' +
+			icons['cdot'] +
+			'Total : ' +
 			abt_r.total +
 			'</span><br><span>' +
 			icons['x'] +
@@ -472,6 +477,22 @@ document.addEventListener('DOMContentLoaded', function () {
 			tsl.innerHTML = tslog
 			test_log.appendChild(tsl)
 			fadeIn(document.querySelector('#adb_test'), 'flex')
+			const r = document.querySelector('#adb_test_r')
+
+			r.innerHTML =
+				'<span>' +
+				icons['cdot'] +
+				' Total : ' +
+				abt.total +
+				'</span><span>' +
+				icons['v'] +
+				' ' +
+				abt.blocked +
+				' blocked</span><span>' +
+				icons['x'] +
+				' ' +
+				abt.notblocked +
+				' not blocked </span>'
 		}, 2000)
 	})
 
