@@ -24,7 +24,7 @@ if (tzversion !== version) {
 var LS = new LocalStorageManager('adb_tool')
 var results = LS.get('results')
 var settings = LS.get('settings')
-if (!settings || settings['hideCF']) {
+if (!settings || !settings['showCF']) {
 	settings = {
 		collapseAll: true,
 		showCF: true,
