@@ -8,7 +8,7 @@
 ! This list cover all the tests on https://d3ward.github.io/toolz/adblock
 ! Type : Stable
 ! Entries : 132
-! Updated On: 24/2/2023
+! Updated On: 01/3/2023
 ! Created by: d3ward
 
 !============ Ads =============
@@ -38,12 +38,9 @@
 ||adc3-launch.adcolony.com^
 ||events3alt.adcolony.com^
 ||wd.adcolony.com^
-||events3alt.adcolony.com^
 
 ! --- Media.net
-||static.media.net^
 ||media.net^
-||adservetx.media.net^
 
 
 !========= Analytics ==========
@@ -53,7 +50,6 @@
 ||analytics.google.com^
 ||click.googleanalytics.com^
 ||google-analytics.com^
-||ssl.google-analytics.com^
 
 ! --- Hotjar
 ||adm.hotjar.com^
@@ -66,21 +62,12 @@
 
 ! --- MouseFlow
 ||mouseflow.com^
-||api.mouseflow.com^
-||tools.mouseflow.com^
-||cdn-test.mouseflow.com^
 
 ! --- FreshWorks
 ||freshmarketer.com^
-||claritybt.freshmarketer.com^
-||fwtracks.freshmarketer.com^
 
 ! --- Luckyorange
 ||luckyorange.com^
-||api.luckyorange.com^
-||realtime.luckyorange.com^
-||cdn.luckyorange.com^
-||w1.luckyorange.com^
 ||upload.luckyorange.net^
 ||cs.luckyorange.net^
 ||settings.luckyorange.net^
@@ -137,7 +124,6 @@
 ||analytics.tiktok.com^
 ||ads-sg.tiktok.com^
 ||analytics-sg.tiktok.com^
-||analytics.tiktok.com^
 ||business-api.tiktok.com^
 ||ads.tiktok.com^
 
