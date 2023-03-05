@@ -7,8 +7,8 @@
 
 # This list cover all the tests on https://d3ward.github.io/toolz/adblock
 # Type : Stable
-# Entries : 132
-# Updated On: 24/2/2023
+# Entries : 130
+# Updated On: 5/3/2023
 # Created by: d3ward
 
 #============ Ads =============
@@ -38,7 +38,6 @@
 0.0.0.0 adc3-launch.adcolony.com
 0.0.0.0 events3alt.adcolony.com
 0.0.0.0 wd.adcolony.com
-0.0.0.0 events3alt.adcolony.com
 
 # --- Media.net
 0.0.0.0 static.media.net
@@ -137,7 +136,6 @@
 0.0.0.0 analytics.tiktok.com
 0.0.0.0 ads-sg.tiktok.com
 0.0.0.0 analytics-sg.tiktok.com
-0.0.0.0 analytics.tiktok.com
 0.0.0.0 business-api.tiktok.com
 0.0.0.0 ads.tiktok.com
 
