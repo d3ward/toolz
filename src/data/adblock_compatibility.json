@@ -5,6 +5,7 @@
 		"type":"DNS",
 		"name": "NextDNS",
 		"no-issues": ["brave-macos","safari-macos","safari-ios","chrome-android","firefox-macos","edge-windows"],
+		"issues": ["with-blocking-page-feature"],
 		"note":"Can be used in combo with ublock-origin or adguard adblocker"
 	},
 	"pi-hole":{
