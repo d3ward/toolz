@@ -6,7 +6,7 @@
 		"name": "NextDNS",
 		"no-issues": ["brave-macos","safari-macos","safari-ios","chrome-android","firefox-macos","edge-windows"],
 		"issues": ["with-blocking-page-feature"],
-		"note":" - Can be used in combo with ublock-origin or adguard adblocker<br> - Having issues if blocking page feature of NextDNS is enabled"
+		"note":"Can be used in combo with ublock-origin or adguard adblocker. Test doesn't work properly if blocking page feature of NextDNS is enabled"
 	},
 	"pi-hole":{
 		"hidden":true,
