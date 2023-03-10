@@ -92,10 +92,8 @@
 			"an.facebook.com"
 		],
 		"Twitter": [
-			"analytics.twitter.com",
 			"static.ads-twitter.com",
-			"ads-api.twitter.com",
-			"ads.twitter.com"
+			"ads-api.twitter.com"
 		],
 		"LinkedIn": [
 			"ads.linkedin.com",
