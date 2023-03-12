@@ -3,12 +3,12 @@
 ! Description: Simple and small list with the most popular advertising, tracking, analytics and social advertising services
 ! Homepage: https://github.com/d3ward/toolz
 ! License: CC BY-NC-SA
-! Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
+! Source: https://github.com/d3ward/toolz/blob/master/src/d3host.adblock
 
 ! This list cover all the tests on https://d3ward.github.io/toolz/adblock
 ! Type : Stable
-! Entries : 130
-! Updated On: 5/3/2023
+! Entries : 137
+! Updated On: 12/3/2023
 ! Created by: d3ward
 
 !============ Ads =============
@@ -108,10 +108,8 @@
 ||an.facebook.com^
 
 ! --- Twitter
-||analytics.twitter.com^
 ||static.ads-twitter.com^
 ||ads-api.twitter.com^
-||ads.twitter.com^
 
 ! --- LinkedIn
 ||ads.linkedin.com^
@@ -138,6 +136,7 @@
 ||analytics-sg.tiktok.com^
 ||business-api.tiktok.com^
 ||ads.tiktok.com^
+||log.byteoversea.com^
 
 
 !============ Mix =============
@@ -210,10 +209,18 @@
 ! --- Samsung
 ||samsungads.com^
 ||smetrics.samsung.com^
+||nmetrics.samsung.com^
 ||samsung-com.112.2o7.net^
 ||analytics-api.samsunghealthcn.com^
 
 ! --- Apple
 ||advertising.apple.com^
 ||tr.iadsdk.apple.com^
+||iadsdk.apple.com^
 ||metrics.icloud.com^
+||metrics.apple.com^
+||metrics.mzstatic.com^
+||api-adservices.apple.com^
+||books-analytics-events.apple.com^
+||weather-analytics-events.apple.com^
+||notes-analytics-events.apple.com^

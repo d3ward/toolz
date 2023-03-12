@@ -8,6 +8,7 @@ function center(s, max, c) {
 		.padEnd(max, c)
 }
 const header = (entries, date, comment) => {
+	let ext = comment == '#' ? '.txt' : '.adblock'
 	return (
 		comment +
 		' Title: d3Host List by d3ward\n' +
@@ -20,7 +21,9 @@ const header = (entries, date, comment) => {
 		comment +
 		' License: CC BY-NC-SA\n' +
 		comment +
-		' Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt\n\n' +
+		' Source: https://github.com/d3ward/toolz/blob/master/src/d3host' +
+		ext +
+		'\n\n' +
 		comment +
 		' This list cover all the tests on https://d3ward.github.io/toolz/adblock\n' +
 		comment +

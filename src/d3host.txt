@@ -7,8 +7,8 @@
 
 # This list cover all the tests on https://d3ward.github.io/toolz/adblock
 # Type : Stable
-# Entries : 130
-# Updated On: 5/3/2023
+# Entries : 137
+# Updated On: 12/3/2023
 # Created by: d3ward
 
 #============ Ads =============
@@ -108,10 +108,8 @@
 0.0.0.0 an.facebook.com
 
 # --- Twitter
-0.0.0.0 analytics.twitter.com
 0.0.0.0 static.ads-twitter.com
 0.0.0.0 ads-api.twitter.com
-0.0.0.0 ads.twitter.com
 
 # --- LinkedIn
 0.0.0.0 ads.linkedin.com
@@ -138,6 +136,7 @@
 0.0.0.0 analytics-sg.tiktok.com
 0.0.0.0 business-api.tiktok.com
 0.0.0.0 ads.tiktok.com
+0.0.0.0 log.byteoversea.com
 
 
 #============ Mix =============
@@ -210,10 +209,18 @@
 # --- Samsung
 0.0.0.0 samsungads.com
 0.0.0.0 smetrics.samsung.com
+0.0.0.0 nmetrics.samsung.com
 0.0.0.0 samsung-com.112.2o7.net
 0.0.0.0 analytics-api.samsunghealthcn.com
 
 # --- Apple
 0.0.0.0 advertising.apple.com
 0.0.0.0 tr.iadsdk.apple.com
+0.0.0.0 iadsdk.apple.com
 0.0.0.0 metrics.icloud.com
+0.0.0.0 metrics.apple.com
+0.0.0.0 metrics.mzstatic.com
+0.0.0.0 api-adservices.apple.com
+0.0.0.0 books-analytics-events.apple.com
+0.0.0.0 weather-analytics-events.apple.com
+0.0.0.0 notes-analytics-events.apple.com

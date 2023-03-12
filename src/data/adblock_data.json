@@ -119,7 +119,8 @@
 			"ads-sg.tiktok.com",
 			"analytics-sg.tiktok.com",
 			"business-api.tiktok.com",
-			"ads.tiktok.com"
+			"ads.tiktok.com",
+			"log.byteoversea.com"
 		]
 	},
 	"Mix": {
@@ -190,13 +191,21 @@
 		"Samsung": [
 			"samsungads.com",
 			"smetrics.samsung.com",
+			"nmetrics.samsung.com",
 			"samsung-com.112.2o7.net",
 			"analytics-api.samsunghealthcn.com"
 		],
 		"Apple": [
 			"advertising.apple.com",
 			"tr.iadsdk.apple.com",
-			"metrics.icloud.com"
+			"iadsdk.apple.com",
+			"metrics.icloud.com",
+			"metrics.apple.com",
+			"metrics.mzstatic.com",
+			"api-adservices.apple.com",
+			"books-analytics-events.apple.com",
+			"weather-analytics-events.apple.com",
+			"notes-analytics-events.apple.com"
 		]
 	}
 }
