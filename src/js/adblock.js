@@ -475,6 +475,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			stopAdBlockTesting()
 			add_report()
 			var tsl = document.createElement('div')
+			tslog +=
+				'<br>-----<br> Total : ' +
+				abt.total +
+				'<br> Blocked : ' +
+				abt.blocked +
+				'<br> Not Blocked : ' +
+				abt.notblocked
 			tsl.innerHTML = tslog
 			test_log.appendChild(tsl)
 			fadeIn(document.querySelector('#adb_test'), 'flex')
