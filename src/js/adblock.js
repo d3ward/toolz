@@ -409,6 +409,11 @@ function render_tests() {
 		})
 	})
 }
+
+function leading_zero(val) {
+    return (val<10?'0':'') + val
+}
+
 //Browser : \nOS : \nAd-block : \nDNS : \nVPN :
 function add_report() {
 	let ms = Date.now()
@@ -420,11 +425,11 @@ function add_report() {
 		'/' +
 		date.getFullYear() +
 		' ' +
-		date.getHours() +
+		leading_zero(date.getHours()) +
 		':' +
-		date.getMinutes() +
+		leading_zero(date.getMinutes()) +
 		':' +
-		date.getSeconds()
+		leading_zero(date.getSeconds())
 	if (results.length < 10) {
 		results.push({ time: ms, date: d, note: '', abt: abt })
 	} else {
