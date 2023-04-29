@@ -1,5 +1,6 @@
 import '../sass/adblock.sass'
 import * as data from '../data/adblock_data.json'
+import * as data_ac from '../data/adblock_compatibility.json'
 import packageJSON from '../../package.json'
 import { icons } from '../data/icons'
 import { navbar } from './components/navbar'
@@ -12,6 +13,7 @@ import { Snackbar } from './components/snackbar'
 import { LocalStorageManager } from './components/localStorage'
 const cd = document.querySelector('#dlg_changelog')
 const ch_dialog = new A11yDialog(cd)
+const bbs_dialog = new A11yDialog(document.querySelector('#dlg_configuration'))
 var TZ = new LocalStorageManager('toolz')
 const version = packageJSON.version
 const tzversion = TZ.get('version')
@@ -26,13 +28,63 @@ var results = LS.get('results')
 var settings = LS.get('settings')
 if (!settings || !settings['showCF']) {
 	settings = {
+		browser: null,
+		block_solution: null,
 		collapseAll: true,
 		showCF: true,
 		showSL: true
 	}
 	LS.set('settings', settings)
 }
-
+const getIcon = (s, type) => {
+	var sp
+	if (type == 'os') {
+		if (s == null) return icons['none']
+		sp = s.slice('-')
+		return icons[sp[1]]
+	} else {
+		if (s == null) return ''
+		sp = s.slice('-')
+		return icons[sp[0]]
+	}
+}
+const bbs_preview = document.getElementById('bbs_preview')
+function setBBS() {
+	bbs_preview.innerHTML =
+		'<span>' +
+		getIcon(settings['browser'], 'os') +
+		getIcon(settings['browser'], 'br') +
+		'</span>' +
+		settings['browser'] +
+		icons['exchange'] +
+		icons[settings['block_solution'] || 'none'] +
+		settings['block_solution']
+}
+bbs_preview.addEventListener('click', () => {
+	bbs_dialog.show()
+})
+setBBS()
+const step1_cnt = document.getElementById('bbs_step_1')
+function step1BBS() {
+	for (let key in adblock_compatibility) {
+		value = adblock_compatibility[key]
+		if (key != 'default' && value.hidden != true) {
+			const s =
+				'<label class="custom-radio__item"><input type="radio" name="options" value="option1" class="custom-radio__input">' +
+				icons[settings['block_solution']] +
+				'<span class="custom-radio__label">Option 1</span></label>'
+		}
+	}
+}
+console.log(!settings['browser'] || !settings['block_solution'])
+/*
+if (!settings['browser'] || !settings['block_solution']) {
+	bbs_dialog.show()
+}
+if (settings.browser === null || settings.block_solution === null) {
+	bbs_dialog.show()
+}
+*/
 var tslog = ''
 if (!results) results = []
 var test_log = document.getElementById('test_log')
@@ -411,7 +463,7 @@ function render_tests() {
 }
 
 function leading_zero(val) {
-    return (val<10?'0':'') + val
+	return (val < 10 ? '0' : '') + val
 }
 
 //Browser : \nOS : \nAd-block : \nDNS : \nVPN :
@@ -472,7 +524,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 	render_tests()
-
+	/*
 	startAdBlockTesting().then(() => {
 		collapse_category(settings['collapseAll'], true)
 		//Add a delay in order to show properly the animation
@@ -507,7 +559,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				abt.notblocked +
 				' not blocked </span>'
 		}, 2000)
-	})
+	})*/
 
 	document.querySelector('#start_test').addEventListener('click', () => {
 		location.reload(true)
@@ -522,4 +574,31 @@ document.addEventListener('DOMContentLoaded', function () {
 	el('#d3H_adblock').addEventListener('click', function () {
 		copyToClip(sadblock)
 	})
+	const items = document.querySelectorAll('.custom-radio__item')
+
+	items.forEach((item) => {
+		item.addEventListener('click', () => {
+			const input = item.querySelector('.custom-radio__input')
+			const value = input.value
+
+			// update the selected value in local storage
+			localStorage.setItem('selectedValue', value)
+
+			// update the selected state of all items
+			items.forEach((item) => {
+				item.classList.toggle('selected', item === input.parentNode)
+			})
+		})
+	})
+
+	// check if there is a previously selected value in local storage
+	const selectedValue = localStorage.getItem('selectedValue')
+
+	if (selectedValue) {
+		// set the selected state of the corresponding item
+		const item = document.querySelector(
+			`.custom-radio__item input[value="${selectedValue}"]`
+		).parentNode
+		item.classList.add('selected')
+	}
 })

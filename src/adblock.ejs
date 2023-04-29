@@ -95,6 +95,32 @@
 		<%- include('partials/adblock/faq.ejs') %>
 		<%- include('partials/adblock/changelog.ejs') %>
 		<%- include('partials/adblock/logs.ejs') %>
+		<div class="dialog" id="dlg_configuration" data-a11y-dialog="dlg_configuration" aria-labelledby="dlg_configuration-title" aria-hidden="true">
+			<div class="dialog-overlay" data-a11y-dialog-hide></div>
+			<div class="dialog-content">
+				<header>
+					<h3 id="dlg_configuration-title">Configure Test</h3>
+					<button data-a11y-dialog-hide><svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor"
+							viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+							</path>
+						</svg></button>
+				</header>
+				<section>
+					<div>
+						<div class="custom-radio" id="bbs_step_1">
+							
+						</div>
+						  
+					</div>
+				</section>
+				<footer>
+					<button data-a11y-dialog-hide>
+						Close
+					</button>
+				</footer>
+			</div>
+		</div>
 		<%- include('partials/header.ejs', {page:'adblock'}) %>
 		<main>
 			<button data-a11y-dialog-show="dlg_reports"> 
@@ -179,6 +205,11 @@
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="_f-center">
+						<button id="bbs_preview">
+
+						</button>
 					</div>
 					<div class="_f-center">
 						<button id="start_test"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-refresh-dot" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
