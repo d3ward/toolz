@@ -15,6 +15,7 @@
 	<body class="_overflowhidden">
 		<%- include('partials/adblock/results.ejs') %>
 		<% const adblock_compatibility = require('./data/adblock_compatibility.json') %>
+		<% const ac_icons = require('./data/ac_icons.json') %>
 		<div class="dialog" id="dlg_compatibility" data-a11y-dialog="dlg_compatibility" aria-labelledby="dlg_compatibility-title" aria-hidden="true">
 			<div class="dialog-overlay" data-a11y-dialog-hide></div>
 			<div class="dialog-content">
@@ -109,7 +110,50 @@
 				<section>
 					<div>
 						<div class="custom-radio" id="bbs_step_1">
-							
+							<%
+							const result = {};
+
+							for (const key in adblock_compatibility) {
+								const item = adblock_compatibility[key];
+								const issues = item.issues || [];
+								const noIssues = item["no-issues"] || [];
+							  
+								const allItems = [...issues, ...noIssues];
+								
+								allItems.forEach(item => {
+								  const [browser, os] = item.split("-");
+								  if (!result[os]) result[os] = [];
+								  if (!result[os].includes(browser)) {
+									result[os].push(browser);
+								  }
+								});
+							  }
+							%>
+
+							<!-- Your existing EJS code here -->
+							<div class="grid keep-width">
+								<% for (const os in result) { %>
+								<div>
+									<div class="card">
+										<% value = ac_icons[os] %>
+										<%= os %>
+										<% if (value) { %>
+										<h5><span><%- value.icon %></span><%= value.name %></h5>
+										<div class="_d-flex">
+											<% result[os].forEach(browser => { %>
+												<% vb = ac_icons[browser] %>
+												<% if (vb) { %>
+													<button class="browser-os" data-cbo="<%= browser %>-<%= os %>"> <%- vb.icon %> <%= vb.name %></button>
+												<% } %>
+											<% }); %>	
+										</div>
+										<% } %>
+									</div>
+								</div>
+								<% } %>
+							</div>
+
+							  
 						</div>
 						  
 					</div>

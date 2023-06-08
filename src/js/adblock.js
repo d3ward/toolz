@@ -574,31 +574,19 @@ document.addEventListener('DOMContentLoaded', function () {
 	el('#d3H_adblock').addEventListener('click', function () {
 		copyToClip(sadblock)
 	})
-	const items = document.querySelectorAll('.custom-radio__item')
+	const items = document.querySelectorAll('.browser-os')
 
 	items.forEach((item) => {
 		item.addEventListener('click', () => {
-			const input = item.querySelector('.custom-radio__input')
-			const value = input.value
-
+			console.log(item.getAttribute('data-cbo'))
 			// update the selected value in local storage
-			localStorage.setItem('selectedValue', value)
+			//localStorage.setItem('selectedValue', value)
 
-			// update the selected state of all items
-			items.forEach((item) => {
-				item.classList.toggle('selected', item === input.parentNode)
-			})
+			
 		})
 	})
 
 	// check if there is a previously selected value in local storage
 	const selectedValue = localStorage.getItem('selectedValue')
 
-	if (selectedValue) {
-		// set the selected state of the corresponding item
-		const item = document.querySelector(
-			`.custom-radio__item input[value="${selectedValue}"]`
-		).parentNode
-		item.classList.add('selected')
-	}
 })
