@@ -13,7 +13,7 @@ const version = packageJSON.version
 const tzversion = TZ.get('version')
 if (tzversion !== version) {
 	//Show changelog
-	ch_dialog.show()
+	//ch_dialog.show()
 	//Set version
 	TZ.set('version', version)
 }

@@ -14,7 +14,7 @@ var tzversion = TZ.get('version')
 console.log(tzversion, version)
 if (tzversion !== version) {
 	//Show changelog
-	ch_dialog.show()
+	//ch_dialog.show()
 	//Set version
 	TZ.set('version', version)
 }
