@@ -12,7 +12,7 @@
 			preview_thumbnail:'https://d3ward.github.io/toolz/src/preview_toolz.png',
 			keywords:'adblock,test adblock,analytics,trackers,ads,cosmetic filter,ublock, ublockorigin,adblock extension,script loading'
 		}) %>
-	<body class="_overflowhidden">
+	<body>
 		<%- include('partials/adblock/results.ejs') %>
 		<% const adblock_compatibility = require('./data/adblock_compatibility.json') %>
 		<% const ac_icons = require('./data/ac_icons.json') %>
@@ -100,7 +100,7 @@
 			<div class="dialog-overlay" data-a11y-dialog-hide></div>
 			<div class="dialog-content">
 				<header>
-					<h3 id="dlg_configuration-title">Configure Test</h3>
+					<h3 id="dlg_configuration-title">Select browser/OS</h3>
 					<button data-a11y-dialog-hide><svg class="w-6 h-6" id="close-icon" fill="none" stroke="currentColor"
 							viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
@@ -108,8 +108,7 @@
 						</svg></button>
 				</header>
 				<section>
-					<div>
-						<div class="custom-radio" id="bbs_step_1">
+						<div id="bbs_step_1" class="_d-none">
 							<%
 							const result = {};
 
@@ -128,18 +127,16 @@
 								  }
 								});
 							  }
+							  console.log(result)
 							%>
-
-							<!-- Your existing EJS code here -->
 							<div class="grid keep-width">
 								<% for (const os in result) { %>
 								<div>
-									<div class="card">
+									<div class="card browser-os_card">
 										<% value = ac_icons[os] %>
-										<%= os %>
 										<% if (value) { %>
-										<h5><span><%- value.icon %></span><%= value.name %></h5>
-										<div class="_d-flex">
+										<h5><span class="_mr-05"><%- value.icon %></span><%= value.name %></h5>
+										<div class="browser-os_wrap">
 											<% result[os].forEach(browser => { %>
 												<% vb = ac_icons[browser] %>
 												<% if (vb) { %>
@@ -152,15 +149,18 @@
 								</div>
 								<% } %>
 							</div>
-
-							  
 						</div>
-						  
-					</div>
+						<div id="bbs_step_2" class="_d-none">
+
+						</div>
 				</section>
 				<footer>
-					<button data-a11y-dialog-hide>
-						Close
+					<button id="close-cancel">
+						Cancel
+					</button>
+
+					<button id="np_bbs" class="btn-p _d-none">
+						Select adblock
 					</button>
 				</footer>
 			</div>

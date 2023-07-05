@@ -287,7 +287,7 @@ footer>div
 		opacity: 0
 :root
 	--liquid-percentage: 50%
-	--liquid-title: "ERROR"
+	--liquid-title: "-"
 	--liquid-color: var(--red)
 
 .r_wrap span
@@ -402,35 +402,25 @@ footer>div
 	align-items: center
 	gap: .5rem
 
-.custom-radio
-	display: grid
-	grid-template-columns: repeat(3, 1fr)
-	gap: 10px
-
-	&__item
-		display: flex
-		align-items: center
-		justify-content: center
-		padding: .5rem
-		border: 1px solid var(--brd)
-		border-radius: var(--radius)
-		color: var(--txt)
-		cursor: pointer
-		transition: background-color 0.2s ease-in-out
-
-	&__item:hover
-		background-color: var(--brd)
-
-	&__item.selected
-		background-color: var(--primary)
-		color: var(--txt-on-p)
-
-	&__input
-		display: none!important
-
-	&__icon
-		width: 24px
-		height: 24px
-		margin-right: 10px
-
-		
+.browser-os_wrap
+	display: flex
+	flex-wrap: wrap
+	gap: .5rem
+.browser-os,.block-sol
+	width: max-content
+.browser-os.slt,.block-sol.slt
+	--btn-f: var(--primary-h)
+	--btn-brd: var(--primary)
+	--btn-txt: var(--txt-on-blue)
+	--btn-bg: var(--blue)
+	svg
+		fill: var(--txt-on-blue)
+#dlg_configuration footer
+	justify-content: space-between
+#bbs_preview >span
+	display: flex
+	svg
+		display: block
+		height: 1.5rem
+		width: 1.5rem
+		max-height: 1.7rem

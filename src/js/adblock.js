@@ -2,6 +2,7 @@ import '../sass/adblock.sass'
 import * as data from '../data/adblock_data.json'
 import * as data_ac from '../data/adblock_compatibility.json'
 import packageJSON from '../../package.json'
+import * as ac_icons from '../data/ac_icons.json'
 import { icons } from '../data/icons'
 import { navbar } from './components/navbar'
 import A11yDialog from './components/dialog'
@@ -38,53 +39,96 @@ if (!settings || !settings['showCF']) {
 }
 const getIcon = (s, type) => {
 	var sp
-	if (type == 'os') {
-		if (s == null) return icons['none']
-		sp = s.slice('-')
-		return icons[sp[1]]
-	} else {
-		if (s == null) return ''
-		sp = s.slice('-')
-		return icons[sp[0]]
+	try {
+		if (type == 'os') {
+			if (s == null) return icons['none']
+			sp = s.split('-')
+			console.log(type, ' : ', sp[1])
+			return ac_icons[sp[1]].icon
+		} else if (type == 'br') {
+			if (s == null) return ''
+			sp = s.split('-')
+			console.log(type, ' : ', sp[0])
+			return ac_icons[sp[0]].icon
+		} else {
+			return ac_icons[s].icon
+		}
+	} catch (error) {
+		console.log('🚀 ~ file: adblock.js:57 ~ getIcon ~ error:', error)
+	}
+}
+const getName = (s) => {
+	if (s == null) return 'undefined'
+	let sp = s.split('-')
+	try {
+		console.log(ac_icons[sp[0]].name)
+		return ac_icons[sp[0]].name
+	} catch (error) {
+		console.log('🚀 ~ file: adblock.js:68 ~ getName ~ error:', error)
 	}
 }
 const bbs_preview = document.getElementById('bbs_preview')
 function setBBS() {
 	bbs_preview.innerHTML =
 		'<span>' +
-		getIcon(settings['browser'], 'os') +
-		getIcon(settings['browser'], 'br') +
+		getIcon(settings['browser-os'], 'os') +
+		getIcon(settings['browser-os'], 'br') +
 		'</span>' +
-		settings['browser'] +
+		getName(settings['browser-os']) +
 		icons['exchange'] +
-		icons[settings['block_solution'] || 'none'] +
-		settings['block_solution']
+		getIcon(settings['block_solution']) +
+		getName(settings['block_solution'])
 }
+
+function stepBBS(bo) {
+	var r = getAS(bo)
+	console.log(r)
+	// Generate HTML list
+	var html =
+		'<div class="grid keep-width"><div><div class="card browser-os_card"><div class="browser-os_wrap">'
+
+	for (var i = 0; i < r.length; i++) {
+		console.log(r[i])
+		html +=
+			'<button class="block-sol" data-cas="' +
+			r[i] +
+			'">' +
+			ac_icons[r[i]].icon +
+			ac_icons[r[i]].name +
+			'</button>'
+	}
+	html += '</div></div></div></div>'
+
+	document.getElementById('bbs_step_2').innerHTML = html
+	const items_as = document.querySelectorAll('.block-sol')
+	items_as.forEach((item) => {
+		item.addEventListener('click', () => {
+			console.log(item.getAttribute('data-cas'))
+			let slt = document.querySelector('.block-sol.slt')
+			if (slt) slt.classList.remove('slt')
+			item.classList.add('slt')
+			settings['block_solution'] = item.getAttribute('data-cas')
+			LS.set('settings', settings)
+			setBBS()
+			// update the selected value in local storage
+			//localStorage.setItem('selectedValue', value)
+		})
+	})
+}
+
 bbs_preview.addEventListener('click', () => {
 	bbs_dialog.show()
 })
+if (
+	!settings['browser-os'] ||
+	!settings['block_solution'] ||
+	settings['browser-os'] === null ||
+	settings['block_solution'] === null
+) {
+	//bbs_dialog.show()
+}
 setBBS()
-const step1_cnt = document.getElementById('bbs_step_1')
-function step1BBS() {
-	for (let key in adblock_compatibility) {
-		value = adblock_compatibility[key]
-		if (key != 'default' && value.hidden != true) {
-			const s =
-				'<label class="custom-radio__item"><input type="radio" name="options" value="option1" class="custom-radio__input">' +
-				icons[settings['block_solution']] +
-				'<span class="custom-radio__label">Option 1</span></label>'
-		}
-	}
-}
-console.log(!settings['browser'] || !settings['block_solution'])
-/*
-if (!settings['browser'] || !settings['block_solution']) {
-	bbs_dialog.show()
-}
-if (settings.browser === null || settings.block_solution === null) {
-	bbs_dialog.show()
-}
-*/
+
 var tslog = ''
 if (!results) results = []
 var test_log = document.getElementById('test_log')
@@ -138,6 +182,8 @@ async function copyToClip(str) {
 	}
 }
 var abt = {
+	browser: false,
+	block_solution: false,
 	total: 0,
 	blocked: 0,
 	notblocked: 0,
@@ -288,6 +334,7 @@ async function fetchTests() {
 	return results
 }
 
+// Function to test ad script loading
 function ad_script_test() {
 	let log = document.createElement('div')
 	const sfa1 = document.querySelector('#sfa_1')
@@ -321,7 +368,7 @@ function ad_script_test() {
 }
 const ctd = document.querySelector('#ctd_test')
 
-//Static
+//Function to test cosmetic static ad
 function cosmetic_test_static() {
 	setTimeout(function () {
 		const cts = document.querySelector('#cts_test')
@@ -346,7 +393,7 @@ function cosmetic_test_static() {
 		set_liquid()
 	}, 500)
 }
-//Dynamic
+//Function to test cosmetic dynamic ad
 function cosmetic_test_dynamic() {
 	let log = document.createElement('div')
 	let ad = document.createElement('div')
@@ -500,6 +547,18 @@ const el = (l) => {
 	return document.querySelector(l)
 }
 
+function getAS(bo) {
+	var r = []
+	for (var key in data_ac) {
+		var item = data_ac[key]
+		var noIssues = item['no-issues']
+
+		if (noIssues && noIssues.includes(bo)) {
+			r.push(key)
+		}
+	}
+	return r
+}
 document.addEventListener('DOMContentLoaded', function () {
 	new navbar()
 	new themeManager()
@@ -509,16 +568,17 @@ document.addEventListener('DOMContentLoaded', function () {
 	for (const key in settings) {
 		try {
 			console.log(`${key}: ${settings[key]}`)
-
-			const c = document.querySelector('#' + key)
-			c.checked = settings[key]
-			c.addEventListener('change', () => {
-				settings[key] = c.checked
-				console.log(key, c.checked)
-				if (key == 'collapseAll')
-					collapse_category(settings[key], false)
-				LS.set('settings', settings)
-			})
+			if (key !== 'browser-os' || key !== 'block_solution') {
+				const c = document.querySelector('#' + key)
+				c.checked = settings[key]
+				c.addEventListener('change', () => {
+					settings[key] = c.checked
+					console.log(key, c.checked)
+					if (key == 'collapseAll')
+						collapse_category(settings[key], false)
+					LS.set('settings', settings)
+				})
+			}
 		} catch (error) {
 			console.log(error)
 		}
@@ -574,19 +634,57 @@ document.addEventListener('DOMContentLoaded', function () {
 	el('#d3H_adblock').addEventListener('click', function () {
 		copyToClip(sadblock)
 	})
-	const items = document.querySelectorAll('.browser-os')
-
-	items.forEach((item) => {
+	const items_bo = document.querySelectorAll('.browser-os')
+	items_bo.forEach((item) => {
 		item.addEventListener('click', () => {
 			console.log(item.getAttribute('data-cbo'))
+			let slt = document.querySelector('.browser-os.slt')
+			if (slt) slt.classList.remove('slt')
+			item.classList.add('slt')
+			settings['browser-os'] = item.getAttribute('data-cbo')
+			LS.set('settings', settings)
+			stepBBS(settings['browser-os'])
+			setBBS()
 			// update the selected value in local storage
 			//localStorage.setItem('selectedValue', value)
-
-			
 		})
 	})
 
 	// check if there is a previously selected value in local storage
-	const selectedValue = localStorage.getItem('selectedValue')
+	let dlg_config_state = 1
+	let dlg_config_title = document.getElementById('dlg_configuration-title')
 
+	let np_bbs = document.getElementById('np_bbs')
+	let slt = document.querySelector(
+		'.browser-os[data-cbo="' + settings['browser-os'] + '"]'
+	)
+	console.log('test1')
+	if (settings['browser-os']) {
+		console.log('test2')
+		slt.classList.add('slt')
+		np_bbs.classList.remove('_d-none')
+		np_bbs.textContent = 'Select browser'
+		dlg_config_title.textContent = 'Select block solution'
+		dlg_config_state = 2
+		stepBBS(settings['browser-os'])
+		document.getElementById('bbs_step_2').classList.remove('_d-none')
+	} else {
+		document.getElementById('bbs_step_1').classList.remove('_d-none')
+	}
+	np_bbs.addEventListener('click', () => {
+		if (dlg_config_state == 1) {
+			np_bbs.textContent = 'Select browser'
+			dlg_config_title.textContent = 'Select block solution'
+			document.getElementById('bbs_step_2').classList.remove('_d-none')
+			document.getElementById('bbs_step_1').classList.add('_d-none')
+			dlg_config_state = 2
+		} else {
+			dlg_config_title.textContent = 'Select browser/os'
+			document.getElementById('bbs_step_1').classList.remove('_d-none')
+			document.getElementById('bbs_step_2').classList.add('_d-none')
+			np_bbs.textContent = 'Select adblock'
+			dlg_config_state = 1
+		}
+	})
+	console.log('current selected : ', settings['browser-os'])
 })
