@@ -97,29 +97,32 @@
 		<%- include('partials/adblock/logs.ejs') %>
 		<%- include('partials/header.ejs', {page:'adblock'}) %>
 		<main>
-			<button data-a11y-dialog-show="dlg_reports"> 
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-					<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-					<path d="M12 8l0 4l2 2"></path>
-					<path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"></path>
-				 </svg>
-				 Results</button>
-			<button data-a11y-dialog-show="dlg_faq">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-info-square"><path stroke="none" d="M0 0h24v24H0z"/><path d="M12 8 12.01 8"/><rect width="16" height="16" x="4" y="4" rx="2"/><path d="M11 12 12 12 12 16 13 16"/></svg> 
-				FAQ</button>
-			<button data-a11y-dialog-show="dlg_compatibility">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke="none" d="M0 0h24v24H0z"/><path d="m7 12 5 5L22 7M2 12l5 5m5-5 5-5"/></svg> 
-				Compatibility</button>
-			<button data-a11y-dialog-show="dlg_logs">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-message-2-code"><path stroke="none" d="M0 0h24v24H0z"/><path d="m12 20-3-3H7a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-2l-3 3"/><path d="m10 9-2 2 2 2M14 9l2 2-2 2"/></svg> 
-				Logs</button>
-			<button data-a11y-dialog-show="dlg_settings">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-settings"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37 1 .608 2.296.07 2.572-1.065z"/><path d="M9 12a3 3 0 1 0 6 0 3 3 0 1 0-6 0"/></svg>
-				Settings</button>
-			<div class="_bg-red _txt-white _radius _p-1 better_r">
-				There is currently an issue with <b>Firefox-based browsers + uBlock-Origin</b> where the test does not work as expected.
-				<br>Investigating and fixing this issue will take some time.<br> Thank you for your patience!
+			<div class="notice">
+				<button data-a11y-dialog-show="dlg_reports"> 
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M12 8l0 4l2 2"></path>
+						<path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"></path>
+					 </svg>
+					 Results</button>
+				<button data-a11y-dialog-show="dlg_faq">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-info-square"><path stroke="none" d="M0 0h24v24H0z"/><path d="M12 8 12.01 8"/><rect width="16" height="16" x="4" y="4" rx="2"/><path d="M11 12 12 12 12 16 13 16"/></svg> 
+					FAQ</button>
+				<button data-a11y-dialog-show="dlg_compatibility">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke="none" d="M0 0h24v24H0z"/><path d="m7 12 5 5L22 7M2 12l5 5m5-5 5-5"/></svg> 
+					Compatibility</button>
+				<button data-a11y-dialog-show="dlg_logs">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-message-2-code"><path stroke="none" d="M0 0h24v24H0z"/><path d="m12 20-3-3H7a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-2l-3 3"/><path d="m10 9-2 2 2 2M14 9l2 2-2 2"/></svg> 
+					Logs</button>
+				<button data-a11y-dialog-show="dlg_settings">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-settings"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37 1 .608 2.296.07 2.572-1.065z"/><path d="M9 12a3 3 0 1 0 6 0 3 3 0 1 0-6 0"/></svg>
+					Settings</button>
 			</div>
+				<div class="_bg-red _txt-white _radius _p-1 better_r">
+					<strong>Attention:</strong> We are currently experiencing an issue with the test not functioning as expected on Firefox-based browsers when using uBlock-Origin.
+					<br>Our team is actively investigating and working towards resolving this issue, but it may take some time to fix.
+					<br>We appreciate your patience and understanding during this process. Thank you!
+				  </div>
 			
 			<section>
 				<div class="grid">
