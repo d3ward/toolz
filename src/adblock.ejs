@@ -13,6 +13,7 @@
 			keywords:'adblock,test adblock,analytics,trackers,ads,cosmetic filter,ublock, ublockorigin,adblock extension,script loading'
 		}) %>
 	<body class="_overflowhidden">
+		
 		<%- include('partials/adblock/results.ejs') %>
 		<% const adblock_compatibility = require('./data/adblock_compatibility.json') %>
 		<div class="dialog" id="dlg_compatibility" data-a11y-dialog="dlg_compatibility" aria-labelledby="dlg_compatibility-title" aria-hidden="true">
@@ -30,18 +31,19 @@
 					<div>
 						<div class="card _pb-2">
 							<p>
-								While most of the tests are performed by users using the most popular solutions such as ublock-Origin, Blokada, NextDNS and Adguard,
-								there are some false positives due to platform/browser/solution limitations<br>
-								The test uses pure Javascript, and due to it's limitations and the way some solutions work, there may be problems.<br>
-								So here is a list of solutions where the test works, and gives a valid report of the result
+								The test relies on JavaScript, it can encounter problems due to browser limitations and varying solution approaches.<br>
+								Below you'll find browser-adblock solutions that have been validated and tested to work effectively
 							</p>
 							<b class="_txt-red"><i>You will not see any ads and no trackers will be activated </i></b>
 							<b class="_txt-blue"><i>A configuration with multiple solutions at the same time can lead to false positives.</i></b>
+							<h5>
+							<b class="_txt-orange"><i>While some browser+adblock solutions may not be supported by this test it's important to note that this does not imply they are not effective or reliable</i></b>
+							</h5>
 						</div>
 						<div class="card _bg-bg3 _mt-2">
 							<div class="row _ta-center">
-							  <div>solution (type)</div>
-							  <div>browser-platform</div>
+							  <div>Adblock Solution </div>
+							  <div>Browser-Platform</div>
 							</div>
 							<hr>
 							<% for (let key in adblock_compatibility) { %>
@@ -50,10 +52,10 @@
 									<div class="row">
 										<div data-th="solution (type)">
 											<span class="rwd-table-t"><%- value.icon %>
-											<%= key %> (<%= value.type%>)</span>
+											<%= value.name %> (<%= value.type%>)</span>
 											<br>
 											<p>
-												<%= value.note %>
+												<%- value.note %>
 											</p>
 										</div>
 										<div>
@@ -66,6 +68,7 @@
 													 </svg>
 													<%= value["no-issues"][b] %></span>
 												<% } %>
+												
 												<% for (let b in value["issues"]) { %>
 													<span class="light-red">
 														<svg xmlns="http://www.w3.org/2000/svg"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -75,6 +78,15 @@
 														 </svg>
 														<%= value["issues"][b] %></span>
 													<% } %>
+													<% for (let c in value["m-issues"]) { %>
+														<span class="light-orange">
+															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+																<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+																<path d="M8 8a3.5 3 0 0 1 3.5 -3h1a3.5 3 0 0 1 3.5 3a3 3 0 0 1 -2 3a3 4 0 0 0 -2 4"></path>
+																<path d="M12 19l0 .01"></path>
+															 </svg>
+															<%= value["m-issues"][c] %></span>
+														<% } %>
 											</div>
 										</div>
 									</div><hr>
@@ -96,6 +108,7 @@
 		<%- include('partials/adblock/changelog.ejs') %>
 		<%- include('partials/adblock/logs.ejs') %>
 		<%- include('partials/header.ejs', {page:'adblock'}) %>
+		
 		<main>
 			<button data-a11y-dialog-show="dlg_reports"> 
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -116,11 +129,35 @@
 			<button data-a11y-dialog-show="dlg_settings">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="prefix__icon prefix__icon-tabler prefix__icon-tabler-settings"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37 1 .608 2.296.07 2.572-1.065z"/><path d="M9 12a3 3 0 1 0 6 0 3 3 0 1 0-6 0"/></svg>
 				Settings</button>
-			<div class="_bg-red _txt-white _radius _p-1 better_r">
-				There is currently an issue with <b>Firefox-based browsers + uBlock-Origin</b> where the test does not work as expected.
-				<br>Investigating and fixing this issue will take some time.<br> Thank you for your patience!
+			<div class="_bg-orange _txt-white _radius _p-1 better_r _py-2">
+				<b>
+				Test may not function as expected on some browser-adblock combinations.<br>
+				To ensure a smooth experience, please check the compatibility list before running the test. <br>
+				<button data-a11y-dialog-show="dlg_compatibility">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke="none" d="M0 0h24v24H0z"/><path d="m7 12 5 5L22 7M2 12l5 5m5-5 5-5"/></svg> 
+					Compatibility</button><br>
+				I kindly request that you refrain from reporting them directly to the respective browser or adblock solution providers. <br>
+				Instead, I encourage you to report any issues directly to project issues <br></b>
+				<a href="https://github.com/d3ward/toolz/issues/new/choose" class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+					viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+					stroke-linecap="round" stroke-linejoin="round">
+					<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+					<path
+						d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
+					</path>
+				</svg> Create issue on Toolz </a>
 			</div>
-			
+			<noscript>
+				<div class="_bg-red _txt-white _radius _p-1 better_r _py-2 _mt-2">
+					<h3>JavaScript is required to run this test. Please enable JavaScript in your browser settings.</h3>
+					<style>
+						#m_test{
+							display: none;
+						}
+					</style>
+				</div>
+			  </noscript>
+			<div id="m_test">
 			<section>
 				<div class="grid">
 					<div>
@@ -222,7 +259,7 @@
 										</svg>
 										&nbsp;
 										Static Ad
-										<div id="cts_test" class="adsbox banner_ads">&nbsp;</div>
+										<div id="cts_test" class="adsbox banner_ads adbox ADBox AdBox adbox-wrapper adSocial ">&nbsp;</div>
 									</div>
 								</div>
 								<div>

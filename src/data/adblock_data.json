@@ -51,6 +51,9 @@
 		],
 		"MouseFlow": [
 			"mouseflow.com",
+			"cdn.mouseflow.com",
+			"o2.mouseflow.com",
+			"gtm.mouseflow.com",
 			"api.mouseflow.com",
 			"tools.mouseflow.com",
 			"cdn-test.mouseflow.com"
