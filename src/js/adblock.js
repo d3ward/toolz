@@ -24,7 +24,7 @@ if (tzversion !== version) {
 var LS = new LocalStorageManager('adb_tool')
 var results = LS.get('results')
 var settings = LS.get('settings')
-if (!settings || !settings['showCF']) {
+if (!settings || settings['showCF'] == undefined) {
 	settings = {
 		collapseAll: true,
 		showCF: true,
@@ -411,7 +411,7 @@ function render_tests() {
 }
 
 function leading_zero(val) {
-    return (val<10?'0':'') + val
+	return (val < 10 ? '0' : '') + val
 }
 
 //Browser : \nOS : \nAd-block : \nDNS : \nVPN :
