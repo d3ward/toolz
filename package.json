@@ -1,6 +1,6 @@
 {
   "name": "toolz",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "A set of accessible web tools",
   "scripts": {
     "dev": "webpack serve --config config/webpack.dev.js",
