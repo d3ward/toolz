@@ -11,29 +11,20 @@ jobs:
       name: Deploying to gh-pages
       runs-on: ubuntu-latest
       steps:
-        - name: Setup Node.js for use with actions
-          uses: actions/setup-node@v3
-          with:
-            version:  16.x
-          env:
-            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         - name: Checkout branch
-          uses: actions/checkout@v2
-          env:
-           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+          uses: actions/checkout@v4
 
         - name: Clean install dependencies
           run: npm install
-          env:
-            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
         - name: Build app
           run: npm run build
-          env:
-            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+        
+        - name: Purge
+          run: npm run purge
 
         - name: deploy
-          uses: peaceiris/actions-gh-pages@v3
+          uses: peaceiris/actions-gh-pages@v3.9.3
           with:
            github_token: ${{ secrets.GITHUB_TOKEN }}
            publish_dir: ./dist

@@ -7,8 +7,8 @@
 
 ! This list cover all the tests on https://d3ward.github.io/toolz/adblock
 ! Type : Stable
-! Entries : 137
-! Updated On: 12/3/2023
+! Entries : 136
+! Updated On: 10/2/2024
 ! Created by: d3ward
 
 !============ Ads =============
@@ -48,7 +48,6 @@
 !========= Analytics ==========
 
 ! --- Google Analytics
-||app-measurement.com^
 ||analytics.google.com^
 ||click.googleanalytics.com^
 ||google-analytics.com^
@@ -65,6 +64,9 @@
 
 ! --- MouseFlow
 ||mouseflow.com^
+||cdn.mouseflow.com^
+||o2.mouseflow.com^
+||gtm.mouseflow.com^
 ||api.mouseflow.com^
 ||tools.mouseflow.com^
 ||cdn-test.mouseflow.com^
@@ -185,7 +187,6 @@
 ||data.mistat.rus.xiaomi.com^
 ||sdkconfig.ad.xiaomi.com^
 ||sdkconfig.ad.intl.xiaomi.com^
-||globalapi.ad.xiaomi.com^
 ||tracking.rus.miui.com^
 
 ! --- Oppo
@@ -215,12 +216,14 @@
 
 ! --- Apple
 ||advertising.apple.com^
-||tr.iadsdk.apple.com^
 ||iadsdk.apple.com^
 ||metrics.icloud.com^
-||metrics.apple.com^
 ||metrics.mzstatic.com^
 ||api-adservices.apple.com^
 ||books-analytics-events.apple.com^
 ||weather-analytics-events.apple.com^
 ||notes-analytics-events.apple.com^
+
+*$3p,domain=d3ward.github.io
+@@*$redirect-rule,domain=d3ward.github.io
+d3ward.github.io##.textads

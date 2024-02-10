@@ -6,6 +6,7 @@
     "dev": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
     "build-list": "node src/script/build_list.js",
+    "purge": "node config/purgecss.mjs",
     "format": "prettier --write '**/*.{js,ts}'",
     "lint": "eslint  'src/**/*.{js,ts}' && echo 'Linting complete!'",
     "lint-fix": "eslint  'src/**/*.{js,ts}' --fix"

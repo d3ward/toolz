@@ -1,8 +1,9 @@
-const { PurgeCSS } = require('purgecss')
-const path = require('path')
-const config = require('./config')
-const fs = require('fs')
-const chalk = require('chalk')
+import { PurgeCSS } from 'purgecss'
+import path from 'path'
+import config from './config.js' // Make sure the config file is also compatible with ESM
+import fs from 'fs'
+import chalk from 'chalk'
+
 const pages = config.pages
 const options = pages.map((page) => {
 	const css = path.join(config.build, `css/${page}.css`)

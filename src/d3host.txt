@@ -7,8 +7,8 @@
 
 # This list cover all the tests on https://d3ward.github.io/toolz/adblock
 # Type : Stable
-# Entries : 137
-# Updated On: 12/3/2023
+# Entries : 136
+# Updated On: 10/2/2024
 # Created by: d3ward
 
 #============ Ads =============
@@ -48,7 +48,6 @@
 #========= Analytics ==========
 
 # --- Google Analytics
-0.0.0.0 app-measurement.com
 0.0.0.0 analytics.google.com
 0.0.0.0 click.googleanalytics.com
 0.0.0.0 google-analytics.com
@@ -65,6 +64,9 @@
 
 # --- MouseFlow
 0.0.0.0 mouseflow.com
+0.0.0.0 cdn.mouseflow.com
+0.0.0.0 o2.mouseflow.com
+0.0.0.0 gtm.mouseflow.com
 0.0.0.0 api.mouseflow.com
 0.0.0.0 tools.mouseflow.com
 0.0.0.0 cdn-test.mouseflow.com
@@ -185,7 +187,6 @@
 0.0.0.0 data.mistat.rus.xiaomi.com
 0.0.0.0 sdkconfig.ad.xiaomi.com
 0.0.0.0 sdkconfig.ad.intl.xiaomi.com
-0.0.0.0 globalapi.ad.xiaomi.com
 0.0.0.0 tracking.rus.miui.com
 
 # --- Oppo
@@ -215,10 +216,8 @@
 
 # --- Apple
 0.0.0.0 advertising.apple.com
-0.0.0.0 tr.iadsdk.apple.com
 0.0.0.0 iadsdk.apple.com
 0.0.0.0 metrics.icloud.com
-0.0.0.0 metrics.apple.com
 0.0.0.0 metrics.mzstatic.com
 0.0.0.0 api-adservices.apple.com
 0.0.0.0 books-analytics-events.apple.com

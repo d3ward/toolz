@@ -19,7 +19,7 @@ if (tzversion !== version) {
 	//Show changelog
 	//ch_dialog.show()
 	//Set version
-	TZ.set('version', version)
+	//TZ.set('version', version)
 }
 var snackbar = new Snackbar({
 	topPos: '10px',

@@ -16,8 +16,9 @@ var TZ = new LocalStorageManager('toolz')
 const version = packageJSON.version
 const tzversion = TZ.get('version')
 if (tzversion !== version) {
+	console.log(version, tzversion)
 	//Show changelog
-	//ch_dialog.show()
+	ch_dialog.show()
 	//Set version
 	TZ.set('version', version)
 }
@@ -123,7 +124,13 @@ async function check_url(url, div, parent, k1, k2) {
 	}
 	div.appendChild(hostDiv)
 	try {
-		await fetch('https://' + url, config, timeout, parent, div)
+		await fetch(
+			'https://' + url + '/fakepage.html',
+			config,
+			timeout,
+			parent,
+			div
+		)
 			.then((response) => {
 				console.log(response)
 				if (response.type == 'basic' && response.status == 200) {
@@ -240,30 +247,20 @@ function ad_script_test() {
 	let log = document.createElement('div')
 	const sfa1 = document.querySelector('#sfa_1')
 	const sfa2 = document.querySelector('#sfa_2')
-	const sfa3 = document.querySelector('#sfa_3')
 
 	abt.script.ads = typeof s_test_ads == 'undefined'
 	abt.script.pagead = typeof s_test_pagead == 'undefined'
 	abt.script.partnerads = typeof s_test_partnerads == 'undefined'
 	sfa1.classList.add(abt.script.ads ? '_bg-green' : '_bg-red')
 	sfa2.classList.add(abt.script.pagead ? '_bg-green' : '_bg-red')
-	sfa3.classList.add(abt.script.partnerads ? '_bg-green' : '_bg-red')
-	abt.blocked +=
-		(abt.script.ads ? 2 : 0) +
-		(abt.script.pagead ? 2 : 0) +
-		(abt.script.partnerads ? 2 : 0)
-	abt.notblocked +=
-		(abt.script.ads ? 0 : 2) +
-		(abt.script.pagead ? 0 : 2) +
-		(abt.script.partnerads ? 0 : 2)
+	abt.blocked += (abt.script.ads ? 1 : 0) + (abt.script.pagead ? 1 : 0)
+	abt.notblocked += (abt.script.ads ? 0 : 1) + (abt.script.pagead ? 0 : 1)
 	test_log.appendChild(log)
 	log.innerHTML =
 		'<div>script_ads : ' +
 		abt.script.ads +
 		'</div><div>script_pagead : ' +
 		abt.script.pagead +
-		'</div><div>script_partenrads : ' +
-		abt.script.partnerads +
 		'</div><br> ------------------------- '
 	set_liquid()
 }
@@ -280,8 +277,8 @@ function cosmetic_test_static() {
 				'block'
 				? false
 				: true
-		abt.blocked += abt.cosmetic_test.static ? 2 : 0
-		abt.notblocked += abt.cosmetic_test.static ? 0 : 2
+		abt.blocked += abt.cosmetic_test.static ? 1 : 0
+		abt.notblocked += abt.cosmetic_test.static ? 0 : 1
 		document
 			.querySelector('#ct_static')
 			.classList.add(abt.cosmetic_test.static ? '_bg-green' : '_bg-red')
@@ -312,8 +309,8 @@ function cosmetic_test_dynamic() {
 				'block'
 				? false
 				: true
-		abt.blocked += abt.cosmetic_test.dynamic ? 2 : 0
-		abt.notblocked += abt.cosmetic_test.dynamic ? 0 : 2
+		abt.blocked += abt.cosmetic_test.dynamic ? 1 : 0
+		abt.notblocked += abt.cosmetic_test.dynamic ? 0 : 1
 		test_log.appendChild(log)
 		log.innerHTML =
 			' cosmetic_dynamic_ad : ' +
@@ -333,14 +330,14 @@ async function startAdBlockTesting() {
 	lt_cwrap.classList.add('start')
 	let tests = []
 	if (settings['showCF'] == true) {
-		abt.total += 4
+		abt.total += 2
 		tests.push(cosmetic_test_static())
 		tests.push(cosmetic_test_dynamic())
 	} else {
 		document.querySelector('#cf_wrap').style.display = 'none'
 	}
 	if (settings['showSL'] == true) {
-		abt.total += 6
+		abt.total += 2
 		tests.push(ad_script_test())
 	} else {
 		document.querySelector('#sl_wrap').style.display = 'none'

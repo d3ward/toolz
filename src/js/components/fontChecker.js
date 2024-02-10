@@ -16,7 +16,7 @@ export function fontChecker() {
 		h.removeChild(s)
 	}
 
-	this.detect = function(font){
+	this.detect = function (font) {
 		var detected = false
 		for (var index in baseFonts) {
 			s.style.fontFamily = font + ',' + baseFonts[index] // name of the font along with the base font for fallback.

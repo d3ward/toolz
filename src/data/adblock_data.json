@@ -34,7 +34,6 @@
 	},
 	"Analytics": {
 		"Google Analytics": [
-			"app-measurement.com",
 			"analytics.google.com",
 			"click.googleanalytics.com",
 			"google-analytics.com",
@@ -170,7 +169,6 @@
 			"data.mistat.rus.xiaomi.com",
 			"sdkconfig.ad.xiaomi.com",
 			"sdkconfig.ad.intl.xiaomi.com",
-			"globalapi.ad.xiaomi.com",
 			"tracking.rus.miui.com"
 		],
 		"Oppo": [
@@ -200,10 +198,8 @@
 		],
 		"Apple": [
 			"advertising.apple.com",
-			"tr.iadsdk.apple.com",
 			"iadsdk.apple.com",
 			"metrics.icloud.com",
-			"metrics.apple.com",
 			"metrics.mzstatic.com",
 			"api-adservices.apple.com",
 			"books-analytics-events.apple.com",
