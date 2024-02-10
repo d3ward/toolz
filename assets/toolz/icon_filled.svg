@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 33.867 33.867"><style>@media (prefers-color-scheme:dark){#prefix__toolz_logo{fill:#fff}}</style><g stroke-width="23.398" paint-order="stroke markers fill"><path d="M20.266 13.384c.968-.11 6.628.393 6.6.523L15.58 20.285l-8.59-.245Z"/><path d="M12.896 13.659C9.3 13.469 7.011 9.705 6.932 6.35h6.637c5.728 0 6.709.023 7.068.074 3.802-.046 6.122 3.81 6.23 7.484m-7.634 6.118c4.228.086 7.438 3.513 7.702 7.491l-13.166-.026c-1.969-.031-6.754-3.016-6.78-7.45"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 33.867 33.867">
+    <style>@media (prefers-color-scheme:dark){#prefix__toolz_logo{fill:#fff}}</style>
+    <g stroke-width="23.398" paint-order="stroke markers fill">
+        <path d="M20.266 13.384c.968-.11 6.628.393 6.6.523L15.58 20.285l-8.59-.245Z"/>
+        <path d="M12.896 13.659C9.3 13.469 7.011 9.705 6.932 6.35h6.637c5.728 0 6.709.023 7.068.074 3.802-.046 6.122 3.81 6.23 7.484m-7.634 6.118c4.228.086 7.438 3.513 7.702 7.491l-13.166-.026c-1.969-.031-6.754-3.016-6.78-7.45"/>
+    </g>
+</svg>
