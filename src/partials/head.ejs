@@ -5,8 +5,11 @@
     <meta name="theme-color" content="#161625">
 
 	<link rel="icon" href="./assets/<%=page%>/icon.svg" type="image/svg+xml">
-	<% if (page == 'adblock') { %>
-		<link rel="canonical" href="https://d3ward.github.io/toolz/adblock">
+	<% if (page == 'toolz') { %>
+		<link rel="canonical" href="https://d3ward.github.io/toolz">
+	<% } %>
+	<% if (page != 'toolz') { %>
+		<link rel="canonical" href="https://d3ward.github.io/toolz/<%=page%>">
 	<% } %>
     <title><%= title %></title>
   	<meta name="author" content="Ursu Eduard Cornelius">
