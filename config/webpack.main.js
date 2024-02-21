@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const config = require('./config')
 const pages = config.pages
+
 module.exports = {
 	context: config.src,
 	entry: {
@@ -12,10 +13,11 @@ module.exports = {
 		}, {})
 	},
 	output: {
-		filename: './js/[name].js',
+		filename: 'js/[name].js', 
 		path: config.build,
 		clean: false,
-		assetModuleFilename: '[path][name][ext]'
+		assetModuleFilename: '[path][name][ext]',
+		publicPath: '/toolz/'
 	},
 	plugins: [
 		new CopyWebpackPlugin({
@@ -36,7 +38,7 @@ module.exports = {
 			]
 		}),
 		new MiniCssExtractPlugin({
-			filename: './css/[name].css',
+			filename: 'css/[name].css', 
 			chunkFilename: '[name].css'
 		}),
 		...pages.map(
@@ -60,7 +62,6 @@ module.exports = {
 				test: /\.ejs$/i,
 				use: ['html-loader', 'template-ejs-loader']
 			},
-
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
@@ -69,9 +70,9 @@ module.exports = {
 			{
 				test: /\.(sa|sc|c)ss$/,
 				use: [
-					MiniCssExtractPlugin.loader, // extract css from commonjs
-					'css-loader', // turn css into commonjs
-					'sass-loader' // turn scss into css
+					MiniCssExtractPlugin.loader, // Extract CSS from commonjs
+					'css-loader', // Turn css into commonjs
+					'sass-loader' // Turn scss into css
 				]
 			}
 		]
