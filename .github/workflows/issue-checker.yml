@@ -33,9 +33,14 @@ jobs:
             "Test Result:",
           ];
 
-          // Helper function to check if a required field is missing
+           // Helper function to check if a required field is actually filled
           const isFieldMissing = (field) => {
-            return !issue.body.includes(field) || issue.body.includes(field + " ");
+            // Regex to find the field and any subsequent text
+            const fieldRegex = new RegExp(`${field}\\s*:\\s*(.+)`);
+            const match = issue.body.match(fieldRegex);
+          
+            // Check if the field is present and has content after the colon
+            return !match || match[1].trim().length === 0;
           };
 
           // Find all missing fields
