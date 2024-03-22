@@ -19,7 +19,9 @@ Before submitting, please:
 ### Context
 
 **Browser**:
+
 **Operating System**:
+
 **Adblock Solution**:
 
 **Description of Issue**:
