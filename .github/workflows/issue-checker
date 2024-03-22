@@ -1,0 +1,55 @@
+name: Issue Template Checks
+
+on:
+  issues:
+    types: [opened, labeled, edited]
+
+jobs:
+  check-required-fields:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Comment on Issues Missing Required Fields
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const issue = context.payload.issue;
+          const issueLabels = issue.labels.map(label => label.name);
+          const hasRelevantLabel = issueLabels.includes('failed-test') || issueLabels.includes('verified-test');
+
+          // Proceed only if the issue has a relevant label
+          if (!hasRelevantLabel) {
+            console.log("Issue does not have relevant labels. Skipping.");
+            return;
+          }
+
+          const requiredFields = [
+            "Browser:",
+            "OS:",
+            "Adblock Solution",
+            "Description of Issue:",
+            "Test Result:",
+          ];
+
+          // Helper function to check if a required field is missing
+          const isFieldMissing = (field) => {
+            return !issue.body.includes(field) || issue.body.includes(field + " ");
+          };
+
+          // Find all missing fields
+          const missingFields = requiredFields.filter(isFieldMissing);
+
+          // If there are missing fields, post a comment
+          if (missingFields.length > 0) {
+            const commentBody = `Hello @${issue.user.login}, it looks like your issue is missing some required information: \n- ${missingFields.join("\n- ")}\nPlease update your issue to include this information.`;
+            await github.rest.issues.createComment({
+              issue_number: issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });
+          } else {
+            console.log("Issue contains all required fields.");
+          }
