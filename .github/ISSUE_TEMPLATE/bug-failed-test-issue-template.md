@@ -8,18 +8,24 @@ assignees: d3ward
 
 ---
 
-<!-- 
-Thank you for reporting an issue. To help me process your issue effectively, please fill out each section below. Fields marked with ** are required. For fields not applicable to your issue, please write 'N/A'. 
+<!--
+Thank you for taking the time to report an issue. To help us process your issue effectively, please fill out each section below. Fields marked with ** are required. For fields not applicable to your issue, please write 'N/A'.
+
+Before submitting, please:
+- Check if a similar issue has already been reported.
+- Ensure that your issue is related to a bug or a failed test, not a question or discussion. For general questions or support, use a blank issue
 -->
 
 ### Context
+
 **Browser**:
-**OS**:
-**Adblock Solution**(if any):
+
+**Operating System**:
+
+**Adblock Solution**:
 
 **Description of Issue**:
 <!-- Please provide a clear and concise description of what the issue is, including steps to reproduce if applicable. -->
-
 
 **Screenshots:**
 <!-- If applicable, add screenshots to help explain your issue. -->
