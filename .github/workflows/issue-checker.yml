@@ -1,8 +1,7 @@
 name: Issue Template Checks
 
 on:
-  issues:
-    types: [opened, labeled, edited]
+  workflow_dispatch:
 
 jobs:
   check-required-fields:
