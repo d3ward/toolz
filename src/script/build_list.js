@@ -94,7 +94,7 @@ function build(obj, comment, pre, post) {
 	})
 	if (pre == '||')
 		txt +=
-			'\n*$3p,domain=d3ward.github.io\n@@*$redirect-rule,domain=d3ward.github.io\nd3ward.github.io##.textads'
+			'\n*$3p,domain=d3ward.github.io\n/pagead.js$domain=d3ward.github.io\n@@*$redirect-rule,domain=d3ward.github.io\nd3ward.github.io##.textads'
 	const date = new Date()
 	const d =
 		date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear()

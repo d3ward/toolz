@@ -7,8 +7,8 @@
 
 ! This list cover all the tests on https://d3ward.github.io/toolz/adblock
 ! Type : Stable
-! Entries : 136
-! Updated On: 10/2/2024
+! Entries : 132
+! Updated On: 8/5/2024
 ! Created by: d3ward
 
 !============ Ads =============
@@ -18,7 +18,6 @@
 ||analyticsengine.s3.amazonaws.com^
 ||analytics.s3.amazonaws.com^
 ||advice-ads.s3.amazonaws.com^
-||advertising-api-eu.amazon.com^
 
 ! --- Google Ads
 ||pagead2.googlesyndication.com^
@@ -149,7 +148,6 @@
 ||geo.yahoo.com^
 ||udc.yahoo.com^
 ||udcm.yahoo.com^
-||advertising.yahoo.com^
 ||analytics.query.yahoo.com^
 ||partnerads.ysm.yahoo.com^
 ||log.fc.yahoo.com^
@@ -161,7 +159,6 @@
 ||appmetrica.yandex.ru^
 ||adfstat.yandex.ru^
 ||metrika.yandex.ru^
-||advertising.yandex.ru^
 ||offerwall.yandex.net^
 ||adfox.yandex.ru^
 
@@ -215,7 +212,6 @@
 ||analytics-api.samsunghealthcn.com^
 
 ! --- Apple
-||advertising.apple.com^
 ||iadsdk.apple.com^
 ||metrics.icloud.com^
 ||metrics.mzstatic.com^
@@ -225,5 +221,6 @@
 ||notes-analytics-events.apple.com^
 
 *$3p,domain=d3ward.github.io
+/pagead.js$domain=d3ward.github.io
 @@*$redirect-rule,domain=d3ward.github.io
 d3ward.github.io##.textads

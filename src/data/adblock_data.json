@@ -4,8 +4,7 @@
 			"adtago.s3.amazonaws.com",
 			"analyticsengine.s3.amazonaws.com",
 			"analytics.s3.amazonaws.com",
-			"advice-ads.s3.amazonaws.com",
-			"advertising-api-eu.amazon.com"
+			"advice-ads.s3.amazonaws.com"
 		],
 		"Google Ads": [
 			"pagead2.googlesyndication.com",
@@ -132,7 +131,6 @@
 			"geo.yahoo.com",
 			"udc.yahoo.com",
 			"udcm.yahoo.com",
-			"advertising.yahoo.com",
 			"analytics.query.yahoo.com",
 			"partnerads.ysm.yahoo.com",
 			"log.fc.yahoo.com",
@@ -144,7 +142,6 @@
 			"appmetrica.yandex.ru",
 			"adfstat.yandex.ru",
 			"metrika.yandex.ru",
-			"advertising.yandex.ru",
 			"offerwall.yandex.net",
 			"adfox.yandex.ru"
 		],
@@ -197,7 +194,6 @@
 			"analytics-api.samsunghealthcn.com"
 		],
 		"Apple": [
-			"advertising.apple.com",
 			"iadsdk.apple.com",
 			"metrics.icloud.com",
 			"metrics.mzstatic.com",

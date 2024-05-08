@@ -110,8 +110,6 @@
 		<%- include('partials/header.ejs', {page:'adblock'}) %>
 		
 		<main>
-			
-			
 			<noscript>
 				<div class="_bg-red _txt-white _radius _p-1 better_r _py-2 _mt-2">
 					<h3>JavaScript is required to run this test. Please enable JavaScript in your browser settings.</h3>
@@ -191,8 +189,22 @@
 						 </svg> &nbsp; Re-test</button>
 					</div>
 					<div class="_f-center">
-						<div class="card" id="adb_test_r">
-						</div>
+						<div class="card" id="adb_test_r"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+									stroke="var(--blue)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+									<path stroke="none" d="M0 0h24v24H0z"></path>
+									<path d="M11 12a1 1 0 1 0 2 0 1 1 0 1 0-2 0"></path>
+									<path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0"></path>
+								</svg> Total : </span><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke-width="2"
+									stroke="var(--green)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M0 0h24v24H0z" stroke="none"></path>
+									<circle cx="12" cy="12" r="9"></circle>
+									<path d="M9 12l2 2 4-4"></path>
+								</svg> </span><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" stroke-width="2"
+									stroke="var(--red)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M0 0h24v24H0z" stroke="none"></path>
+									<circle cx="12" cy="12" r="9"></circle>
+									<path d="M10 10l4 4m0-4l-4 4"></path>
+								</svg> </span></div>
 					</div>
 				</div>
 			</section>
@@ -217,24 +229,24 @@
 				</div>
 				<div>
 					<div class="_bg-orange _txt-white _radius _p-1 better_r">
-				<b>
-				The test may not work as expected with some browser/blocker combinations.<br>
-				To ensure a smooth experience, please check the compatibility list before testing. <br>
-				<button data-a11y-dialog-show="dlg_compatibility">
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke="none" d="M0 0h24v24H0z"/><path d="m7 12 5 5L22 7M2 12l5 5m5-5 5-5"/></svg> 
-					Compatibility</button><br>
-					I ask that you please refrain from reporting them directly to the browser or adblock solution provider.<br>
-					Instead, I encourage you to report problems directly to the Toolz project issues <br></b>
-				<a href="https://github.com/d3ward/toolz/issues/new/choose" class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-					viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-					stroke-linecap="round" stroke-linejoin="round">
-					<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-					<path
-						d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
-					</path>
-				</svg> Create issue on Toolz </a>
-			</div>
-</div>
+						<b>
+						The test may not work as expected with some browser/blocker combinations.<br>
+						To ensure a smooth experience, please check the compatibility list before testing. <br>
+						<button data-a11y-dialog-show="dlg_compatibility">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke="none" d="M0 0h24v24H0z"/><path d="m7 12 5 5L22 7M2 12l5 5m5-5 5-5"/></svg> 
+							Compatibility</button><br>
+							I ask that you please refrain from reporting them directly to the browser or adblock solution provider.<br>
+							Instead, I encourage you to report problems directly to the Toolz project issues <br></b>
+						<a href="https://github.com/d3ward/toolz/issues/new/choose" class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+							viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+							stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+							<path
+								d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5">
+							</path>
+						</svg> Create issue on Toolz </a>
+					</div>
+				</div>
 			</section>
 			<section class="page-active" id="adb_test">
 				<div class="grid">
@@ -285,7 +297,29 @@
 										<div id="ctd_test"></div>
 									</div>
 								</div>
-		
+								
+							</div>
+							<div>
+								<details>
+									<summary>Why Cosmetic Filter test fails?</summary>
+									<div class="better_r _p-1">
+										<p>
+											If a cosmetic filter test fails, it simply means that the specific website being tested
+											(in this case d3ward.github.io) isn't included in any of adblock's rules or lists.<br>
+											It's important to note that this does not mean that cosmetic filtering fails on all websites.<br> You can
+											confirm this by visiting a popular, ad-rich site where you're unlikely to see any ad boxes.<br>
+											The purpose of this test is to assess the functionality of the blocking feature, not to determine its scope
+											or coverage. By adding the following rules to your adblock solution, you may be able to solve the problem:
+										</p>
+								
+										<pre>
+											<code>d3ward.github.io##.adbox.banner_ads.adsbox
+d3ward.github.io##.textads</code></pre>
+										<b>Adding these rules could lead to a successful test result proving your adblock
+											solution have that feature of blocking with cosmetic filters</b>
+									</div>
+								</details>
+								
 							</div>
 						</div>
 					</div>
@@ -315,6 +349,29 @@
 										<script src="./js/pagead.js"></script>
 									</div>
 								</div>
+							</div>
+							<div>
+								<details>
+									<summary>Why Ad Script Loading test fails??</summary>
+									<div class="better_r _p-1">
+										<p>
+											Same as the cosmetic tests. If an ad script load test fails, it usually means that the specific website being
+											tested isn't covered by any of adblock's rules or lists, especially for blocking ad-related scripts like my fake
+											<code>ads.js</code><br>
+											However, this error doesn't indicate a general failure of ad script blocking on all websites.<br>
+											To check, you can visit a popular website known for its abundance of ads scripts.<br>
+											Chances are that you won't encounter any blocked ad scripts.
+											It's important to understand that this test is designed to evaluate the functionality of ad script blocking, not
+											its scope or effectiveness.
+											To potentially fix the problem, consider adding the following rules to your adblock solution:
+										</p>
+										<pre><code>/pagead.js$domain=d3ward.github.io
+/widget/ads.</code></pre>
+										<b>Adding these rules could lead to a successful test result proving your adblock
+											solution have that feature of blocking script loading</b>
+									</div>
+								</details>
+								
 							</div>
 						</div>
 						<hr>

@@ -7,8 +7,8 @@
 
 # This list cover all the tests on https://d3ward.github.io/toolz/adblock
 # Type : Stable
-# Entries : 136
-# Updated On: 10/2/2024
+# Entries : 132
+# Updated On: 8/5/2024
 # Created by: d3ward
 
 #============ Ads =============
@@ -18,7 +18,6 @@
 0.0.0.0 analyticsengine.s3.amazonaws.com
 0.0.0.0 analytics.s3.amazonaws.com
 0.0.0.0 advice-ads.s3.amazonaws.com
-0.0.0.0 advertising-api-eu.amazon.com
 
 # --- Google Ads
 0.0.0.0 pagead2.googlesyndication.com
@@ -149,7 +148,6 @@
 0.0.0.0 geo.yahoo.com
 0.0.0.0 udc.yahoo.com
 0.0.0.0 udcm.yahoo.com
-0.0.0.0 advertising.yahoo.com
 0.0.0.0 analytics.query.yahoo.com
 0.0.0.0 partnerads.ysm.yahoo.com
 0.0.0.0 log.fc.yahoo.com
@@ -161,7 +159,6 @@
 0.0.0.0 appmetrica.yandex.ru
 0.0.0.0 adfstat.yandex.ru
 0.0.0.0 metrika.yandex.ru
-0.0.0.0 advertising.yandex.ru
 0.0.0.0 offerwall.yandex.net
 0.0.0.0 adfox.yandex.ru
 
@@ -215,7 +212,6 @@
 0.0.0.0 analytics-api.samsunghealthcn.com
 
 # --- Apple
-0.0.0.0 advertising.apple.com
 0.0.0.0 iadsdk.apple.com
 0.0.0.0 metrics.icloud.com
 0.0.0.0 metrics.mzstatic.com
