@@ -7,8 +7,8 @@
 
 ! This list cover all the tests on https://d3ward.github.io/toolz/adblock
 ! Type : Stable
-! Entries : 132
-! Updated On: 8/5/2024
+! Entries : 131
+! Updated On: 23/5/2024
 ! Created by: d3ward
 
 !============ Ads =============
@@ -121,7 +121,6 @@
 ||log.pinterest.com^
 ||analytics.pinterest.com^
 ||trk.pinterest.com^
-||widgets.pinterest.com^
 
 ! --- Reddit
 ||events.reddit.com^
