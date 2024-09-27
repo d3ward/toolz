@@ -48,7 +48,7 @@
   "devDependencies": {
     "ejs": "^3.1.10",
     "template-ejs-loader": "^0.9.4",
-    "webpack": "^5.88.0",
+    "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4"
   }
 }
