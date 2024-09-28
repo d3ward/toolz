@@ -1,4 +1,3 @@
-import '../sass/fontlist.sass'
 import packageJSON from '../../package.json'
 import { font_list } from '../data/font_list'
 import { navbar } from './components/navbar'

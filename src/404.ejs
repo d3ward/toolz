@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
 	<%- include('partials/head.ejs',
 		{
 			page: '404',
 			title:'Toolz by d3ward - 404',
 			description:'Page not found',
 			url: 'd3ward.github.io/toolz/',
-			preview_thumbnail:'https://d3ward.github.io/toolz/src/preview_toolz.png',
+			preview_thumbnail:'./assets/preview_toolz.png',
 			keywords:'toolz,web tools,tools,browser testing,font testing,viewport testing,adblock testing, ad blocker testing,performance,toolkit,web design,open source'
 		}) %>
+	<link href="./sass/404.sass" rel="stylesheet" />
+	<script src="./js/404.js" defer="defer"></script>
+</head>
 <body>
     <ul class="squares">
         <li></li>
@@ -99,7 +102,7 @@
        
     </main>
 	<%- include('partials/footer.ejs') %>
-		<%- include('partials/gotop.ejs') %>
+	<%- include('partials/gotop.ejs') %>
 </body>
 
 </html>

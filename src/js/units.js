@@ -1,4 +1,3 @@
-import '../sass/units.sass'
 import packageJSON from '../../package.json'
 import { navbar } from './components/navbar'
 import A11yDialog from './components/dialog'
