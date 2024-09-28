@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 	<%- include('partials/head.ejs',
 		{
 			page:'adblock',
@@ -9,13 +10,15 @@
 			'current ad/content blocker solution. Intuitive interface makes it easy to navigate and use, and the beautiful design ensures that the experience is visually appealing. '+
 			'With just a click, you can see how well the ad blocker is working and make any necessary adjustments.',
 			url: 'd3ward.github.io/toolz/adblock',
-			preview_thumbnail:'https://d3ward.github.io/toolz/src/preview_toolz.png',
+			preview_thumbnail:'./assets/preview_toolz.png',
 			keywords:'adblock test,ad block test,ad blocker test,adblock,test adblock,analytics,trackers,ads,cosmetic filter,ublock, ublockorigin,adblock extension,script loading'
 		}) %>
+	<link href="./sass/adblock.sass" rel="stylesheet" />
+	<script src="./js/adblock.js" defer="defer"></script>
+</head>
 	<body class="_overflowhidden">
 		
 		<%- include('partials/adblock/results.ejs') %>
-		<% const adblock_compatibility = require('./data/adblock_compatibility.json') %>
 		<div class="dialog" id="dlg_compatibility" data-a11y-dialog="dlg_compatibility" aria-labelledby="dlg_compatibility-title" aria-hidden="true">
 			<div class="dialog-overlay" data-a11y-dialog-hide></div>
 			<div class="dialog-content">

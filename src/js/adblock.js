@@ -1,4 +1,3 @@
-import '../sass/adblock.sass'
 import * as data from '../data/adblock_data.json'
 import packageJSON from '../../package.json'
 import { icons } from '../data/icons'

@@ -28,26 +28,20 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-webpack-plugin": "^4.0.1",
-    "file-loader": "^6.2.0",
     "glob": "^10.3.0",
     "glob-all": "^3.3.1",
-    "html-loader": "^4.2.0",
-    "html-webpack-plugin": "^5.5.3",
-    "mini-css-extract-plugin": "^2.7.6",
-    "node-sass": "^9.0.0",
+    "html-bundler-webpack-plugin": "^4.0.0",
     "postcss": "^8.4.31",
     "prettier": "^2.8.8",
     "purgecss-webpack-plugin": "^5.0.0",
     "reachable-url": "^1.7.1",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
-    "style-loader": "^3.3.3",
-    "webpack-dev-server": "^4.15.1",
+    "webpack-dev-server": "^5.1.0",
     "webpack-merge": "^5.9.0"
   },
   "devDependencies": {
     "ejs": "^3.1.10",
-    "template-ejs-loader": "^0.9.4",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4"
   }
