@@ -13,6 +13,13 @@ module.exports = merge(main, {
 		port: 3000,
 		hot: true,
 		open: '/toolz/',
-		historyApiFallback: true
+		historyApiFallback: true,
+		// enable live reload after changes
+		watchFiles: {
+			paths: ['src/**/*.*'],
+			options: {
+				usePolling: true
+			}
+		}
 	}
 })

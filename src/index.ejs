@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-	<%- include('partials/head.ejs',
-	{
-		page: 'toolz',
-		title:'Toolz by d3ward - Home',
-		description:'Are you looking for a reliable and comprehensive toolkit for testing browser features? Look no further!'+
-		' Toolz is an open source project that offers a range of tools for testing everything from fonts and'+
-		' viewport units to the efficiency of ad blockers. With this easy-to-use interface and extensive collection of testing tools,'+
-		' you\'ll have everything you need to ensure that your websites, browser and applications are optimized for the best performance and user experience.',
-		url: 'd3ward.github.io/toolz/',
-		preview_thumbnail:'https://d3ward.github.io/toolz/src/preview_toolz.png',
-		keywords:'toolz,web tools,tools,browser testing,font testing,viewport testing,adblock testing, ad blocker testing,performance,toolkit,web design,open source'
-	}) %>
-	
+<head>
+    <%- include('partials/head.ejs',
+    {
+        page: 'toolz',
+        title:'Toolz by d3ward - Home',
+        description:'Are you looking for a reliable and comprehensive toolkit for testing browser features? Look no further!'+
+        ' Toolz is an open source project that offers a range of tools for testing everything from fonts and'+
+        ' viewport units to the efficiency of ad blockers. With this easy-to-use interface and extensive collection of testing tools,'+
+        ' you\'ll have everything you need to ensure that your websites, browser and applications are optimized for the best performance and user experience.',
+        url: 'd3ward.github.io/toolz/',
+        preview_thumbnail:'./assets/preview_toolz.png',
+        keywords:'toolz,web tools,tools,browser testing,font testing,viewport testing,adblock testing, ad blocker testing,performance,toolkit,web design,open source'
+    }) %>
+    <link href="./sass/index.sass" rel="stylesheet" />
+    <script src="./js/index.js" defer="defer"></script>
+</head>
 <body>
-	<%- include('partials/support_me.ejs') %>
-	<%- include('partials/adblock/changelog.ejs') %>
+    <%- include('partials/support_me.ejs') %>
+    <%- include('partials/adblock/changelog.ejs') %>
     <%- include('partials/header.ejs', {page:'index'}) %>
     <main class="_ta-center">
         <div class="_aos-top card">
