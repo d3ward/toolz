@@ -1,9 +1,9 @@
 # Title: d3Host List by d3ward
 # Expires: 1 days
 # Description: Simple and small list with the most popular advertising, tracking, analytics and social advertising services
-# Homepage: https://github.com/d3ward/toolz
+# Homepage: https://sfdcai.github.io/toolz
 # License: CC BY-NC-SA
-# Source: https://github.com/d3ward/toolz/blob/master/src/d3host.txt
+# Source: https://sfdcai.github.io/toolz/blob/master/src/d3host.txt
 
 # This list cover all the tests on https://sfdcai.github.io/toolz/adblock
 # Type : Stable

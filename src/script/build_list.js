@@ -17,11 +17,11 @@ const header = (entries, date, comment) => {
 		comment +
 		' Description: Simple and small list with the most popular advertising, tracking, analytics and social advertising services\n' +
 		comment +
-		' Homepage: https://github.com/d3ward/toolz\n' +
+		' Homepage: https://sfdcai.github.io/toolz\n' +
 		comment +
 		' License: CC BY-NC-SA\n' +
 		comment +
-		' Source: https://github.com/d3ward/toolz/blob/master/src/d3host' +
+		' Source: https://sfdcai.github.io/toolz/blob/master/src/d3host' +
 		ext +
 		'\n\n' +
 		comment +

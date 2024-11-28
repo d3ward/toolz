@@ -14,7 +14,7 @@
   "author": "Eduard Ursu",
   "license": "(CC BY-NC-SA 4.0)",
   "bugs": {
-    "url": "https://github.com/d3ward/toolz/issues"
+    "url": "https://sfdcai.github.io/toolz/issues"
   },
   "dependencies": {
     "@babel/core": "^7.22.5",
