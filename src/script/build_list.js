@@ -25,7 +25,7 @@ const header = (entries, date, comment) => {
 		ext +
 		'\n\n' +
 		comment +
-		' This list cover all the tests on https://d3ward.github.io/toolz/adblock\n' +
+		' This list cover all the tests on https://sfdcai.github.io/toolz/adblock\n' +
 		comment +
 		' Type : Stable\n' +
 		comment +
