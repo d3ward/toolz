@@ -7,8 +7,8 @@
 
 ! This list cover all the tests on https://d3ward.github.io/toolz/adblock
 ! Type : Stable
-! Entries : 131
-! Updated On: 23/5/2024
+! Entries : 132
+! Updated On: 11/1/2025
 ! Created by: d3ward
 
 !============ Ads =============
@@ -220,6 +220,7 @@
 ||notes-analytics-events.apple.com^
 
 *$3p,domain=d3ward.github.io
+/ads.js$domain=d3ward.github.io
 /pagead.js$domain=d3ward.github.io
 @@*$redirect-rule,domain=d3ward.github.io
 d3ward.github.io##.textads
